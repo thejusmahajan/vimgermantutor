@@ -1,0 +1,134 @@
+== Lektion 2.2: Thema - Reisen und Verkehr ==
+
+Es ist 15:36 Uhr am Dienstag in Hamburg. Zeit, über das Unterwegssein zu sprechen!
+
+--- Wortschatz 1: Verkehrsmittel (Modes of Transport) ---
+Wie bewegt man sich fort?
+
+das Auto (-s)            - car
+das Fahrrad (-räder)     - bicycle
+der Zug (Züge)           - train
+der Bus (-se)            - bus
+die U-Bahn (-en) (Untergrundbahn) - subway
+die S-Bahn (-en) (Stadtschnellbahn) - suburban train
+die Straßenbahn (-en)    - tram
+das Flugzeug (-e)        - airplane
+das Schiff (-e)          - ship
+das Taxi (-s)            - taxi
+zu Fuß                   - on foot
+
+Wichtige Verben:
+fahren (fährt, fuhr, ist gefahren) - to drive, travel (by vehicle)
+fliegen (flog, ist geflogen)       - to fly
+gehen (ging, ist gegangen)         - to go, walk
+nehmen (nimmt, nahm, genommen)     - to take
+reisen (reiste, ist gereist)       - to travel
+
+Typischer Gebrauch:
+Ich fahre *mit dem* Auto / *mit dem* Fahrrad / *mit dem* Zug / *mit dem* Bus.
+Ich fliege *mit dem* Flugzeug.
+Ich gehe *zu Fuß*.
+Ich nehme *den* Bus / *die* U-Bahn / *das* Taxi. (Akkusativ!)
+
+** VIM ÜBUNG 1: Sätze korrigieren/ergänzen **
+Instruktion: Finde die Fehler oder Lücken (`_`). Korrigiere den Kasus/Präposition oder ergänze das passende Verb im Präteritum oder Perfekt. Benutze `cw`, `r`, `i`, `a`.
+
+1. Gestern ich bin gefahren mit das Auto meiner Freundin. -> mit ______ Auto...
+2. Wir nehmen ______ nächste U-Bahn nach St. Pauli. (die U-Bahn -> Akk)
+3. Seid ihr nach Berlin gefliegen oder ______ ihr mit ______ Zug ______ (fahren)? -> seid, dem, gefahren
+4. Zum Büro ich gehe immer ______ ______. -> zu Fuß
+5. Welchen Bus ______ du normalerweise (nehmen)? -> nimmst
+
+--- Wortschatz 2: Unterwegs (On the Way / En Route) ---
+Nomen:
+der Bahnhof (-höfe)      - train station
+der Flughafen (-häfen)   - airport
+die Haltestelle (-n)     - (bus/tram) stop
+das Gleis (-e)           - platform track (train)
+der Bahnsteig (-e)       - platform (area)
+das Ticket (-s) / die Fahrkarte (-n) - ticket
+der Koffer (-)           - suitcase
+das Gepäck (nur Sg.)     - luggage
+die Reise (-n)           - journey, trip
+der Urlaub (-e)          - vacation
+die Verspätung (-en)     - delay
+der Stau (-s)            - traffic jam
+die Information (-en)    - information
+der Schalter (-)         - counter (ticket)
+
+Verben:
+buchen / reservieren     - to book / reserve
+kaufen                  - to buy
+(ein/aus/um)steigen (stieg, ist gestiegen) - to get on/off, change (trains etc.)
+warten auf (+ Akk)       - to wait for
+ankommen in/an (+ Dat) (kam an, ist angekommen) - to arrive in/at
+abfahren (fuhr ab, ist abgefahren) - to depart
+landen (landete, ist gelandet) - to land
+starten (startete, ist gestartet) - to take off
+
+Adjektive / Adverbien:
+pünktlich              - punctual, on time
+verspätet             - delayed
+bequem / unbequem     - comfortable / uncomfortable
+voll / leer           - full / empty
+schnell / langsam     - fast / slow
+direkt                - direct
+
+** VIM ÜBUNG 2: Eine Reise ordnen **
+Instruktion: Die Schritte einer Zugreise sind durcheinander. Benutze Vim, um sie in die richtige Reihenfolge zu bringen. Gehe auf eine Zeile, drücke `dd` (cut line), bewege den Cursor zur Zielzeile (wo die geschnittene Zeile hin soll) und drücke `p` (paste below) oder `P` (paste above).
+
+- Ich steige in den Zug ein.
+- Ich kaufe eine Fahrkarte am Schalter.
+- Der Zug kommt pünktlich in München an.
+- Ich gehe zum Bahnhof.
+- Ich warte auf dem Bahnsteig an Gleis 5.
+- Der Zug fährt vom Bahnhof ab.
+- Ich suche die Information zum Gleis.
+
+--- Konversation: Nach dem Weg fragen / Tickets kaufen ---
+Fragen:
+* Entschuldigung, wie komme ich zum Hauptbahnhof / zur Reeperbahn?
+* Entschuldigung, wo ist die nächste U-Bahn-Haltestelle?
+* Ist dieser Platz noch frei?
+* Fährt dieser Bus zum Flughafen?
+* Ich möchte eine Fahrkarte nach Berlin, bitte.
+* Einfach oder hin und zurück?
+* Was kostet das Ticket?
+* Wann fährt der nächste Zug nach Köln ab?
+* Von welchem Gleis fährt der Zug ab?
+
+Antworten / Informationen verstehen:
+* Gehen Sie hier geradeaus / nach links / nach rechts.
+* An der nächsten Ampel / Kreuzung...
+* Nehmen Sie die U-Bahn Linie U3 Richtung Barmbek.
+* Steigen Sie an der Haltestelle X aus/um.
+* Der Zug hat (10 Minuten) Verspätung.
+* Der Zug nach Hamburg fällt heute leider aus.
+* Ihr Zug fährt von Gleis 7 ab. Bahnsteig C.
+
+** VIM ÜBUNG 3: Kurzen Dialog schreiben **
+Instruktion: Du bist am Bahnhof und willst eine Fahrkarte nach Lübeck kaufen. Schreibe einen kurzen Dialog (3-4 Zeilen für jede Person: Du und der Verkäufer/die Verkäuferin) in Vim. Benutze `o`, `O`, `i`, `A`. Benutze die Redemittel von oben.
+
+Du: Entschuldigung, ...
+Verkäufer/in: Ja, bitte?
+Du: ...
+Verkäufer/in: ...
+Du: ...
+Verkäufer/in: ...
+Du: ...
+Verkäufer/in: ...
+
+
+--- Bash Übung (Optional) ---
+Speichere die Datei (`:w`). Wechsle ins Terminal.
+1. Finde alle Zeilen, die ein Verkehrsmittel erwähnen (Auto, Zug, Bus, Bahn):
+   `grep -iE '(Auto|Zug|Bus|Bahn|Fahrrad|Flugzeug)' ~/vimgermantutor/*.txt`
+2. Erstelle einen Alias für eine häufige Frage (füge das zu ~/.bashrc hinzu oder tippe es direkt):
+   `alias wiekommeich="echo 'Entschuldigung, wie komme ich zu(m/r)...?'"`
+   Benutze es dann mit: `wiekommeich`
+
+--- Ende Lektion 2.2 ---
+Super! Jetzt kennst du wichtiges Vokabular und Sätze für Reisen und Verkehr.
+Speichern nicht vergessen: `:wq`.
+
+Nächstes Thema: `lesson2.3.txt` (Thema: Meinungen äußern, Argumentieren - Expressing Opinions, Arguing).

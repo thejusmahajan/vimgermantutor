@@ -1,0 +1,81 @@
+== Lektion 2.3: Thema - Meinungen äußern, Argumentieren ==
+
+Dienstagnachmittag in Hamburg, 15:37 Uhr. Eine gute Zeit, um zu lernen, wie man seine Meinung sagt und argumentiert!
+
+--- Redemittel 1: Eigene Meinung sagen ---
+* Ich finde / glaube / meine, dass ... (+ Nebensatz: Verb am Ende!)
+    * Beispiel: Ich finde, *dass Deutsch eine interessante Sprache ist*.
+* Meiner Meinung nach ... (+ Hauptsatz: Verb an Position 2!)
+    * Beispiel: Meiner Meinung nach *ist Hamburg eine schöne Stadt*.
+* Ich bin der Meinung / Ansicht, dass ... (+ Nebensatz)
+* Ich bin davon überzeugt, dass ... (+ Nebensatz)
+* Ich halte das für gut / schlecht / wichtig / problematisch.
+* Für mich ist es wichtig / klar / ..., dass ... (+ Nebensatz)
+
+** VIM ÜBUNG 1: Meinung ausdrücken **
+Instruktion: Ergänze die Sätze mit deiner eigenen Meinung (als `dass`-Satz). Finde den Unterstrich `_`. Benutze `A` (append at end of line) oder `i` (insert) um deinen Satzteil zu schreiben. Achte auf das Verb am Ende!
+
+1. Ich glaube, dass das Wetter morgen besser ______. (wird)
+2. Meiner Meinung nach ist Online-Lernen ______. (nützlich / schwierig / ...) -> Ergänze nur das Adjektiv oder einen ganzen Satz: ... Online-Lernen viele Vorteile hat.
+3. Ich bin der Meinung, dass jeder Mensch eine Fremdsprache lernen ______. (sollte)
+
+--- Redemittel 2: Zustimmen (Agreeing) ---
+* Das finde / glaube / meine ich auch.
+* Da bin ich ganz deiner / Ihrer Meinung.
+* Das stimmt. / Stimmt genau. / Genau.
+* Da hast du / haben Sie Recht.
+* Ich sehe das (genau)so.
+
+--- Redemittel 3: Widersprechen (Disagreeing) ---
+* Das finde / glaube / meine ich nicht.
+* Da bin ich (ganz) anderer Meinung.
+* Das stimmt (so) nicht. / Das sehe ich (ganz) anders.
+* Ich bin nicht deiner / Ihrer Meinung.
+* Das ist Unsinn! / Quatsch! (Umgangssprachlich, stark)
+* Ich bezweifle, dass... (+ Nebensatz)
+
+--- Redemittel 4: Argumente verbinden / Abwägen ---
+* **Begründung (Reason): weil** (Konjunktion -> Nebensatz, Verb am Ende)
+    * Beispiel: Ich lerne Deutsch, *weil ich hier arbeiten möchte*.
+* **Gegensatz (Contrast): aber** (Konjunktion -> Hauptsatz, Verb Position 2)
+    * Beispiel: Deutsch ist schwer, *aber es macht Spaß*.
+* **Gegensatz (Contrast): obwohl** (Konjunktion -> Nebensatz, Verb am Ende)
+    * Beispiel: *Obwohl es regnet*, gehe ich spazieren.
+* **Beide Seiten (Both sides): einerseits ... andererseits ...** (Hauptsätze)
+    * Beispiel: *Einerseits* ist die Stadt spannend, *andererseits* ist sie sehr laut.
+* **Einschränkung (Concession): zwar ..., aber ...** (Hauptsätze)
+    * Beispiel: Die Wohnung ist *zwar* klein, *aber* sie ist sehr gemütlich.
+
+** VIM ÜBUNG 2: Sätze verbinden & Wortstellung korrigieren **
+Instruktion:
+a) Verbinde die Sätze mit `weil` oder `obwohl`. Benutze `A` zum Anhängen, `dw`/`cw` zum Ändern/Löschen von Wörtern, `xp` zum Vertauschen von Zeichen (z.B. um das Verb ans Ende zu setzen).
+b) Korrigiere die Wortstellung in den Sätzen mit Nebensatz (Verb ans Ende!).
+
+a1) Ich trinke Kaffee. Ich bin müde. (Grund -> weil)
+    -> Ich trinke Kaffee, weil ______ ______ ______.
+a2) Er hat wenig Geld. Er kauft ein teures Auto. (Gegensatz -> obwohl)
+    -> Obwohl ______ ______ ______ ______, ______ er ein teures Auto.
+b1) Ich glaube, dass er hat Recht. -> ..., dass er Recht ______. (Korrigiere mit `dw` und `p` oder `:%s/hat Recht/Recht hat/`)
+b2) Sie lernt Deutsch, weil sie will in Deutschland studieren. -> ..., weil sie in Deutschland ______ ______.
+
+** VIM ÜBUNG 3: Eigene Argumentation schreiben **
+Instruktion: Lies die folgende Aussage. Schreibe dann darunter (benutze `o`) einen kurzen Absatz (3-5 Sätze) mit deiner Meinung dazu. Benutze Redemittel von oben und mindestens eine Konjunktion wie `weil`, `aber`, `obwohl`, `einerseits/andererseits` oder `zwar/aber`.
+
+*Aussage:* "Man sollte jeden Tag mindestens eine Stunde Deutsch lernen, um schnell Fortschritte zu machen."
+
+Deine Meinung:
+...
+
+
+--- Bash Übung (Optional) ---
+Speichere die Datei (`:w`). Wechsle ins Terminal.
+1. Finde Zeilen mit Meinungsäußerungen:
+   `grep -iE '(finde|glaube|meine),? dass|Meinung nach|überzeugt, dass' ~/vimgermantutor/*.txt`
+2. Finde Zeilen mit Argumentations-Konjunktionen:
+   `grep -wE '(weil|obwohl|aber|denn|sondern|einerseits|zwar)' ~/vimgermantutor/*.txt`
+
+--- Ende Lektion 2.3 ---
+Gut gemacht! Sich ausdrücken zu können ist wichtig. Übe diese Redemittel!
+Speichern: `:wq`.
+
+Nächstes Thema: `lesson2.4.txt` (Thema: Medien und Nachrichten - Media and News).

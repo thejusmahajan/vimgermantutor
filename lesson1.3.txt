@@ -1,0 +1,75 @@
+== Lektion 1.3: Adjektivendungen - Gemischte Deklination ==
+
+Hallo aus Hamburg! Heute (Dienstag, 1. April 2025) schauen wir uns die gemischte Deklination der Adjektive an.
+
+--- Kurze Wiederholung: Starke vs. Schwache Deklination ---
+- **Starke Deklination:** Wenn *kein* Artikel oder ein Artikel*wort* ohne klare Endung davor steht (z.B. `viel`, `etwas`). Die Adjektivendung ist dann stark (wie die Endung des bestimmten Artikels: gut*er* Wein, gut*e* Milch, gut*es* Bier).
+- **Schwache Deklination:** Wenn ein bestimmter Artikel (`der`, `die`, `das`, etc.) oder ein Artikel*wort* mit klarer Endung davor steht (`dieser`, `jeder`, `welcher`). Die Adjektivendung ist dann schwach (-e oder -en). Z.B. `der gut*e* Wein`, `das schön*e* Auto`, `die interessant*en* Bücher`.
+
+--- Gemischte Deklination ---
+Diese brauchen wir nach:
+- Indefinitartikel: `ein-`
+- Negationsartikel: `kein-`
+- Possessivartikel: `mein-`, `dein-`, `sein-`, `ihr-`, `unser-`, `euer-`, `ihr-`, `Ihr-`
+
+Die Regel ist "gemischt", weil die Adjektivendung manchmal stark und manchmal schwach ist:
+
+1.  **Starke Endung (-er, -e, -es):** Wenn das Artikelwort (`ein`, `kein`, `mein` etc.) *keine* Endung hat. Das passiert nur im:
+    - Nominativ Singular (Maskulin: `ein gut*er* Mann`)
+    - Nominativ Singular (Feminin: `eine gut*e* Frau`) --> Achtung: 'eine' hat Endung, aber trotzdem starkes Adj.! Historisch bedingt.
+    - Nominativ Singular (Neutrum: `ein gut*es* Kind`)
+    - Akkusativ Singular (Feminin: `eine gut*e* Frau`) --> siehe Nom. Fem.
+    - Akkusativ Singular (Neutrum: `ein gut*es* Kind`)
+
+2.  **Schwache Endung (-en):** Wenn das Artikelwort (`einen`, `keinem`, `meiner`, `unsere` etc.) *eine* Endung hat. Das passiert in *allen anderen Fällen*:
+    - Akkusativ Singular (Maskulin: `einen gut*en* Mann`)
+    - Dativ Singular (Maskulin, Feminin, Neutrum: `einem gut*en* Mann`, `einer gut*en* Frau`, `einem gut*en* Kind`)
+    - Genitiv Singular (Maskulin, Neutrum: `eines gut*en* Mannes`, `eines gut*en* Kindes`)
+    - Genitiv Singular (Feminin: `einer gut*en* Frau`)
+    - Alle Pluralformen (nach `keine`, `meine`, `deine` etc.): `keine gut*en* Männer`, `meine gut*en* Kinder` (Nom/Akk Pl: -en, Dat Pl: -en, Gen Pl: -en)
+
+
+--- Tabelle: Gemischte Deklination (Beispiel: 'mein neu-' Auto) ---
+
+        | Maskulin (Mann) | Feminin (Frau) | Neutrum (Auto) | Plural (Autos) |
+-------|-----------------|----------------|----------------|----------------|
+**Nom** | mein neu*er* | meine neu*e* | mein neu*es* | meine neu*en* |
+**Akk** | meinen neu*en* | meine neu*e* | mein neu*es* | meine neu*en* |
+**Dat** | meinem neu*en* | meiner neu*en* | meinem neu*en* | meinen neu*en* |
+**Gen** | meines neu*en* | meiner neu*en* | meines neu*en* | meiner neu*en* |
+
+
+--- VIM ÜBUNG 1: Endungen einfügen ---
+Instruktion: Finde den Unterstrich `_`. Gehe in den Einfügemodus (z.B. mit `a`) und tippe die korrekte Adjektivendung. Drücke 'Esc'.
+
+1. Das ist ein neu__ Auto. (Nom, N, sg -> -es)
+2. Hast du meinen rot__ Stift gesehen? (Akk, M, sg -> -en)
+3. Wir helfen unserer alt__ Nachbarin. (Dat, F, sg -> -en)
+4. Sein klein__ Bruder ist sehr nett. (Nom, M, sg -> -er)
+5. Ich habe keine gut__ Idee. (Akk, F, sg -> -e)
+6. Die Kinder spielen mit ihrem neu__ Ball. (Dat, M, sg -> -en)
+7. Das ist das Ergebnis eines lang__ Gesprächs. (Gen, N, sg -> -en)
+8. Eure schön__ Blumen gefallen mir. (Nom, Pl -> -en)
+
+--- VIM ÜBUNG 2: Fehler korrigieren ---
+Instruktion: Finde die falsche Endung. Bewege den Cursor darauf. Drücke `r` (replace) und tippe den korrekten Buchstaben. Oder benutze `cw` wenn mehr als ein Buchstabe falsch ist.
+
+1. Ich brauche einen warmen Mantel. (Korrekt!)
+2. Hast du kein besseres Fahrrad? (Akk, N, sg -> besseres) -> Korrigiere!
+3. Sein neuer Computer war teuer. (Nom, M, sg -> neuer) -> Korrigiere!
+4. Meine alte Freundin hat angerufen. (Nom, F, sg -> alte) -> Korrigiere!
+5. Wir fahren mit unserem neuen Auto. (Dat, N, sg -> neuen) -> Korrigiere!
+6. Siehst du ihre schöne Katzen? (Akk, Pl -> schönen) -> Korrigiere!
+
+
+--- Bash Übung (Optional) ---
+Speichere diese Datei (`:w`). Wechsle zum Terminal.
+Finde Zeilen in deinen Lesson-Dateien, die Possessivartikel gefolgt von möglicherweise einem Adjektiv enthalten könnten:
+`grep -E '(mein|dein|sein|ihr|unser|euer|Ihr)[a-z]* [a-z]+(e|en|er|es|em)' ~/vimgermantutor/*.txt`
+(Das ist nicht perfekt, aber zeigt mögliche Muster)
+
+--- Ende Lektion 1.3 ---
+Adjektivendungen brauchen Übung! Wiederhole diese Regeln oft.
+Speichere deine Arbeit: `:wq`.
+
+Nächste Lektion: `lesson1.4.txt` (Thema: Relativsätze - Relative Clauses).

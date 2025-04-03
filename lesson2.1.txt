@@ -1,0 +1,105 @@
+== Lektion 2.1: Thema - Arbeit und Beruf ==
+
+Willkommen zu Modul 2! Es ist Dienstagnachmittag, 15:34 Uhr in Hamburg. In diesem Modul erweitern wir unseren Wortschatz und üben Konversation. Heute geht es um die Arbeitswelt.
+
+--- Wortschatz 1: Berufe (Professions) ---
+Hier sind einige häufige Berufe. Lerne sie mit Artikel und wenn möglich die weibliche Form.
+
+Maskulin             Feminin
+der Arzt              die Ärztin
+der Lehrer            die Lehrerin
+der Ingenieur         die Ingenieurin
+der Verkäufer         die Verkäuferin
+der Kellner           die Kellnerin
+der Programmierer     die Programmiererin
+der Krankenpfleger    die Krankenschwester  (Achtung: Unterschiedlich!)
+der Friseur           die Friseurin
+der Bäcker            die Bäckerin
+der Koch              die Köchin
+der Anwalt            die Anwältin
+der Student           die Studentin
+
+** VIM ÜBUNG 1a: Weibliche Formen üben **
+Instruktion: Kopiere die Zeile von 'der Ingenieur' mit `yy` und füge sie darunter mit `p` ein. Ändere die Kopie zur weiblichen Form 'die Ingenieurin'. Benutze `0` (gehe zu Zeilenanfang), `cw` (change word) für 'der' -> 'die', dann `$` (gehe zu Zeilenende), `a` (append) und tippe 'in'. Mache das gleiche für 'der Koch'.
+
+** VIM ÜBUNG 1b: Artikel löschen/testen **
+Instruktion: Gehe auf den Artikel (z.B. 'der' bei 'der Arzt'). Lösche ihn mit `dw` (delete word). Mache das für 3-4 Berufe. Später kannst du versuchen, die Artikel aus dem Gedächtnis wieder einzufügen (`i` oder `I`). Mache die Löschungen rückgängig mit `u`, wenn du fertig bist.
+
+--- Wortschatz 2: Arbeitsplatz & Tätigkeiten (Workplace & Activities) ---
+Nomen:
+das Büro (-s)           - office
+die Firma (Firmen)     - company
+der Kollege (-n) / die Kollegin (-nen) - colleague
+der Chef (-s) / die Chefin (-nen) - boss
+das Gehalt (Gehälter)  - salary
+die Besprechung (-en)  - meeting
+der Computer (-)        - computer
+die E-Mail (-s)         - email
+das Projekt (-e)        - project
+die Aufgabe (-n)        - task
+die Arbeit (-en)        - work
+der Beruf (-e)          - profession/job
+
+Verben:
+arbeiten als/bei       - to work as/at
+verdienen             - to earn
+lernen                - to learn
+lehren / unterrichten - to teach
+programmieren         - to program
+verkaufen             - to sell
+helfen (hilft, half, geholfen) (+ Dat) - to help
+organisieren          - to organize
+teilnehmen an (+ Dat) (nimmt teil) - to participate in
+schreiben (schrieb, geschrieben) - to write
+telefonieren mit       - to phone with
+besprechen (bespricht) - to discuss
+
+** VIM ÜBUNG 2: Eigene Sätze bilden **
+Instruktion: Gehe an das Ende dieser Übung. Drücke `o` (open new line below and enter insert mode). Schreibe 2-3 Sätze über einen fiktiven oder realen Job mit dem neuen Vokabular. Beispiel: "Mein Kollege organisiert eine Besprechung. Ich nehme an dem Projekt teil. Ich schreibe viele E-Mails."
+Drücke 'Esc' wenn du fertig bist.
+
+--- Konversation: Über den Beruf sprechen ---
+Fragen:
+* Was sind Sie von Beruf?
+* Was machen Sie beruflich?
+* Als was arbeiten Sie?
+* Wo arbeiten Sie? / Bei welcher Firma arbeiten Sie?
+* Was sind Ihre Hauptaufgaben?
+* Wie sind Ihre Kollegen / Ihr Chef?
+* Sind Sie mit Ihrem Gehalt zufrieden?
+* Macht Ihnen Ihre Arbeit Spaß?
+
+Antworten/Aussagen:
+* Ich bin [Programmierer] von Beruf.
+* Ich arbeite als [Lehrerin].
+* Ich arbeite bei [Name der Firma] / bei einer großen Firma / in einem kleinen Büro.
+* Ich arbeite im [Marketing / Verkauf / IT-Bereich].
+* Meine Hauptaufgaben sind [Kunden beraten / E-Mails schreiben / Projekte leiten].
+* Meine Kollegen sind (sehr) nett / hilfsbereit / gestresst. Mein Chef ist fair / streng.
+* Ja, ich bin (sehr/ziemlich) zufrieden. / Nein, ich bin nicht zufrieden, weil das Gehalt zu niedrig ist / weil ich zu viel Stress habe.
+* Ja, die Arbeit macht (mir) Spaß. / Es geht. / Nein, nicht wirklich.
+
+** VIM ÜBUNG 3: Dialog vervollständigen **
+Instruktion: Finde die Lücken (`___`). Benutze `/___` und `n`. Bewege den Cursor zur Lücke und benutze `c_` (change underscore, geht nur bei einem `_`) oder besser `ciw` (change inner word, wenn `___` als Wort erkannt wird) oder `3s` (substitute 3 chars) oder `C` (change to end of line), um eine passende Antwort einzufügen.
+
+A: Hallo! Was machen Sie beruflich?
+B: Hallo! Ich bin ______ von Beruf. Und Sie?
+A: Ich arbeite als ______ bei Google.
+B: Oh, interessant! Und was sind dort Ihre Hauptaufgaben?
+A: Ich ______ viel und nehme an ______ teil.
+B: Verstehe. Sind Ihre Kollegen nett?
+A: Ja, meine ______ sind sehr hilfsbereit. Und wie ist es bei Ihnen?
+B: Es geht. Mein Chef ist etwas ______, aber das Gehalt ist gut.
+
+--- Bash Übung (Optional) ---
+Speichere diese Datei (`:w`). Wechsle ins Terminal.
+1. Zeige alle Berufe (Zeilen, die mit 'der' oder 'die' beginnen und groß geschrieben sind) in dieser Datei an:
+   `grep -E '^(der|die) [A-Z]' ~/vimgermantutor/lesson2.1.txt`
+2. Erstelle eine einfache Vokabel-Abfrage (tippe das im Terminal):
+   `echo "Was heißt 'Kollege' auf Englisch?"; read antwort; if [ "$antwort" == "colleague" ]; then echo "Richtig!"; else echo "Falsch, es heißt colleague."; fi`
+
+--- Ende Lektion 2.1 ---
+Gute Arbeit! Du hast nun Vokabular und Redemittel zum Thema Arbeit.
+Speichere deine Änderungen: `:wq`.
+
+Nächstes Thema: `lesson2.2.txt` (Thema: Reisen und Verkehr - Travel and Transport).

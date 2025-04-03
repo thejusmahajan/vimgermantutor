@@ -1,0 +1,54 @@
+== Lektion 1.1: Dativ Präpositionen Wiederholung ==
+
+Herzlich willkommen zum VimGermanTutor!
+Diese Lektion wiederholt Präpositionen, die *immer* den Dativ verlangen.
+
+Die wichtigsten Dativ-Präpositionen sind:
+aus, außer, bei, mit, nach, seit, von, zu
+
+--- Beispiele ---
+Maskulin (der -> dem):
+Ich komme aus *dem* Park.
+Er fährt mit *dem* Fahrrad.
+Das Geschenk ist von *meinem* Vater.
+
+Feminin (die -> der):
+Wir gehen zu *der* Bäckerei.
+Sie lernt seit *einer* Woche Deutsch.
+Außer *deiner* Schwester ist niemand hier.
+
+Neutrum (das -> dem):
+Das Kind spielt bei *dem* Haus.
+Nach *dem* Essen schauen wir einen Film.
+
+Plural (die -> den + Nomen bekommt oft -n):
+Er spricht mit *den* Studenten.
+Wir fahren zu *unseren* Freunden.
+
+--- Vim Übung 1: Fehler finden und korrigieren ---
+Instruktion: Finde das Wort "mit" in den folgenden Sätzen. Benutze den Befehl `/mit` im Normalmodus (drücke 'Esc' zuerst) und drücke 'Enter', dann 'n' für das nächste Vorkommen. Prüfe den Artikel nach "mit". Wenn er falsch ist, bewege den Cursor auf das falsche Wort und benutze 'cw' (change word), tippe das korrekte Wort (z.B. 'dem') und drücke 'Esc'.
+
+1. Er spricht mit der Lehrer.  (Fehler bei 'der', falls Lehrer männlich ist -> dem)
+2. Spielst du mit das Kind?   (Fehler bei 'das' -> dem)
+3. Sie trinkt Kaffee mit viel Milch. (Korrekt! 'Milch' ist feminin, Dativ ist 'der', aber hier ohne Artikel verwendet)
+4. Ich diskutiere mit die Kollegen. (Fehler bei 'die' -> den, und Kollegen braucht ein 'n' -> Kollegen)
+
+--- Vim Übung 2: Artikel einfügen ---
+Instruktion: Gehe in den Normalmodus ('Esc'). Bewege den Cursor zu dem Unterstrich `_`. Drücke 's' (substitute character), tippe den korrekten Dativ-Artikel + Leerzeichen (z.B. `dem `), und drücke dann 'Esc'.
+
+1. Ich fahre zu _ Bahnhof. (der Bahnhof -> dem)
+2. Das Geschenk ist von _ Tante. (die Tante -> der)
+3. Seit _ Monat wohne ich in Hamburg. (der Monat -> dem)
+4. Wir kommen aus _ Schweiz. (die Schweiz -> der)
+5. Das Auto steht bei _ Haus. (das Haus -> dem)
+6. Du sprichst mit _ Leuten. (die Leute (Plural) -> den)
+
+--- Bash Übung (Optional, für später) ---
+Wenn du möchtest, kannst du diese Datei speichern (`:w`), ein Terminal öffnen und versuchen, Sätze mit Dativ-Präpositionen in dieser Datei zu finden:
+`grep -E '(mit|nach|von|aus|bei|zu|seit|außer) (dem|der|den|meinem|deiner|unseren)' ~/vimgermantutor/lesson1.1.txt`
+
+--- Ende Lektion 1.1 ---
+Gut gemacht! Du hast die Grundlagen der Dativ-Präpositionen wiederholt und dabei Vim benutzt.
+Speichere deine Arbeit und schließe die Datei mit dem Befehl `:wq` (im Normalmodus).
+
+Für die nächste Lektion, erstelle und öffne die Datei `lesson1.2.txt`.

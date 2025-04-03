@@ -1,0 +1,81 @@
+== Lektion 1.5: Konjunktiv II - Grundlagen (Subjunctive II Basics) ==
+
+Es ist Dienstagnachmittag, 15:33 Uhr hier in Hamburg. Zeit für ein wichtiges Grammatikthema: den Konjunktiv II.
+Der Konjunktiv II beschreibt Dinge, die *nicht real* sind: Wünsche, höfliche Bitten, irreale Bedingungen oder Vermutungen. Der Indikativ beschreibt die Realität.
+
+--- Bildung 1: Die 'würde'-Form ---
+Für die meisten Verben ist das die einfachste und häufigste Form:
+**würde (konjugiert) + Infinitiv**
+
+Ich    würde gehen      Wir   würden gehen
+Du     würdest gehen    Ihr   würdet gehen
+Er/Sie/Es würde gehen   sie/Sie würden gehen
+
+Beispiel:
+Indikativ: Ich kaufe das Auto. (Realität)
+Konjunktiv II: Ich *würde* das Auto *kaufen*. (Hypothetisch, z.B. wenn ich Geld hätte)
+
+--- Bildung 2: Eigene Konjunktiv II-Formen ---
+Einige wichtige Verben haben eigene Formen (oft vom Präteritum abgeleitet + Umlaut + Konjunktiv-Endung). Diese sollte man lernen, da sie sehr häufig sind und oft *statt* der würde-Form benutzt werden!
+
+* **sein -> wäre** (ich wäre, du wär(e)st, er wäre, wir wären, ihr wär(e)t, sie wären)
+* **haben -> hätte** (ich hätte, du hättest, er hätte, wir hätten, ihr hättet, sie hätten)
+* **können -> könnte** (ich könnte, du könntest, er könnte, wir könnten, ihr könntet, sie könnten)
+* **müssen -> müsste**
+* **dürfen -> dürfte**
+* **sollen -> sollte**
+* **wissen -> wüsste**
+* **wollen -> wollte** (kein Umlaut!)
+* **mögen -> möchte** (Indikativ 'mag', Präteritum 'mochte' -> Konj. II 'möchte'. Sehr oft für höfliche Wünsche/Bitten benutzt)
+* Andere (kommen->käme, geben->gäbe, gehen->ginge...) werden seltener benutzt; hier nimmt man oft `würde + Infinitiv`.
+
+**Regel:** Wenn ein Verb eine eigene Konjunktiv II-Form hat (besonders sein, haben, Modalverben), benutzt man normalerweise *diese* Form, nicht die würde-Form.
+Falsch: Ich ~~würde sein~~. Richtig: Ich *wäre*.
+Falsch: Ich ~~würde haben~~. Richtig: Ich *hätte*.
+Falsch: Ich ~~würde können~~. Richtig: Ich *könnte*.
+
+--- Gebrauch 1: Höflichkeit ---
+Konjunktiv II macht Fragen und Bitten höflicher.
+
+Indikativ direkt: Haben Sie Zeit? Geben Sie mir das Salz. Ich will bestellen.
+Konjunktiv II höflich: *Hätten* Sie Zeit? *Könnten* Sie mir bitte das Salz geben? / *Würden* Sie mir bitte das Salz geben? Ich *möchte* / *würde gern* bestellen.
+
+--- Gebrauch 2: Irreale Wünsche / Hypothesen ---
+Was wäre, wenn...?
+
+* Ich *wäre* jetzt gern am Meer! (Wunsch, nicht Realität)
+* Wenn ich reich *wäre*, *würde* ich ein Haus *kaufen*. (Hypothetische Bedingung)
+* An deiner Stelle *würde* ich mehr *lernen*. (Ratschlag, hypothetisch)
+
+--- VIM ÜBUNG 1: Höfliche Bitten formulieren ---
+Instruktion: Ändere die direkten Sätze in höfliche Bitten/Fragen mit Konjunktiv II. Benutze `cw` (change word), `C` (change to end of line) oder `:s/alt/neu/` (substitute).
+
+1. Indikativ: Können Sie mir helfen? -> Höflich: ______ Sie mir helfen?
+2. Indikativ: Haben Sie einen Stift? -> Höflich: ______ Sie einen Stift?
+3. Indikativ: Ich will einen Kaffee. -> Höflich: Ich ______ einen Kaffee / Ich ______ gern einen Kaffee.
+4. Indikativ: Schließen Sie das Fenster? -> Höflich: ______ Sie bitte das Fenster schließen?
+
+--- VIM ÜBUNG 2: Hypothetische Sätze bilden ---
+Instruktion: Fülle die Lücken mit der korrekten Konjunktiv II-Form (eigene Form oder würde+Infinitiv). Benutze `c_` oder `s`.
+
+1. Wenn ich Zeit ____ (haben), ______ ich dich besuchen (besuchen). -> hätte, würde ... besuchen
+2. Er ______ gern Millionär (sein). -> wäre
+3. Was ______ du tun (tun), wenn du das Geld finden ______ (finden)? -> würdest, würdest
+4. Wenn es nicht regnen ______ (regnen), ______ wir spazieren gehen (gehen). -> würde, würden / gingen
+5. Sie ______ (können) uns helfen, wenn sie hier ______ (sein). -> könnte, wäre
+
+--- VIM ÜBUNG 3: Indikativ zu Konjunktiv II ---
+Instruktion: Ersetze alle Vorkommen von 'habe' mit 'hätte' in diesem Absatz mit dem Vim-Befehl `:%s/habe/hätte/g`. (Achtung: ': % s / habe / hätte / g' - ohne die Leerzeichen um die Slashes). Dann mache es rückgängig mit `u`. Probiere es dann mit 'bin' -> 'wäre'.
+
+Ich bin heute zu Hause, weil ich keine Arbeit habe. Ich habe auch kein Geld für Urlaub. Wenn ich Geld hätte und wenn ich Zeit hätte, wäre ich jetzt nicht hier. Ich wäre am Strand. Das wäre schön.
+
+
+--- Bash Übung (Optional) ---
+Speichere die Datei (`:w`). Wechsle ins Terminal. Suche nach häufigen Konjunktiv II-Formen:
+`grep -E '(würde|wäre|hätte|könnte|müsste|sollte)' ~/vimgermantutor/*.txt`
+
+--- Ende Lektion 1.5 ---
+Der Konjunktiv II ist sehr nützlich! Du hast das erste Grammatik-Modul geschafft!
+Speichere deine Arbeit: `:wq`.
+
+Nächstes Mal starten wir Modul 2 mit Vokabular und Konversation: `lesson2.1.txt` (Thema: Arbeit und Beruf).
