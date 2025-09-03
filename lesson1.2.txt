@@ -1,67 +1,99 @@
-== Lektion 1.2: Der Genitiv (Genitive Case) ==
+== Lektion 1.2: Der Genitiv (Wessen?) ==
 
-Der Genitiv zeigt meistens Besitz oder Zugehörigkeit an (possession or belonging). Er antwortet auf die Frage "Wessen?" (Whose?).
-Man benutzt ihn auch nach bestimmten Präpositionen, Verben und Adjektiven.
+Willkommen zurück! In dieser Lektion widmen wir uns dem Genitiv und lernen dabei noch effizientere Wege, Text in Vim zu bearbeiten.
 
---- Form des Artikels im Genitiv ---
-Maskulin: der -> des (+ Nomen bekommt Endung -(e)s)
+Ziel dieser Lektion: Den deutschen Genitiv verstehen und dabei neue Vim-Befehle zum schnellen Ändern von Textteilen anwenden.
+
+--- Vim-Fokus: Effizienter Ändern ---
+In der letzten Lektion hast du cw (change word) gelernt. Jetzt erweitern wir dein Repertoire:
+
+C (Großes C): "Change to End of Line". Löscht alles vom Cursor bis zum Ende der Zeile und wechselt in den Insert-Modus. Extrem nützlich!
+
+r: "Replace". Ersetzt genau ein Zeichen unter dem Cursor, ohne in den Insert-Modus zu wechseln. Perfekt für schnelle Korrekturen.
+
+Drücke Esc, um sicherzustellen, dass du im Normalmodus bist.
+
+--- Die Grammatik: Der Genitiv ---
+Der Genitiv zeigt meist Besitz oder Zugehörigkeit an. Er antwortet auf die Frage "Wessen?" (Whose?).
+
+Artikel im Genitiv:
+
+Maskulin: der -> des (+ Nomen-Endung -s/-es)
+
 Feminin:  die -> der
-Neutrum:  das -> des (+ Nomen bekommt Endung -(e)s)
+
+Neutrum:  das -> des (+ Nomen-Endung -s/-es)
+
 Plural:   die -> der
 
---- Nomenendung -(e)s ---
-Maskuline und neutrale Nomen bekommen im Genitiv Singular die Endung -(e)s.
-- Nomen mit einer Silbe bekommen oft -es: des Mann*es*, des Kind*es*
-- Nomen mit mehreren Silben bekommen oft -s: des Vater*s*, des Auto*s*
-- Nomen, die auf -s, -ss, -ß, -x, -z enden, bekommen -es: des Bus*ses*, des Platz*es*
+Nomen-Endung -(e)s: Maskuline und neutrale Nomen im Singular bekommen eine Endung.
 
---- Gebrauch 1: Besitz anzeigen (Showing Possession) ---
-Alternative zum Genitiv ist oft: von + Dativ. Im gesprochenen Deutsch ist "von + Dativ" sehr häufig.
-Beispiele:
-Das Auto *meines Vaters*. (Wessen Auto? -> meines Vaters) = Das Auto *von meinem Vater*.
-Die Tasche *der Frau*. (Wessen Tasche? -> der Frau) = Die Tasche *von der Frau*.
-Der Titel *des Buches*. (Wessen Titel? -> des Buches) = Der Titel *von dem Buch*.
-Die Entscheidungen *der Eltern*. (Wessen Entscheidungen? -> der Eltern) = Die Entscheidungen *von den Eltern*.
+Meistens -s: des Vaters, des Autos
 
-** VIM ÜBUNG 1: Von + Dativ zu Genitiv ändern **
-Instruktion: Finde "von " mit `/von `. Ersetze die "von + Dativ"-Konstruktion durch den Genitiv.
-Beispiel: "Das Fahrrad von dem Mann." -> Cursor auf 'v' von 'von', tippe `d3w` (delete 3 words: von dem Mann), dann `A` (append at end of line), tippe ` des Mannes.` und 'Esc'.
-Passe die Methode nach Bedarf an! Manchmal brauchst du vielleicht `cw` oder `C`.
+Bei einsilbigen Wörtern oft -es: des Mannes, des Kindes
 
-1. Die Wohnung von meiner Freundin ist schön. -> Die Wohnung ______ ______ ist schön.
-2. Das Spielzeug von dem Kind liegt auf dem Boden. -> Das Spielzeug ______ ______ liegt auf dem Boden.
-3. Die Ideen von den Studenten waren innovativ. -> Die Ideen ______ ______ waren innovativ.
-4. Ich lese das Buch von diesem Autor. -> Ich lese das Buch ______ ______.
+Immer -es nach -s, -ss, -ß, -x, -z: des Busses, des Platzes
 
---- Gebrauch 2: Nach bestimmten Präpositionen ---
-Einige Präpositionen verlangen *immer* den Genitiv:
-wegen (because of), trotz (despite), während (during), statt / anstatt (instead of),
-innerhalb (inside of), außerhalb (outside of), aufgrund (due to), ...
+== Deine Mission: Übungen ==
 
-Beispiele:
-*Wegen des schlechten Wetters* bleiben wir zu Hause. (Because of the bad weather...)
-*Trotz der vielen Arbeit* ist er entspannt. (Despite the hard work...)
-*Während des Urlaubs* haben wir viel gesehen. (During the vacation...)
-Sie trinkt Tee *statt des Kaffees*. (She drinks tea instead of the coffee.)
+--- Übung 1: Besitz anzeigen (von + Dativ -> Genitiv) ---
+Im gesprochenen Deutsch hört man oft "von + Dativ". Im geschriebenen Deutsch ist der Genitiv eleganter. Lass uns das üben!
 
-** VIM ÜBUNG 2: Korrekte Endungen einfügen/korrigieren **
-Instruktion: Finde den Unterstrich `_` oder den Fehler. Benutze `s`, `cw` oder `c$` (change to end of line) um den korrekten Genitiv (Artikel + Nomenendung) einzufügen/korrigieren.
+Dein Werkzeug: C (Change to End of Line)
 
-1. Wegen d__ Stau__ kamen wir zu spät. (der Stau -> des Staus)
-2. Trotz d__ Erkältung ging sie zur Arbeit. (die Erkältung -> der Erkältung)
-3. Während d__ Pause trinken wir Kaffee. (die Pause -> der Pause)
-4. Anstatt d__ Kuchen__ isst er Obst. (der Kuchen -> des Kuchens)
-5. Das geschah innerhalb d__ letzte__ Woche. (die Woche -> der letzten Woche - Adjektivdeklination kommt später!) -> Korrigiere nur den Artikel erstmal: der Woche
-6. Außerhalb das Grundstück(s) ist Parken verboten. (das Grundstück -> des Grundstücks)
+Anleitung:
 
---- Bash Übung (Optional) ---
-Speichere diese Datei (`:w`). Wechsle zum Terminal.
-Versuche, Zeilen mit Genitiv-Präpositionen in deinen Lesson-Dateien zu finden:
-`grep -E '(wegen|trotz|während|statt) (des|der)' ~/vimgermantutor/*.txt`
-Das sucht nach den Präpositionen gefolgt von 'des' oder 'der'.
+Gehe in den Normalmodus (Esc).
 
---- Ende Lektion 1.2 ---
-Super! Der Genitiv ist manchmal knifflig, aber wichtig für das B1/B2 Niveau.
-Speichere deine Arbeit: `:wq`.
+Bewege den Cursor auf das erste Wort, das du ersetzen willst (hier: von).
 
-Für die nächste Lektion, erstelle und öffne die Datei `lesson1.3.txt` (Thema: Adjektivendungen - gemischte Deklination).
+Tippe C. Alles bis zum Zeilenende wird gelöscht.
+
+Tippe die korrekte Genitiv-Konstruktion.
+
+Drücke Esc.
+
+Wandle die folgenden Sätze um:
+
+Die Wohnung von meiner Freundin ist schön.
+
+Das Spielzeug von dem Kind liegt auf dem Boden.
+
+Die Ideen von den Studenten waren innovativ.
+
+Ich lese das Buch von diesem Autor.
+
+--- Übung 2: Nach bestimmten Präpositionen ---
+Diese Präpositionen verlangen immer den Genitiv:
+wegen (because of), trotz (despite), während (during), (an)statt (instead of)
+
+Deine Werkzeuge: r (replace) und cw (change word)
+
+Anleitung:
+Benutze r, um einzelne falsche Buchstaben zu korrigieren (Cursor auf den Buchstaben, r tippen, dann den korrekten Buchstaben). Benutze cw, um ganze Wörter zu ändern.
+
+Korrigiere die Fehler in den folgenden Sätzen:
+
+Wegen dem Stau kamen wir zu spät.       (der Stau)
+
+Trotz die Erkältung ging sie zur Arbeit. (die Erkältung)
+
+Während des Pause trinken wir Kaffee.     (die Pause)
+
+Anstatt den Kuchen isst er Obst.         (der Kuchen)
+
+Außerhalb das Grundstücks ist Parken verboten. (das Grundstück)
+
+== Zusammenfassung & Ausblick ==
+
+Sehr gut! Der Genitiv kann herausfordernd sein, aber du hast ihn gemeistert und dabei dein Vim-Wissen erweitert.
+
+Neue Vim-Befehle in dieser Lektion:
+
+C: Löscht vom Cursor bis zum Zeilenende und startet den Insert-Modus.
+
+r: Ersetzt ein einzelnes Zeichen unter dem Cursor.
+
+Speichere deine Arbeit und schließe die Datei mit :wq.
+
+Für die nächste Lektion, erstelle und öffne die Datei lektion-1.3.txt.
