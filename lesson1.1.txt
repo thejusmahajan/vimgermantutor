@@ -1,54 +1,110 @@
-== Lektion 1.1: Dativ Präpositionen Wiederholung ==
+== Lektion 1.1: Die Dativ-Präpositionen ==
 
 Herzlich willkommen zum VimGermanTutor!
-Diese Lektion wiederholt Präpositionen, die *immer* den Dativ verlangen.
+In diesem Kurs lernst du nicht nur deutsche Grammatik, sondern auch, wie du Vim als mächtiges Werkzeug zum Schreiben und Bearbeiten deiner Texte einsetzt.
 
-Die wichtigsten Dativ-Präpositionen sind:
+Ziel dieser Lektion: Die deutschen Präpositionen, die immer den Dativ verlangen, wiederholen und dabei grundlegende Vim-Navigation und Textänderung üben.
+
+--- Kurze Vim-Grundlagen: Normalmodus vs. Insert-Modus ---
+Vim hat zwei grundlegende Modi:
+
+Normalmodus: Der Standardmodus. Jede Taste ist ein Befehl (z.B. zum Bewegen, Löschen, Ändern). Um in den Normalmodus zu gelangen, drücke die Esc-Taste.
+
+Insert-Modus (Einfügen): In diesem Modus schreibst du Text wie in einem normalen Editor. Drücke i, um in den Insert-Modus zu wechseln.
+
+Drücke jetzt Esc, um sicherzustellen, dass du im Normalmodus bist.
+
+--- Die Grammatik: Präpositionen mit Dativ ---
+Diese Präpositionen erfordern immer den Dativ:
 aus, außer, bei, mit, nach, seit, von, zu
+
+Eine Eselsbrücke: "Aus bei mit nach, seit von zu - schreib Dativ immerzu!"
 
 --- Beispiele ---
 Maskulin (der -> dem):
-Ich komme aus *dem* Park.
-Er fährt mit *dem* Fahrrad.
-Das Geschenk ist von *meinem* Vater.
+Ich komme aus dem Park.
+Das Geschenk ist von meinem Vater.
 
 Feminin (die -> der):
-Wir gehen zu *der* Bäckerei.
-Sie lernt seit *einer* Woche Deutsch.
-Außer *deiner* Schwester ist niemand hier.
+Wir gehen zu der Bäckerei.
+Außer deiner Schwester ist niemand hier.
 
 Neutrum (das -> dem):
-Das Kind spielt bei *dem* Haus.
-Nach *dem* Essen schauen wir einen Film.
+Das Kind spielt bei dem Haus.
+Nach dem Essen schauen wir einen Film.
 
-Plural (die -> den + Nomen bekommt oft -n):
-Er spricht mit *den* Studenten.
-Wir fahren zu *unseren* Freunden.
+Plural (die -> den + Nomen bekommt oft ein -n):
+Er spricht mit den Studenten.
+Wir fahren zu unseren Freunden.
 
---- Vim Übung 1: Fehler finden und korrigieren ---
-Instruktion: Finde das Wort "mit" in den folgenden Sätzen. Benutze den Befehl `/mit` im Normalmodus (drücke 'Esc' zuerst) und drücke 'Enter', dann 'n' für das nächste Vorkommen. Prüfe den Artikel nach "mit". Wenn er falsch ist, bewege den Cursor auf das falsche Wort und benutze 'cw' (change word), tippe das korrekte Wort (z.B. 'dem') und drücke 'Esc'.
+== Deine Mission: Übungen ==
 
-1. Er spricht mit der Lehrer.  (Fehler bei 'der', falls Lehrer männlich ist -> dem)
-2. Spielst du mit das Kind?   (Fehler bei 'das' -> dem)
-3. Sie trinkt Kaffee mit viel Milch. (Korrekt! 'Milch' ist feminin, Dativ ist 'der', aber hier ohne Artikel verwendet)
-4. Ich diskutiere mit die Kollegen. (Fehler bei 'die' -> den, und Kollegen braucht ein 'n' -> Kollegen)
+--- Übung 1: Fehler finden und korrigieren ---
+Dein Werkzeug: cw (change word - Wort ändern)
 
---- Vim Übung 2: Artikel einfügen ---
-Instruktion: Gehe in den Normalmodus ('Esc'). Bewege den Cursor zu dem Unterstrich `_`. Drücke 's' (substitute character), tippe den korrekten Dativ-Artikel + Leerzeichen (z.B. `dem `), und drücke dann 'Esc'.
+Anleitung:
 
-1. Ich fahre zu _ Bahnhof. (der Bahnhof -> dem)
-2. Das Geschenk ist von _ Tante. (die Tante -> der)
-3. Seit _ Monat wohne ich in Hamburg. (der Monat -> dem)
-4. Wir kommen aus _ Schweiz. (die Schweiz -> der)
-5. Das Auto steht bei _ Haus. (das Haus -> dem)
-6. Du sprichst mit _ Leuten. (die Leute (Plural) -> den)
+Gehe in den Normalmodus (Esc).
 
---- Bash Übung (Optional, für später) ---
-Wenn du möchtest, kannst du diese Datei speichern (`:w`), ein Terminal öffnen und versuchen, Sätze mit Dativ-Präpositionen in dieser Datei zu finden:
-`grep -E '(mit|nach|von|aus|bei|zu|seit|außer) (dem|der|den|meinem|deiner|unseren)' ~/vimgermantutor/lesson1.1.txt`
+Bewege den Cursor auf das Wort, das du ändern möchtest.
 
---- Ende Lektion 1.1 ---
-Gut gemacht! Du hast die Grundlagen der Dativ-Präpositionen wiederholt und dabei Vim benutzt.
-Speichere deine Arbeit und schließe die Datei mit dem Befehl `:wq` (im Normalmodus).
+Tippe cw. Das alte Wort verschwindet und du bist im Insert-Modus.
 
-Für die nächste Lektion, erstelle und öffne die Datei `lesson1.2.txt`.
+Tippe das korrekte Wort.
+
+Drücke Esc, um zurück in den Normalmodus zu gehen. Fertig!
+
+Korrigiere die falschen Artikel in den folgenden Sätzen:
+
+Er spricht mit der Lehrer.      (Hinweis: 'der Lehrer' ist maskulin)
+
+Spielst du mit das Kind?       (Hinweis: 'das Kind' ist neutrum)
+
+Sie trinkt Kaffee mit der Sahne. (Korrekt! 'die Sahne' ist feminin)
+
+Ich diskutiere mit die Kollegen. (Hinweis: Plural!)
+
+--- Übung 2: Fehlende Artikel einfügen ---
+Dein Werkzeug: cw funktioniert auch hier super!
+
+Anleitung:
+
+Gehe in den Normalmodus (Esc).
+
+Bewege den Cursor auf den Unterstrich _.
+
+Tippe cw, um den Unterstrich zu ersetzen.
+
+Tippe den korrekten Dativ-Artikel.
+
+Drücke Esc, um zurück in den Normalmodus zu wechseln.
+
+Füge die richtigen Artikel ein:
+
+Ich fahre zu _ Bahnhof.          (der Bahnhof)
+
+Das Geschenk ist von _ Tante.       (die Tante)
+
+Seit _ Monat wohne ich in Hamburg. (der Monat)
+
+Wir kommen aus _ Schweiz.         (die Schweiz)
+
+Das Auto steht bei _ Haus.        (das Haus)
+
+Du sprichst mit _ Leuten.         (die Leute - Plural)
+
+== Zusammenfassung & Ausblick ==
+
+Gut gemacht! Du hast die Dativ-Präpositionen wiederholt und einen der wichtigsten Vim-Befehle gelernt.
+
+Gelernte Vim-Befehle in dieser Lektion:
+
+Esc: Wechsel in den Normalmodus.
+
+i: Wechsel in den Insert-Modus (Einfügen).
+
+cw: "Change Word". Ersetzt ein Wort unter dem Cursor.
+
+Wenn du deine Änderungen speichern und die Datei schließen möchtest, tippe im Normalmodus :wq.
+
+Für die nächste Lektion, erstelle und öffne die Datei lektion-1.2.txt.
