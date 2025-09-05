@@ -1,83 +1,74 @@
-== Lektion 1.4: Relativsätze (Relative Clauses) ==
+== Lektion 1.4: Relativsätze ==
 
-Guten Tag aus Hamburg! Am heutigen Dienstag (1. April 2025) lernen wir, wie man Sätze mit Relativsätzen verbindet.
-Relativsätze geben zusätzliche Informationen zu einem Nomen (oder Pronomen) im Hauptsatz. Sie werden mit einem Komma abgetrennt und das konjugierte Verb steht am *Ende* des Relativsatzes.
+Guten Tag aus Hamburg! Am heutigen Freitag, den 5. September 2025, lernen wir, Sätze elegant mit Relativsätzen zu verbinden.
 
---- Relativpronomen (Relative Pronouns) ---
-Das Relativpronomen richtet sich in Genus (Gender) und Numerus (Number) nach dem Nomen, auf das es sich bezieht (Bezugswort).
-Sein Kasus (Case) hängt von seiner Funktion *im Relativsatz* ab.
+Ziel dieser Lektion: Relativsätze bilden und dabei lernen, wie man in Vim ganze Zeilen bewegt und zusammenfügt.
 
-Die Relativpronomen sehen meistens wie die bestimmten Artikel aus (Ausnahme: Genitiv und Dativ Plural):
+--- Vim-Fokus: Zeilen bearbeiten ---
 
-        | Maskulin (der Mann) | Feminin (die Frau) | Neutrum (das Kind) | Plural (die Leute) |
--------|---------------------|--------------------|--------------------|--------------------|
-**Nom** | der                 | die                | das                | die                |
-**Akk** | den                 | die                | das                | die                |
-**Dat** | dem                 | der                | dem                | den*en* (+Nomen-n)|
-**Gen** | des*sen* | der*en* | des*sen* | der*en* |
+dd: Löscht die komplette Zeile (und kopiert sie gleichzeitig).
 
---- Struktur ---
-Hauptsatz + , + Relativpronomen + ... restlicher Nebensatz ... + Verb am Ende.
+p: Fügt die zuletzt gelöschte Zeile unter der aktuellen Zeile wieder ein.
 
---- Beispiele ---
-1.  **Nominativ:** Das ist der Mann. *Er* wohnt nebenan.
-    -> Das ist der Mann, *der* nebenan wohnt. (Wer wohnt nebenan? -> der Mann -> Nominativ)
+J (Großbuchstabe): Verbindet die aktuelle Zeile mit der nächsten. "Join".
 
-2.  **Akkusativ:** Ich lese das Buch. Ich habe *es* gestern gekauft.
-    -> Ich lese das Buch, *das* ich gestern gekauft habe. (Wen oder was habe ich gekauft? -> das Buch -> Akkusativ)
+--- Die Grammatik: Relativsätze ---
+Relativsätze geben Zusatzinfos zu einem Nomen. Das Verb steht am Ende.
+Das Relativpronomen ist meistens identisch mit dem bestimmten Artikel.
 
-3.  **Dativ:** Kennst du die Frau? Ich habe *ihr* geholfen.
-    -> Kennst du die Frau, *der* ich geholfen habe? (Wem habe ich geholfen? -> der Frau -> Dativ)
+Achtung bei den Ausnahmen im Dativ Plural und im Genitiv!
 
-4.  **Dativ Plural:** Dort stehen die Kinder. Ich gebe *ihnen* Eis.
-    -> Dort stehen die Kinder, *denen* ich Eis gebe. (Wem gebe ich Eis? -> den Kindern -> Dativ Plural)
+    Maskulin (Mann)    Feminin (Frau)    Neutrum (Kind)    Plural (Leute)
 
-5.  **Genitiv:** Das ist der Kollege. *Sein* Büro ist im zweiten Stock.
-    -> Das ist der Kollege, *dessen* Büro im zweiten Stock ist. (Wessen Büro? -> des Kollegen -> Genitiv)
+Nom     der                die               das               die
+Akk     den                die               das               die
+Dat     dem                der               dem               denen
+Gen     dessen deren dessen deren
 
-6.  **Mit Präposition:** Hier ist der Stuhl. Ich habe *auf ihm* gesessen.
-    -> Hier ist der Stuhl, *auf dem* ich gesessen habe. (Die Präposition steht vor dem Relativpronomen. Kasus hängt von Präp. ab: 'auf' + Ort -> Dativ)
+== Deine Mission: Übungen ==
 
+--- Übung 1: Sätze verbinden mit J ---
+Dein Werkzeug: J (Join)
 
---- VIM ÜBUNG 1: Sätze verbinden ---
-Instruktion: Kombiniere die zwei Sätze zu einem Satz mit Relativsatz. Benutze Vim-Befehle wie `dd` (löschen Zeile), `p`/`P` (einfügen), `A` (anhängen am Zeilenende), `i` (einfügen), `dw`/`cw` (löschen/ändern Wort) um den Satz zu formen. Achte auf Komma, Relativpronomen und Verb am Ende!
+Anleitung:
+Setze den Cursor auf die erste Zeile des Paares, drücke J und bearbeite die verbundene Zeile zu einem korrekten Satz mit Relativsatz.
 
 Satzpaar 1:
-Der Kaffee ist heiß. Er steht auf dem Tisch.
--> Der Kaffee, ______ auf dem Tisch ______, ist heiß.
+Der Kaffee ist heiß.
+Er steht auf dem Tisch.
 
 Satzpaar 2:
-Ich mag die Sängerin. Du hast sie mir empfohlen.
--> Ich mag die Sängerin, ______ du mir empfohlen ______.
+Ich mag die Sängerin.
+Du hast sie mir empfohlen.
 
 Satzpaar 3:
-Wir besuchen das Museum. Es wurde neu eröffnet.
--> Wir besuchen das Museum, ______ neu eröffnet ______.
+Wir besuchen das Museum.
+Es wurde neu eröffnet.
 
 Satzpaar 4:
-Der Mann ist nett. Ich habe ihm den Weg gezeigt.
--> Der Mann, ______ ich den Weg gezeigt ______, ist nett.
+Der Mann ist nett.
+Ich habe ihm den Weg gezeigt.
 
+--- Übung 2: Das richtige Relativpronomen wählen ---
+Dein Werkzeug: cw (change word)
 
---- VIM ÜBUNG 2: Richtiges Relativpronomen einfügen ---
-Instruktion: Finde den Unterstrich `_`. Überlege: Welches Bezugswort (Genus/Numerus)? Welche Funktion im Nebensatz (Kasus)? Benutze `s` oder `c_` um das korrekte Pronomen einzufügen.
+Anleitung:
+Bewege den Cursor auf den Unterstrich _ und ersetze ihn mit cw.
 
-1. Das ist der Film, _ ich sehen möchte. (Bezugswort: Film (m), Funktion: sehen + Akkusativ -> den)
-2. Die Stadt, _ wir besuchen, liegt im Süden. (Stadt (f), besuchen + Akk -> die)
-3. Ich danke dem Freund, _ mir geholfen hat. (Freund (m), helfen + Dativ -> der? Nein! Wer hat geholfen? -> der Freund -> Nominativ -> der)
-4. Das sind die Probleme, über _ wir sprechen müssen. (Probleme (pl), über + Akk -> die)
-5. Der Nachbar, _ Hund immer bellt, ist verreist. (Nachbar (m), Wessen Hund? -> Genitiv -> dessen)
-6. Die Kollegin, mit _ ich arbeite, ist krank. (Kollegin (f), mit + Dativ -> der)
-7. Kennst du die Leute, _ dort warten? (Leute (pl), Wer wartet? -> Nominativ -> die)
+Das ist der Film, _ ich sehen möchte. (Bezugswort: Film (m). Funktion: Akkusativ)
 
+Die Stadt, _ wir besuchen, liegt im Süden. (Bezugswort: Stadt (f). Funktion: Akkusativ)
 
---- Bash Übung (Optional) ---
-Speichere diese Datei (`:w`). Wechsle zum Terminal.
-Finde mögliche Anfänge von Relativsätzen in deinen Dateien:
-`grep -E ', d(er|ie|as|en|em|essen|eren) ' ~/vimgermantutor/*.txt`
+Ich danke dem Freund, _ mir geholfen hat. (Achtung! Wer hat geholfen? -> Nominativ)
 
---- Ende Lektion 1.4 ---
-Relativsätze sind sehr nützlich! Übe sie gut.
-Speichere deine Fortschritte: `:wq`.
+Der Nachbar, _ Hund immer bellt, ist verreist. (Wessen Hund? -> Genitiv)
 
-Die nächste Lektion ist `lesson1.5.txt` (Thema: Konjunktiv II - Basics / Subjunctive II).
+Die Kollegin, mit _ ich arbeite, ist krank. (Präposition 'mit' + Dativ)
+
+== Zusammenfassung & Ausblick ==
+
+Fantastisch! Du hast Relativsätze mit eleganten Vim-Befehlen gemeistert.
+
+Speichere deine Fortschritte mit :wq.
+
+Die nächste Lektion ist lektion-1.5.txt und behandelt den Konjunktiv II.
