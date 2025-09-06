@@ -1,81 +1,94 @@
-== Lektion 1.5: Konjunktiv II - Grundlagen (Subjunctive II Basics) ==
+== Lektion 1.5: Konjunktiv II (Wünsche & Bitten) ==
 
-Es ist Dienstagnachmittag, 15:33 Uhr hier in Hamburg. Zeit für ein wichtiges Grammatikthema: den Konjunktiv II.
-Der Konjunktiv II beschreibt Dinge, die *nicht real* sind: Wünsche, höfliche Bitten, irreale Bedingungen oder Vermutungen. Der Indikativ beschreibt die Realität.
+Hallo aus Hamburg! Es ist Freitagnachmittag, der 5. September 2025. Zeit für ein zentrales Thema der deutschen Grammatik: den Konjunktiv II.
 
---- Bildung 1: Die 'würde'-Form ---
-Für die meisten Verben ist das die einfachste und häufigste Form:
-**würde (konjugiert) + Infinitiv**
+Der Konjunktiv II beschreibt alles, was nicht real ist: Wünsche, höfliche Bitten, irreale Bedingungen oder Ratschläge.
 
-Ich    würde gehen      Wir   würden gehen
-Du     würdest gehen    Ihr   würdet gehen
-Er/Sie/Es würde gehen   sie/Sie würden gehen
+Ziel dieser Lektion: Den Konjunktiv II verstehen und dabei lernen, wie man in Vim Text in der ganzen Datei auf einmal ersetzen kann.
 
-Beispiel:
-Indikativ: Ich kaufe das Auto. (Realität)
-Konjunktiv II: Ich *würde* das Auto *kaufen*. (Hypothetisch, z.B. wenn ich Geld hätte)
+--- Vim-Fokus: Globales Suchen & Ersetzen ---
+Heute lernst du einen der mächtigsten Befehle in Vim. Er wird im Befehlsmodus (Command-line mode) ausgeführt, den du mit : im Normalmodus erreichst.
 
---- Bildung 2: Eigene Konjunktiv II-Formen ---
-Einige wichtige Verben haben eigene Formen (oft vom Präteritum abgeleitet + Umlaut + Konjunktiv-Endung). Diese sollte man lernen, da sie sehr häufig sind und oft *statt* der würde-Form benutzt werden!
+:s/alt/neu/g - Ersetzt (substitute) in der aktuellen Zeile jedes Vorkommen (g = global) von alt durch neu.
 
-* **sein -> wäre** (ich wäre, du wär(e)st, er wäre, wir wären, ihr wär(e)t, sie wären)
-* **haben -> hätte** (ich hätte, du hättest, er hätte, wir hätten, ihr hättet, sie hätten)
-* **können -> könnte** (ich könnte, du könntest, er könnte, wir könnten, ihr könntet, sie könnten)
-* **müssen -> müsste**
-* **dürfen -> dürfte**
-* **sollen -> sollte**
-* **wissen -> wüsste**
-* **wollen -> wollte** (kein Umlaut!)
-* **mögen -> möchte** (Indikativ 'mag', Präteritum 'mochte' -> Konj. II 'möchte'. Sehr oft für höfliche Wünsche/Bitten benutzt)
-* Andere (kommen->käme, geben->gäbe, gehen->ginge...) werden seltener benutzt; hier nimmt man oft `würde + Infinitiv`.
+:%s/alt/neu/g - Das % steht für "in allen Zeilen". Ersetzt also in der ganzen Datei.
 
-**Regel:** Wenn ein Verb eine eigene Konjunktiv II-Form hat (besonders sein, haben, Modalverben), benutzt man normalerweise *diese* Form, nicht die würde-Form.
-Falsch: Ich ~~würde sein~~. Richtig: Ich *wäre*.
-Falsch: Ich ~~würde haben~~. Richtig: Ich *hätte*.
-Falsch: Ich ~~würde können~~. Richtig: Ich *könnte*.
+:%s/alt/neu/gc - Das c am Ende steht für "confirm". Vim fragt dich bei jeder Fundstelle, ob du sie ersetzen willst (y/n/a...). Das ist die sicherste und beste Methode!
 
---- Gebrauch 1: Höflichkeit ---
-Konjunktiv II macht Fragen und Bitten höflicher.
+--- Die Grammatik: Konjunktiv II ---
+1. Die Standardform: würde + Infinitiv
+Für die meisten Verben ist das die einfachste Form:
+Indikativ: "Ich kaufe das Auto." (Realität)
+Konjunktiv II: "Ich würde das Auto kaufen." (Hypothese, z.B. wenn ich Geld hätte)
 
-Indikativ direkt: Haben Sie Zeit? Geben Sie mir das Salz. Ich will bestellen.
-Konjunktiv II höflich: *Hätten* Sie Zeit? *Könnten* Sie mir bitte das Salz geben? / *Würden* Sie mir bitte das Salz geben? Ich *möchte* / *würde gern* bestellen.
+2. Wichtige Verben mit eigenen Formen
+Diese Verben sind so häufig, dass man ihre eigenen Formen anstelle von würde benutzt. Man muss sie auswendig lernen:
 
---- Gebrauch 2: Irreale Wünsche / Hypothesen ---
-Was wäre, wenn...?
+Indikativ Konjunktiv II
+sein            wäre
+haben           hätte
+können          könnte
+müssen          müsste
+dürfen          dürfte
+sollen          sollte
+wissen          wüsste
+mögen           möchte
 
-* Ich *wäre* jetzt gern am Meer! (Wunsch, nicht Realität)
-* Wenn ich reich *wäre*, *würde* ich ein Haus *kaufen*. (Hypothetische Bedingung)
-* An deiner Stelle *würde* ich mehr *lernen*. (Ratschlag, hypothetisch)
+Regel: Benutze immer die eigene Form, wenn es eine gibt.
+FALSCH: Ich würde haben. -> RICHTIG: Ich hätte.
+FALSCH: Ich würde sein.  -> RICHTIG: Ich wäre.
 
---- VIM ÜBUNG 1: Höfliche Bitten formulieren ---
-Instruktion: Ändere die direkten Sätze in höfliche Bitten/Fragen mit Konjunktiv II. Benutze `cw` (change word), `C` (change to end of line) oder `:s/alt/neu/` (substitute).
+== Deine Mission: Übungen ==
 
-1. Indikativ: Können Sie mir helfen? -> Höflich: ______ Sie mir helfen?
-2. Indikativ: Haben Sie einen Stift? -> Höflich: ______ Sie einen Stift?
-3. Indikativ: Ich will einen Kaffee. -> Höflich: Ich ______ einen Kaffee / Ich ______ gern einen Kaffee.
-4. Indikativ: Schließen Sie das Fenster? -> Höflich: ______ Sie bitte das Fenster schließen?
+--- Übung 1: Hypothetische Sätze bilden ---
+Dein Werkzeug: cw
 
---- VIM ÜBUNG 2: Hypothetische Sätze bilden ---
-Instruktion: Fülle die Lücken mit der korrekten Konjunktiv II-Form (eigene Form oder würde+Infinitiv). Benutze `c_` oder `s`.
+Anleitung: Fülle die Lücken mit der korrekten Konjunktiv-II-Form. Nutze cw, um den Unterstrich _ zu ersetzen.
 
-1. Wenn ich Zeit ____ (haben), ______ ich dich besuchen (besuchen). -> hätte, würde ... besuchen
-2. Er ______ gern Millionär (sein). -> wäre
-3. Was ______ du tun (tun), wenn du das Geld finden ______ (finden)? -> würdest, würdest
-4. Wenn es nicht regnen ______ (regnen), ______ wir spazieren gehen (gehen). -> würde, würden / gingen
-5. Sie ______ (können) uns helfen, wenn sie hier ______ (sein). -> könnte, wäre
+Wenn ich Zeit _ (haben), _ ich dich besuchen (besuchen).
 
---- VIM ÜBUNG 3: Indikativ zu Konjunktiv II ---
-Instruktion: Ersetze alle Vorkommen von 'habe' mit 'hätte' in diesem Absatz mit dem Vim-Befehl `:%s/habe/hätte/g`. (Achtung: ': % s / habe / hätte / g' - ohne die Leerzeichen um die Slashes). Dann mache es rückgängig mit `u`. Probiere es dann mit 'bin' -> 'wäre'.
+Er _ gern Millionär (sein).
 
-Ich bin heute zu Hause, weil ich keine Arbeit habe. Ich habe auch kein Geld für Urlaub. Wenn ich Geld hätte und wenn ich Zeit hätte, wäre ich jetzt nicht hier. Ich wäre am Strand. Das wäre schön.
+Was _ du _ (tun), wenn du das Geld finden _ (finden)?
 
+Sie _ (können) uns helfen, wenn sie hier _ (sein).
 
---- Bash Übung (Optional) ---
-Speichere die Datei (`:w`). Wechsle ins Terminal. Suche nach häufigen Konjunktiv II-Formen:
-`grep -E '(würde|wäre|hätte|könnte|müsste|sollte)' ~/vimgermantutor/*.txt`
+--- Übung 2: Höfliche Bitten formulieren ---
+Deine Werkzeuge: cw oder C
 
---- Ende Lektion 1.5 ---
-Der Konjunktiv II ist sehr nützlich! Du hast das erste Grammatik-Modul geschafft!
-Speichere deine Arbeit: `:wq`.
+Anleitung: Formuliere die direkten, indikativen Sätze in höfliche Bitten im Konjunktiv II um.
 
-Nächstes Mal starten wir Modul 2 mit Vokabular und Konversation: `lesson2.1.txt` (Thema: Arbeit und Beruf).
+Indikativ: Ich will einen Kaffee.
+
+Indikativ: Geben Sie mir das Salz.
+
+Indikativ: Haben Sie einen Stift für mich?
+
+Indikativ: Schließen Sie das Fenster?
+
+--- Übung 3: Globales Ersetzen üben ---
+Dein Werkzeug: :%s/alt/neu/gc
+
+Anleitung:
+
+Lies den folgenden Absatz.
+
+Drücke Esc, dann tippe den Befehl :%s/bin/wäre/gc und drücke Enter.
+
+Bestätige jede Ersetzung einzeln mit y (yes) oder n (no).
+
+Mache die Änderungen mit u (undo) wieder rückgängig.
+
+Probiere es nochmal mit :%s/habe/hätte/gc.
+
+Absatz zum Üben:
+Ich bin heute zu Hause, weil ich keine Arbeit habe. Ich habe auch kein Geld für Urlaub. Wenn ich Geld hätte und wenn ich Zeit hätte, bin ich jetzt nicht hier. Ich bin am Strand. Das wäre schön.
+
+== Zusammenfassung & Ausblick ==
+
+Der Konjunktiv II ist im Alltag extrem nützlich. Und mit :%s/.../gc hast du jetzt ein echtes Profi-Werkzeug für Vim in deinem Repertoire!
+Du hast das erste Grammatik-Modul geschafft!
+
+Speichere deine Arbeit mit :wq.
+
+Nächstes Mal starten wir Modul 2 mit lektion-2.1.txt (Thema: Arbeit und Beruf).
