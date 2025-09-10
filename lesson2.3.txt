@@ -1,81 +1,100 @@
-== Lektion 2.3: Thema - Meinungen äußern, Argumentieren ==
+== Lektion 2.3: Meinungen äußern, Argumentieren ==
 
-Dienstagnachmittag in Hamburg, 15:37 Uhr. Eine gute Zeit, um zu lernen, wie man seine Meinung sagt und argumentiert!
+Mittwochnachmittag in Hamburg, der 10. September 2025, 15:38 Uhr. Eine gute Zeit, um zu lernen, wie man seine Meinung sagt und argumentiert!
 
---- Redemittel 1: Eigene Meinung sagen ---
-* Ich finde / glaube / meine, dass ... (+ Nebensatz: Verb am Ende!)
-    * Beispiel: Ich finde, *dass Deutsch eine interessante Sprache ist*.
-* Meiner Meinung nach ... (+ Hauptsatz: Verb an Position 2!)
-    * Beispiel: Meiner Meinung nach *ist Hamburg eine schöne Stadt*.
-* Ich bin der Meinung / Ansicht, dass ... (+ Nebensatz)
-* Ich bin davon überzeugt, dass ... (+ Nebensatz)
-* Ich halte das für gut / schlecht / wichtig / problematisch.
-* Für mich ist es wichtig / klar / ..., dass ... (+ Nebensatz)
+Ziel dieser Lektion: Redemittel zur Meinungsäußerung lernen und dabei die Kunst perfektionieren, einzelne Wörter in Vim zu bearbeiten und zu verschieben.
 
-** VIM ÜBUNG 1: Meinung ausdrücken **
-Instruktion: Ergänze die Sätze mit deiner eigenen Meinung (als `dass`-Satz). Finde den Unterstrich `_`. Benutze `A` (append at end of line) oder `i` (insert) um deinen Satzteil zu schreiben. Achte auf das Verb am Ende!
+--- Vim-Fokus: Wort-Bewegung und Text-Objekte ---
+Bisher hast du gelernt, ganze Zeilen zu bearbeiten. Jetzt schauen wir uns an, wie man einzelne Wörter meistert.
 
-1. Ich glaube, dass das Wetter morgen besser ______. (wird)
-2. Meiner Meinung nach ist Online-Lernen ______. (nützlich / schwierig / ...) -> Ergänze nur das Adjektiv oder einen ganzen Satz: ... Online-Lernen viele Vorteile hat.
-3. Ich bin der Meinung, dass jeder Mensch eine Fremdsprache lernen ______. (sollte)
+w: Springe zum Anfang des nächsten Wortes.
 
---- Redemittel 2: Zustimmen (Agreeing) ---
-* Das finde / glaube / meine ich auch.
-* Da bin ich ganz deiner / Ihrer Meinung.
-* Das stimmt. / Stimmt genau. / Genau.
-* Da hast du / haben Sie Recht.
-* Ich sehe das (genau)so.
+b: Springe zum Anfang des vorherigen Wortes.
 
---- Redemittel 3: Widersprechen (Disagreeing) ---
-* Das finde / glaube / meine ich nicht.
-* Da bin ich (ganz) anderer Meinung.
-* Das stimmt (so) nicht. / Das sehe ich (ganz) anders.
-* Ich bin nicht deiner / Ihrer Meinung.
-* Das ist Unsinn! / Quatsch! (Umgangssprachlich, stark)
-* Ich bezweifle, dass... (+ Nebensatz)
+e: Springe zum Ende des aktuellen Wortes.
 
---- Redemittel 4: Argumente verbinden / Abwägen ---
-* **Begründung (Reason): weil** (Konjunktion -> Nebensatz, Verb am Ende)
-    * Beispiel: Ich lerne Deutsch, *weil ich hier arbeiten möchte*.
-* **Gegensatz (Contrast): aber** (Konjunktion -> Hauptsatz, Verb Position 2)
-    * Beispiel: Deutsch ist schwer, *aber es macht Spaß*.
-* **Gegensatz (Contrast): obwohl** (Konjunktion -> Nebensatz, Verb am Ende)
-    * Beispiel: *Obwohl es regnet*, gehe ich spazieren.
-* **Beide Seiten (Both sides): einerseits ... andererseits ...** (Hauptsätze)
-    * Beispiel: *Einerseits* ist die Stadt spannend, *andererseits* ist sie sehr laut.
-* **Einschränkung (Concession): zwar ..., aber ...** (Hauptsätze)
-    * Beispiel: Die Wohnung ist *zwar* klein, *aber* sie ist sehr gemütlich.
+daw: Delete a word. Löscht das ganze Wort unter dem Cursor inklusive des folgenden Leerzeichens. Extrem nützlich!
 
-** VIM ÜBUNG 2: Sätze verbinden & Wortstellung korrigieren **
-Instruktion:
-a) Verbinde die Sätze mit `weil` oder `obwohl`. Benutze `A` zum Anhängen, `dw`/`cw` zum Ändern/Löschen von Wörtern, `xp` zum Vertauschen von Zeichen (z.B. um das Verb ans Ende zu setzen).
-b) Korrigiere die Wortstellung in den Sätzen mit Nebensatz (Verb ans Ende!).
+ciw: Change inner word. Löscht das Wort unter dem Cursor und geht sofort in den Insert-Modus.
 
-a1) Ich trinke Kaffee. Ich bin müde. (Grund -> weil)
-    -> Ich trinke Kaffee, weil ______ ______ ______.
-a2) Er hat wenig Geld. Er kauft ein teures Auto. (Gegensatz -> obwohl)
-    -> Obwohl ______ ______ ______ ______, ______ er ein teures Auto.
-b1) Ich glaube, dass er hat Recht. -> ..., dass er Recht ______. (Korrigiere mit `dw` und `p` oder `:%s/hat Recht/Recht hat/`)
-b2) Sie lernt Deutsch, weil sie will in Deutschland studieren. -> ..., weil sie in Deutschland ______ ______.
+Workflow zum Verb-Verschieben (Beispiel):
+Satz: "..., weil er hat Recht."
 
-** VIM ÜBUNG 3: Eigene Argumentation schreiben **
-Instruktion: Lies die folgende Aussage. Schreibe dann darunter (benutze `o`) einen kurzen Absatz (3-5 Sätze) mit deiner Meinung dazu. Benutze Redemittel von oben und mindestens eine Konjunktion wie `weil`, `aber`, `obwohl`, `einerseits/andererseits` oder `zwar/aber`.
+Cursor auf hat.
 
-*Aussage:* "Man sollte jeden Tag mindestens eine Stunde Deutsch lernen, um schnell Fortschritte zu machen."
+Tippe daw, um "hat " zu löschen.
+
+Cursor ans Ende von Recht bewegen (z.B. mit e).
+
+Tippe a (append) und füge  hat wieder ein.
+
+--- Redemittel 1: Eigene Meinung äußern ---
+Ich finde / glaube / meine, dass ...      (Verb am Ende!)
+
+Bsp: Ich finde, dass Deutsch lernen wichtig ist.
+
+Meiner Meinung nach ...                  (Verb an Pos. 2)
+
+Bsp: Meiner Meinung nach ist Hamburg eine schöne Stadt.
+
+Ich bin davon überzeugt, dass ...         (Verb am Ende!)
+
+--- Redemittel 2: Zustimmen & Widersprechen --- Zustimmen Widersprechen
+Das finde ich auch.              Das finde ich nicht.
+Da bin ich Ihrer Meinung.        Da bin ich anderer Meinung.
+Das stimmt. / Genau.             Das stimmt so nicht.
+Da haben Sie Recht.              Das sehe ich anders.
+
+--- Redemittel 3: Argumente verbinden ---
+weil      (Grund)     -> Nebensatz (Verb am Ende)
+obwohl    (Gegensatz) -> Nebensatz (Verb am Ende)
+aber      (Gegensatz) -> Hauptsatz (Verb an Pos. 2)
+einerseits ..., andererseits ... (Aufzählung)
+
+--- Übung 1: Meinungen formulieren ---
+Anleitung: Beende die Sätze mit deiner eigenen Meinung.
+
+Ich bin davon überzeugt, dass ...
+
+Meiner Meinung nach sind Computer ...
+
+Ich finde, dass ...
+
+--- Übung 2: Sätze verbinden & korrigieren ---
+Anleitung: Benutze deine neuen Vim-Kenntnisse (daw, w, e, p, a), um die Sätze zu verbinden und die Wortstellung zu korrigieren.
+
+Satzpaar 1:
+Ich trinke Kaffee. Ich bin müde.
+(Verbinde mit weil)
+->
+
+Satzpaar 2:
+Er hat wenig Geld. Er kauft ein teures Auto.
+(Verbinde mit obwohl)
+->
+
+Satz 3 (korrigieren):
+Sie lernt Deutsch, weil sie will in Deutschland studieren.
+->
+
+--- Übung 3: Eigene Argumentation schreiben ---
+Anleitung: Lies die folgende Aussage. Schreibe dann darunter (o) einen kurzen Absatz (3-4 Sätze) mit deiner Meinung dazu. Benutze die Redemittel von oben und mindestens eine Konjunktion (weil, aber, obwohl).
+
+Aussage: "Man sollte jeden Tag mindestens eine Stunde Deutsch lernen, um schnell Fortschritte zu machen."
 
 Deine Meinung:
-...
 
+== Zusammenfassung & Ausblick ==
+Gut gemacht! Sich klar auszudrücken ist eine wichtige Fähigkeit.
 
---- Bash Übung (Optional) ---
-Speichere die Datei (`:w`). Wechsle ins Terminal.
-1. Finde Zeilen mit Meinungsäußerungen:
-   `grep -iE '(finde|glaube|meine),? dass|Meinung nach|überzeugt, dass' ~/vimgermantutor/*.txt`
-2. Finde Zeilen mit Argumentations-Konjunktionen:
-   `grep -wE '(weil|obwohl|aber|denn|sondern|einerseits|zwar)' ~/vimgermantutor/*.txt`
+Neue Vim-Befehle in dieser Lektion:
 
---- Ende Lektion 2.3 ---
-Gut gemacht! Sich ausdrücken zu können ist wichtig. Übe diese Redemittel!
-Speichern: `:wq`.
+w, b, e: Wortweise Navigation.
 
-Nächstes Thema: `lesson2.4.txt` (Thema: Medien und Nachrichten - Media and News).
+daw: Ein ganzes Wort mit Leerzeichen löschen.
+
+ciw: Das Wort unter dem Cursor ändern.
+
+Speichern: :wq.
+
+Nächstes Thema: lektion-2.4.txt (Medien und Nachrichten).
