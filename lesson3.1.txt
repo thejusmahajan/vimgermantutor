@@ -1,100 +1,108 @@
 == Lektion 3.1: Passiv (Passive Voice) ==
 
-Willkommen zu Modul 3! Hier in Hamburg ist es Dienstag, 15:40 Uhr. Wir starten mit dem Passiv.
-Das Passiv wird benutzt, wenn die Handlung oder das Ergebnis wichtig ist, aber der Täter (Agent) unwichtig, unbekannt oder selbstverständlich ist. Das Objekt des Aktivsatzes wird zum Subjekt des Passivsatzes.
+Willkommen zu Modul 3! Es ist Donnerstag, der 11. September 2025, 8:53 Uhr. Wir starten mit einem wichtigen Grammatikthema: dem Passiv.
 
-Es gibt zwei Hauptarten: Vorgangspassiv und Zustandspassiv.
+Das Passiv benutzt man, wenn die Handlung wichtig ist, aber die Person, die handelt (der Täter), unwichtig oder unbekannt ist.
 
---- 1. Vorgangspassiv (Process Passive) ---
-Betont die Handlung, den Prozess. Focus on the action/process.
+Ziel dieser Lektion: Die Bildung und Verwendung des deutschen Passivs lernen und dabei entdecken, wie man wiederkehrende Aufgaben mit Vim-Makros automatisiert.
 
-**Bildung:** Form von `werden` (konjugiert) + Partizip II (des Hauptverbs)
+--- Vim-Fokus: Makros - Deine erste Automatisierung ---
+Ein Makro ist eine aufgezeichnete Abfolge von Tastenanschlägen. Du kannst eine komplexe Bearbeitung einmal aufzeichnen und sie dann beliebig oft wiederholen.
 
-**Gebrauch:** Beschreibt eine Handlung, die gerade passiert, passiert ist oder passieren wird.
+q + buchstabe (z.B. qa): Startet die Aufnahme eines Makros in das Register 'a'.
 
-**Agent (Täter):**
-* `von` + Dativ: Bei Personen oder eindeutigen Verursachern.
-* `durch` + Akkusativ: Bei Mitteln, Instrumenten oder indirekten Ursachen.
+q (im Normalmodus): Beendet die Aufnahme.
 
-**Beispiele:**
-* Aktiv: Der Koch kocht die Suppe.
-* Passiv (Präsens): Die Suppe *wird* (vom Koch) *gekocht*.
-* Aktiv: Der Sturm zerstörte das Dach.
-* Passiv (Präteritum): Das Dach *wurde* durch den Sturm *zerstört*.
+@ + buchstabe (z.B. @a): Spielt das Makro aus dem Register 'a' ab.
 
-**Zeitformen (Tenses):**
-Präsens:     Das Auto *wird* repariert.
-Präteritum:  Das Auto *wurde* repariert.
-Perfekt:     Das Auto *ist* repariert *worden*. (Achtung: 'worden', nicht 'geworden'!)
-Plusquamperf.: Das Auto *war* repariert *worden*.
-Futur I:     Das Auto *wird* repariert *werden*. (Doppelt 'werden'!)
+@@: Wiederholt das ZULETZT abgespielte Makro.
 
-** VIM ÜBUNG 1: Aktiv -> Passiv (Präsens & Präteritum) **
-Instruktion: Wandle die Aktivsätze ins Vorgangspassiv um.
-1. Finde das Akkusativobjekt (wird neues Subjekt).
-2. Konjugiere `werden` passend zum neuen Subjekt und zur Zeitform (Präsens oder Präteritum).
-3. Finde/Bilde das Partizip II des Verbs.
-4. (Optional) Füge den Agent mit `von` oder `durch` hinzu.
-Benutze `dd`, `p`, `cw`, `dw`, `A`, `i`.
+Beispiel-Workflow:
 
-Aktiv (Präsens): Die Frau liest das Buch.
-Passiv (Präsens): Das Buch ______ von der Frau ______. (wird, gelesen)
+Gehe zur Zeile, an der du die Bearbeitung starten willst.
 
-Aktiv (Präteritum): Man baute das Haus im letzten Jahr.
-Passiv (Präteritum): Das Haus ______ im letzten Jahr ______. (wurde, gebaut)
+qa -> "Recording @a" erscheint unten.
 
-Aktiv (Präsens): Der Lehrer korrigiert die Tests.
-Passiv (Präsens): Die Tests ______ vom Lehrer ______. (werden, korrigiert)
+Führe deine Bearbeitungsschritte durch (z.B. ans Ende gehen A, ein Semikolon tippen ;, Esc).
 
-Aktiv (Präteritum): Der Hund fraß den Kuchen.
-Passiv (Präteritum): Der Kuchen ______ vom Hund ______. (wurde, gefressen)
+q -> Die Aufnahme stoppt.
 
---- 2. Zustandspassiv (State Passive) ---
-Betont das Ergebnis, den Zustand nach einer Handlung. Focus on the result/state.
+Gehe zur nächsten Zeile und tippe @a. Die Bearbeitung wird wiederholt!
 
-**Bildung:** Form von `sein` (konjugiert) + Partizip II
+Gehe zur nächsten Zeile und tippe @@. Noch einfacher!
 
-**Gebrauch:** Beschreibt einen Zustand, der das Resultat einer vorherigen Handlung ist.
+--- 1. Vorgangspassiv (Prozess) ---
+Betont die Handlung. Wird gebildet mit: werden (konjugiert) + Partizip II.
 
-**Beispiele:**
-* Vorgang: Die Tür *wird* geschlossen. (The door is being closed - action)
-* Zustand: Die Tür *ist* geschlossen. (The door is closed - state)
-* Vorgang: Das Essen *wurde* gekocht. (The food was being cooked - action)
-* Zustand: Das Essen *ist* (jetzt) gekocht. (The food is cooked - state)
+Aktiv: Der Koch kocht die Suppe.
+Passiv: Die Suppe wird (vom Koch) gekocht.
 
-** VIM ÜBUNG 2: Vorgangspassiv vs. Zustandspassiv **
-Instruktion: Entscheide, ob Vorgangs- oder Zustandspassiv passt, oder wandle um. Benutze `cw` um `wird` zu `ist` etc. zu ändern oder fülle die Lücke.
+Zeitformen:
+Präsens:       Das Auto wird repariert.
+Präteritum:    Das Auto wurde repariert.
+Perfekt:       Das Auto ist repariert worden. (Achtung: nicht geworden!)
+Futur I:       Das Auto wird repariert werden.
 
-1. Das Fenster ______ gestern Abend geöffnet (werden). -> Vorgang, Präteritum -> wurde geöffnet
-2. Jetzt ______ das Fenster geöffnet (sein). -> Zustand, Präsens -> ist geöffnet
-3. Nachdem das Auto repariert ______, konnte er fahren. (Perfekt Passiv Vorgang) -> worden war / wurde (?) -> ist repariert worden / wurde repariert (Perfekt ist besser)
-4. Vorsicht, die Straße ______ gerade frisch asphaltiert (werden)! -> Vorgang, Präsens -> wird ... asphaltiert
-5. Die Hausaufgaben ______ schon gemacht (sein). -> Zustand, Präsens -> sind ... gemacht
+Übung 1: Aktiv -> Passiv (mit einem Makro!)
+Anleitung: Wandle den ersten Satz manuell um. Starte dann bei der zweiten Zeile eine Makro-Aufnahme mit qa. Forme den Satz um, beende die Aufnahme mit q. Wende das Makro dann mit @@ auf die restlichen Sätze an.
 
---- 3. Unpersönliches Passiv (Impersonal Passive) ---
-Wird benutzt, wenn es kein Objekt gibt (intransitive Verben) oder der Fokus nur auf der Handlung liegt. Oft mit `man` im Aktivsatz.
+Aktiv: Der Gärtner gießt die Blumen.
+Passiv: ______________________________
 
-**Bildung:** `es wird/wurde...` + Partizip II ODER Adverbiale + `wird/wurde...` + Partizip II
+Aktiv: Die Polizei fängt den Dieb.
+Passiv: ______________________________
 
-**Beispiele:**
-* Aktiv: Man arbeitet hier viel.
-* Passiv: *Es wird* hier viel gearbeitet. / Hier *wird* viel gearbeitet.
-* Aktiv: Man hat gestern lange gefeiert.
-* Passiv: *Es wurde* gestern lange gefeiert. / Gestern *wurde* lange gefeiert.
+Aktiv: Der Schüler liest das Buch.
+Passiv: ______________________________
 
-** VIM ÜBUNG 3: 'Man'-Sätze -> Passiv **
-Instruktion: Wandle die Sätze mit 'man' ins unpersönliche Passiv um.
+Aktiv: Die Firma bezahlt die Rechnung.
+Passiv: ______________________________
 
-1. Man darf hier nicht rauchen. -> Es ______ hier nicht ______. / Hier ______ nicht ______. (darf, geraucht, darf, geraucht)
-2. Man diskutierte lange über das Problem. -> Es ______ lange über das Problem ______. / Lange ______ über das Problem ______. (wurde, diskutiert, wurde, diskutiert)
+--- 2. Zustandspassiv (Ergebnis) ---
+Betont das Ergebnis oder den Zustand nach einer Handlung. Wird gebildet mit: sein (konjugiert) + Partizip II.
 
---- Bash Übung (Optional) ---
-Speichere die Datei (`:w`). Wechsle ins Terminal. Finde Passiv-Strukturen:
-`grep -E '(wird|wurde|ist|war|werden) .* ge[a-z]+t\b' ~/vimgermantutor/*.txt`
-`grep -E '(ist|war) .* worden\b' ~/vimgermantutor/*.txt`
+Vorgang: Die Tür wird geschlossen. (Aktion)
+Zustand: Die Tür ist geschlossen. (Ergebnis)
 
---- Ende Lektion 3.1 ---
-Das Passiv ist wichtig, um den Fokus zu verschieben. Übe die Formen gut!
-Speichern: `:wq`.
+Übung 2: Vorgang oder Zustand?
+Anleitung: Entscheide, ob die Handlung (Vorgang) oder das Ergebnis (Zustand) betont wird und fülle die Lücke mit der richtigen Form von sein oder werden.
 
-Nächste Lektion: `lesson3.2.txt` (Thema: Indirekte Rede - Indirect Speech).
+Vorsicht, die Straße ________ gerade frisch asphaltiert!
+
+Die Hausaufgaben ________ schon gemacht, wir können gehen.
+
+Das Fenster ________ gestern Abend von jemandem geöffnet.
+
+Schau, das Fenster ________ noch geöffnet. Wer hat das gemacht?
+
+--- 3. Unpersönliches Passiv ---
+Wird bei Verben ohne Akkusativobjekt benutzt. Oft bei Sätzen, die im Aktiv mit "man" formuliert sind.
+
+Aktiv: Man arbeitet hier viel.
+Passiv: Es wird hier viel gearbeitet. / Hier wird viel gearbeitet.
+
+Übung 3: "Man"-Sätze umwandeln
+Anleitung: Formuliere die Sätze mit "man" ins unpersönliche Passiv um.
+
+Man darf hier nicht rauchen.
+->
+
+Man diskutierte lange über das Problem.
+->
+
+== Zusammenfassung & Ausblick ==
+Das Passiv ist wichtig, um den Fokus einer Aussage zu verschieben.
+
+Neue Vim-Befehle in dieser Lektion:
+
+qa (und andere Buchstaben): Startet die Aufnahme eines Makros.
+
+q: Stoppt die Aufnahme.
+
+@a: Spielt ein Makro ab.
+
+@@: Wiederholt das letzte Makro.
+
+Speichern: :wq.
+
+Nächstes Thema: lektion-3.2.txt (Indirekte Rede).
