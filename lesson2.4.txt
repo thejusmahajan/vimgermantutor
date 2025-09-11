@@ -1,37 +1,41 @@
-== Lektion 2.4: Thema - Medien und Nachrichten ==
+== Lektion 2.4: Medien und Nachrichten ==
 
-Hamburg, Dienstagnachmittag, 1. April 2025, 15:38 Uhr. Heute sprechen wir über Medien - ein Thema, das uns alle täglich begleitet.
+Donnerstagmorgen in Hamburg, der 11. September 2025, 8:52 Uhr. Heute sprechen wir über Medien – ein Thema, das uns alle täglich begleitet.
 
---- Wortschatz 1: Medienarten (Types of Media) ---
-Woher bekommen wir Informationen und Unterhaltung?
+Ziel dieser Lektion: Wortschatz zum Thema Medien lernen und dabei meistern, wie man Wörter im Text effizient findet und gezielt ersetzt.
 
-* **Online / Digital:**
-    * das Internet (nur Sg.)
-    * die Webseite / die Website (-s)
-    * das soziale Netzwerk (-e) / Social Media (Pl.) (z.B. Facebook, Instagram, Twitter/X, TikTok, LinkedIn...)
-    * die E-Mail (-s)
-    * der Blog (-s)
-    * der Podcast (-s)
-    * die App (-s) (Applikation)
-* **Geräte (Devices):**
-    * der Computer (-)
-    * der Laptop (-s)
-    * das Tablet (-s)
-    * das Smartphone (-s)
-* **Rundfunk (Broadcasting):**
-    * das Fernsehen (nur Sg.) (the medium) / der Fernseher (-) (the device)
-    * das Radio (-s)
-    * die Sendung (-en) (program/show), die Serie (-n), der Film (-e)
-    * die Nachrichten (Pl.) (news broadcast)
-* **Printmedien:**
-    * die Zeitung (-en)
-    * die Zeitschrift (-en) / das Magazin (-e)
-    * der Artikel (-)
-    * der Bericht (-e)
-    * das Buch (Bücher)
+--- Vim-Fokus: Suchen und gezielt Ersetzen ---
+Du kennst bereits /, um zu suchen. Lass uns das mit zwei extrem mächtigen Befehlen kombinieren, um Wörter schnell zu ersetzen.
 
-** VIM ÜBUNG 1: Kategorisieren **
-Instruktion: Unten steht eine Liste von Medienbegriffen. Erstelle darüber Überschriften wie `== Online ==`, `== Geräte ==`, `== Rundfunk ==`, `== Print ==`. Benutze `o` oder `O` zum Einfügen der Überschriftenzeilen. Verschiebe dann jeden Begriff unter die passende Überschrift. Benutze `dd` zum Ausschneiden der Zeile und `p` zum Einfügen unter der korrekten Überschrift.
+cgn: Change Go Next. Das ist ein magischer Befehl. Nachdem du mit /wort gesucht hast, springt Vim zum ersten Treffer. Wenn du jetzt cgn tippst, löscht Vim das Wort, geht in den Insert-Modus und nach deiner Änderung (Esc) springt es automatisch zum nächsten Treffer.
+
+.: Der Punkt-Befehl. Wiederholt die letzte Änderung.
+
+Der ultimative Workflow zum Ersetzen:
+
+Suche ein Wort: /altes-wort + Enter.
+
+Ändere den ersten Treffer: cgn + neues-wort + Esc.
+
+Springe zum nächsten Treffer: n.
+
+Wenn du ihn auch ändern willst: Tippe einfach .. Vim wiederholt die cgn-Änderung.
+
+Springe weiter mit n und wiederhole mit . nach Bedarf.
+
+--- Wortschatz 1: Medienarten ---
+das Internet           - the internet
+die Webseite / Website - website
+das soziale Netzwerk   - social network
+der Podcast, -s        - podcast
+das Smartphone, -s     - smartphone
+das Fernsehen / der Fernseher - television (medium / device)
+die Nachrichten (Pl.)  - the news (broadcast)
+die Zeitung, -en       - newspaper
+die Zeitschrift, -en   - magazine
+der Artikel, -         - article
+
+Übung 1: Begriffe sortieren. Erstelle die Überschriften == Digital ==, == Geräte == und == Print == mit O. Verschiebe dann jeden Begriff aus der Liste mit dd und p in die richtige Kategorie.
 
 Liste zum Sortieren:
 die Zeitung
@@ -40,85 +44,49 @@ der Podcast
 der Fernseher
 die Webseite
 das Buch
-die Sendung
-der Laptop
-das soziale Netzwerk
 die Zeitschrift
 
---- Wortschatz 2: Mediennutzung (Media Usage) ---
-Verben:
-lesen (liest, las, gelesen) - to read
-hören                       - to hear, listen to
-sehen (sieht, sah, gesehen) / schauen / gucken - to see, watch
-surfen (im Internet)        - to surf (the internet)
-googeln                     - to google
-streamen                    - to stream
-herunterladen (lädt herunter, lud herunter, heruntergeladen) - to download
-hochladen (lädt hoch, lud hoch, hochgeladen) - to upload
-posten                      - to post
-teilen                      - to share
-kommentieren                - to comment
-informieren (sich über + Akk) - to inform oneself about
-recherchieren               - to research
-folgen (+ Dat)              - to follow (sb. on social media)
+--- Wortschatz 2: Mediennutzung ---
+lesen (liest, las)     - to read
+hören                  - to hear, listen
+sehen (sieht, sah)     - to see, watch
+surfen (im Internet)   - to surf (the internet)
+streamen               - to stream
+herunterladen / hochladen - to download / upload
+posten / teilen / kommentieren - to post / share / comment
+sich informieren über  - to inform oneself about
+die Quelle, -n         - source
+glaubwürdig / gefälscht - credible / fake
 
-Nomen:
-die Information (-en)       - information
-die Quelle (-n)             - source
-die Werbung (-en)           - advertising
-der Nutzer (-) / die Nutzerin (-nen) - user
-das Konto (Konten) / der Account (-s) - account
-die Schlagzeile (-n)        - headline
+Übung 2: Beschreibe deine Mediennutzung. Schreibe 3-4 Sätze über deine Gewohnheiten. Welche Medien nutzt du? Wo informierst du dich? Benutze o am Ende dieser Übung.
 
-Adjektive:
-aktuell                     - current, up-to-date
-informiert                  - informed
-online / offline
-digital / analog
-öffentlich / privat         - public / private
-glaubwürdig / unglaubwürdig - credible / not credible
-seriös / unseriös           - reputable / disreputable
-gefälscht                   - fake (e.g., fake news)
+--- Konversation & Übung 3: Synonyme ersetzen ---
 
-** VIM ÜBUNG 2: Eigene Mediennutzung beschreiben **
-Instruktion: Schreibe 3-4 Sätze über deine Mediengewohnheiten. Was liest/hörst/siehst du oft? Wo informierst du dich? Benutze Vokabular aus dieser Lektion. Gehe ans Ende des Textes und benutze `o` oder `A`.
+Welche Medien nutzen Sie am häufigsten?
 
+Ich nutze hauptsächlich mein Smartphone.
 
---- Konversation: Über Medien sprechen ---
-Fragen:
-* Welche Medien nutzt du/nutzen Sie am häufigsten?
-* Wie informierst du dich/informieren Sie sich über aktuelle Nachrichten?
-* Liest du/Lesen Sie lieber online oder auf Papier?
-* Welche Webseiten/Apps besuchst du/besuchen Sie oft?
-* Siehst du/Sehen Sie viel fern? Was ist Ihre Lieblingssendung?
-* Bist du/Sind Sie in sozialen Netzwerken aktiv? Wenn ja, in welchen?
-* Wie wichtig ist dir/Ihnen der Schutz deiner/Ihrer privaten Daten im Internet?
-* Hältst du/Halten Sie [Nachrichtenquelle X] für glaubwürdig?
+Wie informieren Sie sich über aktuelle Nachrichten?
 
-Antworten / Aussagen:
-* Ich nutze hauptsächlich mein Smartphone und das Internet.
-* Ich informiere mich meistens online über Nachrichten-Apps / Webseiten wie [tagesschau.de / Spiegel Online / ...].
-* Ich lese lieber online, weil es schneller geht / aktueller ist. / Ich lese lieber Zeitung, weil ich das Gefühl mag.
-* Ich schaue oft [YouTube / Netflix / ...]. Meine Lieblingsserie ist [...].
-* Ja, ich bin auf [Instagram / ...] aktiv. / Nein, ich nutze keine sozialen Netzwerke.
-* Datenschutz ist mir sehr wichtig / ziemlich wichtig / nicht so wichtig.
-* Ich halte [Quelle X] für (ziemlich/sehr) glaubwürdig / eher unglaubwürdig.
+Ich informiere mich online über Nachrichten-Apps.
 
-** VIM ÜBUNG 3: Synonyme finden und ersetzen **
-Instruktion: Finde das Wort "sehen" im folgenden Text mit `/sehen`. Ersetze einige (nicht alle!) Vorkommen durch das Synonym "schauen" oder "gucken". Benutze `cgn` (change, go to next), `cw` (change word) oder `:s/sehen/schauen/` (aber nur für einzelne Vorkommen, nicht global mit 'g').
+Halten Sie diese Quelle für glaubwürdig?
 
-Text: Viele Leute sehen heute kaum noch normales Fernsehen. Sie sehen lieber Filme und Serien auf Streaming-Diensten, wann immer sie wollen. Nachrichten sehen sie vielleicht kurz am Abend oder lesen sie online. Wenn Kinder zu viel fernsehen, ist das nicht gut. Man sollte darauf achten, was sie sehen.
+Ja, ich halte sie für sehr glaubwürdig. / Nein, ich glaube, die Nachrichten sind oft gefälscht.
 
+Übung 3: Wende den neuen Workflow an! Finde das Wort "sehen" im folgenden Text. Ersetze einige, aber nicht alle Vorkommen durch "schauen". Benutze /sehen, dann cgn + schauen + Esc, und dann n und . um gezielt weitere Vorkommen zu ersetzen.
 
---- Bash Übung (Optional) ---
-Speichere die Datei (`:w`). Wechsle ins Terminal.
-1. Zähle, wie oft das Wort "Nachricht(en)" in deinen Tutor-Dateien vorkommt (ignoriere Groß/Kleinschreibung):
-   `grep -i -c nachricht ~/vimgermantutor/*.txt`
-2. Finde Zeilen, die digitale Geräte erwähnen:
-   `grep -iE '(Computer|Laptop|Tablet|Smartphone)' ~/vimgermantutor/*.txt`
+Text: Viele Leute sehen heute kaum noch normales Fernsehen. Sie sehen lieber Filme und Serien auf Streaming-Diensten, wann immer sie wollen. Nachrichten sehen sie vielleicht kurz am Abend. Man sollte darauf achten, was Kinder sehen.
 
---- Ende Lektion 2.4 ---
-Super! Das Vokabular zu Medien ist sehr nützlich im Alltag. Modul 2 ist damit abgeschlossen.
-Speichern: `:wq`.
+== Zusammenfassung & Ausblick ==
+Super! Das Vokabular zu Medien ist im Alltag sehr nützlich.
 
-Nächstes Mal beginnen wir Modul 3 mit fortgeschrittener Grammatik: `lesson3.1.txt` (Thema: Passiv - Passive Voice).
+Neue Vim-Befehle in dieser Lektion:
+
+cgn: Ändere das Suchergebnis und springe zum nächsten.
+
+.: Wiederhole die letzte Änderung (perfekt in Kombination mit n).
+
+Speichern: :wq.
+
+Nächstes Thema: lektion-3.1.txt (Passiv).
