@@ -1,100 +1,80 @@
 == Lektion 3.2: Indirekte Rede (Indirect Speech) ==
 
-Hamburg, Dienstag, 1. April 2025, 15:43 Uhr. Wir lernen heute, wie man Aussagen anderer wiedergibt.
-Indirekte Rede benutzt man oft in Berichten (Nachrichten, Zeitungen) oder wenn man neutral wiedergeben will, was jemand gesagt hat. Sie wird meist mit dem Konjunktiv I gebildet.
+Donnerstag, der 11. September 2025, 9:05 Uhr in Hamburg. Heute lernen wir, wie man Aussagen anderer wiedergibt – eine Technik, die man oft in Nachrichten und Berichten findet.
 
---- Einleitung der Indirekten Rede ---
-Oft beginnt sie mit einem Verb des Sagens/Meinens (sagen, berichten, meinen, behaupten, fragen...) im Präsens oder Präteritum. Es gibt zwei Hauptstrukturen:
+Ziel dieser Lektion: Die Regeln der indirekten Rede verstehen und dabei lernen, Text im gesamten Dokument systematisch und kontrolliert zu ersetzen.
 
-1.  `Er sagt,` + Hauptsatz-ähnliche Struktur mit **Konjunktiv I** (Verb oft an Position 2):
-    * Direkt: Peter sagt: "Ich *komme* morgen."
-    * Indirekt: Peter sagt, er *komme* morgen.
-2.  `Er sagt, dass` + Nebensatz mit **Konjunktiv I** (oder oft Indikativ in gesprochener Sprache) (Verb am Ende):
-    * Direkt: Peter sagt: "Ich *komme* morgen."
-    * Indirekt: Peter sagt, dass er morgen *komme*. (oder: ... dass er morgen *kommt*.)
+--- Vim-Fokus: Suchen & Ersetzen im ganzen Dokument (mit Bestätigung) ---
+Du kennst schon das Suchen mit /. Der Befehl :substitute (kurz :s) ist noch mächtiger.
 
-Wir konzentrieren uns hier auf den Konjunktiv I, da er die formale Form der indirekten Rede ist.
+Befehl: :%s/alt/neu/gc
 
---- Konjunktiv I ---
-**Zweck:** Signalisieren, dass man eine Aussage nur wiedergibt (neutrale Distanz).
-**Bildung:** Infinitivstamm + Konjunktiv I-Endungen: `-e, -est, -e, -en, -et, -en`
+::         Startet einen Befehl.
 
-| Verb    | ich    | du      | er/sie/es | wir    | ihr     | sie/Sie |
-|---------|--------|---------|-----------|--------|---------|---------|
-| kommen  | komm*e* | komm*est* | komm*e* | komm*en* | komm*et* | komm*en* |
-| haben   | hab*e* | hab*est* | hab*e* | hab*en* | hab*et* | hab*en* |
-| **sein** | **sei** | **sei(e)st**| **sei** | **seien**| **sei(e)t**| **seien** |
-| können  | könn*e* | könn*est* | könn*e* | könn*en* | könn*et* | könn*en* |
-| wissen  | wiss*e* | wiss*est* | wiss*e* | wiss*en* | wiss*et* | wiss*en* |
+%:         Bedeutet: in der ganzen Datei.
 
---- Ersatzregel: Konjunktiv II statt Konjunktiv I ---
-**Regel:** Wenn die Form des Konjunktiv I identisch ist mit der Form des Indikativ Präsens, benutzt man stattdessen den **Konjunktiv II**, um die Indirekte Rede klar zu markieren.
+s:         Der substitute-Befehl.
 
-**Wann passiert das?** Hauptsächlich bei: `ich`, `wir`, `sie/Sie` (Plural).
+/alt/neu/: Ersetze "alt" durch "neu".
 
-* **Beispiel 1 (ich):**
-    * Direkt: Sie sagt: "Ich *habe* keine Zeit."
-    * Konj. I wäre: Sie sagt, sie *habe* keine Zeit. (Hier ist 'habe' NICHT identisch mit Indikativ 'sie hat' -> Konj. I ist OK!)
-    * *Aber:* Direkt: Ich sage: "Ich *habe* keine Zeit."
-    * Konj. I wäre: Ich sage, ich *habe* keine Zeit. (Hier ist 'habe' IDENTISCH mit Indikativ 'ich habe' -> Ersatz durch Konj. II!)
-    * -> Korrekt: Ich sage, ich *hätte* keine Zeit.
-* **Beispiel 2 (wir):**
-    * Direkt: Die Kinder sagen: "Wir *spielen* im Garten."
-    * Konj. I wäre: Sie sagen, sie *spielen* im Garten. (IDENTISCH mit Indikativ 'sie spielen' -> Ersatz durch Konj. II!)
-    * -> Korrekt: Sie sagen, sie *spielten* im Garten.
-* **Beispiel 3 (er/sie/es):**
-    * Direkt: Er sagt: "Sie *geht* nach Hause."
-    * Konj. I wäre: Er sagt, sie *gehe* nach Hause. (NICHT identisch mit Indikativ 'sie geht' -> Konj. I ist OK!)
+g:         Global. Ersetze alle Vorkommen in einer Zeile, nicht nur das erste.
 
---- Zeiten in der Indirekten Rede (vereinfacht) ---
-* Original Präsens -> Konjunktiv I Präsens (er *komme*)
-* Original Perfekt/Präteritum/Plusquamperfekt -> Konjunktiv I Perfekt (er *sei gekommen*)
-* Original Futur I -> Konjunktiv I Futur I (er *werde kommen*)
+c:         Confirm. Frage vor jeder Ersetzung nach. Das ist der wichtigste Teil!
 
---- Änderungen: Pronomen, Possessivartikel, Adverbien ---
-Diese müssen oft an die Perspektive des Berichterstatters angepasst werden:
-* `ich` -> `er/sie`
-* `du` -> `ich` (wenn der Reporter angesprochen wurde) oder `er/sie`
-* `wir` -> `sie` (Plural)
-* `mein` -> `sein/ihr`
-* `hier` -> `dort`
-* `heute` -> `an diesem Tag / am selben Tag`
-* `gestern` -> `am Vortag / am Tag zuvor`
-* `morgen` -> `am nächsten Tag / am folgenden Tag`
+Nach der Eingabe fragt Vim bei jedem Treffer: replace with neu (y/n/a/q/l/^E/^Y)?
 
---- VIM ÜBUNG 1: Direkt -> Indirekt ---
-Instruktion: Wandle die direkte Rede in indirekte Rede um. Achte auf Einleitungssatz, Konjunktiv I (oder II Ersatz), Pronomen und Adverbien. Benutze `cw`, `C`, `:s`, `A`.
+y: Ja (yes), ersetzen.
 
-1.  Direkt: Maria sagt: "Ich bin müde."
-    Indirekt: Maria sagt, sie ______ müde. (sei)
-2.  Direkt: Der Chef sagte: "Wir machen heute früher Schluss." (Achtung: wir->sie, heute->an diesem Tag, Konj.II Ersatz!)
-    Indirekt: Der Chef sagte, sie ______ an diesem Tag früher Schluss. (machten)
-3.  Direkt: Klaus erzählte mir: "Du hast mir sehr geholfen." (Achtung: du->ich, mir->ihm)
-    Indirekt: Klaus erzählte mir, ich ______ ihm sehr geholfen. (hätte / Konj. I Perfekt: geholfen habe?) -> hätte
-4.  Direkt: Die Touristen fragten: "Wo ist der Bahnhof?"
-    Indirekt: Die Touristen fragten, wo der Bahnhof ______. (sei)
-5.  Direkt: Er versprach: "Ich werde dich morgen anrufen." (Achtung: ich->er, dich->mich/Person X, morgen->am nächsten Tag)
-    Indirekt (angenommen, er spricht zum Reporter): Er versprach, er ______ mich am nächsten Tag anrufen. (werde)
+n: Nein (no), überspringen.
 
---- VIM ÜBUNG 2: Konjunktiv-Formen finden/einsetzen ---
-Instruktion: Finde und korrigiere die Verbformen, wo Konjunktiv I/II nötig wäre, oder fülle die Lücken.
+a: Alle ersetzen (all).
 
-1. Der Minister erklärte, die Situation *ist* schwierig. -> sei
-2. Sie meinten, sie *haben* keine andere Wahl. -> hätten
-3. Es heißt, der Präsident ______ bald eine Rede halten. (Konj. I von 'wird') -> werde
-4. Er behauptete, er ______ nichts davon gewusst. (Konj. I Perfekt von 'hat gewusst') -> habe ... gewusst
+q: Abbrechen (quit).
 
+--- 1. Konjunktiv I: Die Form der neutralen Wiedergabe ---
+Der Konjunktiv I signalisiert: "Ich gebe nur wieder, was jemand anderes gesagt hat."
+Man bildet ihn vom Infinitivstamm + den Endungen: -e, -est, -e, -en, -et, -en.
 
---- Bash Übung (Optional) ---
-Speichere die Datei (`:w`). Wechsle ins Terminal.
-1. Finde Zeilen mit Verben des Sagens gefolgt von Komma oder 'dass':
-   `grep -E '(sagt|sagte|berichtet|meint|behauptet)[, ]' ~/vimgermantutor/*.txt`
-2. Versuche, typische Konjunktiv I Formen zu finden (vereinfacht):
-   `grep -E '\b(sei|habe|komme|gehe|könne|werde)\b' ~/vimgermantutor/*.txt`
+Verb er/sie/es Besonderheit
+haben     habe
+sein      sei          Unregelmäßig!
+kommen    komme
+gehen     gehe
+können    könne
 
+--- 2. Die Ersatzregel: Wann man Konjunktiv II nimmt ---
+Regel: Wenn der Konjunktiv I gleich klingt wie der Indikativ (die normale Form), benutzt man stattdessen den Konjunktiv II. Das passiert meistens bei wir und sie (Plural).
 
---- Ende Lektion 3.2 ---
-Indirekte Rede und Konjunktiv I sind typisch für formellere Sprache und Berichte. Gut gemacht!
-Speichern: `:wq`.
+Direkt: Die Minister sagen: "Wir haben einen Plan."
+Konj. I: ..., sie haben einen Plan. (Klingt wie Indikativ -> unklar!)
+Korrekt: ..., sie hätten einen Plan. (Konjunktiv II -> klar!)
 
-Nächste Lektion: `lesson3.3.txt` (Thema: Komplexe Konnektoren - Complex Connectors).
+--- 3. Anpassungen: Pronomen und Adverbien ---
+Bei der Wiedergabe muss man oft die Perspektive ändern.
+ich -> er/sie       heute -> an diesem Tag
+mein -> sein/ihr    gestern -> am Vortag
+wir -> sie (Pl.)    morgen -> am nächsten Tag
+
+--- Übung 1: Direkte Rede umwandeln ---
+Anleitung: Wandle die direkten Aussagen in indirekte Rede um. Benutze den neuen Befehl :%s/alt/neu/gc, um systematisch Pronomen etc. zu ändern. Korrigiere dann die Verben manuell.
+
+Direkt: Der Politiker sagte: "Ich werde morgen eine Rede halten. Meine Rede wird wichtig sein."
+Indirekt: Der Politiker sagte, ___________________________________________________________
+
+Direkt: Die Touristen erklärten: "Wir waren gestern hier und haben nichts gesehen."
+Indirekt: Die Touristen erklärten, _______________________________________________________
+
+Direkt: Maria sagt: "Ich bin müde und habe keine Energie mehr."
+Indirekt: Maria sagt, __________________________________________________________________
+
+--- Übung 2: Einen Nachrichtenabsatz korrigieren ---
+Anleitung: In diesem Text wurden die Verben noch nicht in den Konjunktiv I gesetzt. Finde die Fehler und korrigiere sie.
+
+Der Sprecher des Unternehmens berichtete, die Lage ist ernst. Man hat alles versucht, um das Problem zu lösen. Die Mitarbeiter werden bald informiert. Man ist zuversichtlich, eine Lösung zu finden.
+
+== Zusammenfassung & Ausblick ==
+Indirekte Rede ist ein Zeichen von formellem, professionellem Deutsch.
+
+Neue Vim-Befehle in dieser Lektion:
+
+:%s/alt/neu/gc: Ersetze "alt" durch "neu" im
