@@ -1,83 +1,95 @@
 == Lektion 3.3: Komplexe Konnektoren (Doppelkonnektoren) ==
 
-Hamburg, Dienstag, 1. April 2025, 15:45 Uhr. Zum Abschluss von Modul 3 schauen wir uns an, wie man Sätze mit Doppelkonnektoren verbindet, um Beziehungen zwischen Ideen genauer auszudrücken.
+Freitag, der 12. September 2025, 16:15 Uhr in Hamburg. Willkommen zur letzten Lektion! Heute lernen wir, wie man mit Doppelkonnektoren Sätze eleganter und präziser macht.
 
---- 1. entweder ... oder ... (either ... or ...) ---
-* Bedeutung: Zeigt zwei Alternativen, von denen nur eine möglich ist.
-* Struktur: Verbindet Wörter, Satzteile oder ganze Hauptsätze. Normale Wortstellung.
-* Beispiel:
-    * Wir können *entweder* ins Kino gehen *oder* zu Hause bleiben.
-    * *Entweder* du rufst ihn an *oder* ich mache es.
+Ziel dieser Lektion: Doppelkonnektoren meistern und dabei lernen, Zeilen intelligent zu verbinden und Textblöcke spaltenweise zu bearbeiten.
 
---- 2. weder ... noch ... (neither ... nor ...) ---
-* Bedeutung: Negiert zwei Alternativen. Beide sind nicht der Fall. Achtung: Keine zusätzliche Negation (nicht/kein) nötig!
-* Struktur: Verbindet Wörter, Satzteile oder Hauptsätze. Normale Wortstellung.
-* Beispiel:
-    * Er trinkt *weder* Kaffee *noch* Tee.
-    * Sie hat *weder* Zeit *noch* Lust, uns zu helfen.
-    * *Weder* war er pünktlich *noch* hat er Bescheid gesagt.
+--- Vim-Fokus: Zeilen verbinden & Visueller Blockmodus ---
+Zwei fortgeschrittene Techniken für das schnelle Umstrukturieren von Text.
 
---- 3. sowohl ... als auch ... (both ... and ... / as well as ...) ---
-* Bedeutung: Zählt zwei Dinge auf, die beide zutreffen.
-* Struktur: Verbindet Wörter, Satzteile oder Hauptsätze. Normale Wortstellung.
-* Beispiel:
-    * Er spricht *sowohl* Deutsch *als auch* Englisch.
-    * Das Konzert war *sowohl* laut *als auch* fantastisch.
+J (Großbuchstabe J): Join. Verbindet die Zeile unter dem Cursor mit der aktuellen Zeile. Vim fügt dabei intelligent ein Leerzeichen ein und passt die Einrückung an. Perfekt, um zwei kurze Sätze zu einem langen zu verbinden.
 
---- 4. zwar ..., aber ... (indeed ..., but ... / admittedly ..., but ...) ---
-* Bedeutung: Gibt erst etwas zu (zwar), leitet dann aber einen Gegensatz oder eine Einschränkung ein (aber).
-* Struktur: `Zwar` steht oft auf Position 1 oder nach dem Verb im ersten Hauptsatz. `Aber` leitet einen zweiten Hauptsatz ein (Position 0).
-* Beispiel:
-    * Das Auto ist *zwar* alt, *aber* es fährt noch gut.
-    * *Zwar* habe ich wenig Zeit, *aber* ich helfe dir gern kurz.
+Visueller Blockmodus: CTRL-v
 
---- 5. nicht nur ..., sondern auch ... (not only ..., but also ...) ---
-* Bedeutung: Hebt hervor, dass nicht nur das Erste, sondern zusätzlich auch das Zweite zutrifft.
-* Struktur: `nicht nur` steht vor dem ersten Teil. `sondern auch` leitet den zweiten Teil ein (oft Hauptsatz nach Komma).
-* Beispiel:
-    * Sie ist *nicht nur* intelligent, *sondern auch* sehr kreativ.
-    * Er hat *nicht nur* das Buch gelesen, *sondern auch* den Film gesehen.
+CTRL-v (Strg+v): Startet den visuellen Blockmodus.
 
---- 6. je ..., desto / umso ... (the ... the ...) ---
-* Bedeutung: Drückt einen proportionalen Zusammenhang aus (Vergleich).
-* Struktur: `Je` + Komparativ + Nebensatz (Verb am Ende), `desto/umso` + Komparativ + Hauptsatz (Verb an Position 2).
-* Beispiel:
-    * *Je* mehr man übt, *desto* besser wird man. (Je mehr man übt, wird man desto besser.)
-    * *Je* länger er wartete, *umso* ungeduldiger wurde er. (Je länger er wartete, wurde er umso ungeduldiger.)
+j/k/Pfeiltasten: Wähle einen rechteckigen Block an Text aus.
 
---- VIM ÜBUNG 1: Sätze verbinden ---
-Instruktion: Verbinde die Sätze mit dem passenden Doppelkonnektor aus der Klammer. Benutze `A`, `i`, `C`, `dd`, `p`, `:s`. Achte auf die Satzstellung!
+I (Großbuchstabe i): Insert. Nachdem du einen Block markiert hast, tippe I, gib deinen Text ein und drücke dann Esc. Der Text wird am Anfang der Markierung auf jeder Zeile eingefügt!
 
-1. Er möchte nach Italien fahren. Er möchte nach Spanien fahren. (Alternativen -> entweder...oder...)
-   -> Er möchte ______ nach Italien ______ nach Spanien fahren.
-2. Sie kann gut singen. Sie kann gut tanzen. (Beides -> sowohl...als auch...)
-   -> Sie kann ______ gut singen ______ ______ gut tanzen.
-3. Das Wetter war schlecht. Wir hatten keinen Spaß. (Beides negativ -> weder...noch...)
-   -> Wir hatten ______ Spaß, ______ war das Wetter gut. (Umstellung nötig!) -> Weder hatten wir Spaß, noch war das Wetter gut.
-4. Er lernt viel. Er versteht es besser. (Proportional -> je...desto...)
-   -> ______ mehr er lernt, ______ besser versteht er es.
-5. Das Angebot ist günstig. Die Qualität ist nicht gut. (Einschränkung -> zwar...aber...)
-   -> Das Angebot ist ______ günstig, ______ die Qualität ist nicht gut.
-6. Diese Stadt hat schöne Parks. Sie hat interessante Museen. (Zusätzlich -> nicht nur...sondern auch...)
-   -> Diese Stadt hat ______ schöne Parks, ______ ______ interessante Museen.
+--- Die Doppelkonnektoren ---
+entweder ... oder ...   (eine von zwei Alternativen)
 
---- VIM ÜBUNG 2: Fehlende Teile ergänzen / Wortstellung korrigieren ---
-Instruktion: Fülle den fehlenden Teil des Konnektors ein oder korrigiere die Wortstellung (besonders bei je...desto). Benutze `A`, `i`, `dw`, `p`.
+Entweder wir gehen ins Kino oder wir bleiben zu Hause.
 
-1. Entweder bleibst du hier ______ du gehst mit uns. -> oder
-2. Je mehr Leute kommen, ______ lustiger wird die Party. -> desto / umso
-3. Er hat weder angerufen ______ eine E-Mail geschrieben. -> noch
-4. Je schneller das Auto fährt, desto es braucht mehr Benzin. -> Korrigiere Wortstellung! -> ..., desto mehr Benzin braucht es.
-5. Sie ist nicht nur fleißig, ______ auch sehr zuverlässig. -> sondern
-6. Zwar war der Film lang, ______ er war nicht langweilig. -> aber
+weder ... noch ...      (beide Alternativen nicht)
 
---- Bash Übung (Optional) ---
-Speichere die Datei (`:w`). Wechsle ins Terminal. Finde Zeilen mit Doppelkonnektoren:
-`grep -E '(entweder .* oder|weder .* noch|sowohl .* als auch|zwar.*, aber|nicht nur.*, sondern auch|je .*, desto|je .*, umso)' ~/vimgermantutor/*.txt`
+Er trinkt weder Kaffee noch Tee. (Kein extra "nicht"!)
 
---- Ende Lektion 3.3 ---
-Sehr gut! Mit diesen Konnektoren kannst du deine Sätze viel präziser und eleganter gestalten.
-Dies ist die letzte Lektion in unserer geplanten Serie. Du hast jetzt eine gute Basis in B1/B2-Grammatik und Vokabular aufgebaut, kombiniert mit Vim-Praxis!
-Speichern: `:wq`.
+sowohl ... als auch ... (beide Alternativen treffen zu)
 
-Viel Erfolg beim weiteren Deutschlernen!
+Sie spricht sowohl Deutsch als auch Englisch.
+
+zwar ..., aber ...      (erst zustimmen, dann einschränken)
+
+Das Auto ist zwar alt, aber es fährt noch gut.
+
+nicht nur ..., sondern auch ... (eine Steigerung/Ergänzung)
+
+Er ist nicht nur klug, sondern auch sehr hilfsbereit.
+
+je ..., desto/umso ... (ein proportionaler Vergleich)
+
+Je mehr man übt, desto besser wird man. (Nebensatz + Hauptsatz)
+
+--- Übung 1: Sätze verbinden mit J ---
+Anleitung: Gehe auf die erste Zeile des Paares. Drücke J, um sie zu verbinden. Bearbeite dann den neuen Satz mit den gelernten Befehlen (cw, A, etc.), um den passenden Konnektor einzubauen.
+
+Satzpaar 1 (sowohl ... als auch ...):
+Sie kann gut singen.
+Sie kann gut tanzen.
+->
+
+Satzpaar 2 (zwar ..., aber ...):
+Das Angebot ist günstig.
+Die Qualität ist nicht gut.
+->
+
+Satzpaar 3 (je ..., desto ...):
+Er lernt viel.
+Er versteht es besser.
+->
+
+--- Übung 2: Ergänzen mit dem visuellen Blockmodus ---
+Anleitung: Füge vor jede der folgenden Zeilen das Wort "entweder " ein.
+
+Gehe auf das erste E in "Er".
+
+Drücke CTRL-v.
+
+Drücke j, um beide Zeilen zu markieren.
+
+Tippe I (großes I), tippe entweder  (mit Leerzeichen).
+
+Drücke Esc. Das Wort erscheint auf beiden Zeilen!
+
+Ergänze dann manuell  oder ... am Ende der ersten Zeile.
+
+Er isst einen Apfel.
+Er isst eine Banane.
+->
+
+--- Ein letztes Wort ---
+Herzlichen Glückwunsch! Du hast den VimGermanTutor abgeschlossen. Du hast nicht nur wichtige deutsche Grammatik und Vokabular auf B1/B2-Niveau gelernt, sondern dir auch eine solide Grundlage in Vim erarbeitet – einer Fähigkeit, die dir beim Programmieren, Schreiben und Organisieren unendlich viel Zeit sparen wird.
+
+Neue Vim-Befehle in dieser Lektion:
+
+J: Verbindet die nächste Zeile mit der aktuellen.
+
+CTRL-v: Startet den visuellen Blockmodus.
+
+I (nach CTRL-v): Fügt Text am Anfang des Blocks auf allen Zeilen ein.
+
+Der Schlüssel ist jetzt, beides weiter zu benutzen. Viel Erfolg und Spaß dabei!
+
+Speichern
