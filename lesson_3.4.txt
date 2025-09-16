@@ -1,0 +1,88 @@
+== Lektion 3.4: Partizipialattribute ==
+
+Montagmorgen in Hamburg, der 15. September 2025, 9:30 Uhr. Willkommen zurück! Ich dachte, wir wären fertig, aber es gibt immer noch mehr zu lernen. Heute widmen wir uns einem sehr eleganten Thema für Fortgeschrittene: den Partizipialattributen.
+
+Ziel dieser Lektion: Lange Relativsätze in prägnante Partizipialattribute umwandeln und dabei lernen, mit benannten Registern (named registers) wie ein Profi zu jonglieren.
+
+--- Vim-Fokus: Benannte Register (Named Registers) ---
+Stell dir vor, du hättest nicht nur eine, sondern 26 verschiedene Zwischenablagen (Clipboards). Das sind benannte Register! Du kannst Textausschnitte gezielt ablegen und wieder abrufen.
+
+" + buchstabe + y (yank/copy)
+
+" + buchstabe + d (delete/cut)
+
+" + buchstabe + p (paste)
+
+Beispiel-Workflow:
+
+Gehe auf eine Zeile und tippe "ayy. Die Zeile ist jetzt in Register a kopiert.
+
+Gehe auf eine andere Zeile und tippe "bdd. Diese Zeile wird in Register b ausgeschnitten.
+
+Gehe an eine neue Stelle und tippe "ap. Der Inhalt von Register a wird eingefügt.
+
+Tippe dann "bp. Der Inhalt von Register b wird eingefügt.
+
+--- Grammatik: Partizipialattribute (Adjektive aus Verben) ---
+Diese Konstruktionen ersetzen Relativsätze und machen den Stil kompakter und gehobener.
+
+1. Partizip I (Aktiv / andauernde Handlung)
+Bildung: Infinitiv + d
+Bedeutung: Beschreibt etwas, das jetzt gerade passiert. (Die "-ing"-Form im Englischen)
+
+Relativsatz: Der Mann, der am Tisch sitzt, liest ein Buch.
+Partizip I:  Der am Tisch sitzende Mann liest ein Buch.
+
+2. Partizip II (Passiv / abgeschlossene Handlung)
+Bildung: Das normale Partizip II des Verbs
+Bedeutung: Beschreibt etwas, das passiert ist oder getan wurde.
+
+Relativsatz: Das Auto, das repariert wurde, ist teuer.
+Partizip II:  Das reparierte Auto ist teuer.
+
+--- Übung 1: Relativsätze umformen (Partizip I) ---
+Anleitung: Forme die folgenden Sätze um, indem du den Relativsatz durch ein Partizip-I-Attribut ersetzt.
+
+Das Kind, das auf der Straße spielt, ist laut.
+->
+
+Ich sehe den Hund, der laut bellt.
+->
+
+Die Sonne, die vom Himmel scheint, wärmt das Gesicht.
+->
+
+--- Übung 2: Relativsätze umformen (Partizip II mit Registern) ---
+Anleitung: Nutze jetzt deine neuen Register-Kenntnisse! Forme die Sätze um, indem du den Relativsatz durch ein Partizip-II-Attribut ersetzt.
+
+Der Kuchen, der gestern gebacken wurde, schmeckt sehr gut.
+->
+
+Ich lese den Brief, der von Hand geschrieben ist.
+->
+
+Die Tür, die frisch gestrichen war, klebte ein wenig.
+->
+
+--- Übung 3: Gemischte Herausforderung ---
+Anleitung: Entscheide selbst, ob du Partizip I (aktiv) oder Partizip II (passiv) benötigst, um den Satz umzuformen.
+
+Der Zug, der gerade in den Bahnhof einfährt, hat Verspätung.
+->
+
+Das Problem, das gestern gelöst wurde, war sehr komplex.
+->
+
+Die Studenten, die auf den Professor warten, werden langsam ungeduldig.
+->
+
+== Zusammenfassung & Ausblick ==
+Partizipialattribute sind ein klares Zeichen für fortgeschrittene Sprachbeherrschung.
+
+Neue Vim-Befehle in dieser Lektion:
+
+"ayy / "add / "ap: Benutze das Register a zum Kopieren/Ausschneiden/Einfügen.
+
+Speichern: :wq.
+
+Nächstes Thema: `lektion-
