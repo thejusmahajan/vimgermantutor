@@ -1,0 +1,37 @@
+﻿== Lektion 3.5: Nominalisierung ==
+Dienstag, der 16. September 2025, 9:35 Uhr. Weiter geht's in Hamburg! Heute lernen wir, wie man Verben und Adjektive in Nomen umwandelt (Nominalisierung), um einen formelleren und präziseren Stil zu erreichen.
+Ziel dieser Lektion: Sätze durch Nominalisierung umstrukturieren und dabei die Macht der Vim-"Text Objects" entdecken, um ganze Sätze auf einmal zu bearbeiten.
+--- Vim-Fokus: Text Objects (am Beispiel Satz) --- Text Objects sind Vims Art, logische Texteinheiten zu verstehen. Du kannst Operatoren (d, c, y) mit diesen Objekten kombinieren.
+* as: a sentence (ein ganzer Satz, inklusive Leerzeichen danach)
+* is: inner sentence (ein Satz ohne die umgebenden Leerzeichen)
+Die Magie passiert in der Kombination:
+* das: delete a sentence. Löscht den ganzen Satz, auf dem der Cursor steht.
+* yas: yank a sentence. Kopiert den ganzen Satz.
+* cis: change inner sentence. Löscht den Satz und versetzt dich in den Insert-Modus, um ihn neu zu schreiben. Das ist extrem nützlich für diese Lektion!
+--- Grammatik: Nominalisierung (Aus Verben werden Nomen) --- Dies ist eine Technik, die oft in akademischen, offiziellen oder technischen Texten verwendet wird.
+1. Infinitiv als Nomen (Immer Neutrum: das) Die einfachste Form: Der Infinitiv eines Verbs wird zum Nomen.
+* lernen -> das Lernen
+* rauchen -> das Rauchen Satz: Er lernt fleißig. -> Das fleißige Lernen ist wichtig. Satz: Man darf hier nicht rauchen. -> Das Rauchen ist hier verboten.
+2. Verben mit Suffix -ung (Immer Feminin: die) Viele Verben bilden ein Nomen mit der Endung -ung.
+* lösen -> die Lösung
+* entscheiden -> die Entscheidung Satz: Man löst das Problem. -> Die Lösung des Problems ist einfach.
+3. Adjektive mit Suffix -heit / -keit (Immer Feminin: die) Adjektive können ebenfalls zu Nomen werden.
+* frei -> die Freiheit
+* schön -> die Schönheit Satz: Er ist frei. -> Er genießt die Freiheit.
+--- Übung 1: Sätze umwandeln mit cis --- Anleitung: Gehe irgendwo in den Satz. Tippe cis (change inner sentence) und schreibe den Satz mit einer Nominalisierung neu.
+1. Man muss die Aufgabe schnell erledigen. -> Eine schnelle Erledigung der Aufgabe ist notwendig.
+2. Er schläft schlecht. Das ist ein Problem. ->
+3. Die Mitarbeiter sind sehr pünktlich. Das ist positiv. ->
+--- Übung 2: Vom Verb zum Nomen --- Anleitung: Forme die Sätze um und achte auf den Genitiv, der oft nach der Nominalisierung benötigt wird.
+1. Die Regierung hat den Plan geprüft. -> Die Prüfung des Plans durch die Regierung ist abgeschlossen.
+2. Die Landschaft ist schön. ->
+3. Man hat die Regeln geändert. ->
+--- Übung 3: Gemischte Herausforderung --- Anleitung: Wandle die verbalen oder adjektivischen Ausdrücke in Nominalkonstruktionen um.
+1. Es ist wichtig, dass man die Umwelt schützt. -> Der Schutz der Umwelt ist wichtig.
+2. Ich freue mich, dass wir uns bald wiedersehen. ->
+3. Es ist verboten, im Gebäude zu essen. ->
+== Zusammenfassung & Ausblick == Nominalisierung ist ein mächtiges Werkzeug für einen gehobenen Schreibstil.
+Neue Vim-Befehle in dieser Lektion:
+* das / yas / cis: Lösche / Kopiere / Ändere einen ganzen Satz.
+Speichern: :wq.
+Nächstes Thema: lektion-4.1.txt (Modul 4: Redewendungen und Umgangssprache).
