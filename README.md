@@ -1,2 +1,2 @@
-Motivated by vimtutor, I am making a german tutor with vim and bash commands trainer.
-Caution: Not for vim starters. They are adviced to use vimtutor to get a quick start. 
+Motivated by vimtutor, I am building a German tutor that also helps you practice Vim and Bash commands.
+Caution: Not for Vim absolute beginners. They are advised to use `vimtutor` first to get a quick start.
