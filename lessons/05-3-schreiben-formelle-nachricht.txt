@@ -1,0 +1,190 @@
+============================================================================
+  Lektion 5.3: Schreiben Teil 2: Die formelle Nachricht
+  Vim: V + :s · gv · :iabbrev                              ca. 15 Minuten
+                                                    + 25 Minuten Schreiben
+============================================================================
+
+  Im Schreiben Teil 2 schreibst du eine formelle Nachricht im Beruf, zum
+  Beispiel an deine Chefin: ca. 100 Wörter. Hier zählt der richtige Ton:
+  Sie statt du, höfliche Bitten, eine klare Anrede und ein klarer Gruß.
+
+  In Vim lernst du, wie du einen Text in einem Schritt von du auf Sie
+  umstellst, und eine Abkürzung (abbreviation), die für dich "Mit
+  freundlichen Grüßen" tippt.
+
+
+# 1. Ein Bauplan für die formelle Nachricht
+
+  1  Anrede        Sehr geehrte Frau Dr. Schäfer, / Sehr geehrter Herr ...,
+  2  Anlass        Warum schreibst du? (Ich schreibe Ihnen, weil ...)
+  3  Inhalt        Die Punkte aus der Aufgabe: Grund, Bitte, Vorschlag
+  4  Schluss       Für Rückfragen stehe ich Ihnen gern zur Verfügung.
+  5  Gruß          Mit freundlichen Grüßen + dein Name
+
+  Redemittel
+    Entschuldigung   Leider kann ich ... nicht ... · Es tut mir leid,
+                     dass ... · Entschuldigen Sie bitte ...
+    Bitte            Könnten Sie ...? · Ich wäre Ihnen dankbar, wenn ...
+    Vorschlag        Ich würde vorschlagen, ... zu ... · Wie wäre es, wenn
+                     ...?
+    Schluss          Ich freue mich auf Ihre Antwort.
+
+  Nach der Anrede mit Komma geht es klein weiter: "vielen Dank für ..."
+
+
+# 2. Vom Alltag zum Büro
+
+  Jede Zeile ist zu locker für eine E-Mail an die Chefin. Mache sie
+  formell.
+
+---> Hallo Frau Dr. Schäfer,
+     Lösung {{{
+===> Sehr geehrte Frau Dr. Schäfer,
+     Formelle Anrede: Sehr geehrte Frau ..., (feminin: geehrte).
+     }}}
+
+---> Sorry für die späte Antwort.
+     Lösung {{{
+===> Entschuldigen Sie bitte die späte Antwort.
+oder Bitte entschuldigen Sie die späte Antwort.
+     Formell: Entschuldigen Sie bitte ...
+     }}}
+
+---> Kannst du den Termin am Freitag verschieben?
+     Lösung {{{
+===> Könnten Sie den Termin am Freitag verschieben?
+oder Können Sie den Termin am Freitag verschieben?
+     Sie statt du. Mit Konjunktiv II (Könnten) klingt es höflicher.
+     }}}
+
+---> Ich brauche am Montag frei.
+     Lösung {{{
+===> Ich hätte am Montag gern frei.
+oder Ich hätte am Montag gerne frei.
+     Konjunktiv II macht aus einer Forderung eine Bitte.
+     }}}
+
+
+# 3. Abkürzungen: :iabbrev
+
+  :iabbrev mfg Mit freundlichen Grüßen
+       Jetzt wird im Einfügemodus aus "mfg" automatisch der ganze Gruß,
+       sobald du danach ein Leerzeichen, Enter oder `Esc` tippst.
+
+  1. Tippe :iabbrev mfg Mit freundlichen Grüßen und Enter.
+  2. Gehe auf die Zeile unten, auf das T von "Tschüss".
+  3. Drücke `C`, tippe mfg und drücke `Esc`.
+
+---> Tschüss und bis bald
+     Lösung {{{
+===> Mit freundlichen Grüßen
+     Am Ende einer formellen Nachricht: Mit freundlichen Grüßen (ohne
+     Komma), in der nächsten Zeile dein Name.
+     }}}
+
+
+# 4. Von du auf Sie: V, :s und gv
+
+  Mira hat eine Nachricht an Tim geschrieben. Jetzt soll sie an Frau Dr.
+  Schäfer gehen. Ändere die Pronomen in der Markierung:
+
+  1. Gehe auf die erste Zeile. Drücke `V` und zweimal `j`.
+  2. Tippe :s/deine/Ihre/ und Enter. (Vim zeigt :'<,'> davor.)
+  3. Drücke `gv`: Die Markierung ist wieder da.
+  4. Tippe :s/dir/Ihnen/ und Enter.
+  5. Ändere in der letzten Zeile "Kannst du" mit `cw` von Hand. Hier
+     ändert sich auch das Verb.
+
+---> Vielen Dank für deine schnelle Antwort.
+---> Ich schicke dir den Bericht morgen früh.
+---> Kannst du ihn bis Freitag lesen?
+     Lösung {{{
+===> Vielen Dank für Ihre schnelle Antwort.
+===> Ich schicke Ihnen den Bericht morgen früh.
+===> Können Sie ihn bis Freitag lesen?
+oder Könnten Sie ihn bis Freitag lesen?
+     deine -> Ihre, dir -> Ihnen, du -> Sie. Das Verb passt sich an:
+     Kannst du -> Können Sie.
+     }}}
+
+
+# 5. Typische Fehler
+
+---> Leider kann ich am Freitag nicht an den Workshop teilnehmen.
+     Lösung {{{
+===> Leider kann ich am Freitag nicht am Workshop teilnehmen.
+oder Leider kann ich am Freitag nicht an dem Workshop teilnehmen.
+     teilnehmen an + Dativ: am Workshop.
+     }}}
+
+---> Ich würde vorschlagen, den Termin auf Dienstag verschieben.
+     Lösung {{{
+===> Ich würde vorschlagen, den Termin auf Dienstag zu verschieben.
+     vorschlagen, ... zu + Infinitiv.
+     }}}
+
+---> Für Rückfragen stehe ich Ihnen gern zu Verfügung.
+     Lösung {{{
+===> Für Rückfragen stehe ich Ihnen gern zur Verfügung.
+     zur Verfügung stehen (zu der -> zur).
+     }}}
+
+
+# 6. Deine Aufgabe
+
+  Du kannst am Freitag nicht zum Workshop deines Teams kommen. Schreibe
+  deiner Chefin, Frau Dr. Schäfer, eine Nachricht (ca. 100 Wörter):
+  Entschuldige dich, nenne den Grund, schlage eine Lösung vor und bitte
+  um eine Antwort.
+
+  1. Tippe :GermanTutorTimer 25 und Enter.
+  2. Gehe auf die leere Zeile unter "Meine Nachricht:" und drücke `o`.
+  3. Schreibe. Am Ende: `vip`, `g Strg-g`.
+
+  Prüfe danach selbst:
+    [ ] Anrede: Sehr geehrte Frau Dr. Schäfer,
+    [ ] Sie, Ihnen, Ihr (groß!)
+    [ ] Grund, Vorschlag, Bitte um Antwort: alle Punkte da?
+    [ ] höflich: Könnten Sie ...? Ich würde vorschlagen, ...
+    [ ] Gruß: Mit freundlichen Grüßen + Name
+    [ ] ca. 100 Wörter
+
+     Meine Nachricht:
+
+
+     Musterlösung {{{
+     Sehr geehrte Frau Dr. Schäfer,
+
+     leider kann ich am Freitag nicht am Workshop unseres Teams teilnehmen.
+     Ich habe an diesem Tag einen wichtigen Termin beim Bürgeramt, den ich
+     nicht verschieben kann. Das tut mir sehr leid, denn das Thema
+     interessiert mich sehr.
+
+     Ich würde vorschlagen, dass Tim mir am Montag die wichtigsten
+     Ergebnisse erklärt. Gern lese ich auch vorher die Unterlagen und
+     schicke Ihnen meine Ideen per E-Mail. Wäre das für Sie in Ordnung? Ab
+     Montag bin ich wieder im Büro.
+
+     Für Rückfragen stehe ich Ihnen gern zur Verfügung. Ich freue mich auf
+     Ihre Antwort.
+
+     Mit freundlichen Grüßen
+     Mira Novak
+     }}}
+
+
+# Zusammenfassung Lektion 5.3
+
+  Vim
+    `V` und :s/alt/neu/   nur in den markierten Zeilen ersetzen
+    `gv`                  die letzte Markierung wieder markieren
+    :iabbrev mfg ...      Abkürzung für den Einfügemodus
+
+  Prüfung
+    Anrede: Sehr geehrte Frau ..., / Sehr geehrter Herr ...,
+    Sie, Ihnen, Ihr · Könnten Sie ...? · Ich würde vorschlagen, ...
+    Für Rückfragen stehe ich Ihnen gern zur Verfügung.
+    Mit freundlichen Grüßen
+    ca. 100 Wörter, alle Punkte der Aufgabe
+
+  Weiter:  :GermanTutor 5.4

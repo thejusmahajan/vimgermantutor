@@ -1,0 +1,162 @@
+============================================================================
+  Lektion 5.2: Schreiben Teil 1: Der Forumsbeitrag
+  Vim: :GermanTutorTimer · gqip · g Strg-g                 ca. 15 Minuten
+                                                    + 50 Minuten Schreiben
+============================================================================
+
+  Im Schreiben Teil 1 schreibst du einen Beitrag für ein Internetforum:
+  deine Meinung zu einem Thema aus der Gesellschaft, ca. 150 Wörter. Lies
+  die Aufgabe genau und gehe auf alle Punkte ein, die dort stehen.
+
+  In Vim lernst du heute, wie du gegen die Uhr schreibst, deinen Absatz
+  ordentlich umbrichst und am Ende die Wörter zählst.
+
+
+# 1. Ein Bauplan für den Forumsbeitrag
+
+  1  Einstieg        Um welches Thema geht es? Warum ist es wichtig?
+  2  Meinung         Was denkst du? Mit Grund.
+  3  Abwägen         Ein Argument dafür und eins dagegen.
+  4  Beispiel        Eine eigene Erfahrung oder ein Beispiel.
+  5  Schluss         Ein kurzes Fazit, vielleicht eine Frage ans Forum.
+
+  Redemittel
+    Einstieg   In diesem Beitrag geht es um die Frage, ob ...
+               Das Thema ... wird zurzeit viel diskutiert.
+    Meinung    Ich bin der Meinung, dass ... · Meiner Meinung nach ...
+    Abwägen    Einerseits ..., andererseits ... · Ein Vorteil ist, dass
+               ... · Dagegen spricht, dass ...
+    Beispiel   Ich habe selbst erlebt, dass ... · Zum Beispiel ...
+    Schluss    Abschließend möchte ich sagen, dass ... · Was meint ihr?
+
+  Im Forum duzt man sich oft (ihr, euch). Das ist in Ordnung.
+
+
+# 2. Typische Fehler in Redemitteln
+
+  Jeder Satz hat einen Fehler. Korrigiere ihn mit dem Kommando, das dir
+  am schnellsten vorkommt.
+
+---> In diesem Beitrag geht es um der Frage, ob Homeoffice sinnvoll ist.
+     Lösung {{{
+===> In diesem Beitrag geht es um die Frage, ob Homeoffice sinnvoll ist.
+     es geht um + Akkusativ: um die Frage.
+     }}}
+
+---> Ich bin die Meinung, dass Homeoffice viele Vorteile hat.
+     Lösung {{{
+===> Ich bin der Meinung, dass Homeoffice viele Vorteile hat.
+     Fester Ausdruck mit Genitiv: Ich bin der Meinung.
+     }}}
+
+---> Ein wichtiger Vorteil ist, dass man spart viel Zeit.
+     Lösung {{{
+===> Ein wichtiger Vorteil ist, dass man viel Zeit spart.
+     dass -> Verb am Ende.
+     }}}
+
+---> Auf der anderen Seite man hat weniger Kontakt zu Kollegen.
+     Lösung {{{
+===> Auf der anderen Seite hat man weniger Kontakt zu Kollegen.
+     "Auf der anderen Seite" ist Position 1. Dann kommt das Verb.
+     }}}
+
+---> Zum Beispiel, ich arbeite selbst zwei Tage pro Woche zu Hause.
+     Lösung {{{
+===> Zum Beispiel arbeite ich selbst zwei Tage pro Woche zu Hause.
+     Zum Beispiel ist Position 1: kein Komma, Verb auf Position 2.
+     }}}
+
+---> Homeoffice ist bequem. Deshalb Trotzdem vermisse ich das Büro.
+     Lösung {{{
+===> Homeoffice ist bequem. Trotzdem vermisse ich das Büro.
+     bequem, aber ich vermisse das Büro: ein Gegensatz -> trotzdem.
+     }}}
+
+---> Abschließend möchte ich sagen, dass beide Modelle haben Vorteile.
+     Lösung {{{
+===> Abschließend möchte ich sagen, dass beide Modelle Vorteile haben.
+     dass -> Verb am Ende.
+     }}}
+
+---> Ich freue mich für eure Antworten!
+     Lösung {{{
+===> Ich freue mich auf eure Antworten!
+     Die Antworten kommen noch: sich freuen auf.
+     }}}
+
+
+# 3. Gegen die Uhr schreiben
+
+  :GermanTutorTimer 50   startet einen Timer über 50 Minuten. Unten
+                         rechts siehst du die Zeit. Fünf Minuten vor
+                         Schluss und am Ende sagt Vim Bescheid.
+                         Mit :GermanTutorTimer stop hältst du ihn an.
+
+  Wie teilst du die 75 Minuten auf? Ein Vorschlag: 50 Minuten für Teil 1
+  (er ist länger), 25 Minuten für Teil 2.
+
+  Lange Zeilen umbrechen: Tippe einfach weiter, ohne Enter. Danach:
+     :setlocal textwidth=70   (Zeilen höchstens 70 Zeichen breit)
+     gqip                     (den Absatz neu umbrechen)
+
+  Wörter zählen: `vip` und dann `g Strg-g`.
+
+
+# 4. Deine Aufgabe
+
+  Thema im Forum: "Sollten alle Kinder in der Schule programmieren
+  lernen?"
+
+  1. Tippe :GermanTutorTimer 50 und Enter.
+  2. Gehe auf die leere Zeile unter "Mein Beitrag:" und drücke `o`.
+  3. Schreibe ca. 150 Wörter in einem Absatz (ohne leere Zeilen).
+  4. Am Ende: `vip`, `g Strg-g`. Speichern: `vip` und
+     :w ~/b2-forumsbeitrag.txt
+
+  Prüfe danach selbst:
+    [ ] Einstieg: Das Thema ist genannt.
+    [ ] Meinung mit Grund (weil, denn, deshalb).
+    [ ] Ein Argument dafür und eins dagegen (einerseits ...
+        andererseits, zwar ... aber).
+    [ ] Ein Beispiel oder eine eigene Erfahrung.
+    [ ] Schluss mit Fazit.
+    [ ] Nach weil, dass, obwohl: Verb am Ende. Nach deshalb, trotzdem:
+        Verb auf Position 2.
+    [ ] ca. 150 Wörter.
+
+     Mein Beitrag:
+
+
+     Musterlösung {{{
+     In diesem Beitrag geht es um die Frage, ob alle Kinder in der Schule
+     programmieren lernen sollten. Ich bin der Meinung, dass das eine gute
+     Idee ist, weil Computer heute in fast jedem Beruf wichtig sind. Wer ein
+     bisschen programmieren kann, versteht besser, wie Apps und Webseiten
+     funktionieren. Außerdem lernt man dabei, ein Problem in kleine Schritte
+     zu zerlegen. Das hilft auch in Mathe und im Alltag. Viele Kinder sitzen
+     sowieso jeden Tag am Handy, also sollten sie auch verstehen, was darin
+     passiert. Andererseits haben die Schulen schon jetzt wenig Zeit, und es
+     fehlen Lehrerinnen und Lehrer, die das unterrichten können.
+     Programmieren darf deshalb nicht auf Kosten von Sport oder Musik gehen.
+     Ich habe selbst erst mit 25 programmieren gelernt. Hätte ich es früher
+     gelernt, wäre mir vieles leichter gefallen. Abschließend möchte ich
+     sagen, dass eine Stunde pro Woche schon viel bringt. Was meint ihr: Ab
+     welchem Alter sollten Kinder damit anfangen?
+     }}}
+
+
+# Zusammenfassung Lektion 5.2
+
+  Vim
+    :GermanTutorTimer 50   Timer für 50 Minuten (stop: anhalten)
+    :setlocal textwidth=70 und `gqip`   Absatz umbrechen
+    `vip` `g Strg-g`       Wörter im Absatz zählen
+
+  Prüfung
+    Forumsbeitrag: Einstieg, Meinung, Abwägen, Beispiel, Schluss
+    ca. 150 Wörter, alle Punkte der Aufgabe
+    Ich bin der Meinung, dass ... · Einerseits ..., andererseits ...
+    Abschließend möchte ich sagen, dass ...
+
+  Weiter:  :GermanTutor 5.3

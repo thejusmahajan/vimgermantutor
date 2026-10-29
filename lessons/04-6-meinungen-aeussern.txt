@@ -149,3 +149,5 @@
     Zustimmen: Ich stimme dir zu. · Widersprechen: Das sehe ich anders.
     weil, dass, obwohl -> Verb am Ende
     deshalb, trotzdem, andererseits -> Verb auf Position 2
+
+  Weiter:  :GermanTutor 4.7

@@ -1,0 +1,149 @@
+============================================================================
+  Lektion 5.4: Sprechen Teil 1: Der Vortrag
+  Vim: zf · zM · zR · zd                                   ca. 15 Minuten
+============================================================================
+
+  Im Sprechen Teil 1 hältst du einen kurzen Vortrag, ca. 4 Minuten. Du
+  wählst eins von zwei Themen. Danach stellen dir dein Partner oder die
+  Prüfer Fragen. Vorher hast du Zeit zur Vorbereitung und darfst Notizen
+  machen. Mira übt mit Jana in der Küche, mit einem Timer auf dem Handy.
+
+  In Vim baust du heute deine Notizen als Gliederung mit eigenen Falten.
+  So siehst du den ganzen Vortrag auf einen Blick und öffnest nur den
+  Teil, über den du gerade sprichst.
+
+
+# 1. Ein Bauplan für den Vortrag
+
+  Auf dem Aufgabenblatt stehen meistens Punkte, die du ansprechen sollst.
+  Folge ihnen. Ein guter Vortrag hat fast immer diese Teile:
+
+  1  Einleitung     Thema nennen, kurz sagen, wie der Vortrag aufgebaut
+                    ist
+  2  Erfahrung      eigene Erfahrung oder die Situation in deinem
+                    Heimatland
+  3  Abwägen        Vorteile und Nachteile
+  4  Meinung        deine Meinung mit Begründung
+  5  Schluss        kurze Zusammenfassung, Dank
+
+  Redemittel
+    Einleitung   In meinem Vortrag geht es um das Thema ...
+                 Zuerst spreche ich über ..., dann ..., zum Schluss ...
+    Übergang     Ich komme jetzt zum nächsten Punkt.
+    Erfahrung    In meinem Heimatland ist es so, dass ...
+    Abwägen      Ein großer Vorteil ist ... · Ein Nachteil ist, dass ...
+    Meinung      Ich persönlich finde ...
+    Schluss      Zusammenfassend kann man sagen, dass ...
+                 Vielen Dank für Ihre Aufmerksamkeit!
+    Fragen       Das ist eine gute Frage. · Darüber habe ich noch nicht
+                 nachgedacht, aber ...
+
+
+# 2. Typische Fehler im Vortrag
+
+  Mira hat ihren Vortrag über Homeoffice aufgeschrieben. Jeder Satz hat
+  einen Fehler.
+
+---> In meinem Vortrag geht es über das Thema Homeoffice.
+     Lösung {{{
+===> In meinem Vortrag geht es um das Thema Homeoffice.
+     es geht um + Akkusativ.
+     }}}
+
+---> Zuerst ich möchte von meinen eigenen Erfahrungen erzählen.
+     Lösung {{{
+===> Zuerst möchte ich von meinen eigenen Erfahrungen erzählen.
+     Zuerst ist Position 1: dann das Verb.
+     }}}
+
+---> In meiner Heimat Slowenien es gibt viele Firmen mit Homeoffice.
+     Lösung {{{
+===> In meiner Heimat Slowenien gibt es viele Firmen mit Homeoffice.
+     Verb auf Position 2: gibt es.
+     }}}
+
+---> Ein großes Vorteil ist die Flexibilität.
+     Lösung {{{
+===> Ein großer Vorteil ist die Flexibilität.
+     der Vorteil (maskulin): ein großer Vorteil.
+     }}}
+
+---> Ein Nachteil sind, dass man oft allein arbeitet.
+     Lösung {{{
+===> Ein Nachteil ist, dass man oft allein arbeitet.
+     Subjekt ist "ein Nachteil" (Singular): ist.
+     }}}
+
+---> Zusammenfassend kann man sagen, dass Homeoffice ist praktisch.
+     Lösung {{{
+===> Zusammenfassend kann man sagen, dass Homeoffice praktisch ist.
+     dass -> Verb am Ende.
+     }}}
+
+---> Vielen Dank für Ihr Aufmerksamkeit!
+     Lösung {{{
+===> Vielen Dank für Ihre Aufmerksamkeit!
+     die Aufmerksamkeit (feminin): Ihre Aufmerksamkeit.
+     }}}
+
+---> Das ist eine gute Frage. Darauf habe ich noch nicht nachgedacht.
+     Lösung {{{
+===> Das ist eine gute Frage. Darüber habe ich noch nicht nachgedacht.
+     nachdenken über -> darüber.
+     }}}
+
+
+# 3. Eigene Falten: zf, zM, zR
+
+  `zf` + Bewegung macht eine neue Falte. Am einfachsten: Markiere Zeilen
+  mit `V` und `j`, dann `zf`. Vim schreibt dabei Faltmarken (drei
+  geschweifte Klammern) ans Ende der Zeilen, so merkt es sich die Falte.
+
+  `zM`   schließt alle Falten (M wie more)
+  `zR`   öffnet alle Falten (R wie reduce)
+  `zd`   löscht die Falte unter dem Cursor (der Text bleibt)
+
+  Thema für deine Übung: "Sollte man im Urlaub für die Arbeit erreichbar
+  sein?" Schreibe unter "Meine Gliederung:" für jeden Teil eine Zeile
+  als Überschrift und darunter zwei, drei Stichpunkte. Mache dann aus
+  jedem Teil eine Falte: Überschrift und Stichpunkte mit `V` markieren,
+  `zf`. Am Ende `zM`: Jetzt siehst du nur noch fünf Zeilen, deinen
+  ganzen Vortrag.
+
+  Probe: Stelle den Timer auf 4 Minuten (:GermanTutorTimer 4) und halte
+  den Vortrag laut. Ja, wirklich laut!
+
+     Meine Gliederung:
+
+
+     Musterlösung {{{
+     1 Einleitung
+       Thema: im Urlaub erreichbar sein? Erst Erfahrung, dann Vor- und
+       Nachteile, dann Meinung
+     2 Erfahrung
+       in Slowenien: viele lesen im Urlaub E-Mails
+       ich selbst: letzter Urlaub, jeden Tag Handy
+     3 Vor- und Nachteile
+       + Probleme schnell lösen, weniger Arbeit nach dem Urlaub
+       - keine Erholung, Stress, Familie ärgert sich
+     4 Meinung
+       nur im Notfall erreichbar, Vertretung organisieren
+     5 Schluss
+       Zusammenfassung, Dank
+     }}}
+
+
+# Zusammenfassung Lektion 5.4
+
+  Vim
+    `V` ... `zf`   neue Falte aus den markierten Zeilen
+    `zM` `zR`      alle Falten zu / auf
+    `zd`           Falte löschen (Text bleibt)
+
+  Prüfung
+    Vortrag ca. 4 Minuten: Einleitung, Erfahrung, Vor- und Nachteile,
+    Meinung, Schluss
+    In meinem Vortrag geht es um ... · Ich komme jetzt zum nächsten
+    Punkt. · Zusammenfassend ... · Vielen Dank für Ihre Aufmerksamkeit!
+
+  Weiter:  :GermanTutor 5.5

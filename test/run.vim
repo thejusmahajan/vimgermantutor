@@ -73,11 +73,11 @@ function! s:Test_LessonsExist() abort
   let number = 0
   for lesson in lessons
     if lesson.chapter != chapter
-      call s:Check(lesson.chapter > chapter, 'chapters in order at ' . lesson.id)
+      call s:Equal(lesson.chapter, chapter + 1, 'chapters without gaps at ' . lesson.id)
       let chapter = lesson.chapter
       let number = 0
     endif
-    call s:Check(lesson.number > number, 'lessons in order at ' . lesson.id)
+    call s:Equal(lesson.number, number + 1, 'lessons without gaps at ' . lesson.id)
     let number = lesson.number
     call s:Check(lesson.title !~# '\.txt$', 'lesson ' . lesson.id . ' has a title line')
   endfor
@@ -423,6 +423,20 @@ function! s:Test_Timer() abort
   call s:Equal(germantutor#StatusTimer(), '', 'timer stopped')
 endfunction
 
+function! s:Test_Help() abort
+  execute 'helptags' fnameescape(s:root . '/doc')
+  for tag in ['germantutor', ':GermanTutor', ':GermanTutorProgress',
+        \ ':GermanTutorTimer', 'g:germantutor_ascii', 'germantutor-format']
+    try
+      execute 'help' tag
+      call s:Check(expand('%:t') ==# 'germantutor.txt', ':help ' . tag)
+      helpclose
+    catch
+      call s:Fail(':help ' . tag . ': ' . v:exception)
+    endtry
+  endfor
+endfunction
+
 " Every recipe in test/recipes.vim types the keys a lesson teaches and must
 " end with an accepted answer. This proves that the steps really work.
 function! s:Test_Recipes() abort
@@ -433,6 +447,11 @@ function! s:Test_Recipes() abort
     let block = b:germantutor.blocks[recipe.block - 1]
     call cursor(block.lnums[0], 1)
     let keys = recipe.keys
+    " Ex commands typed through feedkeys() do not always run in Vim's Ex
+    " mode (vim -es); a recipe can give such a command as 'setup'.
+    if has_key(recipe, 'setup')
+      execute recipe.setup
+    endif
     if has_key(recipe, 'confirm')
       let answers = ex_mode ? join(split(recipe.confirm, '\zs'), "\<CR>") . "\<CR>"
             \ : recipe.confirm
@@ -461,7 +480,7 @@ endfunction
 let s:tests = ['LessonsExist', 'FilesClean', 'LessonStructure', 'AnswersPass',
       \ 'OriginalsFail', 'Normalize', 'CrlfTolerated', 'LauncherCopy', 'Syntax',
       \ 'SignsAndTally', 'MissingArrow', 'ProgressAndResume', 'Find', 'Timer',
-      \ 'Recipes']
+      \ 'Help', 'Recipes']
 
 let s:editor = has('nvim') ? 'Neovim ' . matchstr(execute('version'), 'NVIM v\zs[^\n]*')
       \ : 'Vim ' . v:version / 100 . '.' . v:version % 100

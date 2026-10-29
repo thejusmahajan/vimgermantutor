@@ -5,9 +5,14 @@
 " fed as if typed. Afterwards the exercise (and those listed in 'also') must
 " be solved. '<confirm>' in the keys stands for the answers to a :s///c
 " prompt, given in 'confirm'.
+" The abbreviation recipe comes first: in Vim's silent Ex mode (vim -es),
+" abbreviations stop expanding once any keys have been fed. Interactive Vim
+" and Neovim are not affected.
 scriptencoding utf-8
 
 let g:germantutor_recipes = [
+      \ {'lesson': '5.3', 'block': 5, 'setup': 'iabbrev mfg Mit freundlichen Grüßen',
+      \  'keys': "wCmfg \<Esc>"},
       \ {'lesson': '1.1', 'block': 1, 'keys': "f/xxxx"},
       \ {'lesson': '1.1', 'block': 2, 'keys': "/einen\\/\<CR>xxxxxx"},
       \ {'lesson': '1.1', 'block': 6, 'keys': "/die\\/\<CR>xxxx"},
@@ -83,4 +88,10 @@ let g:germantutor_recipes = [
       \ {'lesson': '4.5', 'block': 1, 'keys': "/macht\<CR>ciwtrifft\<Esc>"},
       \ {'lesson': '4.5', 'block': 6, 'keys': "/entscheidet\<CR>ciwtrifft\<Esc>f.i eine Ents\<C-n>\<Esc>"},
       \ {'lesson': '4.5', 'block': 9, 'keys': "/drückt\<CR>ciwbringt\<Esc>/aus\\.\<CR>ciwzum Ausdruck\<Esc>"},
+      \ {'lesson': '1.7', 'block': 8, 'keys': "ddjp"},
+      \ {'lesson': '2.7', 'block': 8, 'keys': "wd/\\<das\\>\<CR>rD/bald\<CR>isoll \<Esc>/umzieht\<CR>cwumziehen\<Esc>"},
+      \ {'lesson': '2.7', 'block': 9, 'keys': ":s/kann/könnte/g\<CR>"},
+      \ {'lesson': '5.1', 'block': 1, 'keys': "/75\<CR>dw"},
+      \ {'lesson': '5.3', 'block': 6, 'keys': "Vjj:s/deine/Ihre/\<CR>gv:s/dir/Ihnen/\<CR>/Kannst\<CR>cwKönnen\<Esc>wcwSie\<Esc>"},
+      \ {'lesson': '5.5', 'block': 1, 'keys': "Vjjj:sort\<CR>"},
       \ ]

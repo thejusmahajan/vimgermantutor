@@ -182,6 +182,8 @@ function! s:LauncherDefaults() abort
   endif
   let s:launcher_done = 1
   set backspace=indent,eol,start showcmd ruler incsearch nojoinspaces
+  " Without this, Esc waits a whole second in terminal Vim.
+  set ttimeout ttimeoutlen=100
   syntax on
 endfunction
 
@@ -193,6 +195,8 @@ function! s:SetOptions() abort
   setlocal filetype=germantutor
   setlocal foldmethod=marker foldmarker={{{,}}} foldlevel=0 foldenable
   setlocal foldtext=germantutor#FoldText()
+  " zf writes plain fold markers, not /*{{{*/
+  setlocal commentstring=\ %s
   if exists('+signcolumn')
     setlocal signcolumn=yes
   endif
