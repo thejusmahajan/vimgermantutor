@@ -58,7 +58,7 @@
 # 3. Aktiv -> Passiv
 
   In jeder Zeile steht ein man-Satz. Mache daraus einen Passivsatz.
-  Behalte die Wortstellung, so weit es geht.
+  Behalte die Wortstellung, soweit es geht.
 
   1. Springe mit `/\<man\>` oder `n` zur Zeile.
   2. Ändere das Verb mit `cw` in wird (oder wurde).

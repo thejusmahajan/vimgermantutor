@@ -19,7 +19,11 @@
   Gerücht (rumour), andere sagen es:  sollen
        Man sagt, dass er reich ist.    ->  Er soll reich sein.
   Behauptung, er sagt es selbst:      wollen
-       Er sagt, dass er alles weiß.    ->  Er will alles wissen.
+       Er sagt, dass er nichts davon gewusst hat.
+                                       ->  Er will nichts davon gewusst
+                                           haben.
+  (Achtung: "Er will alles wissen" heißt meistens: he wants to. Mit der
+  Vergangenheit ist die Behauptung klar.)
   Vermutung, fast sicher:             müssen
        Ich bin fast sicher, dass das Paket für Mira ist.
                                        ->  Das Paket muss für Mira sein.
@@ -65,10 +69,11 @@
   Und jetzt eine Behauptung (wollen). Der Satz beginnt schon mit dem
   Subjekt. Stelle den Cursor auf "behauptet" und lösche bis "jeden".
 
----> Herr Albrecht behauptet, dass er jeden im Haus kennt.
+---> Herr Albrecht behauptet, dass er jeden im Haus kennengelernt hat.
      Lösung {{{
-===> Herr Albrecht will jeden im Haus kennen.
-     Er sagt es selbst über sich: wollen.
+===> Herr Albrecht will jeden im Haus kennengelernt haben.
+     Er sagt es selbst über sich: wollen. Vergangenheit: kennengelernt
+     haben.
      }}}
 
 
@@ -116,7 +121,7 @@
 
   Deutsch
     sollen: Gerücht (andere sagen es)
-    wollen: Behauptung (er sagt es selbst)
+    wollen: Behauptung (er sagt es selbst): Er will es gewusst haben.
     muss (fast sicher) > dürfte (wahrscheinlich) > könnte (möglich)
     Vergangenheit: Er soll ... gewohnt haben / gewesen sein.
 

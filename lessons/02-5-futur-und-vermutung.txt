@@ -39,9 +39,9 @@
                                     ausgefüllt haben.
 
   Bei Vermutungen hilft ein Wort, das zeigt, wie sicher man ist:
-       ganz sicher:   bestimmt, sicher
-       ziemlich:      wahrscheinlich, vermutlich, wohl
-       nicht sicher:  vielleicht, möglicherweise
+       ganz sicher:      bestimmt, sicher
+       ziemlich sicher:  wahrscheinlich, vermutlich, wohl
+       nicht sicher:     vielleicht, möglicherweise
 
 
 # 3. Präsens -> Futur I

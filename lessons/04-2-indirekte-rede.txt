@@ -17,7 +17,7 @@
   In der indirekten Rede steht der Konjunktiv I. Er zeigt: Das sage
   nicht ich, das hat jemand anders gesagt.
 
-  Für er/sie/es: Infinitiv ohne -n. Ganz einfach:
+  Für er/sie/es: fast immer der Infinitiv ohne -n. Ganz einfach:
        kommen -> er komme       haben  -> er habe      können -> er könne
        werden -> er werde       wissen -> er wisse     sein   -> er sei (!)
 
@@ -128,14 +128,14 @@ oder Die Zeitung schreibt, dass die Mieten steigen würden.
      bekommen -> er/sie/es bekomme.
      }}}
 
-  Und eine Frage. Aus einer Ja/Nein-Frage wird ein Satz mit ob, das
+  Und eine Frage. Aus einer Ja-Nein-Frage wird ein Satz mit ob, das
   Verb steht am Ende.
 
 ---> Tim fragt Mira: „Kommst du mit?“
      Lösung {{{
 ===> Tim fragt Mira, ob sie mitkomme.
 oder Tim fragt Mira, ob sie mitkommt.
-     Ja/Nein-Frage -> ob + Verb am Ende. du -> sie.
+     Ja-Nein-Frage -> ob + Verb am Ende. du -> sie.
      Im Alltag hört man auch den Indikativ: ob sie mitkommt.
      }}}
 
@@ -152,6 +152,6 @@ oder Tim fragt Mira, ob sie mitkommt.
     Konjunktiv I (er/sie/es): komme, habe, sei, könne, werde, wisse
     Ersatzform, wenn Konjunktiv I = Indikativ: hätten, würden + Infinitiv
     Pronomen anpassen: ich -> er/sie, wir -> sie
-    Ja/Nein-Frage -> ob + Verb am Ende
+    Ja-Nein-Frage -> ob + Verb am Ende
 
   Weiter:  :GermanTutor 4.3

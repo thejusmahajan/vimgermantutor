@@ -7,7 +7,7 @@
   gibt viel zu erzählen, und mit Relativsätzen (relative clauses) klingt
   das gleich viel eleganter.
 
-  In Vim lernst du `J`: Es verbindet zwei Zeilen zu einer. So werden aus
+  In Vim lernst du `J`: Es verbindet zwei Zeilen zu einer. So wird aus
   zwei kurzen Sätzen ein langer Satz mit Relativsatz.
 
 

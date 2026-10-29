@@ -15,7 +15,7 @@
 # 1. Grammatik: Infinitiv mit zu
 
   Nach vielen Verben und Ausdrücken: versuchen, vergessen, vorhaben,
-  anfangen, hoffen, Lust haben, Es ist wichtig ...
+  anfangen, hoffen, Lust haben, es ist wichtig ...
        Mira hat vor, sich zu bewerben.
   Bei trennbaren Verben steht zu in der Mitte: mitbringen -> mitzubringen
   Nach Modalverben steht KEIN zu: Mira muss eine Bewerbung schreiben.

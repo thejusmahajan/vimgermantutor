@@ -72,7 +72,7 @@ let g:germantutor_recipes = [
       \ {'lesson': '2.5', 'block': 5, 'keys': "/ hat\<CR>lcwwird\<Esc>f.i haben\<Esc>"},
       \ {'lesson': '2.6', 'block': 1, 'keys': "wd/Herr\<CR>/früher\<CR>isoll \<Esc>/war\<CR>cwgewesen sein\<Esc>"},
       \ {'lesson': '2.6', 'block': 2, 'keys': "wd/die\<CR>rD/bald\<CR>isoll \<Esc>/steigt\<CR>cwsteigen\<Esc>"},
-      \ {'lesson': '2.6', 'block': 4, 'keys': "/behauptet\<CR>d/jeden\<CR>iwill \<Esc>/kennt\<CR>cwkennen\<Esc>"},
+      \ {'lesson': '2.6', 'block': 4, 'keys': "/behauptet\<CR>d/jeden\<CR>iwill \<Esc>/hat\\.\<CR>cwhaben\<Esc>"},
       \ {'lesson': '3.2', 'block': 1, 'keys': "/ an \<CR>lciwfür\<Esc>"},
       \ {'lesson': '3.2', 'block': 5, 'keys': "/auch auf\<CR>wdawciwdarauf\<Esc>"},
       \ {'lesson': '3.2', 'block': 7, 'keys': "wciwWofür\<Esc>wdaw"},

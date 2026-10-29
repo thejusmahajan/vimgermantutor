@@ -14,7 +14,7 @@
 
 # 1. Grammatik: Aus dem Relativsatz wird ein Adjektiv
 
-  Partizip I = Infinitiv + d. Es ist aktiv und passiert gerade:
+  Partizip I = Infinitiv + d. Es ist aktiv und passiert gleichzeitig:
        die Kollegen, die warten     ->  die wartenden Kollegen
        der Zug, der einfährt        ->  der einfahrende Zug
 

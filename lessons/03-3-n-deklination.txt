@@ -22,7 +22,8 @@
        Dat  dem Kollegen      dem Praktikanten
        Gen  des Kollegen      des Praktikanten
 
-  Welche Nomen? Fast alle maskulinen Nomen auf
+  Welche Nomen? Fast alle maskulinen Nomen auf -e und viele maskuline
+  Nomen für Personen und Tiere auf -ent, -ant, -ist:
        -e      der Kollege, der Kunde, der Junge, der Experte
        -ent    der Student, der Präsident
        -ant    der Praktikant, der Elefant
@@ -88,7 +89,7 @@
 ---> Nach dem Gespräch schreibt Mira Herr Becker eine Nachricht.
      Lösung {{{
 ===> Nach dem Gespräch schreibt Mira Herrn Becker eine Nachricht.
-     Dativ: Herrn. Auch in Anreden im Akkusativ: an Herrn Becker.
+     Dativ: Herrn. Auch auf dem Briefumschlag steht: Herrn Becker.
      }}}
 
 ---> Sie erzählt ihrem Nachbar von Blauwerk.

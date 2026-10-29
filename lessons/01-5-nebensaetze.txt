@@ -29,7 +29,7 @@
   Achtung, drei Paare:
     weil (Verb am Ende)    - denn (Verb auf Position 2)
     als (einmal, früher)   - wenn (immer, oder jetzt und später)
-    dass (Aussage)         - ob (Ja/Nein-Frage)
+    dass (Aussage)         - ob (Ja-Nein-Frage)
 
 
 # 2. Drei neue Werkzeuge
@@ -125,7 +125,7 @@
 ---> Mira fragt Herrn Becker, dass ob die Küche neu ist.
      Lösung {{{
 ===> Mira fragt Herrn Becker, ob die Küche neu ist.
-     Eine Ja/Nein-Frage (Ist die Küche neu?) wird zu ob.
+     Eine Ja-Nein-Frage (Ist die Küche neu?) wird zu ob.
      }}}
 
 

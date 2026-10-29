@@ -41,7 +41,7 @@
   `ce` macht dasselbe. Bei `cw` ist Vim großzügig: Das Leerzeichen nach
   dem Wort bleibt stehen.
 
-  Mache aus den direkten Fragen höfliche Bitten.
+  Mache die Sätze höflicher: Ändere das Verb in den Konjunktiv II.
 
   1. Stelle den Cursor auf den Anfang des Verbs.
   2. Drücke `cw`, tippe die Form im Konjunktiv II, drücke `Esc`.

@@ -64,10 +64,10 @@
      die Zimmer (Plural) -> der Zimmer. Im Plural gibt es keine Endung -s.
      }}}
 
-  Tipp: Keine Umlaute auf deiner Tastatur? Im Einfügemodus geht das so:
-  `Strg-k` (Ctrl-k), dann zwei Zeichen. Strg-k a : ergibt ä, Strg-k o :
-  ergibt ö, Strg-k u : ergibt ü, Strg-k s s ergibt ß. Das heißt in Vim
-  Digraph.
+  Tipp: Keine Umlaute auf deiner Tastatur? Im Einfügemodus drückst du
+  `Strg-k` (Ctrl-k) und dann zwei Zeichen, ohne Leerzeichen dazwischen:
+  `Strg-k a:` ergibt ä, `Strg-k o:` ergibt ö, `Strg-k u:` ergibt ü und
+  `Strg-k ss` ergibt ß. Das heißt in Vim Digraph.
 
 
 # 3. Text anfügen mit a
@@ -166,7 +166,7 @@ oder Mira mag die Wohnung trotz des Lärmes.
     `a`          Text nach dem Cursor anfügen
     `A`          Text am Zeilenende anfügen
     `Esc`        Einfügemodus beenden
-    `Strg-k`     Digraph im Einfügemodus: a : -> ä, s s -> ß
+    `Strg-k a:`  Digraph im Einfügemodus: ä (o: ö, u: ü, ss ß)
     `:wq`        speichern und beenden
     `:w` `:q`    nur speichern, nur beenden
 
