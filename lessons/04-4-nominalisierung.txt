@@ -141,4 +141,4 @@ oder Mira hat eine Frage. Sie fragt nach dem Projektbeginn.
     weil -> wegen + Gen. · als -> bei + Dat. · nachdem -> nach + Dat.
     Objekt -> Genitiv: die Unterzeichnung des Vertrags
 
-  Weiter:  :GermanTutor 4.6
+  Weiter:  :GermanTutor 4.5

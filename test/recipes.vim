@@ -2,8 +2,9 @@
 "
 " Every recipe starts with the cursor at column 1 of the first ---> line of
 " exercise 'block' (1-based) in 'lesson', with all folds open. The keys are
-" fed as if typed. Afterwards the exercise must be solved. '<confirm>' in
-" the keys stands for the answers to a :s///c prompt, given in 'confirm'.
+" fed as if typed. Afterwards the exercise (and those listed in 'also') must
+" be solved. '<confirm>' in the keys stands for the answers to a :s///c
+" prompt, given in 'confirm'.
 scriptencoding utf-8
 
 let g:germantutor_recipes = [
@@ -46,4 +47,40 @@ let g:germantutor_recipes = [
       \ {'lesson': '4.4', 'block': 8, 'keys': "/Man darf\<CR>cisDas Rauchen im Büro ist verboten.\<Esc>"},
       \ {'lesson': '4.6', 'block': 1, 'keys': "/ ist\<CR>dawbhhp"},
       \ {'lesson': '4.6', 'block': 2, 'keys': "/ ist\<CR>dawf.P"},
+      \ {'lesson': '1.5', 'block': 1, 'keys': "/ ist\<CR>dawf.P"},
+      \ {'lesson': '1.5', 'block': 2, 'keys': "/ kann\<CR>dawf.P"},
+      \ {'lesson': '1.5', 'block': 3, 'keys': "/ hat\<CR>dawf.P"},
+      \ {'lesson': '1.5', 'block': 4, 'keys': "/ ist\<CR>dawf,P"},
+      \ {'lesson': '1.5', 'block': 5, 'keys': "/ zieht\<CR>dawf.Pbhx"},
+      \ {'lesson': '1.5', 'block': 6, 'keys': "/ nimmt\<CR>dawbhhp"},
+      \ {'lesson': '1.5', 'block': 7, 'keys': "/weil\<CR>dw"},
+      \ {'lesson': '1.5', 'block': 8, 'keys': "wdw"},
+      \ {'lesson': '2.3', 'block': 1, 'keys': "/\\<hatte\\>\<CR>cwhätte\<Esc>n."},
+      \ {'lesson': '2.3', 'block': 2, 'keys': "/\\<war\\>\<CR>ncwwäre\<Esc>n."},
+      \ {'lesson': '2.3', 'block': 6, 'keys': "wCDu hättest früher anrufen sollen.\<Esc>"},
+      \ {'lesson': '2.4', 'block': 6, 'keys': ":s/muss/musste/g\<CR>"},
+      \ {'lesson': '2.4', 'block': 7, 'confirm': 'yyn',
+      \  'keys': "Vjjj:s/\\<muss\\>/musste/gc\<CR><confirm>?kann\<CR>:s/kann/konnte/\<CR>"},
+      \ {'lesson': '2.4', 'block': 8, 'keys': "/muss\<CR>Cist bis Freitag abzugeben.\<Esc>"},
+      \ {'lesson': '2.5', 'block': 1, 'keys': "/macht\<CR>cwwird\<Esc>f.i machen\<Esc>"},
+      \ {'lesson': '2.5', 'block': 2, 'keys': "/holt\<CR>cwwird\<Esc>/\\<ab\\.\<CR>eaholen\<Esc>"},
+      \ {'lesson': '2.5', 'block': 5, 'keys': "/ hat\<CR>lcwwird\<Esc>f.i haben\<Esc>"},
+      \ {'lesson': '2.6', 'block': 1, 'keys': "wd/Herr\<CR>/früher\<CR>isoll \<Esc>/war\<CR>cwgewesen sein\<Esc>"},
+      \ {'lesson': '2.6', 'block': 2, 'keys': "wd/die\<CR>rD/bald\<CR>isoll \<Esc>/steigt\<CR>cwsteigen\<Esc>"},
+      \ {'lesson': '2.6', 'block': 4, 'keys': "/behauptet\<CR>d/jeden\<CR>iwill \<Esc>/kennt\<CR>cwkennen\<Esc>"},
+      \ {'lesson': '3.2', 'block': 1, 'keys': "/ an \<CR>lciwfür\<Esc>"},
+      \ {'lesson': '3.2', 'block': 5, 'keys': "/auch auf\<CR>wdawciwdarauf\<Esc>"},
+      \ {'lesson': '3.2', 'block': 7, 'keys': "wciwWofür\<Esc>wdaw"},
+      \ {'lesson': '3.2', 'block': 9, 'keys': "f,i darauf\<Esc>"},
+      \ {'lesson': '3.3', 'block': 1, 'also': [2, 3],
+      \  'keys': "/\\<Kollege\\>\<CR>cgnKollegen\<Esc>n.nn."},
+      \ {'lesson': '3.3', 'block': 4, 'keys': "/den Kunde\<CR>eean\<Esc>"},
+      \ {'lesson': '3.4', 'block': 1, 'keys': "/ und\<CR>ct., ohne zu frühstücken\<Esc>"},
+      \ {'lesson': '3.4', 'block': 2, 'keys': "/ und\<CR>ct., statt ihr Zimmer aufzuräumen\<Esc>"},
+      \ {'lesson': '3.4', 'block': 3, 'keys': "/dass\<CR>dtp/ist\\.\<CR>cwzu sein\<Esc>"},
+      \ {'lesson': '3.4', 'block': 5, 'keys': "/um damit\<CR>dw"},
+      \ {'lesson': '3.4', 'block': 7, 'keys': "/mitbringen\<CR>llazu\<Esc>"},
+      \ {'lesson': '4.5', 'block': 1, 'keys': "/macht\<CR>ciwtrifft\<Esc>"},
+      \ {'lesson': '4.5', 'block': 6, 'keys': "/entscheidet\<CR>ciwtrifft\<Esc>f.i eine Ents\<C-n>\<Esc>"},
+      \ {'lesson': '4.5', 'block': 9, 'keys': "/drückt\<CR>ciwbringt\<Esc>/aus\\.\<CR>ciwzum Ausdruck\<Esc>"},
       \ ]

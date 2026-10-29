@@ -242,11 +242,11 @@ function! s:Test_OriginalsFail() abort
       " The original text is not an accepted answer.
       let main = map(copy(block.answers), 'v:val[0]')
       call s:Check(block.lines !=# main, where . ' original block is not the answer')
-      if len(block.lines) == len(block.answers)
-        for k in range(len(block.lines))
-          call s:Check(index(block.answers[k], block.lines[k]) < 0,
-                \ where . ' original line ' . (k + 1) . ' fails the checker')
-        endfor
+      " A one-line exercise must be wrong as it stands. In longer ones some
+      " lines may stay as they are (a :s///c passage with "n" answers).
+      if len(block.lines) == 1 && len(block.answers) == 1
+        call s:Check(index(block.answers[0], block.lines[0]) < 0,
+              \ where . ' original line fails the checker')
       endif
     endfor
   endfor
@@ -428,7 +428,6 @@ endfunction
 function! s:Test_Recipes() abort
   let ex_mode = mode(1) ==# 'ce' || mode(1) ==# 'cv'
   for recipe in g:germantutor_recipes
-    let where = recipe.lesson . ' exercise ' . recipe.block
     execute 'GermanTutor' recipe.lesson
     normal! zR
     let block = b:germantutor.blocks[recipe.block - 1]
@@ -439,12 +438,21 @@ function! s:Test_Recipes() abort
             \ : recipe.confirm
       let keys = substitute(keys, '<confirm>', answers, '')
     endif
-    call feedkeys(keys, 'xt')
+    try
+      call feedkeys(keys, 'xt')
+    catch
+      call s:Fail(recipe.lesson . ' exercise ' . recipe.block . ': ' . v:exception)
+      continue
+    endtry
     call germantutor#check#Update(1)
-    if index(b:germantutor.solved, recipe.block) < 0
-      call s:Fail(where . ' recipe ' . string(recipe.keys) . ' gave '
-            \ . string(getline(block.lnums[0], block.fold - 1)))
-    endif
+    for number in [recipe.block] + get(recipe, 'also', [])
+      if index(b:germantutor.solved, number) < 0
+        let other = b:germantutor.blocks[number - 1]
+        call s:Fail(recipe.lesson . ' exercise ' . number . ' after recipe '
+              \ . string(recipe.keys) . ': '
+              \ . string(getline(other.lnums[0], other.fold - 1)))
+      endif
+    endfor
   endfor
 endfunction
 

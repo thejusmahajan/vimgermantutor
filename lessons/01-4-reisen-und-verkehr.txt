@@ -163,4 +163,4 @@
     trennbare Verben: Sie steigt in die Bahn ein. Der Zug fährt ab.
     zu Fuß gehen · mit dem Bus fahren
 
-  Weiter:  :GermanTutor 1.6
+  Weiter:  :GermanTutor 1.5

@@ -6,8 +6,8 @@ sentence, and the command often *is* the grammar step (`e` + `r` fixes an
 adjective ending, `daw` + `f.` + `P` moves the verb to the end of a
 *weil*-clause).
 
-> Work in progress: the 14 original lessons are ported to the new format;
-> the new B2 grammar lessons, the exam chapter and the review lessons follow.
+> Work in progress: 23 lessons are done (the 14 original ones, ported, and the
+> missing B2 grammar); the exam chapter and the review lessons follow.
 
 ## How it works
 

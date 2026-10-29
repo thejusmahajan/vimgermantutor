@@ -1,0 +1,141 @@
+============================================================================
+  Lektion 2.4: Passiv mit Modalverben
+  Vim: :s · :s///g · :%s///gc · V + :s                    ca. 15 Minuten
+============================================================================
+
+  Ämter und Hausordnungen lieben Regeln: Der Antrag muss unterschrieben
+  werden. Fahrräder dürfen nicht im Flur abgestellt werden. Mira liest
+  heute die Hausordnung ihres neuen Hauses und erzählt danach, wie es
+  auf dem Amt war.
+
+  In Vim lernst du das Ersetzungskommando :s (substitute). Damit änderst
+  du ein Wort in einer Zeile, in einer Markierung oder in der ganzen
+  Datei, und Vim fragt dich bei jedem Treffer, wenn du willst.
+
+
+# 1. Grammatik: Modalverb + Partizip II + werden
+
+  Aktiv mit man:      Man muss den Antrag unterschreiben.
+  Passiv:             Der Antrag muss unterschrieben werden.
+
+  Das Modalverb steht auf Position 2, am Ende stehen Partizip II und
+  werden (Infinitiv).
+       Präteritum:    Der Antrag musste unterschrieben werden.
+       Nebensatz:     ..., weil der Antrag unterschrieben werden muss.
+       ohne Subjekt:  Hier darf nicht geraucht werden.
+
+  B2-Bonus: sein + zu + Infinitiv bedeutet dasselbe wie "muss ... werden"
+  oder "kann ... werden":
+       Der Antrag ist bis Freitag abzugeben.
+       (= Der Antrag muss bis Freitag abgegeben werden.)
+
+
+# 2. Aktiv mit man -> Passiv mit Modalverb
+
+  Schreibe die Sätze im Passiv. Am schnellsten mit `C` ab dem ersten
+  Wort, oder Schritt für Schritt mit `cw`, `dw` und `A`.
+
+---> Man muss den Müll trennen.
+     Lösung {{{
+===> Der Müll muss getrennt werden.
+     Akkusativ -> Nominativ: den Müll -> der Müll.
+     }}}
+
+---> Man muss den Antrag unterschreiben.
+     Lösung {{{
+===> Der Antrag muss unterschrieben werden.
+     unterschreiben ist nicht trennbar: unterschrieben (ohne ge-).
+     }}}
+
+---> Man kann die Gebühr bar bezahlen.
+     Lösung {{{
+===> Die Gebühr kann bar bezahlt werden.
+     bezahlen -> bezahlt (be- ist nicht trennbar, kein ge-).
+     }}}
+
+---> Im Wartesaal darf man nicht telefonieren.
+     Lösung {{{
+===> Im Wartesaal darf nicht telefoniert werden.
+     Ohne Akkusativ-Objekt gibt es kein Subjekt. Position 1 bleibt
+     "Im Wartesaal".
+     }}}
+
+---> Mira weiß, dass man das Formular online ausfüllen kann.
+     Lösung {{{
+===> Mira weiß, dass das Formular online ausgefüllt werden kann.
+     Im Nebensatz steht das Modalverb ganz am Ende: ausgefüllt werden
+     kann.
+     }}}
+
+
+# 3. Ersetzen mit :s
+
+  `:s/alt/neu/`      ersetzt das erste "alt" in der Zeile durch "neu"
+  `:s/alt/neu/g`     ersetzt jedes "alt" in der Zeile (g = global)
+  `:%s/alt/neu/g`    ersetzt in der ganzen Datei (% = alle Zeilen)
+  `:%s/alt/neu/gc`   ... und fragt bei jedem Treffer (c = confirm):
+                     `y` ja, `n` nein, `a` alle, `q` aufhören
+
+  Die Hausordnung im Präteritum: Wie war es früher? Gehe auf die Zeile
+  und tippe `:s/muss/musste/g` und `Enter`.
+
+---> Früher muss der Hof gekehrt werden und das Licht muss aus sein.
+     Lösung {{{
+===> Früher musste der Hof gekehrt werden und das Licht musste aus sein.
+     Präteritum von müssen: musste. Mit g werden beide geändert.
+     }}}
+
+
+# 4. Nur in einer Markierung, mit Frage: V und :s///gc
+
+  Mira erzählt, wie es gestern auf dem Amt war. Alles ist vorbei, also
+  Präteritum. Nur die letzte Zeile ist eine Regel, die immer gilt. Sie
+  bleibt im Präsens.
+
+  1. Gehe auf die erste Zeile. Drücke `V` und dreimal `j`.
+  2. Tippe `:`. Vim schreibt selbst :'<,'> davor. Das heißt: nur in der
+     Markierung.
+  3. Tippe `s/\<muss\>/musste/gc` und `Enter`.
+  4. Vim fragt bei jedem Treffer. Antworte `y` oder `n`.
+  5. Gehe auf die Zeile mit "kann" und tippe `:s/kann/konnte/`.
+
+---> Zuerst muss eine Nummer gezogen werden.
+---> Dann muss das Formular ausgefüllt werden.
+---> Die Gebühr kann bar bezahlt werden.
+---> Wichtig für alle: Die Bescheinigung muss gut aufbewahrt werden.
+     Lösung {{{
+===> Zuerst musste eine Nummer gezogen werden.
+===> Dann musste das Formular ausgefüllt werden.
+===> Die Gebühr konnte bar bezahlt werden.
+===> Wichtig für alle: Die Bescheinigung muss gut aufbewahrt werden.
+     Antworten bei :s///gc: y, y, n. Die Regel gilt weiter: muss.
+     }}}
+
+
+# 5. B2-Bonus: sein + zu + Infinitiv
+
+  Ändere den Satz mit `C` ab "muss". Bei trennbaren Verben steht zu
+  in der Mitte: abgeben -> abzugeben.
+
+---> Der Antrag muss bis Freitag abgegeben werden.
+     Lösung {{{
+===> Der Antrag ist bis Freitag abzugeben.
+     muss ... abgegeben werden = ist ... abzugeben.
+     }}}
+
+
+# Zusammenfassung Lektion 2.4
+
+  Vim
+    `:s/alt/neu/`       erstes "alt" in der Zeile ersetzen
+    `:s/alt/neu/g`      jedes "alt" in der Zeile
+    `:%s/alt/neu/gc`    in der ganzen Datei, mit Frage (y/n/a/q)
+    `V` dann `:s`       nur in den markierten Zeilen (:'<,'>s)
+
+  Deutsch
+    Modalverb + Partizip II + werden: Der Müll muss getrennt werden.
+    Präteritum: musste ... werden · Nebensatz: ... werden muss
+    ohne Subjekt: Hier darf nicht geraucht werden.
+    sein + zu + Infinitiv: Der Antrag ist abzugeben.
+
+  Weiter:  :GermanTutor 2.5

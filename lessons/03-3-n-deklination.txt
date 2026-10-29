@@ -1,0 +1,121 @@
+============================================================================
+  Lektion 3.3: Die n-Deklination
+  Vim: * · cgn · n · .                                     ca. 15 Minuten
+============================================================================
+
+  Mira hat ihr Vorstellungsgespräch bei Blauwerk. Die Chefin, Frau Dr.
+  Schäfer, zeigt ihr das Büro. Mira lernt einen Kollegen kennen, sieht
+  einen Kunden und begrüßt den Praktikanten. Kollege, Kunde, Praktikant:
+  Diese Nomen bekommen fast immer ein -n. Das ist die n-Deklination.
+
+  In Vim lernst du heute, wie du ein Wort an vielen Stellen änderst, aber
+  nur dort, wo es passt. Du entscheidest bei jedem Treffer.
+
+
+# 1. Grammatik: die n-Deklination
+
+  Einige maskuline Nomen bekommen in allen Fällen ein -(e)n, nur nicht im
+  Nominativ Singular:
+
+       Nom  der Kollege       der Praktikant
+       Akk  den Kollegen      den Praktikanten
+       Dat  dem Kollegen      dem Praktikanten
+       Gen  des Kollegen      des Praktikanten
+
+  Welche Nomen? Fast alle maskulinen Nomen auf
+       -e      der Kollege, der Kunde, der Junge, der Experte
+       -ent    der Student, der Präsident
+       -ant    der Praktikant, der Elefant
+       -ist    der Journalist, der Polizist
+  und ein paar andere: der Mensch, der Nachbar, der Herr (den Herrn).
+
+  Besonders: der Name -> den Namen, aber des Namens (auch: der Gedanke).
+
+
+# 2. Ein Wort suchen und überall prüfen: *, cgn, n, .
+
+  `*`     sucht das Wort unter dem Cursor (als ganzes Wort)
+  `cgn`   ändert den nächsten Treffer der Suche (change, go next)
+  `n`     springt zum nächsten Treffer
+  `.`     wiederholt das cgn genau an diesem Treffer
+
+  So geht es:
+  1. Stelle den Cursor auf "Kollege" in der Zeile unten ("Der neue
+     Kollege heißt Tim."). Das ist Nominativ, er bleibt so.
+  2. Drücke `*`. Vim springt zum nächsten "Kollege".
+  3. Drücke `cgn`, tippe Kollegen, drücke `Esc`.
+  4. Drücke `n`. Muss hier ein -n dazu? Dann `.`. Wenn nicht, wieder `n`.
+
+     Der neue Kollege heißt Tim.
+
+---> Mira lernt ihren neuen Kollege kennen.
+     Lösung {{{
+===> Mira lernt ihren neuen Kollegen kennen.
+     Akkusativ (wen?): -n.
+     }}}
+
+---> Mira gibt dem Kollege die Hand.
+     Lösung {{{
+===> Mira gibt dem Kollegen die Hand.
+     Dativ (wem?): -n.
+     }}}
+
+     Der Kollege zeigt Mira sein Büro.
+
+---> Das Büro des Kollege ist klein, aber hell.
+     Lösung {{{
+===> Das Büro des Kollegen ist klein, aber hell.
+     Genitiv: -n. Kein -s!
+     }}}
+
+
+# 3. Noch mehr n-Nomen
+
+  Jetzt ohne Suche: Nimm `ea` (Endung anfügen) oder `ciw`.
+
+---> Am Nachmittag kommt ein Kunde. Mira begrüßt den Kunde.
+     Lösung {{{
+===> Am Nachmittag kommt ein Kunde. Mira begrüßt den Kunden.
+     Der erste ist Nominativ und bleibt. Der zweite ist Akkusativ.
+     }}}
+
+---> Frau Dr. Schäfer stellt Mira den Praktikant vor.
+     Lösung {{{
+===> Frau Dr. Schäfer stellt Mira den Praktikanten vor.
+     Akkusativ: den Praktikanten. (Mira ist hier Dativ: wem?)
+     }}}
+
+---> Nach dem Gespräch schreibt Mira Herr Becker eine Nachricht.
+     Lösung {{{
+===> Nach dem Gespräch schreibt Mira Herrn Becker eine Nachricht.
+     Dativ: Herrn. Auch in Anreden im Akkusativ: an Herrn Becker.
+     }}}
+
+---> Sie erzählt ihrem Nachbar von Blauwerk.
+     Lösung {{{
+===> Sie erzählt ihrem Nachbarn von Blauwerk.
+     Dativ: dem Nachbarn.
+     }}}
+
+---> Leider hat sie den Name des Praktikanten vergessen.
+     Lösung {{{
+===> Leider hat sie den Namen des Praktikanten vergessen.
+     Akkusativ: den Namen. Genitiv wäre: des Namens.
+     }}}
+
+
+# Zusammenfassung Lektion 3.3
+
+  Vim
+    `*`       Wort unter dem Cursor suchen
+    `cgn`     nächsten Treffer ändern
+    `n` `.`   zum nächsten Treffer, dort wiederholen
+    `n` `n`   einen Treffer auslassen
+
+  Deutsch
+    n-Deklination: maskulin auf -e, -ent, -ant, -ist; Mensch, Nachbar,
+    Herr
+    -(e)n überall außer im Nominativ Singular
+    der Name: den Namen, des Namens
+
+  Weiter:  :GermanTutor 3.4

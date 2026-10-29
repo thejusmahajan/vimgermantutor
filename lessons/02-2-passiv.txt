@@ -151,4 +151,4 @@ oder Es wird im Wartesaal leise gesprochen.
     ohne Objekt: Hier wird gearbeitet.
     Zustandspassiv: sein + Partizip II: Die Tür ist abgeschlossen.
 
-  Weiter:  :GermanTutor 3.1
+  Weiter:  :GermanTutor 2.3

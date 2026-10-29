@@ -1,0 +1,114 @@
+============================================================================
+  Lektion 4.5: Nomen-Verb-Verbindungen
+  Vim: Strg-n · Strg-p (im Einfügemodus)                   ca. 15 Minuten
+============================================================================
+
+  In Besprechungen bei Blauwerk klingt Deutsch oft anders als zu Hause:
+  Man entscheidet nicht, man trifft eine Entscheidung. Man fragt nicht,
+  man stellt eine Frage. Das sind Nomen-Verb-Verbindungen (noun-verb
+  collocations). Sie sind typisch für Berufssprache und B2-Texte.
+
+  In Vim lernst du die Wortergänzung (completion): Du tippst den Anfang
+  eines Wortes, und Vim ergänzt den Rest. Bei langen deutschen Wörtern
+  spart das viel Zeit.
+
+
+# 1. Wortschatz: feste Verbindungen
+
+  eine Entscheidung treffen    = entscheiden
+  eine Frage stellen           = fragen
+  einen Antrag stellen auf     = beantragen
+  einen Vorschlag machen       = vorschlagen
+  zur Verfügung stellen        = geben, anbieten
+  zum Ausdruck bringen         = ausdrücken
+  eine Rolle spielen           = wichtig sein
+  Rücksicht nehmen auf         = an andere denken
+  Verantwortung übernehmen     = verantwortlich sein
+
+  Das Verb ist fest. Man sagt nicht "eine Entscheidung machen" oder
+  "eine Frage fragen". Lerne immer Nomen und Verb zusammen.
+
+
+# 2. Das falsche Verb
+
+  Ändere das Verb mit `ciw`. Achte auf die Form: Person, Zeit.
+
+---> Die Chefin macht morgen eine Entscheidung.
+     Lösung {{{
+===> Die Chefin trifft morgen eine Entscheidung.
+     eine Entscheidung treffen (sie trifft).
+     }}}
+
+---> Darf ich noch eine Frage machen?
+     Lösung {{{
+===> Darf ich noch eine Frage stellen?
+     eine Frage stellen.
+     }}}
+
+---> Tim tut einen Vorschlag für das neue Projekt.
+     Lösung {{{
+===> Tim macht einen Vorschlag für das neue Projekt.
+     einen Vorschlag machen.
+     }}}
+
+---> Bei Miras Entscheidung hat das Gehalt keine große Rolle gemacht.
+     Lösung {{{
+===> Bei Miras Entscheidung hat das Gehalt keine große Rolle gespielt.
+     eine Rolle spielen, im Perfekt: gespielt.
+     }}}
+
+---> Bitte geben Sie Rücksicht auf die Kollegen im Großraumbüro.
+     Lösung {{{
+===> Bitte nehmen Sie Rücksicht auf die Kollegen im Großraumbüro.
+     Rücksicht nehmen auf + Akk.
+     }}}
+
+
+# 3. Wörter ergänzen: Strg-n
+
+  Im Einfügemodus tippst du den Anfang eines Wortes und drückst `Strg-n`.
+  Vim sucht in der Datei nach Wörtern, die so beginnen, und setzt das
+  erste ein. `Strg-n` noch einmal: das nächste Wort. `Strg-p`: zurück.
+  Dann einfach weiterschreiben.
+
+  Probiere es: Mache aus dem Verb eine Nomen-Verb-Verbindung. Tippe für
+  die langen Nomen nur den Anfang (zum Beispiel "Ents") und `Strg-n`.
+
+---> Das Team entscheidet heute.
+     Lösung {{{
+===> Das Team trifft heute eine Entscheidung.
+     entscheiden = eine Entscheidung treffen.
+     }}}
+
+---> Mira beantragt drei Tage Urlaub.
+     Lösung {{{
+===> Mira stellt einen Antrag auf drei Tage Urlaub.
+     beantragen = einen Antrag stellen auf + Akk.
+     }}}
+
+---> Die Firma gibt Mira einen Laptop.
+     Lösung {{{
+===> Die Firma stellt Mira einen Laptop zur Verfügung.
+     zur Verfügung stellen. Das Nomen (Verfügung) steht am Ende.
+     }}}
+
+---> Mira drückt ihren Dank aus.
+     Lösung {{{
+===> Mira bringt ihren Dank zum Ausdruck.
+     ausdrücken = zum Ausdruck bringen.
+     }}}
+
+
+# Zusammenfassung Lektion 4.5
+
+  Vim
+    `Strg-n`   im Einfügemodus: Wort ergänzen (nächster Vorschlag)
+    `Strg-p`   vorheriger Vorschlag
+
+  Deutsch
+    eine Entscheidung treffen · eine Frage stellen · einen Antrag
+    stellen auf · einen Vorschlag machen · zur Verfügung stellen ·
+    zum Ausdruck bringen · eine Rolle spielen · Rücksicht nehmen auf ·
+    Verantwortung übernehmen
+
+  Weiter:  :GermanTutor 4.6

@@ -1,0 +1,146 @@
+============================================================================
+  Lektion 1.5: Nebensätze mit weil, dass, obwohl, wenn
+  Vim: daw · f · P                                         ca. 15 Minuten
+============================================================================
+
+  Mira war bei drei Besichtigungen. Jetzt erzählt sie Jana, wie es war,
+  und begründet alles: weil, obwohl, dass, wenn. Nebensätze (subordinate
+  clauses) sind überall, im Alltag und in der Prüfung.
+
+  Die wichtigste Regel: Im Nebensatz steht das Verb am Ende. In Vim
+  lernst du heute genau diese Bewegung: ein Wort ausschneiden und am
+  Satzende wieder einsetzen.
+
+
+# 1. Grammatik: Das Verb am Ende
+
+  Nach weil, dass, obwohl, wenn, als, ob steht das konjugierte Verb am
+  Ende des Nebensatzes:
+
+       Mira ist müde. Sie hat schlecht geschlafen.
+       Mira ist müde, weil sie schlecht geschlafen hat.
+
+  Trennbare Verben bleiben im Nebensatz zusammen:
+       Sie zieht morgen ein.  ->  ..., weil sie morgen einzieht.
+
+  Steht der Nebensatz vorne, beginnt der Hauptsatz mit dem Verb:
+       Wenn die Miete stimmt, nimmt Mira die Wohnung.
+
+  Achtung, drei Paare:
+    weil (Verb am Ende)    - denn (Verb auf Position 2)
+    als (einmal, früher)   - wenn (immer, oder jetzt und später)
+    dass (Aussage)         - ob (Ja/Nein-Frage)
+
+
+# 2. Drei neue Werkzeuge
+
+  `f` + Zeichen   springt zum nächsten Zeichen in der Zeile (find).
+                  `f.` springt zum nächsten Punkt, `f,` zum Komma.
+  `daw`           löscht ein Wort mit einem Leerzeichen (delete a word).
+                  Steht der Cursor auf dem Leerzeichen VOR einem Wort,
+                  löscht `daw` das Leerzeichen und das Wort.
+  `P`             setzt das Gelöschte VOR den Cursor (`p` dahinter).
+
+  Zusammen ergeben sie den Trick dieser Lektion:
+
+  1. Gehe mit `w` auf das Verb, dann mit `h` auf das Leerzeichen davor.
+  2. Drücke `daw`. Verb und Leerzeichen sind weg (und gemerkt).
+  3. Drücke `f.` (oder `f,`, wenn der Nebensatz mit einem Komma endet).
+  4. Drücke `P`. Das Verb steht jetzt am Ende, mit dem richtigen
+     Leerzeichen davor.
+
+  Warum das Leerzeichen VOR dem Verb? Weil du das Verb vor den Punkt
+  setzt. So steht das Leerzeichen genau richtig: "krank ist."
+
+---> Mira bleibt heute zu Hause, weil sie ist krank.
+     Lösung {{{
+===> Mira bleibt heute zu Hause, weil sie krank ist.
+     weil -> Verb am Ende.
+     }}}
+
+---> Sie schreibt Herrn Becker, dass sie kann nicht kommen.
+     Lösung {{{
+===> Sie schreibt Herrn Becker, dass sie nicht kommen kann.
+     Das Modalverb (kann) steht ganz am Ende, nach dem Infinitiv.
+     }}}
+
+---> Mira ist glücklich, weil sie hat endlich eine Wohnung gefunden.
+     Lösung {{{
+===> Mira ist glücklich, weil sie endlich eine Wohnung gefunden hat.
+     Perfekt im Nebensatz: Partizip, dann das Hilfsverb (hat) am Ende.
+     }}}
+
+  Hier endet der Nebensatz mit einem Komma. Nimm `f,` statt `f.`.
+
+---> Obwohl die Wohnung ist klein, gefällt sie Mira sehr.
+     Lösung {{{
+===> Obwohl die Wohnung klein ist, gefällt sie Mira sehr.
+     obwohl -> Verb am Ende. Dann beginnt der Hauptsatz mit dem Verb.
+     }}}
+
+
+# 3. Trennbare Verben
+
+  Im Nebensatz kommen Präfix und Verb wieder zusammen. Nach `P` steht
+  noch ein Leerzeichen dazwischen: "ein zieht". Der Cursor steht auf dem
+  t. Drücke `b`, `h` und `x`. Fertig: "einzieht".
+
+---> Jana hilft beim Umzug, weil Mira zieht am Samstag ein.
+     Lösung {{{
+===> Jana hilft beim Umzug, weil Mira am Samstag einzieht.
+     einziehen ist trennbar. Im Nebensatz: ..., weil sie einzieht.
+     }}}
+
+
+# 4. Der Nebensatz steht vorne
+
+  Dann beginnt der Hauptsatz mit dem Verb. Verschiebe es mit `daw`,
+  `b`, `h`, `h` (jetzt steht der Cursor auf dem Komma) und `p`.
+
+---> Wenn die Miete nicht zu hoch ist, Mira nimmt die Wohnung.
+     Lösung {{{
+===> Wenn die Miete nicht zu hoch ist, nimmt Mira die Wohnung.
+     Der Nebensatz ist Position 1. Das Verb kommt auf Position 2.
+     }}}
+
+
+# 5. weil oder denn, als oder wenn, dass oder ob?
+
+  In jeder Zeile stehen zwei Konnektoren. Lies weiter: Wo steht das
+  Verb? Was passt? Lösche den falschen mit `dw`.
+
+---> Mira lernt viel, weil denn sie hat bald einen Termin beim Amt.
+     Lösung {{{
+===> Mira lernt viel, denn sie hat bald einen Termin beim Amt.
+     Das Verb (hat) steht auf Position 2: denn. Mit weil müsste es
+     heißen: weil sie bald einen Termin beim Amt hat.
+     }}}
+
+---> Wenn Als Mira in Leipzig ankam, regnete es.
+     Lösung {{{
+===> Als Mira in Leipzig ankam, regnete es.
+     Einmal in der Vergangenheit: als. Immer wenn es passierte: wenn.
+     }}}
+
+---> Mira fragt Herrn Becker, dass ob die Küche neu ist.
+     Lösung {{{
+===> Mira fragt Herrn Becker, ob die Küche neu ist.
+     Eine Ja/Nein-Frage (Ist die Küche neu?) wird zu ob.
+     }}}
+
+
+# Zusammenfassung Lektion 1.5
+
+  Vim
+    `f.` `f,`   zum nächsten Punkt, zum nächsten Komma
+    `daw`       ein Wort mit Leerzeichen löschen (Textobjekt)
+    `P` `p`     vor / hinter dem Cursor einsetzen
+    Der Trick:  Leerzeichen vor dem Verb, `daw`, `f.`, `P`
+
+  Deutsch
+    weil, dass, obwohl, wenn, als, ob -> Verb am Ende
+    trennbare Verben im Nebensatz zusammen: ..., weil sie einzieht.
+    Nebensatz vorne -> Hauptsatz beginnt mit dem Verb
+    weil/denn · als/wenn · dass/ob
+
+  Weiter:  :GermanTutor 1.6

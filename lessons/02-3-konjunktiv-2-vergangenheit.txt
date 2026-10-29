@@ -1,0 +1,134 @@
+============================================================================
+  Lektion 2.3: Konjunktiv II der Vergangenheit
+  Vim: . (Punkt) · n .                                     ca. 15 Minuten
+============================================================================
+
+  Miras zweiter Termin im Bürgeramt ging schief. Der Mietvertrag lag zu
+  Hause, die Wartenummer war weg, und am Ende kam sie zu spät. Jetzt
+  denkt sie: Hätte ich doch ...! Wenn ich nur ...!
+
+  Über Vergangenes, das nicht passiert ist, sprichst du mit dem
+  Konjunktiv II der Vergangenheit. In Vim lernst du dazu das Kommando,
+  das am meisten Zeit spart: den Punkt. Er wiederholt die letzte
+  Änderung.
+
+
+# 1. Grammatik: hätte oder wäre + Partizip II
+
+  Gegenwart:      Wenn ich Zeit hätte, würde ich kommen.
+  Vergangenheit:  Wenn ich Zeit gehabt hätte, wäre ich gekommen.
+
+  Die Form ist wie das Plusquamperfekt, nur mit Konjunktiv II:
+       hatte gewusst  ->  hätte gewusst       (Verben mit haben)
+       war gekommen   ->  wäre gekommen       (Verben mit sein)
+
+  So benutzt man sie:
+       irreal:     Wenn sie früher gekommen wäre, wäre sie dran gewesen.
+       Bedauern:   Hätte ich doch den Vertrag mitgenommen!
+       Vergleich:  Er tut so, als ob er nichts gehört hätte.
+
+  Mit Modalverb (typisch B2): hätte + Infinitiv + Modalverb (Infinitiv)
+       Du hättest früher anrufen sollen.
+       Mira hätte den Termin verschieben können.
+
+
+# 2. Der Punkt: die letzte Änderung wiederholen
+
+  `.` wiederholt deine letzte Änderung, zum Beispiel ein `cw` mit dem
+  neuen Wort. Zusammen mit der Suche ist das sehr stark:
+
+  1. Suche das Wort: `/\<hatte\>` und `Enter`.
+  2. Ändere es einmal: `cw`, tippe hätte, drücke `Esc`.
+  3. Springe mit `n` zum nächsten Treffer.
+  4. Soll er sich auch ändern? Dann drücke `.`. Wenn nicht, gleich `n`.
+
+  Mache das zuerst für alle "hatte" in den Übungen unten, danach für alle
+  "war" (`/\<war\>`, `cw` wäre, `n` und `.`). Achtung: Nicht jedes war
+  ist irreal! Was wirklich passiert ist, bleibt im Indikativ.
+
+---> Wenn Mira das gewusst hatte, hatte sie den Mietvertrag mitgebracht.
+     Lösung {{{
+===> Wenn Mira das gewusst hätte, hätte sie den Mietvertrag mitgebracht.
+     Beide Verben sind irreal: Sie hat es nicht gewusst und den Vertrag
+     nicht mitgebracht.
+     }}}
+
+---> Es war voll. Wenn Mira früher gekommen war, war sie dran gewesen.
+     Lösung {{{
+===> Es war voll. Wenn Mira früher gekommen wäre, wäre sie dran gewesen.
+     Der erste Satz ist wirklich so gewesen: Indikativ, er bleibt.
+     Dann zwei Verben mit sein: wäre gekommen, wäre dran gewesen.
+     (dran sein = an der Reihe sein)
+     }}}
+
+---> Wenn der Drucker funktioniert hatte, war alles einfacher gewesen.
+     Lösung {{{
+===> Wenn der Drucker funktioniert hätte, wäre alles einfacher gewesen.
+     funktionieren mit haben: hätte funktioniert. sein mit sein: wäre
+     gewesen.
+     }}}
+
+---> Ohne Janas Hilfe hatte Mira den Umzug nie geschafft.
+     Lösung {{{
+===> Ohne Janas Hilfe hätte Mira den Umzug nie geschafft.
+     ohne + Nomen kann eine irreale Bedingung sein: Wenn Jana nicht
+     geholfen hätte, ...
+     }}}
+
+
+# 3. Bedauern, Vorwurf, Vergleich
+
+  Schreibe die Zeile mit `C` (ab dem Cursor) oder mit `cw` neu.
+
+  Bedauern: Was Mira gern anders gemacht hätte. Beginne mit "Hätte".
+
+---> Ich habe den Termin vergessen.
+     Lösung {{{
+===> Hätte ich doch den Termin nicht vergessen!
+oder Hätte ich den Termin doch nicht vergessen!
+oder Wenn ich doch den Termin nicht vergessen hätte!
+oder Wenn ich den Termin doch nicht vergessen hätte!
+     Bedauern: Hätte ich doch ...! Das Gegenteil der Wirklichkeit:
+     vergessen -> nicht vergessen.
+     }}}
+
+  Vorwurf (reproach) an Tim mit sollen: Er hat nicht früher angerufen.
+
+---> Du hast nicht früher angerufen.
+     Lösung {{{
+===> Du hättest früher anrufen sollen.
+     hätte + Infinitiv + sollen. Das Modalverb steht im Infinitiv
+     (nicht: gesollt).
+     }}}
+
+  Eine verpasste Möglichkeit mit können:
+
+---> Mira hat den Termin nicht verschoben.
+     Lösung {{{
+===> Mira hätte den Termin verschieben können.
+     hätte + verschieben + können: Es wäre möglich gewesen.
+     }}}
+
+  Ein irrealer Vergleich: als ob + Konjunktiv II.
+
+---> Herr Becker tut so, als ob er die E-Mail nicht bekommen hat.
+     Lösung {{{
+===> Herr Becker tut so, als ob er die E-Mail nicht bekommen hätte.
+     als ob: Es ist nicht so, es scheint nur so. hat -> hätte.
+     }}}
+
+
+# Zusammenfassung Lektion 2.3
+
+  Vim
+    `.`        die letzte Änderung wiederholen
+    `n` `.`    zum nächsten Treffer und dort wiederholen
+               (oder nur `n`, wenn sich nichts ändern soll)
+
+  Deutsch
+    Konjunktiv II Vergangenheit: hätte / wäre + Partizip II
+    Bedauern: Hätte ich doch ...!
+    Vorwurf: Du hättest ... sollen. (Modalverb im Infinitiv)
+    Vergleich: als ob ... hätte / wäre
+
+  Weiter:  :GermanTutor 2.4

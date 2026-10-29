@@ -166,4 +166,4 @@
     Grüßen
     Komposita: Vorstellung + s + Gespräch = das Vorstellungsgespräch
 
-  Weiter:  :GermanTutor 3.5
+  Weiter:  :GermanTutor 3.2
