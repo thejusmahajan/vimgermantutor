@@ -1,0 +1,200 @@
+*germantutor.txt*  vimtutor for German: from B1 to Goethe-Zertifikat B2
+
+                         VimGermanTutor ~
+
+Learn German grammar for the Goethe-Zertifikat B2 and the editor Vim at the
+same time. Every Vim command is practised on a German sentence, and the
+command often performs the grammar step itself.
+
+1. Start                                     |germantutor-start|
+2. Commands                                  |germantutor-commands|
+3. How a lesson works                        |germantutor-lesson|
+4. The check: ✓ and ✗                         |germantutor-check|
+5. Progress                                  |germantutor-progress|
+6. Options                                   |germantutor-options|
+7. The shell launcher                        |germantutor-launcher|
+8. Writing a lesson                          |germantutor-format|
+9. Lessons                                   |germantutor-lessons|
+
+==============================================================================
+1. Start                                               *germantutor-start*
+
+Inside Vim or Neovim: >
+	:GermanTutor
+<
+From a shell, without your own vimrc (like vimtutor): >
+	vimgermantutor
+<
+Both resume where you stopped last time. The first time, they open lesson
+1.1, which starts from zero Vim: it only uses h j k l, x and two fold
+commands.
+
+Requirements: Vim 8.2 or newer, or Neovim 0.9 or newer, with 'encoding' set
+to "utf-8" (the default in Neovim and in Vim 9 on Windows). Signs are shown
+as ✓ and ✗, or as "ok" and "x" with |g:germantutor_ascii|.
+
+==============================================================================
+2. Commands                                         *germantutor-commands*
+
+:GermanTutor [lesson]                                      *:GermanTutor*
+		Open a fresh copy of a lesson in a temporary file. The
+		original lesson is never changed. [lesson] can be:
+		  (empty)   resume: the last lesson at the last line, or the
+		            next lesson if the last one is complete
+		  1.2       lesson 1.2 (also 01-2 or 1-2)
+		  next      the lesson after the current one
+		  genitiv   the first lesson whose file name contains it
+		If the current buffer is a tutor copy, it is replaced. If it
+		is another modified buffer, the lesson opens in a new tab page.
+
+:GermanTutorProgress                               *:GermanTutorProgress*
+		List all lessons with the number of solved exercises, the last
+		position and the file where the progress is kept.
+
+:GermanTutorTimer {minutes}                           *:GermanTutorTimer*
+:GermanTutorTimer stop
+:GermanTutorTimer
+		Count down for timed writing practice. The status line shows
+		the time left. You get a message five minutes before the end
+		and at the end. Without an argument, show the time left.
+		Needs |+timers|.
+
+==============================================================================
+3. How a lesson works                                 *germantutor-lesson*
+
+A lesson is a text file that you read from top to bottom and edit as you
+go. Every exercise line starts with "--->". The numbered steps above it say
+what to press. Below each exercise is a closed fold with the answer: try
+first, then open it with |zo| and close it with |zc|.
+
+:GermanTutor sets these options for the copy: 'foldmethod' "marker",
+'foldlevel' 0, 'foldtext', 'fileencoding' "utf-8", 'signcolumn' "yes",
+'textwidth' 0, 'nomodeline', 'commentstring' " %s" (so |zf| writes plain
+markers), 'bufhidden' "wipe" and a 'statusline' with the lesson title, the
+tally and the timer. If 'laststatus' is less than 2, it is set to 2.
+
+==============================================================================
+4. The check: ✓ and ✗                                   *germantutor-check*
+
+While you edit, every "--->" line is compared with the accepted answers:
+	✓   the line matches an accepted answer
+	✗   you changed the line, but it does not match (yet)
+	    (no sign) the exercise is untouched
+The comparison ignores extra spaces, a trailing CR, typographic quotes and
+apostrophes. Case matters: German capitals are part of the grammar.
+
+An exercise can have several "--->" lines (sorting lines, a macro over
+several lines, a block insert). It counts as solved when all its lines
+match. The status line shows the tally, e.g. "6/8 ✓". When you solve an
+exercise, Vim says so after you leave Insert mode. If you delete a "--->"
+line by mistake (|cis| at the start of a line does that), Vim tells you to
+press |u|.
+
+==============================================================================
+5. Progress                                         *germantutor-progress*
+
+Solved exercises and the last position are saved in a JSON file:
+	Neovim          stdpath('data') . '/germantutor/progress.json'
+	Vim (Unix)      ~/.vim/germantutor/progress.json
+	                (~/.config/vim/... if you only have that directory)
+	Vim (Windows)   ~/vimfiles/germantutor/progress.json
+Progress only grows: a fresh copy of a lesson does not forget exercises you
+solved before. Delete the file to start over.
+
+==============================================================================
+6. Options                                           *germantutor-options*
+
+*g:germantutor_ascii*
+	Set to 1 to show "ok" and "x" instead of ✓ and ✗, for terminals
+	without these characters: >
+		let g:germantutor_ascii = 1
+<
+*g:germantutor_data_dir*
+	Directory for progress.json. The environment variable
+	$GERMANTUTOR_DATA_DIR does the same.
+
+The signs use the highlight groups GermanTutorOk and GermanTutorBad.
+
+==============================================================================
+7. The shell launcher                               *germantutor-launcher*
+
+bin/vimgermantutor (POSIX sh) and bin\vimgermantutor.cmd (Windows) start
+Neovim if it is installed, else Vim, else gVim. Like vimtutor, they start
+the editor without your vimrc ("-u NONE"), so that every key does what the
+lesson says, and with a few friendly settings: 'backspace', 'showcmd',
+'ruler', 'incsearch', 'nojoinspaces', 'ttimeout' and syntax on. >
+	vimgermantutor [--nvim | --vim] [lesson] [-- editor arguments]
+<
+Arguments after "--" go to the editor unchanged.
+
+==============================================================================
+8. Writing a lesson                                   *germantutor-format*
+
+Lessons live in lessons/ and are named "CC-N-name.txt" (chapter, number).
+The first lines are a rule of "=", "Lektion C.N: Title", a line starting
+with "Vim:", and another rule. Lines are at most 76 columns wide, UTF-8
+without BOM, without tabs. An exercise looks like this: >
+
+	---> Mira fährt mit dem/den Zug nach Leipzig.
+	     Lösung {{{
+	===> Mira fährt mit dem Zug nach Leipzig.
+	oder Mira fährt mit ...
+	     Explanation lines, indented.
+	     }}}
+<
+- "--->" lines (one or more, adjacent) are the exercise. Indented lines
+  between them and the fold are allowed (text that |J| joins).
+- The fold must start with "Lösung {{{". Each "===>" line is the expected
+  text of one "--->" line, in order. Each "oder" line is another accepted
+  answer for the "===>" line above it.
+- A fold starting with "Musterlösung {{{" holds a model answer for free
+  writing. It is not checked.
+- The last line names the next lesson: "  Weiter:  :GermanTutor C.N".
+
+The tests in test/run.vim check all of this: every answer passes, every
+untouched exercise fails, every pointer resolves. test/recipes.vim types
+the keys a lesson teaches and checks that they solve the exercise.
+
+==============================================================================
+9. Lessons                                             *germantutor-lessons*
+
+Kapitel 1  Ankommen (B1-Wiederholung)
+  1.1 Dativ-Präpositionen          h j k l, zo zc, x, :q!
+  1.2 Der Genitiv                  i, a, A, :wq
+  1.3 Adjektivendungen             w, b, e, r
+  1.4 Reisen und Verkehr           dw, d$, Zähler, dd, p, u, Strg-r
+  1.5 Nebensätze                   daw, f, P
+  1.6 Relativsätze                 J, o, O
+  1.7 Wiederholung Kapitel 1
+Kapitel 2  Auf dem Amt
+  2.1 Konjunktiv II                cw, ce, C
+  2.2 Das Passiv                   /, n, N, ?, Strg-o
+  2.3 Konjunktiv II Vergangenheit  .
+  2.4 Passiv mit Modalverben       :s, :%s///gc, V + :s
+  2.5 Futur I und II, Vermutungen  gg, G, :N, Strg-g
+  2.6 Subjektive Modalverben       d/wort, c/wort
+  2.7 Wiederholung Kapitel 2
+Kapitel 3  Jobsuche
+  3.1 Arbeit und Beruf             yy, yw, p, P
+  3.2 Verben mit Präpositionen     ciw, caw, diw, daw
+  3.3 n-Deklination                *, cgn, n, .
+  3.4 Infinitivsätze               t, ;, ct., dtp
+  3.5 Doppelkonnektoren            Strg-v, I, J
+  3.6 Wiederholung Kapitel 3
+Kapitel 4  Im Büro und in den Nachrichten
+  4.1 Medien und Nachrichten       v, V
+  4.2 Indirekte Rede               q, @, @@, 0
+  4.3 Partizipialattribute         "a, "ap, :reg, df,
+  4.4 Nominalisierung              ~, cis, das
+  4.5 Nomen-Verb-Verbindungen      Strg-n, Strg-p
+  4.6 Meinungen äußern             g Strg-g, vip, :w datei
+  4.7 Wiederholung Kapitel 4
+Kapitel 5  Prüfungstraining
+  5.1 Die Prüfung im Überblick     ma, 'a, :set hlsearch
+  5.2 Schreiben: Forumsbeitrag     :GermanTutorTimer, gqip
+  5.3 Schreiben: Formelle Nachricht  V + :s, gv, :iabbrev
+  5.4 Sprechen: Vortrag            zf, zM, zR, zd
+  5.5 Sprechen: Diskussion         :sort, ddp
+  5.6 Generalprobe und Wiederholung
+
+ vim:tw=78:ts=8:noet:ft=help:norl:

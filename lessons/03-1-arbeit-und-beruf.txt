@@ -1,0 +1,169 @@
+============================================================================
+  Lektion 3.1: Arbeit und Beruf
+  Vim: yy · yw · p · P                                     ca. 15 Minuten
+============================================================================
+
+  Kapitel 3: Jobsuche. Mira ist angemeldet und hat eine Wohnung. Jetzt
+  braucht sie einen Job. In Ljubljana war sie Datenanalystin. In Leipzig
+  sucht sie eine neue Stelle und schreibt ihre ersten Bewerbungen.
+
+  In Vim lernst du heute Kopieren (yank) und Einfügen (put). Kopieren
+  heißt in Vim y wie yank. Das y ist ein Operator, genau wie d und c.
+
+
+# 1. Wortschatz: Arbeit
+
+  der Beruf, -e             die Stelle, -n            das Gehalt, -er
+  die Bewerbung, -en        der Lebenslauf, -läufe    das Zeugnis, -se
+  das Vorstellungsgespräch  die Erfahrung, -en        die Firma, Firmen
+
+  arbeiten als + Beruf      Mira arbeitet als Datenanalystin.
+  arbeiten bei + Firma      Sie möchte bei einer Softwarefirma arbeiten.
+  arbeiten in + Ort         Sie arbeitet in einem Büro, in der Stadt.
+
+  Berufe haben eine männliche und eine weibliche Form:
+       der Lehrer -> die Lehrerin     der Arzt -> die Ärztin (Umlaut!)
+
+
+# 2. Zeilen kopieren mit yy und p
+
+  `yy` kopiert die ganze Zeile. `p` setzt sie unter dem Cursor ein, `P`
+  (großes P) über dem Cursor. Das Original bleibt stehen.
+
+  Kopiere die Zeile und mache aus der Kopie die weibliche Form.
+
+  1. Gehe auf die Zeile mit --->.
+  2. Drücke `yy` und dann `p`. Jetzt steht die Zeile zweimal da.
+  3. Ändere in der zweiten Zeile den Artikel mit `cw` und füge die
+     Endung mit `A` an. Für den Umlaut: `r` und den neuen Buchstaben.
+
+---> der Ingenieur
+     Lösung {{{
+===> der Ingenieur
+===> die Ingenieurin
+     -in macht aus dem Mann die Frau: der Ingenieur, die Ingenieurin.
+     }}}
+
+---> der Arzt
+     Lösung {{{
+===> der Arzt
+===> die Ärztin
+     Bei manchen Berufen kommt ein Umlaut dazu: Arzt -> Ärztin,
+     Koch -> Köchin, Anwalt -> Anwältin.
+     }}}
+
+---> der Kollege
+     Lösung {{{
+===> der Kollege
+===> die Kollegin
+     Kollege endet auf -e. Die Frau: Kollegin (das -e fällt weg).
+     }}}
+
+
+# 3. als, bei oder in?
+
+  Lösche die falsche Präposition mit `dw`.
+
+---> In Ljubljana arbeitete Mira bei als Datenanalystin.
+     Lösung {{{
+===> In Ljubljana arbeitete Mira als Datenanalystin.
+     arbeiten als + Beruf (ohne Artikel).
+     }}}
+
+---> Jetzt möchte sie als bei einer kleinen Softwarefirma arbeiten.
+     Lösung {{{
+===> Jetzt möchte sie bei einer kleinen Softwarefirma arbeiten.
+     arbeiten bei + Firma (Dativ).
+     }}}
+
+
+# 4. Die Bewerbung: Anrede und Gruß
+
+  Ein Brief oder eine E-Mail an eine Firma beginnt mit einer Anrede und
+  endet mit einem Gruß. Hier passieren viele Fehler, auch in der
+  Prüfung. Korrigiere die Endungen mit `e`, `r`, `x` oder `a`.
+
+       Sehr geehrter Herr Weber,        (der Herr -> geehrter)
+       Sehr geehrte Frau Klein,         (die Frau -> geehrte)
+       Sehr geehrte Damen und Herren,   (wenn du keinen Namen weißt)
+       Mit freundlichen Grüßen          (mit + Dativ Plural)
+
+---> Sehr geehrte Herr Weber,
+     Lösung {{{
+===> Sehr geehrter Herr Weber,
+     Ohne Artikel zeigt das Adjektiv das Genus: Herr ist maskulin -> -er.
+     }}}
+
+---> Sehr geehrter Frau Klein,
+     Lösung {{{
+===> Sehr geehrte Frau Klein,
+     Frau ist feminin -> geehrte.
+     }}}
+
+---> Mit freundlichem Grüßen
+     Lösung {{{
+===> Mit freundlichen Grüßen
+     mit + Dativ Plural, ohne Artikel: freundlichen Grüßen.
+     }}}
+
+
+# 5. Ein Wort kopieren mit yw
+
+  `yw` kopiert ein Wort (bis zum nächsten Wort). Mit `P` setzt du es vor
+  den Cursor, mit `p` hinter den Cursor.
+
+  Deutsch liebt lange Wörter: Aus Vorstellung und Gespräch wird das
+  Vorstellungsgespräch. Dazwischen steht oft ein -s- (das Fugen-s).
+
+  1. Stelle den Cursor auf das V von "Vorstellung" in der Klammer.
+  2. Drücke `yw`.
+  3. Stelle den Cursor auf das G von "Gespräch" und drücke `P`.
+  4. Drücke `a`, tippe s, drücke `Esc`. Dann `l` und `rg` (kleines g).
+  5. Lösche die Klammer: Cursor auf "(" und `d$`.
+
+---> Mira bereitet sich auf das Gespräch vor. (Vorstellung)
+     Lösung {{{
+===> Mira bereitet sich auf das Vorstellungsgespräch vor.
+     die Vorstellung + das Gespräch = das Vorstellungsgespräch.
+     Der Artikel kommt immer vom letzten Wort: das Gespräch.
+     Wörter auf -ung bekommen fast immer ein Fugen-s.
+     }}}
+
+
+# 6. Frei schreiben
+
+  Stell dich vor wie in einem Vorstellungsgespräch. Gehe auf die Zeile
+  "Ich:" und drücke `o`. Schreibe drei bis vier Sätze: Was bist du von
+  Beruf? Wo arbeitest du oder wo möchtest du arbeiten? Was machst du
+  gern?
+
+  Prüfe danach selbst:
+    [ ] arbeiten als + Beruf, bei + Firma
+    [ ] die richtige Form deines Berufs (männlich oder weiblich)
+    [ ] Verb auf Position 2
+
+     Ich:
+
+     Musterlösung {{{
+     Ich bin Datenanalystin von Beruf. In Ljubljana habe ich vier Jahre
+     bei einer Bank gearbeitet. Jetzt möchte ich in Leipzig bei einer
+     Softwarefirma arbeiten. Ich arbeite gern mit Zahlen und im Team.
+     }}}
+
+
+# Zusammenfassung Lektion 3.1
+
+  Vim
+    `yy`    Zeile kopieren (yank)
+    `yw`    Wort kopieren
+    `p`     nach dem Cursor einfügen (bei Zeilen: darunter)
+    `P`     vor dem Cursor einfügen (bei Zeilen: darüber)
+
+  Deutsch
+    arbeiten als (Beruf) · bei (Firma) · in (Ort)
+    weibliche Form: -in, manchmal mit Umlaut (Ärztin, Köchin)
+    Sehr geehrter Herr ... · Sehr geehrte Frau ... · Mit freundlichen
+    Grüßen
+    Komposita: Vorstellung + s + Gespräch = das Vorstellungsgespräch
+
+  Weiter:  :GermanTutor 3.2

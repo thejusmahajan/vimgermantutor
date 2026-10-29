@@ -1,0 +1,138 @@
+============================================================================
+  Lektion 1.6: Relativsätze
+  Vim: J · o · O                                           ca. 15 Minuten
+============================================================================
+
+  Mira hat die Wohnung bekommen! Jetzt lernt sie die Nachbarn kennen. Es
+  gibt viel zu erzählen, und mit Relativsätzen (relative clauses) klingt
+  das gleich viel eleganter.
+
+  In Vim lernst du `J`: Es verbindet zwei Zeilen zu einer. So wird aus
+  zwei kurzen Sätzen ein langer Satz mit Relativsatz.
+
+
+# 1. Grammatik: Relativsätze
+
+  Ein Relativsatz erklärt ein Nomen genauer. Er beginnt mit einem
+  Relativpronomen, und das Verb steht am Ende.
+
+       Mira hat einen Nachbarn. Er heißt Herr Albrecht.
+       Mira hat einen Nachbarn, der Herr Albrecht heißt.
+
+  Das Relativpronomen hat das Genus des Nomens. Den Fall bekommt es aus
+  dem Relativsatz.
+
+            maskulin   feminin   neutral   Plural
+       Nom  der        die       das       die
+       Akk  den        die       das       die
+       Dat  dem        der       dem       denen
+       Gen  dessen     deren     dessen    deren
+
+  Mit Präposition: die Nachbarin, mit der Mira oft spricht.
+
+
+# 2. Zwei Zeilen verbinden mit J
+
+  `J` (join) hängt die nächste Zeile an die Zeile mit dem Cursor an.
+  Dazwischen setzt Vim ein Leerzeichen.
+
+  1. Gehe auf die Zeile mit ---> und drücke `J`.
+  2. Der Cursor steht jetzt genau zwischen den Sätzen. Drücke `b`: Er
+     springt auf den Punkt. Mache mit `r,` ein Komma daraus.
+  3. Ersetze den Anfang des zweiten Satzes durch das Relativpronomen.
+     Mit `r` (Die -> die) oder mit `dw` und `i`.
+  4. Bringe das Verb ans Ende wie in Lektion 1.5: Cursor auf das
+     Leerzeichen vor dem Verb, `daw`, `f.`, `P`.
+
+---> Mira besichtigt eine Wohnung.
+     Die Wohnung hat einen großen Balkon.
+     Lösung {{{
+===> Mira besichtigt eine Wohnung, die einen großen Balkon hat.
+     die Wohnung (feminin), im Relativsatz Subjekt (Nominativ): die.
+     Schritte: J b r, w rd w dw h daw f. P
+     }}}
+
+---> Mira spricht mit einem Nachbarn.
+     Er heißt Herr Albrecht.
+     Lösung {{{
+===> Mira spricht mit einem Nachbarn, der Herr Albrecht heißt.
+     der Nachbar (maskulin), im Relativsatz Subjekt (Nominativ): der.
+     Schritte: J b r, w dw, dann i der Leerzeichen Esc, daw f. P
+     }}}
+
+
+# 3. Das Verb ans Ende
+
+  Im Relativsatz steht das Verb am Ende. Wiederhole den Trick aus
+  Lektion 1.5: Cursor auf das Leerzeichen vor dem Verb, `daw`, `f.`, `P`.
+
+---> Herr Albrecht hat einen Hund, der heißt Bruno.
+     Lösung {{{
+===> Herr Albrecht hat einen Hund, der Bruno heißt.
+     Relativsatz: Verb am Ende.
+     }}}
+
+
+# 4. Das richtige Relativpronomen
+
+  Jetzt stehen in jeder Zeile zwei Relativpronomen. Frage: Welches Genus
+  hat das Nomen? Und welcher Fall ist es im Relativsatz? Lösche das
+  falsche Pronomen mit `dw`.
+
+---> Bruno ist ein Hund, dem den alle Nachbarn kennen.
+     Lösung {{{
+===> Bruno ist ein Hund, den alle Nachbarn kennen.
+     Alle Nachbarn kennen den Hund: Akkusativ maskulin -> den.
+     }}}
+
+---> Die Nachbarin, die der Mira beim Einkaufen hilft, ist schon 90.
+     Lösung {{{
+===> Die Nachbarin, der Mira beim Einkaufen hilft, ist schon 90.
+     helfen + Dativ: Mira hilft der Nachbarin -> der.
+     }}}
+
+---> Im Haus wohnen zwei Studenten, den denen Mira ihr Fahrrad leiht.
+     Lösung {{{
+===> Im Haus wohnen zwei Studenten, denen Mira ihr Fahrrad leiht.
+     Mira leiht den Studenten ihr Fahrrad: Dativ Plural -> denen.
+     }}}
+
+---> Herr Becker ist der Vermieter, deren dessen Haus am Park steht.
+     Lösung {{{
+===> Herr Becker ist der Vermieter, dessen Haus am Park steht.
+     Wessen Haus? Das Haus des Vermieters (maskulin) -> dessen.
+     }}}
+
+---> Das ist die Straßenbahn, mit der die Mira in die Stadt fährt.
+     Lösung {{{
+===> Das ist die Straßenbahn, mit der Mira in die Stadt fährt.
+     mit + Dativ, die Straßenbahn (feminin) -> mit der.
+     }}}
+
+
+# 5. Neue Zeilen: o und O
+
+  `o` öffnet eine neue Zeile UNTER dem Cursor und startet den
+  Einfügemodus. `O` (großes O) öffnet eine neue Zeile ÜBER dem Cursor.
+
+  Probiere es aus: Gehe auf die Zeile unten. Drücke `o` und schreibe
+  einen eigenen Relativsatz über deine Stadt. Zum Beispiel: "Ich wohne in
+  einer Stadt, die ..." Drücke dann `Esc`. Für diese Zeile gibt es kein
+  ✓, denn hier ist vieles richtig.
+
+     Meine Stadt:
+
+
+# Zusammenfassung Lektion 1.6
+
+  Vim
+    `J`     die nächste Zeile anhängen (join)
+    `o`     neue Zeile unter dem Cursor, Einfügemodus
+    `O`     neue Zeile über dem Cursor, Einfügemodus
+
+  Deutsch
+    Relativpronomen: Genus vom Nomen, Fall aus dem Relativsatz
+    der/die/das · den · dem/der/denen · dessen/deren
+    Im Relativsatz steht das Verb am Ende.
+
+  Weiter:  :GermanTutor 1.7

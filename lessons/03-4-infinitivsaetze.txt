@@ -1,0 +1,128 @@
+============================================================================
+  Lektion 3.4: Infinitivsätze: zu, um ... zu, ohne ... zu, statt ... zu
+  Vim: t · ; · dt · ct.                                    ca. 15 Minuten
+============================================================================
+
+  Mira hat vor, sich bei drei Firmen zu bewerben. Sie lernt jeden Abend,
+  um im Gespräch gut Deutsch zu sprechen. Und am Morgen des Gesprächs
+  geht sie los, ohne zu frühstücken. Infinitivsätze machen Sätze kürzer,
+  wenn das Subjekt gleich bleibt.
+
+  In Vim lernst du `t` (till): wie `f`, aber der Cursor bleibt VOR dem
+  Zeichen stehen. Mit `ct.` änderst du alles bis vor den Punkt.
+
+
+# 1. Grammatik: Infinitiv mit zu
+
+  Nach vielen Verben und Ausdrücken: versuchen, vergessen, vorhaben,
+  anfangen, hoffen, Lust haben, es ist wichtig ...
+       Mira hat vor, sich zu bewerben.
+  Bei trennbaren Verben steht zu in der Mitte: mitbringen -> mitzubringen
+  Nach Modalverben steht KEIN zu: Mira muss eine Bewerbung schreiben.
+
+  um ... zu      Ziel (wozu?), das Subjekt ist gleich
+                 Mira lernt, um die Prüfung zu bestehen.
+  damit          Ziel, aber zwei verschiedene Subjekte
+                 Die Chefin spricht langsam, damit Mira alles versteht.
+  ohne ... zu    etwas passiert nicht
+                 Mira geht los, ohne zu frühstücken.
+  statt ... zu   etwas anderes passiert
+                 Jana sieht fern, statt ihr Zimmer aufzuräumen.
+
+  Komma: Bei um, ohne und statt steht immer ein Komma.
+
+
+# 2. Bis vor ein Zeichen: t und ;
+
+  `t.`    springt bis VOR den nächsten Punkt (till)
+  `;`     wiederholt das letzte f oder t, `,` in die andere Richtung
+  `ct.`   ändert alles vom Cursor bis vor den Punkt
+  `dtp`   löscht alles bis vor das nächste p
+
+  Aus "und ... nicht" wird ohne ... zu oder statt ... zu.
+
+  1. Stelle den Cursor auf das Leerzeichen vor "und".
+  2. Drücke `ct.`. Der Rest bis vor den Punkt ist weg.
+  3. Tippe das Komma und den Infinitivsatz, drücke `Esc`.
+
+---> Mira geht zum Vorstellungsgespräch und frühstückt nicht.
+     Lösung {{{
+===> Mira geht zum Vorstellungsgespräch, ohne zu frühstücken.
+     etwas passiert nicht: ohne ... zu, mit Komma.
+     }}}
+
+---> Jana sieht fern und räumt ihr Zimmer nicht auf.
+     Lösung {{{
+===> Jana sieht fern, statt ihr Zimmer aufzuräumen.
+oder Jana sieht fern, anstatt ihr Zimmer aufzuräumen.
+     etwas anderes passiert: statt ... zu. Trennbar: aufzuräumen.
+     }}}
+
+  Und mit `dtp`: Lösche "dass man " bis vor das p von "pünktlich". Ändere
+  dann "ist" mit `cw`.
+
+---> Bei Blauwerk ist es wichtig, dass man pünktlich ist.
+     Lösung {{{
+===> Bei Blauwerk ist es wichtig, pünktlich zu sein.
+     Es ist wichtig, ... zu + Infinitiv. Das Subjekt "man" fällt weg.
+     }}}
+
+
+# 3. damit -> um ... zu
+
+  Wenn das Subjekt gleich ist, wird aus damit ein um ... zu.
+
+---> Mira lernt jeden Abend, damit sie im Gespräch gut Deutsch spricht.
+     Lösung {{{
+===> Mira lernt jeden Abend, um im Gespräch gut Deutsch zu sprechen.
+     Mira lernt, Mira spricht: gleiches Subjekt -> um ... zu.
+     }}}
+
+  Hier sind die Subjekte verschieden. Lösche das falsche Wort mit `dw`.
+
+---> Die Chefin spricht langsam, um damit Mira alles versteht.
+     Lösung {{{
+===> Die Chefin spricht langsam, damit Mira alles versteht.
+     Die Chefin spricht, Mira versteht: zwei Subjekte -> damit.
+     }}}
+
+
+# 4. Wo steht zu?
+
+  Füge zu mit `i` oder `a` ein. Bei trennbaren Verben steht es zwischen
+  Präfix und Verb. Ist es zu viel, lösche es mit `dw`.
+
+---> Mira hat vor, sich bei drei Firmen bewerben.
+     Lösung {{{
+===> Mira hat vor, sich bei drei Firmen zu bewerben.
+     vorhaben + zu + Infinitiv.
+     }}}
+
+---> Sie vergisst nicht, ihre Zeugnisse mitbringen.
+     Lösung {{{
+===> Sie vergisst nicht, ihre Zeugnisse mitzubringen.
+     mitbringen ist trennbar: mit-zu-bringen.
+     }}}
+
+---> Mira muss heute noch zwei Bewerbungen zu schreiben.
+     Lösung {{{
+===> Mira muss heute noch zwei Bewerbungen schreiben.
+     Nach Modalverben (muss) steht kein zu.
+     }}}
+
+
+# Zusammenfassung Lektion 3.4
+
+  Vim
+    `t.`  `t,`    bis vor den Punkt, bis vor das Komma
+    `;` `,`       f oder t wiederholen (vorwärts, rückwärts)
+    `ct.`         ändern bis vor den Punkt
+    `dtp`         löschen bis vor das nächste p
+
+  Deutsch
+    zu + Infinitiv nach vorhaben, vergessen, versuchen, Es ist wichtig ...
+    trennbar: mitzubringen, aufzuräumen
+    um ... zu (gleiches Subjekt) / damit (zwei Subjekte)
+    ohne ... zu · statt ... zu · nach Modalverben kein zu
+
+  Weiter:  :GermanTutor 3.5

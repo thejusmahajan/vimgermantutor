@@ -1,0 +1,100 @@
+============================================================================
+  Lektion 4.7: Wiederholung Kapitel 4
+  Vim: alles aus Kapitel 4                                 ca. 15 Minuten
+============================================================================
+
+  Mira arbeitet seit drei Monaten bei Blauwerk. Für den Newsletter der
+  Firma schreibt sie einen kurzen Text über ihr Team. Tim liest ihn
+  vorher und findet noch ein paar Fehler. Findest du sie auch?
+
+  Zuerst die Zusammenfassung von Kapitel 4, dann die Übungen.
+
+
+# Zusammenfassung Kapitel 4
+
+  Vim
+    `v` `V`            visueller Modus: Zeichen, Zeilen
+    `qa` `q` `@a` `@@` Makro aufnehmen, abspielen, wiederholen
+    `0`                an den Zeilenanfang
+    `"ay` `"ap`        Register a: kopieren, einsetzen
+    `:reg`             Register zeigen
+    `~`                groß/klein tauschen
+    `cis` `das`        Satz ändern, Satz löschen
+    `Strg-n`           Wort ergänzen (im Einfügemodus)
+    `g Strg-g` `vip`   Wörter zählen, Absatz markieren
+    `:w datei`         speichern unter einem Namen
+
+  Deutsch
+    im Internet, in der Zeitung · sich informieren über
+    Indirekte Rede: Konjunktiv I (sei, habe, komme), Ersatzform hätten
+    Partizipialattribut: die im Homeoffice arbeitenden Kollegen
+    Nominalisierung: nach dem Abschluss des Projekts, beim Schreiben
+    Nomen-Verb: eine Entscheidung treffen, eine Frage stellen
+    Meinung: Meiner Meinung nach ist ... · Ich finde, dass ... ist.
+
+
+# Übungen: Miras Text für den Newsletter
+
+---> Die Chefin sagte, das Team ist sehr zufrieden mit dem Jahr.
+     Lösung {{{
+===> Die Chefin sagte, das Team sei sehr zufrieden mit dem Jahr.
+     Indirekte Rede: Konjunktiv I, ist -> sei.
+     }}}
+
+---> Die Kunden sagen, sie haben zu wenig Zeit für Tests.
+     Lösung {{{
+===> Die Kunden sagen, sie hätten zu wenig Zeit für Tests.
+     "sie haben" klingt wie der Indikativ: Ersatzform hätten.
+     }}}
+
+---> Der Bericht, der von Mira geschrieben wurde, ist jetzt fertig.
+     Lösung {{{
+===> Der von Mira geschriebene Bericht ist jetzt fertig.
+     Partizip II als Attribut, Nominativ maskulin nach der: -e.
+     }}}
+
+---> Die Kollegen, die im Homeoffice arbeiten, kommen nur dienstags.
+     Lösung {{{
+===> Die im Homeoffice arbeitenden Kollegen kommen nur dienstags.
+     Partizip I als Attribut, Plural nach die: -en.
+     }}}
+
+---> Nachdem das Projekt abgeschlossen worden war, feierte das Team im Park.
+     Lösung {{{
+===> Nach dem Abschluss des Projekts feierte das Team im Park.
+oder Nach dem Abschluss des Projektes feierte das Team im Park.
+oder Nach Abschluss des Projekts feierte das Team im Park.
+oder Nach Abschluss des Projektes feierte das Team im Park.
+     nachdem -> nach + Dativ. abschließen -> der Abschluss. Das Objekt
+     (das Projekt) steht im Genitiv: des Projekts.
+     }}}
+
+---> Beim schreiben von Berichten hilft mir Vim sehr.
+     Lösung {{{
+===> Beim Schreiben von Berichten hilft mir Vim sehr.
+     beim + Infinitiv: Das Verb ist ein Nomen, also groß.
+     }}}
+
+---> Frau Dr. Schäfer muss oft schwierige Entscheidungen machen.
+     Lösung {{{
+===> Frau Dr. Schäfer muss oft schwierige Entscheidungen treffen.
+     Entscheidungen treffen.
+     }}}
+
+---> Die Nachrichten über die Firma lese ich meistens auf dem Internet.
+     Lösung {{{
+===> Die Nachrichten über die Firma lese ich meistens im Internet.
+     im Internet.
+     }}}
+
+---> Meiner Meinung nach das Team arbeitet sehr gut zusammen.
+     Lösung {{{
+===> Meiner Meinung nach arbeitet das Team sehr gut zusammen.
+     Meiner Meinung nach ist Position 1: Verb auf Position 2.
+     }}}
+
+
+  Klasse! Kapitel 4 ist geschafft. Jetzt kommt das Prüfungstraining:
+  Mira und du bereitet euch auf das Goethe-Zertifikat B2 vor.
+
+  Weiter:  :GermanTutor 5.1

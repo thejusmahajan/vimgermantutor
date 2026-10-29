@@ -1,0 +1,153 @@
+============================================================================
+  Lektion 4.6: Meinungen äußern und argumentieren
+  Vim: g Strg-g · vip · :w datei                           ca. 15 Minuten
+============================================================================
+
+  Bei Blauwerk wird diskutiert: Sollen alle zwei Tage pro Woche im
+  Homeoffice arbeiten? Tim findet das super. Mira ist nicht so sicher.
+  Eine Meinung sagen und begründen: Das brauchst du in der Prüfung beim
+  Schreiben und beim Sprechen.
+
+  In Vim lernst du, wie du Wörter zählst und deinen eigenen Text in einer
+  Datei speicherst.
+
+
+# 1. Redemittel: Meinung, Zustimmung, Widerspruch
+
+  Meinung              Ich finde / glaube / meine, dass ... (Verb am Ende)
+                       Meiner Meinung nach ist ... (Verb auf Position 2)
+                       Ich bin der Meinung / Ansicht, dass ...
+  Zustimmen            Da hast du recht. · Ich stimme dir zu.
+                       Das sehe ich genauso.
+  Widersprechen        Das sehe ich anders. · Da bin ich anderer Meinung.
+                       Ich bin nicht deiner Meinung, weil ...
+  Abwägen              Einerseits ..., andererseits ...
+                       Zwar ..., aber ...
+
+  Wortstellung (word order), das Wichtigste für B2:
+    weil, dass, obwohl            -> Verb am Ende
+    deshalb, trotzdem, außerdem,  -> Verb sofort danach (Position 2),
+    andererseits, meiner Meinung     dann das Subjekt
+    nach
+
+
+# 2. Wortstellung korrigieren
+
+  In jeder Zeile steht ein Verb an der falschen Stelle. Verschiebe es mit
+  dem Trick aus Lektion 1.5: Cursor auf das Leerzeichen vor dem Verb,
+  `daw`, dann an die richtige Stelle und `p` oder `P`.
+
+---> Meiner Meinung nach Homeoffice ist praktisch.
+     Lösung {{{
+===> Meiner Meinung nach ist Homeoffice praktisch.
+     Meiner Meinung nach ist Position 1. Das Verb kommt sofort danach.
+     }}}
+
+---> Tim findet, dass Homeoffice ist viel ruhiger.
+     Lösung {{{
+===> Tim findet, dass Homeoffice viel ruhiger ist.
+     dass -> Verb am Ende.
+     }}}
+
+---> Die Bahn ist morgens voll, deshalb ich fahre mit dem Fahrrad.
+     Lösung {{{
+===> Die Bahn ist morgens voll, deshalb fahre ich mit dem Fahrrad.
+     deshalb ist Position 1 im zweiten Hauptsatz: Verb, dann Subjekt.
+     }}}
+
+---> Das Büro ist weit weg, trotzdem Mira kommt gern.
+     Lösung {{{
+===> Das Büro ist weit weg, trotzdem kommt Mira gern.
+     trotzdem: auch hier Verb auf Position 2.
+     }}}
+
+---> Einerseits ist Homeoffice bequem, andererseits man sieht niemanden.
+     Lösung {{{
+===> Einerseits ist Homeoffice bequem, andererseits sieht man niemanden.
+     andererseits: Verb auf Position 2.
+     }}}
+
+---> Ich bin nicht deiner Meinung, weil ich arbeite lieber im Büro.
+     Lösung {{{
+===> Ich bin nicht deiner Meinung, weil ich lieber im Büro arbeite.
+     weil -> Verb am Ende.
+     }}}
+
+
+# 3. Kleine Fehler in Redemitteln
+
+---> Da hast du recht, ich stimme mit dir zu.
+     Lösung {{{
+===> Da hast du recht, ich stimme dir zu.
+     jemandem zustimmen (Dativ), ohne mit.
+     }}}
+
+---> Obwohl trotzdem es regnet, fährt Mira mit dem Fahrrad.
+     Lösung {{{
+===> Obwohl es regnet, fährt Mira mit dem Fahrrad.
+     obwohl verbindet einen Nebensatz (Verb am Ende).
+     trotzdem steht im Hauptsatz: Es regnet, trotzdem fährt sie ...
+     }}}
+
+
+# 4. Wörter zählen: g Strg-g
+
+  `g Strg-g` (erst g, dann Strg-g) zeigt unten, wie viele Wörter in der
+  Datei stehen, und das wievielte Wort unter dem Cursor steht.
+
+  Noch besser: Markiere erst einen Absatz mit `vip` (visual, inner
+  paragraph). Dann zählt `g Strg-g` nur die Wörter in der Markierung.
+
+  Probiere es mit dem Absatz unten: `vip`, dann `g Strg-g`, dann `Esc`.
+
+     Homeoffice hat Vorteile und Nachteile. Man spart Zeit, weil man
+     nicht fahren muss. Andererseits fehlt der Kontakt zu den Kollegen.
+
+  (Vim zählt 20 Wörter.)
+
+
+# 5. Deine Meinung schreiben und speichern
+
+  Schreibe einen kurzen Beitrag für das Firmenforum: Zwei Tage
+  Homeoffice pro Woche, ja oder nein? Gehe auf die leere Zeile direkt
+  unter "Mein Beitrag:", drücke `o` und schreibe etwa 60 Wörter. Mache
+  einen Absatz ohne leere Zeilen.
+
+  Prüfe danach selbst:
+    [ ] eine Meinung mit Redemittel (Meiner Meinung nach ..., Ich finde,
+        dass ...)
+    [ ] ein Grund mit weil und ein Gegenargument (andererseits, zwar ...
+        aber)
+    [ ] Verb richtig: nach weil am Ende, nach deshalb auf Position 2
+    [ ] Wörter gezählt: `vip` und `g Strg-g`
+
+  Speichern: Markiere deinen Absatz mit `vip` und tippe `:w ~/meinung.txt`
+  (Vim zeigt davor :'<,'> an, das ist richtig). Jetzt steht nur dein Text
+  in der Datei meinung.txt in deinem Home-Verzeichnis.
+
+     Mein Beitrag:
+
+
+     Musterlösung {{{
+     Ich bin für zwei Tage Homeoffice pro Woche. Meiner Meinung nach
+     arbeiten viele Menschen zu Hause konzentrierter, weil es dort ruhiger
+     ist. Außerdem spart man die lange Fahrt ins Büro. Andererseits sieht
+     man die Kollegen seltener, und kurze Fragen dauern länger. Deshalb
+     finde ich drei Tage im Büro und zwei Tage zu Hause ideal.
+     }}}
+
+
+# Zusammenfassung Lektion 4.6
+
+  Vim
+    `g Strg-g`    Wörter zählen (in der Datei oder in der Markierung)
+    `vip`         einen Absatz markieren
+    `:w datei`    speichern unter einem Namen; mit Markierung nur diese
+
+  Deutsch
+    Meinung: Ich finde, dass ... · Meiner Meinung nach ist ...
+    Zustimmen: Ich stimme dir zu. · Widersprechen: Das sehe ich anders.
+    weil, dass, obwohl -> Verb am Ende
+    deshalb, trotzdem, andererseits -> Verb auf Position 2
+
+  Weiter:  :GermanTutor 4.7

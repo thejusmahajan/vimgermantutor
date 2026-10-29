@@ -1,0 +1,131 @@
+============================================================================
+  Lektion 5.1: Die Prüfung im Überblick
+  Vim: ma · 'a · :set hlsearch · :noh                      ca. 15 Minuten
+============================================================================
+
+  Kapitel 5: Prüfungstraining. Mira will das Goethe-Zertifikat B2
+  machen, denn Blauwerk bezahlt ihr dann mehr. Und du willst es auch.
+  In diesem Kapitel übt ihr beide für die vier Module: Lesen, Hören,
+  Schreiben und Sprechen.
+
+  In Vim lernst du Marken (marks): Du merkst dir eine Stelle und springst
+  später sofort dorthin zurück. Beim Lesen ist das sehr praktisch: Text
+  hier, Aufgaben dort.
+
+
+# 1. Die vier Module
+
+  So beschreibt das Goethe-Institut die Prüfung für Erwachsene. Prüfe vor
+  deiner Anmeldung trotzdem die aktuelle Beschreibung auf goethe.de.
+
+  Lesen       65 Minuten, 5 Teile. Verschiedene Texte, zum Beispiel
+              Meinungen, Artikel und Regeln. Aufgaben wie Zuordnen und
+              Ankreuzen.
+  Hören       ca. 40 Minuten, 4 Teile.
+  Schreiben   75 Minuten, 2 Teile.
+              Teil 1: ein Forumsbeitrag, deine Meinung zu einem Thema aus
+              der Gesellschaft, ca. 150 Wörter.
+              Teil 2: eine formelle Nachricht im Beruf, zum Beispiel an
+              die Chefin, ca. 100 Wörter.
+  Sprechen    ca. 15 Minuten, zu zweit. Vorher 15 Minuten Vorbereitung.
+              Teil 1: ein Vortrag, ca. 4 Minuten (eins von zwei Themen),
+              danach Fragen.
+              Teil 2: eine Diskussion, ca. 5 Minuten.
+
+  Bestanden hast du ein Modul mit 60 von 100 Punkten. Jedes Modul zählt
+  für sich.
+
+
+# 2. Quiz: Weißt du es noch?
+
+  Lösche die falsche Zahl mit `dw`. (Ohne nach oben zu schauen!)
+
+---> Im Modul Lesen hast du 65 75 Minuten Zeit.
+     Lösung {{{
+===> Im Modul Lesen hast du 65 Minuten Zeit.
+     }}}
+
+---> Im Modul Schreiben hast du 65 75 Minuten Zeit.
+     Lösung {{{
+===> Im Modul Schreiben hast du 75 Minuten Zeit.
+     }}}
+
+---> Der Forumsbeitrag hat ca. 100 150 Wörter.
+     Lösung {{{
+===> Der Forumsbeitrag hat ca. 150 Wörter.
+     }}}
+
+---> Die formelle Nachricht hat ca. 100 150 Wörter.
+     Lösung {{{
+===> Die formelle Nachricht hat ca. 100 Wörter.
+     }}}
+
+---> Der Vortrag im Sprechen dauert ca. vier zehn Minuten.
+     Lösung {{{
+===> Der Vortrag im Sprechen dauert ca. vier Minuten.
+     }}}
+
+---> Ein Modul ist mit 50 60 von 100 Punkten bestanden.
+     Lösung {{{
+===> Ein Modul ist mit 60 von 100 Punkten bestanden.
+     }}}
+
+
+# 3. Lesen: Marken und Suchen
+
+  `ma`   setzt die Marke a an die Cursor-Position
+  `'a`   springt zurück in die Zeile der Marke a
+  :set hlsearch   zeigt alle Treffer einer Suche farbig
+  :noh            macht die Farbe wieder weg (no highlight)
+
+  Beim Lesen in der Prüfung springst du oft zwischen Text und Aufgaben.
+  Übe das hier:
+
+  1. Gehe auf die erste Zeile des Textes unten und drücke `ma`.
+  2. Lies die Aufgaben weiter unten. Springe mit `'a` zum Text zurück.
+  3. Tippe :set hlsearch und Enter, dann /Miete und Enter. Jetzt siehst
+     du jedes "Miete" im Text. Mit :noh geht die Farbe wieder weg.
+
+     Leipzig: Die Mieten in der Stadt steigen weiter. Eine Wohnung kostet
+     jetzt im Durchschnitt mehr als vor fünf Jahren. Der Deutschkurs an
+     der Volkshochschule fällt im Sommer aus, weil der Lehrer krank ist.
+     Mira hat die Stelle bei Blauwerk angenommen.
+
+  Der wichtigste Trick beim Lesen: Die Aufgabe benutzt fast nie dieselben
+  Wörter wie der Text. Sie sagt dasselbe mit anderen Wörtern. Welches
+  Wort passt zum Text? Lösche das falsche mit `dw`.
+
+---> Wohnungen sind heute billiger teurer als früher.
+     Lösung {{{
+===> Wohnungen sind heute teurer als früher.
+     Im Text: Die Mieten steigen. In der Aufgabe: teurer.
+     }}}
+
+---> Der Kurs im Sommer wird verschoben abgesagt.
+     Lösung {{{
+===> Der Kurs im Sommer wird abgesagt.
+     Im Text: fällt aus. Das heißt: Er findet nicht statt, er wird
+     abgesagt. Verschoben hieße: später.
+     }}}
+
+---> Mira hat bei Blauwerk zugesagt abgesagt.
+     Lösung {{{
+===> Mira hat bei Blauwerk zugesagt.
+     Im Text: die Stelle angenommen = zugesagt.
+     }}}
+
+
+# Zusammenfassung Lektion 5.1
+
+  Vim
+    `ma` `'a`          Marke a setzen, zur Marke a springen
+    :set hlsearch      alle Treffer zeigen, :noh macht sie aus
+
+  Prüfung
+    Lesen 65 Min. · Hören ca. 40 Min. · Schreiben 75 Min. ·
+    Sprechen ca. 15 Min. (zu zweit)
+    Schreiben: Forumsbeitrag ca. 150 Wörter, Nachricht ca. 100 Wörter
+    Bestanden: 60 von 100 Punkten pro Modul
+    Lesen: Die Aufgabe sagt dasselbe mit anderen Wörtern.
+
+  Weiter:  :GermanTutor 5.2

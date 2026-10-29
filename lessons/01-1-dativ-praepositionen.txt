@@ -1,0 +1,190 @@
+============================================================================
+  Lektion 1.1: Dativ-Präpositionen
+  Vim: h j k l · zo zc · x · :q!                          ca. 15 Minuten
+============================================================================
+
+  Willkommen beim VimGermanTutor!
+
+  Hier lernst du zwei Dinge auf einmal: Deutsch für das Goethe-Zertifikat
+  B2 und den Editor Vim. Jede neue Taste übst du an einem deutschen Satz.
+  So lernst du die Taste und die Grammatik zusammen.
+
+  Diese Datei ist eine Kopie nur für dich. Du kannst nichts kaputt machen.
+  Probiere alles aus!
+
+  Die Sätze erzählen eine Geschichte. Mira Novak, 29, ist Datenanalystin
+  aus Ljubljana. Sie zieht nach Leipzig. Sie sucht eine Wohnung, geht zu
+  den Ämtern, sucht einen Job und lernt neue Kollegen kennen. Du
+  begleitest sie dabei.
+
+  Tasten stehen so im Text: `j`. Das heißt: Drücke die Taste j.
+
+
+# 1. Den Cursor bewegen
+
+  Vim startet im Normalmodus (normal mode). Hier tippst du keinen Text.
+  Jede Taste ist ein Kommando, zum Beispiel ein Schritt mit dem Cursor:
+
+              `k`              k wie klettern: nach oben
+         `h`        `l`        h nach links, l nach rechts
+              `j`              j nach unten
+
+  1. Drücke `j` ein paarmal. Der Cursor geht nach unten.
+  2. Drücke `k`. Der Cursor geht wieder nach oben.
+  3. Halte `j` gedrückt. Der Cursor läuft, bis du loslässt.
+  4. Gehe mit `j` weiter zu Abschnitt 2.
+
+  Tipp: Die Pfeiltasten gehen auch. Aber h j k l liegen direkt unter
+  deinen Fingern. Nach ein paar Tagen bist du damit viel schneller.
+
+  Tipp: Du weißt nicht, in welchem Modus du bist? Drücke `Esc`. Danach
+  bist du sicher im Normalmodus.
+
+
+# 2. Lösungen ansehen: Falten öffnen und schließen
+
+  Unter jeder Übung steht die Lösung. Sie ist versteckt, in einer
+  geschlossenen Falte (fold). Von der Falte siehst du nur eine Zeile.
+  Erst selbst probieren, dann vergleichen!
+
+  1. Gehe mit `j` auf die Zeile "Eine Überraschung" unten.
+  2. Drücke `zo` (erst z, dann o wie offen). Die Falte geht auf.
+  3. Lies den Text. Drücke dann `zc` (c wie close). Die Falte geht zu.
+
+     Eine Überraschung {{{
+     Hallo! Du hast deine erste Falte geöffnet.
+     Schließe sie jetzt wieder mit zc.
+     }}}
+
+  Steht der Cursor auf einer geschlossenen Falte, springt `j` über die
+  ganze Falte. Praktisch!
+
+
+# 3. Grammatik: Präpositionen mit Dativ
+
+  Nach diesen Präpositionen (prepositions) steht immer der Dativ
+  (dative case):
+
+       aus   bei   mit   nach   seit   von   zu
+       und auch: außer, gegenüber
+
+  Merkspruch: "Aus, bei, mit, nach, seit, von, zu - schreib Dativ immerzu!"
+
+  Der Artikel im Dativ:
+
+       der Zug        ->  mit dem Zug          maskulin:  dem
+       das Auto       ->  mit dem Auto         neutral:   dem
+       die Freundin   ->  bei der Freundin     feminin:   der
+       die Koffer     ->  mit den Koffern      Plural:    den + -n
+
+  Im Plural bekommt das Nomen ein -n. Ausnahme: Der Plural endet schon
+  auf -n oder auf -s (mit den Frauen, mit den Autos).
+  Kurzformen: zum = zu dem, zur = zu der, vom = von dem, beim = bei dem.
+
+
+# 4. Löschen mit x
+
+  `x` löscht das Zeichen unter dem Cursor.
+
+  In den Sätzen unten stehen immer zwei Formen, zum Beispiel "dem/den".
+  Nur eine ist richtig. Lösche die falsche Form und den Schrägstrich.
+
+  1. Gehe mit `j` auf die erste Zeile mit --->.
+  2. Gehe mit `l` auf den Schrägstrich oder auf die falsche Form.
+  3. Drücke `x` so oft, bis nur noch die richtige Form da ist.
+  4. Links von der Zeile erscheint ein Zeichen: ✓ heißt richtig, ✗ heißt
+     noch nicht richtig. Unten rechts zählt Vim mit: "1/8 ✓" heißt
+     "1 von 8 Übungen richtig". (Manche Terminals zeigen ok und x.)
+  5. Öffne die Lösung mit `zo` und vergleiche. Schließe sie mit `zc`.
+
+  Zu viel gelöscht? Drücke `u` (undo). Das macht die letzte Änderung
+  rückgängig. Mehr dazu in Lektion 1.4.
+
+---> Mira fährt mit dem/den Zug nach Leipzig.
+     Lösung {{{
+===> Mira fährt mit dem Zug nach Leipzig.
+     mit + Dativ. der Zug -> mit dem Zug.
+     }}}
+
+---> Jana wartet am Gleis mit einen/einem großen Schild.
+     Lösung {{{
+===> Jana wartet am Gleis mit einem großen Schild.
+     mit + Dativ. das Schild -> mit einem Schild.
+     }}}
+
+---> Mira wohnt erst einmal bei ihrer/ihre Freundin.
+     Lösung {{{
+===> Mira wohnt erst einmal bei ihrer Freundin.
+     bei + Dativ. die Freundin -> bei ihrer Freundin (feminin: -er).
+     }}}
+
+---> Seit eine/einer Woche sucht sie eine eigene Wohnung.
+     Lösung {{{
+===> Seit einer Woche sucht sie eine eigene Wohnung.
+     seit + Dativ. die Woche -> seit einer Woche.
+     Achtung: seit sagt, wie lange etwas schon dauert. Das Verb steht
+     im Präsens. Englisch: "She has been looking for a week."
+     }}}
+
+---> Nach dem/das Frühstück liest sie die Wohnungsanzeigen.
+     Lösung {{{
+===> Nach dem Frühstück liest sie die Wohnungsanzeigen.
+     nach + Dativ. das Frühstück -> nach dem Frühstück.
+     }}}
+
+---> Dann telefoniert sie mit die/den Vermietern.
+     Lösung {{{
+===> Dann telefoniert sie mit den Vermietern.
+     mit + Dativ Plural: die Vermieter -> mit den Vermietern (+ -n).
+     }}}
+
+---> Am Nachmittag geht sie zum/zur Bank.
+     Lösung {{{
+===> Am Nachmittag geht sie zur Bank.
+     zu + Dativ. die Bank -> zu der Bank = zur Bank.
+     zum = zu dem (maskulin, neutral): zum Bahnhof, zum Amt.
+     }}}
+
+---> Abends fährt sie mit der Straßenbahn nach/zu Hause.
+     Lösung {{{
+===> Abends fährt sie mit der Straßenbahn nach Hause.
+     nach Hause = Richtung (Wohin?). zu Hause = Ort (Wo?).
+     Mira fährt nach Hause. Später ist sie zu Hause.
+     }}}
+
+
+# 5. Vim verlassen
+
+  So beendest du Vim, ohne etwas zu speichern:
+
+  1. Drücke `Esc`. Sicher ist sicher.
+  2. Tippe `:q!` und drücke `Enter`.
+     Der Doppelpunkt : öffnet die Kommandozeile unten am Bildschirm.
+     q heißt quit (beenden), ! heißt "ja, wirklich, ohne Speichern".
+
+  Keine Angst: Deine richtigen Übungen merkt sich der Tutor. Mit dem
+  Kommando `:GermanTutor` (in Vim) oder `vimgermantutor` (im Terminal)
+  kommst du genau hierher zurück.
+
+  Probiere es aus, wenn du willst. Oder lies erst die Zusammenfassung.
+
+
+# Zusammenfassung Lektion 1.1
+
+  Vim
+    `h` `j` `k` `l`    Cursor nach links, unten, oben, rechts
+    `zo` / `zc`        Falte öffnen / schließen
+    `x`                Zeichen unter dem Cursor löschen
+    `u`                letzte Änderung rückgängig machen
+    `Esc`              zurück in den Normalmodus
+    `:q!` `Enter`      Vim beenden, ohne zu speichern
+
+  Deutsch
+    aus, bei, mit, nach, seit, von, zu (auch außer, gegenüber): Dativ
+    dem (maskulin, neutral) · der (feminin) · den + -n (Plural)
+    zum = zu dem · zur = zu der · vom = von dem · beim = bei dem
+    nach Hause (Wohin?) · zu Hause (Wo?)
+
+  Super gemacht! Tippe jetzt das Kommando unten und drücke `Enter`.
+
+  Weiter:  :GermanTutor 1.2

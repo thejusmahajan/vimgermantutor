@@ -1,0 +1,144 @@
+============================================================================
+  Lektion 4.4: Nominalisierung
+  Vim: ~ · cis · das                                       ca. 15 Minuten
+============================================================================
+
+  Miras Berichte werden immer besser. Die Chefin sagt: "Schreiben Sie
+  mehr im Nominalstil!" Statt "weil es regnet" schreibt man "wegen des
+  Regens". Das ist kürzer, sachlicher und typisch für B2-Texte: in
+  Berichten, in Briefen an Ämter und in der Prüfung.
+
+  In Vim lernst du `~`: Es macht aus einem kleinen Buchstaben einen
+  großen. Genau das braucht ein Verb, wenn es ein Nomen wird.
+
+
+# 1. Grammatik: Aus Verben und Adjektiven werden Nomen
+
+  Infinitiv als Nomen: immer das, immer groß.
+       lernen -> das Lernen            beim Lernen, zum Telefonieren
+  Verb + -ung: immer die.
+       lösen -> die Lösung             unterzeichnen -> die Unterzeichnung
+  Verbstamm, oft maskulin:
+       ankommen -> die Ankunft (!)     schützen -> der Schutz
+  Adjektiv + -heit oder -keit: immer die.
+       frei -> die Freiheit            pünktlich -> die Pünktlichkeit
+
+  Aus einem Nebensatz wird eine Präposition mit Nomen. Was im Satz das
+  Objekt war, steht jetzt oft im Genitiv:
+       weil es regnet               ->  wegen des Regens
+       als Mira ankam               ->  bei Miras Ankunft
+       nachdem sie den Vertrag      ->  nach der Unterzeichnung des
+       unterzeichnet hatte              Vertrags
+
+
+# 2. Groß und klein: ~
+
+  `~` (Tilde) ändert den Buchstaben unter dem Cursor: klein wird groß,
+  groß wird klein. Dann springt der Cursor eins weiter.
+
+  Deutsche Tastatur: ~ ist AltGr-+.
+
+  Hier wurden Verben zu Nomen, aber sie stehen noch klein da.
+
+  1. Stelle den Cursor auf den ersten Buchstaben des Verbs.
+  2. Drücke `~`.
+
+---> Beim lernen hört Mira gern Musik.
+     Lösung {{{
+===> Beim Lernen hört Mira gern Musik.
+     beim = bei dem. Nach einem Artikel ist das Verb ein Nomen: groß.
+     }}}
+
+---> Das pünktliche ankommen ist bei Blauwerk wichtig.
+     Lösung {{{
+===> Das pünktliche Ankommen ist bei Blauwerk wichtig.
+     das + Adjektiv + Infinitiv: Das Ankommen ist ein Nomen.
+     }}}
+
+---> Zum telefonieren geht Tim immer auf den Flur.
+     Lösung {{{
+===> Zum Telefonieren geht Tim immer auf den Flur.
+     zum = zu dem: Telefonieren ist ein Nomen.
+     }}}
+
+
+# 3. Nebensatz -> Präposition mit Nomen
+
+  So machst du aus dem Nebensatz eine Präposition mit Nomen:
+  1. Cursor auf das erste Wort.
+  2. Lösche den Nebensatz bis zum Komma mit `df,`.
+  3. Füge mit `i` die Präposition mit dem Nomen ein.
+  4. Achtung: Danach kommt sofort das Verb (Position 2).
+
+---> Weil es regnet, fährt Mira mit der Bahn.
+     Lösung {{{
+===> Wegen des Regens fährt Mira mit der Bahn.
+     weil + Nebensatz -> wegen + Genitiv. der Regen -> des Regens.
+     }}}
+
+---> Als Mira ankam, war das Büro noch leer.
+     Lösung {{{
+===> Bei Miras Ankunft war das Büro noch leer.
+oder Bei ihrer Ankunft war das Büro noch leer.
+     als (einmal, Vergangenheit) -> bei + Dativ. ankommen -> die Ankunft.
+     }}}
+
+---> Nachdem sie den Vertrag unterzeichnet hatte, ging sie essen.
+     Lösung {{{
+===> Nach der Unterzeichnung des Vertrags ging sie essen.
+oder Nach der Unterzeichnung des Vertrages ging sie essen.
+     nachdem -> nach + Dativ. Das Objekt (den Vertrag) wird Genitiv.
+     }}}
+
+---> Die Chefin lobt, dass Mira so pünktlich ist.
+     Lösung {{{
+===> Die Chefin lobt Miras Pünktlichkeit.
+     Aus dem dass-Satz wird ein Akkusativ-Objekt. pünktlich ->
+     die Pünktlichkeit. Hier mit C ab "dass" ändern.
+     }}}
+
+
+# 4. Einen ganzen Satz ändern: cis
+
+  Ein Satz ist für Vim ein Textobjekt (text object). Er endet mit . ! ?
+  `cis` (change inner sentence) löscht den Satz, in dem der Cursor steht,
+  und startet den Einfügemodus. `das` (delete a sentence) löscht ihn.
+  Lustig: das ist hier kein Artikel, sondern ein Kommando!
+
+  Achtung: Steht der Satz am Zeilenanfang, gehört der Pfeil ---> für Vim
+  zum Satz. Deshalb ändern wir hier immer den ZWEITEN Satz. Ist der
+  Pfeil doch einmal weg: `u`.
+
+  1. Stelle den Cursor irgendwo in den zweiten Satz.
+  2. Drücke `cis` und schreibe den Satz im Nominalstil neu. `Esc`.
+
+---> Neue Regel bei Blauwerk. Man darf im Büro nicht rauchen.
+     Lösung {{{
+===> Neue Regel bei Blauwerk. Das Rauchen im Büro ist verboten.
+oder Neue Regel bei Blauwerk. Das Rauchen ist im Büro verboten.
+     nicht dürfen -> verboten sein. rauchen -> das Rauchen.
+     }}}
+
+---> Mira hat eine Frage. Sie will wissen, wann das Projekt beginnt.
+     Lösung {{{
+===> Mira hat eine Frage. Sie fragt nach dem Beginn des Projekts.
+oder Mira hat eine Frage. Sie fragt nach dem Projektbeginn.
+     wann ... beginnt -> nach dem Beginn (fragen nach + Dativ).
+     }}}
+
+
+# Zusammenfassung Lektion 4.4
+
+  Vim
+    `~`       Groß-/Kleinbuchstabe tauschen
+    `cis`     den Satz ändern (Textobjekt Satz)
+    `das`     den Satz löschen
+    `df,`     bis zum Komma löschen
+
+  Deutsch
+    das Lernen (Infinitiv) · die Lösung (-ung) · die Freiheit (-heit)
+    die Pünktlichkeit (-keit) · der Schutz, die Ankunft (Stamm)
+    weil -> wegen + Gen. · als -> bei + Dat. · nachdem -> nach + Dat.
+    Objekt -> Genitiv: die Unterzeichnung des Vertrags
+
+  Weiter:  :GermanTutor 4.5

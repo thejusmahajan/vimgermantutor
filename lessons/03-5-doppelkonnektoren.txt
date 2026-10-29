@@ -1,0 +1,143 @@
+============================================================================
+  Lektion 3.5: Doppelkonnektoren
+  Vim: Strg-v · I · J · c3w                                ca. 15 Minuten
+============================================================================
+
+  Mira hat zwei Angebote. Sie vergleicht, wägt ab und entscheidet. Dafür
+  braucht sie Doppelkonnektoren (two-part connectors): sowohl ... als
+  auch, nicht nur ... sondern auch, zwar ... aber. Sie machen Texte
+  präzise, und in der B2-Prüfung bringen sie Punkte.
+
+  In Vim lernst du den visuellen Blockmodus. Damit schreibst du in
+  mehrere Zeilen gleichzeitig.
+
+
+# 1. Grammatik: Die Doppelkonnektoren
+
+  sowohl ... als auch            (beides)
+       Sie spricht sowohl Englisch als auch Deutsch.
+  nicht nur ..., sondern auch    (beides, das Zweite ist ein Plus)
+       Sie spricht nicht nur Englisch, sondern auch Deutsch.
+  weder ... noch                 (keins von beiden, ohne nicht!)
+       Sie spricht weder Polnisch noch Russisch.
+  entweder ... oder              (eins von beiden)
+       Entweder sie bleibt in Leipzig oder sie geht nach Berlin.
+  zwar ..., aber                 (ja, aber ...)
+       Die Stelle ist zwar gut, aber weit weg.
+  je ..., desto                  (je mehr ..., desto mehr ...)
+       Je mehr sie übt, desto besser wird sie.
+
+  Komma: vor aber und sondern immer, zwischen je und desto immer. Bei
+  sowohl ... als auch, weder ... noch, entweder ... oder steht
+  normalerweise keins.
+  Bei je ..., desto: Im je-Satz steht das Verb am Ende. Nach desto kommt
+  der Komparativ und dann gleich das Verb.
+
+
+# 2. Zwei Sätze verbinden: J und c3w
+
+  1. Gehe auf die Zeile mit ---> und drücke `J`.
+  2. Füge den ersten Teil des Konnektors mit `i` ein.
+  3. Gehe mit `f.` auf den Punkt. Drücke `c3w`: Das ändert den Punkt und
+     die nächsten zwei Wörter. Tippe den zweiten Teil und drücke `Esc`.
+
+---> Die Firma bietet ein gutes Gehalt.
+     Sie bietet Homeoffice.
+     Lösung {{{
+===> Die Firma bietet sowohl ein gutes Gehalt als auch Homeoffice.
+     Schritte: J, Cursor auf "ein", i sowohl Leerzeichen Esc,
+     f. c3w als auch Esc. (Vor als ein Leerzeichen tippen!)
+     }}}
+
+---> Mira spricht Slowenisch und Englisch.
+     Sie spricht auch Deutsch.
+     Lösung {{{
+===> Mira spricht nicht nur Slowenisch und Englisch, sondern auch Deutsch.
+     Vor sondern steht ein Komma.
+     Schritte: J, Cursor auf "Slowenisch", i nicht nur Leerzeichen Esc,
+     f. c3w , sondern Esc.
+     }}}
+
+
+# 3. Der visuelle Blockmodus: Strg-v
+
+  `Strg-v` (Ctrl-v) startet den visuellen Blockmodus. Mit `j` und `l`
+  markierst du ein Rechteck. `I` (großes i) schreibt dann Text vor das
+  Rechteck, in JEDE markierte Zeile. Erst nach `Esc` erscheint der Text
+  in allen Zeilen!
+
+  Setze vor beide Sätze "Entweder" mit einem Leerzeichen.
+
+  1. Gehe auf die erste Zeile mit ---> und drücke `w`. Der Cursor steht
+     auf dem M von Mira.
+  2. Drücke `Strg-v` und dann `j`. Jetzt sind zwei Zeilen markiert.
+  3. Drücke `I`, tippe "Entweder " (mit Leerzeichen), drücke `Esc`.
+
+  Tipp für Windows: Wenn Strg-v im Terminal einfügt statt zu markieren,
+  nimm `Strg-q`. Das macht in Vim dasselbe.
+
+---> Mira bekommt die Stelle bei Blauwerk oder sie sucht weiter.
+---> Mira nimmt das Fahrrad oder sie fährt mit der Bahn.
+     Lösung {{{
+===> Entweder Mira bekommt die Stelle bei Blauwerk oder sie sucht weiter.
+===> Entweder Mira nimmt das Fahrrad oder sie fährt mit der Bahn.
+     Entweder steht hier auf Position 0: Danach kommt das Subjekt.
+     Auch richtig wäre: Entweder bekommt Mira die Stelle ...
+     }}}
+
+
+# 4. Den richtigen Konnektor
+
+  Ein Teil des Konnektors ist falsch. Ändere das falsche Wort mit `cw`.
+
+---> Die Arbeit ist zwar interessant, und das Gehalt ist niedrig.
+     Lösung {{{
+===> Die Arbeit ist zwar interessant, aber das Gehalt ist niedrig.
+     zwar ..., aber: erst ja, dann eine Einschränkung.
+     }}}
+
+---> Blauwerk sucht nicht nur Programmierer, aber auch Analysten.
+     Lösung {{{
+===> Blauwerk sucht nicht nur Programmierer, sondern auch Analysten.
+     nicht nur ..., sondern auch.
+     }}}
+
+---> Mira braucht sowohl ein Zeugnis und auch einen Lebenslauf.
+     Lösung {{{
+===> Mira braucht sowohl ein Zeugnis als auch einen Lebenslauf.
+     sowohl ... als auch.
+     }}}
+
+  Bei weder ... noch ist schon alles verneint. Ein "kein" ist zu viel.
+  Mache mit `x` aus "keine" ein "eine".
+
+---> Mira hat weder von Firma A noch von Firma B keine Antwort bekommen.
+     Lösung {{{
+===> Mira hat weder von Firma A noch von Firma B eine Antwort bekommen.
+     weder ... noch verneint schon. Kein doppeltes Nein im Deutschen.
+     }}}
+
+  Und je ..., desto: Nach desto kommt erst das Adjektiv, dann das Verb.
+  Tausche "sie" und "wird".
+
+---> Je mehr Bewerbungen Mira schreibt, desto besser sie wird.
+     Lösung {{{
+===> Je mehr Bewerbungen Mira schreibt, desto besser wird sie.
+     Ein Weg: Cursor auf das Leerzeichen vor "wird", daw. Dann b und
+     zweimal h: Der Cursor steht auf dem r von "besser". Jetzt p.
+     }}}
+
+
+# Zusammenfassung Lektion 3.5
+
+  Vim
+    `Strg-v`    visueller Blockmodus (Rechteck markieren)
+    `I`         im Blockmodus: Text vor das Rechteck, in jede Zeile
+    `J` `c3w`   Zeilen verbinden, drei Wörter ändern
+
+  Deutsch
+    sowohl ... als auch · nicht nur ..., sondern auch
+    weder ... noch (ohne nicht und kein) · entweder ... oder
+    zwar ..., aber · je + Komparativ ..., desto + Komparativ + Verb
+
+  Weiter:  :GermanTutor 3.6

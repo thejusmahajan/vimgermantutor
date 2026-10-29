@@ -1,0 +1,130 @@
+============================================================================
+  Lektion 5.5: Sprechen Teil 2: Die Diskussion
+  Vim: V + :sort · ddp                                     ca. 15 Minuten
+============================================================================
+
+  Im Sprechen Teil 2 diskutierst du mit deinem Partner ca. 5 Minuten über
+  eine Frage, zu der man verschiedene Meinungen haben kann. Ihr tauscht
+  Argumente aus, reagiert aufeinander und fasst am Ende eure Positionen
+  zusammen. Wichtig: Es geht nicht ums Gewinnen. Es geht ums Gespräch.
+
+  Mira und Tim üben in der Mittagspause. Die Frage: "Sollen Autos in
+  der Innenstadt von Leipzig verboten werden?"
+
+  In Vim lernst du `:sort`: Damit sortierst du Zeilen, zum Beispiel deine
+  Argumente: erst dafür (+), dann dagegen (-).
+
+
+# 1. Redemittel für die Diskussion
+
+  Meinung         Ich bin der Meinung, dass ... · Für mich ist wichtig,
+                  dass ...
+  Nachfragen      Was denkst du über ...? · Kannst du das genauer
+                  erklären? · Wie meinst du das?
+  Zustimmen       Da hast du recht. · Da bin ich ganz deiner Meinung.
+  Widersprechen   Ich verstehe deinen Punkt, aber ... · Das sehe ich
+                  anders. · Da muss ich dir widersprechen.
+  Unterbrechen    Darf ich dich kurz unterbrechen? · Entschuldige, wenn
+                  ich kurz etwas sagen darf ...
+  Kompromiss      Wie wäre es, wenn ...? · Vielleicht können wir uns
+                  darauf einigen, dass ...
+  Zusammenfassen  Wir sind uns also einig, dass ... · Wir sehen das
+                  unterschiedlich, aber ...
+
+  Tipp: Sprich nicht zu lange allein. Stelle auch Fragen. Ein gutes
+  Gespräch geht hin und her.
+
+
+# 2. Argumente sortieren: :sort
+
+  `:sort` sortiert Zeilen nach dem Alphabet. Mit `V` sortierst du nur die
+  markierten Zeilen. Das Zeichen + steht im Alphabet vor dem -, also
+  stehen danach alle Argumente dafür oben.
+
+  1. Gehe auf die erste Zeile. Drücke `V` und dreimal `j`.
+  2. Tippe :sort und Enter. (Vim zeigt :'<,'> davor.)
+
+---> + weniger Lärm
+---> - schwierig für ältere Menschen
+---> + bessere Luft in der Stadt
+---> - Geschäfte verlieren Kunden
+     Lösung {{{
+===> + bessere Luft in der Stadt
+===> + weniger Lärm
+===> - Geschäfte verlieren Kunden
+===> - schwierig für ältere Menschen
+     Erst alle + (dafür), dann alle - (dagegen). Innerhalb der Gruppe
+     nach dem Alphabet. Großbuchstaben kommen vor Kleinbuchstaben.
+     }}}
+
+  Tipp: `ddp` tauscht eine Zeile mit der nächsten. So änderst du die
+  Reihenfolge danach von Hand, zum Beispiel das stärkste Argument nach
+  oben.
+
+
+# 3. Typische Fehler in der Diskussion
+
+---> Was denkst du über dieser Idee?
+     Lösung {{{
+===> Was denkst du über diese Idee?
+     denken über + Akkusativ: über diese Idee.
+     }}}
+
+---> Kannst du das genauer erklärst?
+     Lösung {{{
+===> Kannst du das genauer erklären?
+     Modalverb (kannst) + Infinitiv am Ende: erklären.
+     }}}
+
+---> Da bin ich ganz deine Meinung.
+     Lösung {{{
+===> Da bin ich ganz deiner Meinung.
+     Fester Ausdruck mit Genitiv: deiner Meinung sein.
+     }}}
+
+---> Ich verstehe deinen Punkt, aber ich sehe das anderes.
+     Lösung {{{
+===> Ich verstehe deinen Punkt, aber ich sehe das anders.
+     Das Adverb heißt anders (ohne -es).
+     }}}
+
+---> Darf ich dir kurz unterbrechen?
+     Lösung {{{
+===> Darf ich dich kurz unterbrechen?
+     jemanden unterbrechen (Akkusativ): dich.
+     }}}
+
+---> Vielleicht können wir uns über einen Kompromiss einigen.
+     Lösung {{{
+===> Vielleicht können wir uns auf einen Kompromiss einigen.
+     sich einigen auf + Akkusativ (auf ein Ergebnis).
+     }}}
+
+---> Wir sind uns also einig, dass mehr Radwege sind nötig.
+     Lösung {{{
+===> Wir sind uns also einig, dass mehr Radwege nötig sind.
+     dass -> Verb am Ende.
+     }}}
+
+
+# 4. Übe laut
+
+  Suche dir einen Partner (oder sprich mit dir selbst). Stelle den Timer
+  auf 5 Minuten: :GermanTutorTimer 5. Diskutiert die Frage oben. Benutze
+  aus jeder Gruppe der Redemittel mindestens eins, und fasst am Ende
+  zusammen.
+
+
+# Zusammenfassung Lektion 5.5
+
+  Vim
+    `V` ... :sort   markierte Zeilen sortieren
+    `ddp`           Zeile mit der nächsten tauschen
+
+  Prüfung
+    Diskussion ca. 5 Minuten, zu zweit, am Ende zusammenfassen
+    Nachfragen: Wie meinst du das? · Widersprechen: Ich verstehe deinen
+    Punkt, aber ... · Kompromiss: Wie wäre es, wenn ...?
+    Zusammenfassen: Wir sind uns also einig, dass ...
+
+  Weiter:  :GermanTutor 5.6

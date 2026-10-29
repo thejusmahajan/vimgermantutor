@@ -1,0 +1,49 @@
+name: Tests
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: ${{ matrix.os }} · ${{ matrix.editor }} ${{ matrix.version }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        editor: [vim, nvim]
+        version: [stable]
+        include:
+          # The oldest versions the plugin supports.
+          - os: ubuntu-latest
+            editor: vim
+            version: v8.2.0000
+          - os: ubuntu-latest
+            editor: nvim
+            version: v0.9.5
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: rhysd/action-setup-vim@v1
+        id: vim
+        with:
+          neovim: ${{ matrix.editor == 'nvim' }}
+          version: ${{ matrix.version }}
+
+      - name: Show the editor
+        shell: bash
+        run: |
+          "${{ steps.vim.outputs.executable }}" --version | head -n 3
+          command -v ${{ matrix.editor }} || true
+
+      - name: Tests (lessons, checker, launcher via sh)
+        shell: bash
+        run: sh test/run.sh ${{ matrix.editor }} "${{ steps.vim.outputs.executable }}"
+
+      - name: Launcher via vimgermantutor.cmd
+        if: runner.os == 'Windows'
+        shell: cmd
+        run: |
+          where ${{ matrix.editor }}
+          call test\launcher.cmd ${{ matrix.editor }}

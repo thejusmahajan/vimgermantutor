@@ -1,0 +1,99 @@
+============================================================================
+  Lektion 3.6: Wiederholung Kapitel 3
+  Vim: alles aus Kapitel 3                                 ca. 15 Minuten
+============================================================================
+
+  Die Zusage ist da! Blauwerk will Mira einstellen. Frau Dr. Schäfer
+  fragt per E-Mail, ob sie am Ersten anfangen kann. Mira schreibt sofort
+  zurück, vor Freude ein bisschen zu schnell. Korrigiere ihre Antwort,
+  bevor sie auf "Senden" klickt.
+
+  Zuerst die Zusammenfassung von Kapitel 3, dann die Übungen.
+
+
+# Zusammenfassung Kapitel 3
+
+  Vim
+    `yy` `yw`          Zeile, Wort kopieren
+    `p` `P`            hinter, vor dem Cursor einsetzen
+    `ciw` `caw`        Wort ändern (Textobjekt)
+    `diw` `daw`        Wort löschen (Textobjekt)
+    `*` `cgn` `n` `.`  Wort suchen, Treffer ändern, wiederholen
+    `t.` `;` `,`       bis vor ein Zeichen, f/t wiederholen
+    `ct.` `dtp`        ändern bis vor den Punkt, löschen bis vor "p"
+    `Strg-v` `I`       Blockmodus, Text in mehrere Zeilen
+    `J` `c3w`          verbinden, drei Wörter ändern
+
+  Deutsch
+    arbeiten als / bei · Sehr geehrte Frau ... · Mit freundlichen Grüßen
+    Verb + Präposition: sich freuen auf/über, sich kümmern um ...
+    da-Wort (Sache): darauf · Person: auf ihn · Wofür? Auf wen?
+    n-Deklination: den Kollegen, dem Kunden, Herrn Becker
+    zu + Infinitiv · um ... zu · ohne ... zu · statt ... zu
+    sowohl ... als auch · nicht nur ..., sondern auch · weder ... noch
+    zwar ..., aber · entweder ... oder · je ..., desto
+
+
+# Übungen: Miras Antwort
+
+---> Sehr geehrter Frau Dr. Schäfer,
+     Lösung {{{
+===> Sehr geehrte Frau Dr. Schäfer,
+     Frau ist feminin: geehrte.
+     }}}
+
+---> vielen Dank für Ihre Nachricht. Ich freue mich sehr auf die Zusage.
+     Lösung {{{
+===> vielen Dank für Ihre Nachricht. Ich freue mich sehr über die Zusage.
+     Die Zusage ist schon da: sich freuen über.
+     Nach der Anrede mit Komma geht es klein weiter: vielen Dank.
+     }}}
+
+---> Ich freue mich auch darauf, das Team bald kennenlernen.
+     Lösung {{{
+===> Ich freue mich auch darauf, das Team bald kennenzulernen.
+     darauf, ... zu + Infinitiv. kennenlernen ist trennbar:
+     kennen-zu-lernen.
+     }}}
+
+---> Bitte grüßen Sie auch den Kollege, der mir das Büro gezeigt hat.
+     Lösung {{{
+===> Bitte grüßen Sie auch den Kollegen, der mir das Büro gezeigt hat.
+     n-Deklination: den Kollegen.
+     }}}
+
+---> Ich lerne weiter Deutsch, damit ich im Team gut mitarbeite.
+     Lösung {{{
+===> Ich lerne weiter Deutsch, um im Team gut mitzuarbeiten.
+     Gleiches Subjekt (ich): um ... zu. Trennbar: mitzuarbeiten.
+     }}}
+
+---> Am ersten Tag bringe ich sowohl den Vertrag und auch den Ausweis mit.
+     Lösung {{{
+===> Am ersten Tag bringe ich sowohl den Vertrag als auch den Ausweis mit.
+     sowohl ... als auch.
+     }}}
+
+---> Für was brauchen Sie meine Steuer-ID?
+     Lösung {{{
+===> Wofür brauchen Sie meine Steuer-ID?
+     Frage nach einer Sache: Wofür?
+     }}}
+
+---> Ich kümmere mich gern für alle Unterlagen.
+     Lösung {{{
+===> Ich kümmere mich gern um alle Unterlagen.
+     sich kümmern um + Akkusativ.
+     }}}
+
+---> Mit freundlichem Grüßen
+     Lösung {{{
+===> Mit freundlichen Grüßen
+     mit + Dativ Plural: freundlichen Grüßen.
+     }}}
+
+
+  Glückwunsch! Kapitel 3 ist geschafft, und Mira hat einen Job. In
+  Kapitel 4 arbeitet sie bei Blauwerk.
+
+  Weiter:  :GermanTutor 4.1

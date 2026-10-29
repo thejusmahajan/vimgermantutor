@@ -1,0 +1,131 @@
+============================================================================
+  Lektion 3.2: Verben und Adjektive mit Präpositionen, da- und wo-Wörter
+  Vim: ciw · caw · diw · daw                               ca. 15 Minuten
+============================================================================
+
+  Mira bewirbt sich um eine Stelle als Datenanalystin. Sie interessiert
+  sich für Statistik, wartet auf Antworten und freut sich auf das erste
+  Vorstellungsgespräch. Viele deutsche Verben haben eine feste
+  Präposition. Man lernt sie am besten zusammen mit dem Verb.
+
+  In Vim lernst du Textobjekte (text objects) für Wörter: `iw` ist das
+  Wort, `aw` ist das Wort mit Leerzeichen. Mit `ciw` änderst du ein
+  ganzes Wort, egal wo im Wort der Cursor steht.
+
+
+# 1. Grammatik: Verb + Präposition
+
+  sich bewerben um + Akk       sich interessieren für + Akk
+  warten auf + Akk             sich freuen auf + Akk  (kommt noch)
+  denken an + Akk              sich freuen über + Akk (ist schon da)
+  teilnehmen an + Dat          sich kümmern um + Akk
+  achten auf + Akk             abhängen von + Dat
+
+  Auch Adjektive haben feste Präpositionen:
+       interessiert an + Dat     zufrieden mit + Dat     stolz auf + Akk
+
+  da-Wörter ersetzen eine Sache: auf die Antwort -> darauf
+       (vor Vokal mit r: darauf, daran, darüber; sonst: dafür, damit)
+  Bei Personen: Präposition + Pronomen: an den Bruder -> an ihn
+  Fragen nach Sachen: Worauf? Wofür? Woran?  Nach Personen: Auf wen?
+
+  Auch vor einem Nebensatz steht oft ein da-Wort:
+       Mira achtet darauf, dass die Bewerbung keine Fehler hat.
+
+
+# 2. Ein Wort ändern mit ciw
+
+  `ciw` (change inner word) löscht das ganze Wort unter dem Cursor und
+  startet den Einfügemodus. Der Cursor darf irgendwo im Wort stehen.
+  `diw` löscht nur das Wort. `daw` löscht das Wort mit Leerzeichen.
+
+  1. Gehe mit `w` irgendwo auf die falsche Präposition.
+  2. Drücke `ciw`, tippe die richtige, drücke `Esc`.
+
+---> Mira interessiert sich an Statistik.
+     Lösung {{{
+===> Mira interessiert sich für Statistik.
+     sich interessieren für + Akk.
+     }}}
+
+---> Sie ist sehr interessiert für Datenanalyse.
+     Lösung {{{
+===> Sie ist sehr interessiert an Datenanalyse.
+     Das Adjektiv: interessiert an + Dat. Das Verb: sich interessieren
+     für. Ein beliebter Prüfungsfehler!
+     }}}
+
+---> Seit zwei Wochen wartet sie für eine Antwort von Blauwerk.
+     Lösung {{{
+===> Seit zwei Wochen wartet sie auf eine Antwort von Blauwerk.
+     warten auf + Akk.
+     }}}
+
+---> Heute kam die Einladung zum Gespräch. Mira freut sich auf die Post.
+     Lösung {{{
+===> Heute kam die Einladung zum Gespräch. Mira freut sich über die Post.
+     Die Post ist schon da: sich freuen über.
+     Auf etwas freut man sich, wenn es erst noch kommt.
+     }}}
+
+
+# 3. da-Wörter, wo-Wörter, Pronomen
+
+  Hier brauchst du zwei Schritte: ein Wort weg (`daw`) und ein Wort neu
+  (`ciw`).
+
+---> Mira wartet auf die Antwort. Jana wartet auch auf sie.
+     Lösung {{{
+===> Mira wartet auf die Antwort. Jana wartet auch darauf.
+     Eine Sache (die Antwort): darauf. auf sie hört man oft im Alltag,
+     im geschriebenen Deutsch steht das da-Wort.
+     Schritte: Cursor auf das zweite "auf", daw, dann ciw darauf.
+     }}}
+
+---> Mira hat einen Bruder in Ljubljana. Sie denkt oft daran.
+     Lösung {{{
+===> Mira hat einen Bruder in Ljubljana. Sie denkt oft an ihn.
+     Eine Person: Präposition + Pronomen. denken an + Akk: an ihn.
+     }}}
+
+---> Für was interessierst du dich?
+     Lösung {{{
+===> Wofür interessierst du dich?
+     Frage nach einer Sache: Wofür? (Für was? ist Umgangssprache.)
+     }}}
+
+---> Auf wen wartest du? Auf den Bus.
+     Lösung {{{
+===> Worauf wartest du? Auf den Bus.
+     Der Bus ist eine Sache: Worauf? (Auf wen? fragt nach Personen.)
+     }}}
+
+
+# 4. Das da-Wort vor dem Nebensatz
+
+  Füge das da-Wort mit `i` vor dem Komma ein. Tipp: `f,` springt zum
+  Komma.
+
+---> Mira achtet, dass ihre Bewerbung keine Fehler hat.
+     Lösung {{{
+===> Mira achtet darauf, dass ihre Bewerbung keine Fehler hat.
+     achten auf -> achten darauf, dass ... Hier ist das da-Wort nötig.
+     }}}
+
+
+# Zusammenfassung Lektion 3.2
+
+  Vim
+    `ciw`   das Wort unter dem Cursor ändern (überall im Wort)
+    `diw`   das Wort löschen
+    `daw`   das Wort mit Leerzeichen löschen
+    `caw`   das Wort mit Leerzeichen ändern
+
+  Deutsch
+    Verb + feste Präposition zusammen lernen: warten auf, denken an ...
+    sich interessieren für, aber: interessiert an
+    sich freuen auf (kommt) / über (ist da)
+    Sache: darauf, Worauf? · Person: auf ihn, Auf wen?
+    vor Nebensatz: Ich achte darauf, dass ...
+
+  Weiter:  :GermanTutor 3.3

@@ -1,0 +1,136 @@
+============================================================================
+  Lektion 2.5: Futur I und II, Vermutungen
+  Vim: gg · G · :Zahl · Strg-g                             ca. 15 Minuten
+============================================================================
+
+  Die Anmeldung ist fast geschafft. Mira plant die nächsten Wochen, und
+  sie wartet: auf einen Brief, auf Frau Wolf vom Bürgeramt, auf Jana.
+  Wo bleiben die alle? Mira vermutet.
+
+  Mit dem Futur sprichst du über die Zukunft, aber noch öfter über
+  Vermutungen (assumptions). In Vim springst du heute durch die ganze
+  Datei: mit `G` ans Ende, also in die Zukunft, und mit `gg` zurück an
+  den Anfang.
+
+
+# 1. In der Datei springen
+
+  `G`        springt in die letzte Zeile (die Zukunft)
+  `gg`       springt in die erste Zeile
+  `:42`      springt in Zeile 42 (dann `Enter`). `42G` geht auch.
+  `Strg-g`   zeigt unten: Dateiname, Zeile, wie viel Prozent der Datei
+
+  1. Drücke `Strg-g` und merke dir die Zeilennummer.
+  2. Drücke `G`. Du bist am Ende der Lektion.
+  3. Drücke `gg`. Du bist am Anfang.
+  4. Tippe `:` und die Zahl aus Schritt 1, dann `Enter`. Du bist zurück.
+
+
+# 2. Grammatik: Futur I und Futur II
+
+  Futur I: werden + Infinitiv
+       Plan, Vorhersage:   Im Herbst wird Mira einen Deutschkurs machen.
+       Vermutung jetzt:    Frau Wolf wird wohl krank sein.
+
+  Futur II: werden + Partizip II + haben/sein
+       Vermutung über Vergangenes:  Jana wird den Termin vergessen haben.
+                                    Herr Becker wird verreist sein.
+       fertig in der Zukunft:       Bis Freitag wird Mira alles
+                                    ausgefüllt haben.
+
+  Bei Vermutungen hilft ein Wort, das zeigt, wie sicher man ist:
+       ganz sicher:      bestimmt, sicher
+       ziemlich sicher:  wahrscheinlich, vermutlich, wohl
+       nicht sicher:     vielleicht, möglicherweise
+
+
+# 3. Präsens -> Futur I
+
+  Ändere das Verb mit `cw` in "wird". Setze den Infinitiv mit `f.` und
+  `i` vor den Punkt. Bei trennbaren Verben kommt das Präfix dazu: holt
+  ... ab -> wird ... abholen (Cursor auf "ab", `ea`, holen).
+
+---> Im Herbst macht Mira einen Deutschkurs.
+     Lösung {{{
+===> Im Herbst wird Mira einen Deutschkurs machen.
+     werden + Infinitiv am Ende.
+     }}}
+
+---> Morgen holt Mira ihre Meldebescheinigung ab.
+     Lösung {{{
+===> Morgen wird Mira ihre Meldebescheinigung abholen.
+     abholen ist trennbar. Im Futur steht der Infinitiv zusammen am Ende.
+     }}}
+
+
+# 4. Vermutungen mit Futur I
+
+  Der erste Satz ist eine Tatsache und bleibt. Mache aus dem zweiten
+  Satz eine Vermutung mit Futur I. Das Wort für die Vermutung (wohl,
+  wahrscheinlich) bleibt stehen.
+
+---> Frau Wolf ist nicht da. Sie ist wohl krank.
+     Lösung {{{
+===> Frau Wolf ist nicht da. Sie wird wohl krank sein.
+     Vermutung über jetzt: werden + Infinitiv (sein).
+     }}}
+
+---> Das Amt ist noch zu. Es öffnet wahrscheinlich gleich.
+     Lösung {{{
+===> Das Amt ist noch zu. Es wird wahrscheinlich gleich öffnen.
+     werden + Infinitiv (öffnen) am Ende.
+     }}}
+
+
+# 5. Vermutungen mit Futur II
+
+  Hier geht es um Vergangenes. Aus dem Perfekt wird Futur II: hat/ist
+  -> wird, und haben/sein kommt ans Ende.
+
+---> Jana ist nicht gekommen. Sie hat den Termin wohl vergessen.
+     Lösung {{{
+===> Jana ist nicht gekommen. Sie wird den Termin wohl vergessen haben.
+oder Jana ist nicht gekommen. Sie wird wohl den Termin vergessen haben.
+     Perfekt mit haben -> wird ... vergessen haben.
+     }}}
+
+---> Herr Becker antwortet nicht. Er ist wohl verreist.
+     Lösung {{{
+===> Herr Becker antwortet nicht. Er wird wohl verreist sein.
+     Perfekt mit sein (verreisen) -> wird ... verreist sein.
+     }}}
+
+  Und etwas, das in der Zukunft fertig ist:
+
+---> Bis Freitag hat Mira alle Formulare ausgefüllt.
+     Lösung {{{
+===> Bis Freitag wird Mira alle Formulare ausgefüllt haben.
+     Futur II: Am Freitag ist es schon fertig.
+     }}}
+
+
+# 6. Wie sicher bist du?
+
+  Lösche das Wort, das nicht passt, mit `dw`.
+
+---> Ich bin mir ganz sicher: Der Brief kommt vielleicht bestimmt morgen.
+     Lösung {{{
+===> Ich bin mir ganz sicher: Der Brief kommt bestimmt morgen.
+     ganz sicher -> bestimmt.
+     }}}
+
+
+# Zusammenfassung Lektion 2.5
+
+  Vim
+    `G` / `gg`     ans Ende / an den Anfang der Datei
+    `:42` `42G`    in Zeile 42
+    `Strg-g`       wo bin ich? (Datei, Zeile, Prozent)
+
+  Deutsch
+    Futur I: werden + Infinitiv (Plan, Vermutung jetzt)
+    Futur II: werden + Partizip II + haben/sein (Vermutung über
+    Vergangenes, fertig in der Zukunft)
+    bestimmt > wahrscheinlich, wohl > vielleicht
+
+  Weiter:  :GermanTutor 2.6

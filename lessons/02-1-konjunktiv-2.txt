@@ -1,0 +1,145 @@
+============================================================================
+  Lektion 2.1: Konjunktiv II: Bitten, Wünsche, Ratschläge
+  Vim: cw · ce · C                                         ca. 15 Minuten
+============================================================================
+
+  Kapitel 2: Auf dem Amt. Mira muss sich in Leipzig anmelden. Dafür
+  braucht sie einen Termin beim Bürgeramt, ein Formular und viel Geduld.
+  Auf dem Amt hilft höfliches Deutsch, und höflich heißt oft: Konjunktiv
+  II (subjunctive II).
+
+  In Vim lernst du den Operator c (change). Er löscht wie d und startet
+  danach sofort den Einfügemodus. Löschen und Neuschreiben in einem!
+
+
+# 1. Grammatik: Konjunktiv II
+
+  Der Konjunktiv II ist die Form für das, was nicht (oder noch nicht)
+  wirklich ist: höfliche Bitten, Wünsche, Ratschläge und irreale
+  Bedingungen.
+
+  Die meisten Verben: würde + Infinitiv am Ende.
+       Ich lerne jeden Tag.   ->   Ich würde jeden Tag lernen.
+
+  Diese Verben haben eine eigene Form. Benutze sie statt würde:
+       sein   -> wäre        haben  -> hätte      werden -> würde
+       können -> könnte      müssen -> müsste     dürfen -> dürfte
+       sollen -> sollte      wollen -> wollte     wissen -> wüsste
+       mögen  -> möchte      kommen -> käme       geben  -> gäbe
+
+  So klingt es auf dem Amt:
+       Bitte:      Könnten Sie mir helfen?  Ich hätte gern einen Termin.
+       Wunsch:     Wenn ich doch schon eine Steuernummer hätte!
+       Ratschlag:  An deiner Stelle würde ich früh kommen.
+       Irreal:     Wenn ich Zeit hätte, würde ich mehr lernen.
+
+
+# 2. Ein Wort ändern mit cw
+
+  `cw` löscht vom Cursor bis zum Ende des Wortes und startet den
+  Einfügemodus (change word). Du tippst das neue Wort und drückst `Esc`.
+  `ce` macht dasselbe. Bei `cw` ist Vim großzügig: Das Leerzeichen nach
+  dem Wort bleibt stehen.
+
+  Mache die Sätze höflicher: Ändere das Verb in den Konjunktiv II.
+
+  1. Stelle den Cursor auf den Anfang des Verbs.
+  2. Drücke `cw`, tippe die Form im Konjunktiv II, drücke `Esc`.
+
+---> Können Sie mir bitte helfen?
+     Lösung {{{
+===> Könnten Sie mir bitte helfen?
+     können -> könnte. Mit Sie: Könnten Sie ...?
+     }}}
+
+---> Haben Sie heute noch einen Termin frei?
+     Lösung {{{
+===> Hätten Sie heute noch einen Termin frei?
+     haben -> hätte. Mit Sie: Hätten Sie ...?
+     }}}
+
+---> Ich will einen Termin für die Anmeldung.
+     Lösung {{{
+===> Ich hätte gern einen Termin für die Anmeldung.
+oder Ich möchte einen Termin für die Anmeldung.
+oder Ich hätte gerne einen Termin für die Anmeldung.
+     "Ich will" klingt auf dem Amt unhöflich. Höflich: Ich hätte gern
+     oder Ich möchte (möchte ist der Konjunktiv II von mögen).
+     }}}
+
+
+# 3. Bis zum Zeilenende ändern mit C
+
+  `C` (großes C) ändert alles vom Cursor bis zum Zeilenende. Es ist
+  dasselbe wie `c$`.
+
+  1. Ändere das erste Verb mit `cw`.
+  2. Stelle den Cursor auf den Teil, der sich ändern muss, und drücke
+     `C`. Tippe den neuen Schluss und drücke `Esc`.
+
+---> Geben Sie mir bitte das Formular.
+     Lösung {{{
+===> Würden Sie mir bitte das Formular geben?
+oder Könnten Sie mir bitte das Formular geben?
+     Aus dem Imperativ wird eine höfliche Frage: Würden Sie ... geben?
+     Schritte: cw Würden Esc, dann f. und C geben? Esc.
+     }}}
+
+  Jetzt irreale Bedingungen: Die Bedingung ist nicht wahr. Im
+  wenn-Satz: wäre, hätte, ... Im Hauptsatz: würde + Infinitiv.
+
+---> Wenn ich mehr Zeit habe, lerne ich jeden Tag Deutsch.
+     Lösung {{{
+===> Wenn ich mehr Zeit hätte, würde ich jeden Tag Deutsch lernen.
+     Real: Ich habe keine Zeit. Irreal: Wenn ich mehr Zeit hätte, ...
+     Schritte: cw hätte Esc, dann auf "lerne" C würde ich jeden Tag
+     Deutsch lernen. Esc
+     }}}
+
+---> Wenn der Termin früher ist, komme ich gern.
+     Lösung {{{
+===> Wenn der Termin früher wäre, würde ich gern kommen.
+oder Wenn der Termin früher wäre, käme ich gern.
+     sein -> wäre. kommen: würde ... kommen oder käme. Beides ist
+     richtig, würde kommen hört man öfter.
+     }}}
+
+  Ein Wunsch: Ändere die ganze Zeile mit `C`. Beginne mit "Wenn" oder
+  mit dem Verb.
+
+---> Ich habe schon eine Wohnung.
+     Lösung {{{
+===> Wenn ich doch schon eine Wohnung hätte!
+oder Hätte ich doch schon eine Wohnung!
+oder Wenn ich nur schon eine Wohnung hätte!
+oder Hätte ich nur schon eine Wohnung!
+     Wunsch: Wenn ich doch ... hätte! oder: Hätte ich doch ...!
+     doch oder nur machen den Wunsch stärker.
+     }}}
+
+  Ein Ratschlag für Jana, die auch zum Amt muss:
+
+---> Du gehst früh zum Bürgeramt.
+     Lösung {{{
+===> An deiner Stelle würde ich früh zum Bürgeramt gehen.
+oder Du solltest früh zum Bürgeramt gehen.
+oder Ich würde früh zum Bürgeramt gehen.
+     Ratschlag: An deiner Stelle würde ich ... / Du solltest ...
+     }}}
+
+
+# Zusammenfassung Lektion 2.1
+
+  Vim
+    `cw` `ce`   Wort ändern: löschen und Einfügemodus
+    `C`         ändern bis zum Zeilenende (wie c$)
+
+  Deutsch
+    Konjunktiv II: würde + Infinitiv
+    eigene Formen: wäre, hätte, könnte, müsste, dürfte, sollte, wüsste,
+    möchte, käme, gäbe
+    Bitte: Könnten Sie ...? · Wunsch: Wenn ich doch ... hätte!
+    Ratschlag: An deiner Stelle würde ich ... · Du solltest ...
+    Irreal: Wenn ich Zeit hätte, würde ich ...
+
+  Weiter:  :GermanTutor 2.2

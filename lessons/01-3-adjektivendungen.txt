@@ -1,0 +1,146 @@
+============================================================================
+  Lektion 1.3: Adjektivendungen
+  Vim: w · b · e · r                                       ca. 15 Minuten
+============================================================================
+
+  Mira liest jeden Morgen Wohnungsanzeigen. Die Texte sind kurz und voller
+  Adjektive: "Helle Wohnung mit großem Balkon". Jedes Adjektiv braucht die
+  richtige Endung.
+
+  Dafür lernst du heute, wie du in Vim von Wort zu Wort springst. Mit `e`
+  landest du genau am Ende eines Wortes. Und dort steht die Endung!
+
+
+# 1. Von Wort zu Wort: w, b, e
+
+  `w`   springt zum Anfang des nächsten Wortes (word)
+  `b`   springt zurück zum Anfang des Wortes (back)
+  `e`   springt zum Ende des Wortes (end)
+
+  1. Gehe mit `j` auf die Übungszeile unten.
+  2. Drücke ein paarmal `w`. Der Cursor springt von Wort zu Wort.
+  3. Drücke `b`. Er springt zurück.
+  4. Drücke `e`. Er steht jetzt auf dem letzten Buchstaben eines Wortes.
+
+     Übungszeile: Helle Wohnung mit großem Balkon in ruhiger Lage.
+
+  Achtung: Für `w` ist auch ein Komma oder ein Punkt ein "Wort".
+
+
+# 2. Grammatik: Wer zeigt den Fall?
+
+  Die Regel in einem Satz: Entweder der Artikel oder das Adjektiv zeigt
+  Genus (gender) und Kasus (case).
+
+  Zeigt der Artikel den Fall schon (der, den, dem, des, die, das, eine,
+  einen, einem, einer ...)? Dann bekommt das Adjektiv nur -e oder -en:
+
+       der große Balkon     mit dem großen Balkon     einen großen Balkon
+
+  Zeigt der Artikel ihn nicht (ein, kein, mein ohne Endung), oder gibt es
+  keinen Artikel? Dann zeigt das Adjektiv den Fall, fast wie der Artikel:
+
+       ein großer Balkon   (der)      ein helles Zimmer   (das)
+       mit großem Balkon   (dem)      neue Küche          (die)
+
+  Die Tabelle mit ein (Plural mit keine):
+
+            maskulin        feminin         neutral         Plural
+       Nom  ein neuer       eine neue       ein neues       keine neuen
+       Akk  einen neuen     eine neue       ein neues       keine neuen
+       Dat  einem neuen     einer neuen     einem neuen     keinen neuen
+       Gen  eines neuen     einer neuen     eines neuen     keiner neuen
+
+
+# 3. Eine Endung ersetzen mit r
+
+  `r` ersetzt ein Zeichen (replace). Danach bist du sofort wieder im
+  Normalmodus. Kein `Esc` nötig!
+
+  In jeder Zeile ist eine Endung falsch. Meistens ist nur ein Buchstabe
+  falsch: -en statt -em, -er statt -en ...
+
+  1. Gehe mit `j` auf die Zeile mit --->.
+  2. Springe mit `w` zu dem Adjektiv mit der falschen Endung.
+  3. Drücke `e`. Der Cursor steht auf dem letzten Buchstaben.
+  4. Drücke `r` und dann den richtigen Buchstaben, zum Beispiel `rm`.
+
+---> Schöne Wohnung mit großen Balkon, nur fünf Minuten zum Park.
+     Lösung {{{
+===> Schöne Wohnung mit großem Balkon, nur fünf Minuten zum Park.
+     mit + Dativ, ohne Artikel: Das Adjektiv zeigt den Fall.
+     (mit dem Balkon) -> mit großem Balkon.
+     }}}
+
+---> Die Wohnung hat ein großen Bad mit Fenster.
+     Lösung {{{
+===> Die Wohnung hat ein großes Bad mit Fenster.
+     Akkusativ neutral: ein großes Bad. ein zeigt das Genus nicht,
+     also zeigt es das Adjektiv: -es wie das.
+     }}}
+
+---> Im Wohnzimmer steht ein alten Sofa.
+     Lösung {{{
+===> Im Wohnzimmer steht ein altes Sofa.
+     Nominativ neutral: ein altes Sofa (das Sofa).
+     }}}
+
+---> Mira ruft den freundlicher Vermieter an.
+     Lösung {{{
+===> Mira ruft den freundlichen Vermieter an.
+     Akkusativ maskulin: den zeigt den Fall, also nur -en.
+     }}}
+
+---> Herr Becker sucht einen zuverlässiges Mieter.
+     Lösung {{{
+===> Herr Becker sucht einen zuverlässigen Mieter.
+     Akkusativ maskulin: einen zuverlässigen Mieter.
+     }}}
+
+---> Mira möchte lieber in einem ruhiger Viertel wohnen.
+     Lösung {{{
+===> Mira möchte lieber in einem ruhigen Viertel wohnen.
+     in + Dativ (Wo?), neutral: in einem ruhigen Viertel.
+     }}}
+
+
+# 4. Mit e und x oder e und a
+
+  Nicht immer reicht ein Buchstabe. Manchmal ist einer zu viel, manchmal
+  fehlt einer. Dann hilft `e` zusammen mit `x` (löschen) oder `a`
+  (anfügen).
+
+  1. Springe mit `w` und `e` ans Ende des Adjektivs.
+  2. Ein Buchstabe zu viel? Drücke `x`.
+     Ein Buchstabe fehlt? Drücke `a`, tippe ihn, drücke `Esc`.
+
+---> Ruhige Lage, neues Küche, kleiner Garten.
+     Lösung {{{
+===> Ruhige Lage, neue Küche, kleiner Garten.
+     Anzeigen-Stil ohne Artikel, Nominativ: die Küche -> neue Küche.
+     Ruhige Lage (die) und kleiner Garten (der) waren schon richtig.
+     }}}
+
+---> Wegen des hohe Preises sagt Mira den Termin ab.
+     Lösung {{{
+===> Wegen des hohen Preises sagt Mira den Termin ab.
+     Genitiv maskulin: des zeigt den Fall, also -en.
+     }}}
+
+
+# Zusammenfassung Lektion 1.3
+
+  Vim
+    `w`     zum Anfang des nächsten Wortes
+    `b`     zum Anfang des Wortes zurück
+    `e`     zum Ende des Wortes, dorthin, wo die Endung steht
+    `r`     ein Zeichen ersetzen, ohne Einfügemodus
+
+  Deutsch
+    Der Artikel zeigt den Fall: Adjektiv auf -e oder -en.
+      der neue Balkon, mit dem neuen Balkon, einen neuen Balkon
+    Der Artikel zeigt ihn nicht (ein, kein, mein) oder fehlt: Das
+    Adjektiv zeigt ihn.
+      ein neuer Balkon, ein neues Bad, mit neuem Balkon, neue Küche
+
+  Weiter:  :GermanTutor 1.4

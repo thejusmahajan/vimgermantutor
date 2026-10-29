@@ -1,0 +1,166 @@
+============================================================================
+  Lektion 1.4: Reisen und Verkehr
+  Vim: dw · d$ · Zähler · dd · p · u · Strg-r              ca. 15 Minuten
+============================================================================
+
+  Mira entdeckt Leipzig mit der Straßenbahn. Am Wochenende fährt sie mit
+  dem Zug nach Dresden. Unterwegs übst du die Wechselpräpositionen und die
+  trennbaren Verben.
+
+  In Vim lernst du heute den Operator d (delete). Ein Operator braucht
+  eine Bewegung (motion): d plus w löscht ein Wort, d plus $ löscht bis
+  zum Zeilenende.
+
+
+# 1. Wortschatz: unterwegs
+
+  die Haltestelle, -n     die Fahrkarte, -n        der Fahrplan, -pläne
+  das Gleis, -e           der Automat, -en         die Verspätung, -en
+
+  einsteigen (in + Akk)   Mira steigt in die Straßenbahn ein.
+  aussteigen (aus + Dat)  Sie steigt am Hauptbahnhof aus.
+  umsteigen (in + Akk)    Dort steigt sie in den Zug um.
+  ankommen (in + Dat)     Um zehn kommt sie in Dresden an.
+  abfahren (von + Dat)    Der Zug fährt von Gleis 12 ab.
+
+  Trennbare Verben (separable verbs): Im Hauptsatz steht das Präfix am
+  Ende: ein-steigen -> Sie steigt ... ein.
+
+
+# 2. Grammatik: Wo? oder Wohin?
+
+  Nach den Wechselpräpositionen (two-way prepositions) an, auf, hinter,
+  in, neben, über, unter, vor, zwischen steht mal Akkusativ, mal Dativ:
+
+       Wohin? (Richtung)  -> Akkusativ    Sie steigt in die Bahn ein.
+       Wo?    (Ort)       -> Dativ        Sie sitzt in der Bahn.
+
+  Und: zu Fuß gehen (on foot), aber mit dem Bus, mit der Bahn fahren.
+
+
+# 3. Wörter löschen mit dw
+
+  `dw` löscht vom Cursor bis zum Anfang des nächsten Wortes. Steht der
+  Cursor am Anfang eines Wortes, verschwindet das ganze Wort mit dem
+  Leerzeichen danach.
+
+  In jeder Zeile stehen zwei Artikel. Nur einer passt: Wo? oder Wohin?
+
+  1. Gehe auf die Zeile mit --->.
+  2. Stelle den Cursor mit `w` auf den Anfang des falschen Artikels.
+  3. Drücke `dw`.
+
+---> Mira wartet an der die Haltestelle.
+     Lösung {{{
+===> Mira wartet an der Haltestelle.
+     Wo wartet sie? -> Dativ: an der Haltestelle.
+     }}}
+
+---> Dann steigt sie in der die Straßenbahn ein.
+     Lösung {{{
+===> Dann steigt sie in die Straßenbahn ein.
+     Wohin steigt sie? -> Akkusativ: in die Straßenbahn.
+     }}}
+
+---> In die der Bahn sind viele Studenten.
+     Lösung {{{
+===> In der Bahn sind viele Studenten.
+     Wo sind die Studenten? -> Dativ: in der Bahn.
+     }}}
+
+---> Am Hauptbahnhof steigt sie in dem den Zug nach Dresden um.
+     Lösung {{{
+===> Am Hauptbahnhof steigt sie in den Zug nach Dresden um.
+     Wohin steigt sie um? -> Akkusativ: in den Zug.
+     }}}
+
+
+# 4. Mit Zähler: mehrere Wörter auf einmal
+
+  Vor fast jedes Kommando kannst du eine Zahl setzen, den Zähler (count).
+  `3w` springt drei Wörter weiter. `d3w` löscht drei Wörter.
+
+  1. Stelle den Cursor auf das erste Wort, das weg muss.
+  2. Drücke `d3w`.
+
+---> In Dresden geht Mira mit dem Fuß zu Fuß in die Altstadt.
+     Lösung {{{
+===> In Dresden geht Mira zu Fuß in die Altstadt.
+     Der Ausdruck heißt: zu Fuß gehen (ohne Artikel).
+     }}}
+
+
+# 5. Bis zum Zeilenende löschen mit d$
+
+  `$` ist die Bewegung zum Zeilenende. `d$` löscht also alles vom Cursor
+  bis zum Ende der Zeile.
+
+  In der Zeile steht der Satz zweimal: erst richtig, dann mit einem
+  typischen Fehler. Lösche den falschen Satz.
+
+  1. Stelle den Cursor auf den Anfang des zweiten Satzes.
+  2. Drücke `d$`.
+
+---> Der Zug fährt um acht Uhr ab. Der Zug abfährt um acht Uhr.
+     Lösung {{{
+===> Der Zug fährt um acht Uhr ab.
+     abfahren ist trennbar. Im Hauptsatz: fährt ... ab.
+     }}}
+
+
+# 6. Ganze Zeilen: dd und p
+
+  `dd` löscht die ganze Zeile. Vim merkt sich die gelöschte Zeile.
+  `p` (put) setzt sie UNTER der Zeile mit dem Cursor wieder ein.
+
+  So verschiebst du eine Zeile nach unten: `dd`, dann `j` oder `k`, dann
+  `p`. Und `ddp` tauscht eine Zeile mit der Zeile darunter.
+
+  Die vier Sätze erzählen Miras Fahrt nach Dresden. Leider ist die
+  Reihenfolge falsch. Bringe sie in die richtige Reihenfolge.
+
+---> Am Hauptbahnhof steigt sie in den Zug nach Dresden um.
+---> Mira kauft am Automaten eine Fahrkarte.
+---> Eine gute Stunde später kommt sie in Dresden an.
+---> Dann steigt sie in die Straßenbahn ein.
+     Lösung {{{
+===> Mira kauft am Automaten eine Fahrkarte.
+===> Dann steigt sie in die Straßenbahn ein.
+===> Am Hauptbahnhof steigt sie in den Zug nach Dresden um.
+===> Eine gute Stunde später kommt sie in Dresden an.
+     Ein möglicher Weg: Auf der ersten Zeile ddp (tauscht 1 und 2).
+     Dann auf der letzten Zeile dd. Jetzt steht der Cursor auf der
+     Falte darunter: dreimal k, dann p. Es gibt viele Wege!
+     }}}
+
+
+# 7. Rückgängig: u und Strg-r
+
+  `u` (undo) macht die letzte Änderung rückgängig. Drückst du `u`
+  mehrmals, geht Vim immer weiter zurück.
+  `Strg-r` (Ctrl-r, redo) stellt die Änderung wieder her.
+
+  Probiere es aus: Lösche in der Zeile unten zwei Wörter mit `dw`. Drücke
+  `u` zweimal. Drücke dann `Strg-r` einmal.
+
+     Probierzeile: Nächste Haltestelle: Augustusplatz. Bitte aussteigen.
+
+
+# Zusammenfassung Lektion 1.4
+
+  Vim
+    `dw`        Wort löschen (bis zum nächsten Wort)
+    `d$`        bis zum Zeilenende löschen
+    `d3w` `3w`  Zähler: dreimal
+    `dd`        Zeile löschen
+    `p`         Gelöschtes unter der Zeile einsetzen (put)
+    `ddp`       Zeile mit der nächsten tauschen
+    `u`         rückgängig (undo)
+    `Strg-r`    wiederherstellen (redo)
+
+  Deutsch
+    Wechselpräpositionen: Wohin? -> Akkusativ, Wo? -> Dativ
+    trennbare Verben: Sie steigt in die Bahn ein. Der Zug fährt ab.
+    zu Fuß gehen · mit dem Bus fahren
+
+  Weiter:  :GermanTutor 1.5

@@ -1,0 +1,103 @@
+============================================================================
+  Lektion 1.7: Wiederholung Kapitel 1
+  Vim: alles aus Kapitel 1                                 ca. 15 Minuten
+============================================================================
+
+  Mira ist seit einem Monat in Leipzig. Heute schreibt sie ihrem Bruder
+  Luka in Ljubljana eine lange E-Mail. Sie schreibt schnell, und ein
+  paar Fehler sind dabei. Hilf ihr beim Korrigieren!
+
+  Zuerst die Zusammenfassung von Kapitel 1. Dann kommen gemischte
+  Übungen. Welches Kommando du nimmst, entscheidest du jetzt selbst.
+
+
+# Zusammenfassung Kapitel 1
+
+  Vim
+    `h` `j` `k` `l`   bewegen          `zo` `zc`   Falte auf, zu
+    `w` `b` `e`       Wortsprünge      `f.`        zum nächsten Punkt
+    `x`               Zeichen löschen  `r`         Zeichen ersetzen
+    `i` `a` `A`       einfügen         `o` `O`     neue Zeile
+    `dw` `d$` `dd`    löschen          `daw`       Wort mit Leerzeichen
+    `p` `P`           einsetzen        `J`         Zeilen verbinden
+    `u` `Strg-r`      rückgängig, wiederherstellen
+    `3w` `d2w`        Zähler           `:wq` `:q!` speichern, beenden
+
+  Deutsch
+    aus, bei, mit, nach, seit, von, zu: Dativ
+    wegen, trotz, während: Genitiv (des Regens, der Miete)
+    Adjektiv: Zeigt der Artikel den Fall, dann -e/-en; sonst zeigt das
+    Adjektiv ihn (ein großer, mit großem)
+    Wechselpräpositionen: Wohin? Akkusativ, Wo? Dativ
+    weil, dass, obwohl, wenn: Verb am Ende
+    Relativpronomen: Genus vom Nomen, Fall aus dem Relativsatz
+
+
+# Übungen
+
+  In jeder Zeile ist ein Fehler, manchmal auch zwei. Die Lösung zeigt
+  dir, was gemeint ist.
+
+---> Ich wohne jetzt seit einen Monat in Leipzig.
+     Lösung {{{
+===> Ich wohne jetzt seit einem Monat in Leipzig.
+     seit + Dativ, der Monat -> seit einem Monat. (e, r, m)
+     }}}
+
+---> Wegen dem Lärm war die erste Wohnung nichts für mich.
+     Lösung {{{
+===> Wegen des Lärms war die erste Wohnung nichts für mich.
+oder Wegen des Lärmes war die erste Wohnung nichts für mich.
+     wegen + Genitiv: des Lärms.
+     }}}
+
+---> Jetzt habe ich eine helle Küche mit ein großes Fenster.
+     Lösung {{{
+===> Jetzt habe ich eine helle Küche mit einem großen Fenster.
+     mit + Dativ, das Fenster: mit einem großen Fenster.
+     Zwei Fehler: ein -> einem, großes -> großen.
+     }}}
+
+---> Jeden Morgen steige ich in der Straßenbahn ein.
+     Lösung {{{
+===> Jeden Morgen steige ich in die Straßenbahn ein.
+     Wohin? -> Akkusativ: in die Straßenbahn.
+     }}}
+
+---> Ich mag Leipzig, weil die Stadt ist grün und nicht so teuer.
+     Lösung {{{
+===> Ich mag Leipzig, weil die Stadt grün und nicht so teuer ist.
+     weil -> Verb am Ende. (Leerzeichen vor "ist", daw, f., P)
+     }}}
+
+---> Meine Nachbarin, die ich beim Einkaufen helfe, ist sehr lustig.
+     Lösung {{{
+===> Meine Nachbarin, der ich beim Einkaufen helfe, ist sehr lustig.
+     helfen + Dativ: Ich helfe der Nachbarin -> der.
+     }}}
+
+---> Am Wochenende ich fahre mit Jana nach Dresden.
+     Lösung {{{
+===> Am Wochenende fahre ich mit Jana nach Dresden.
+     Am Wochenende ist Position 1. Das Verb kommt auf Position 2.
+     }}}
+
+  Und der Schluss der E-Mail. Die Zeilen sind durcheinander. Sortiere
+  sie mit `dd` und `p`.
+
+---> Mira
+---> Ich vermisse dich!
+---> Liebe Grüße
+     Lösung {{{
+===> Ich vermisse dich!
+===> Liebe Grüße
+===> Mira
+     Nach "Liebe Grüße" steht kein Komma. Der Name steht allein in der
+     letzten Zeile. Ein Weg: auf "Mira" dd, j, p.
+     }}}
+
+
+  Super! Kapitel 1 ist geschafft. Mira hat eine Wohnung, und du kennst
+  die wichtigsten Vim-Kommandos. In Kapitel 2 geht Mira auf das Amt.
+
+  Weiter:  :GermanTutor 2.1

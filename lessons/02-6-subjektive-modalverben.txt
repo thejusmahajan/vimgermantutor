@@ -1,0 +1,128 @@
+============================================================================
+  Lektion 2.6: Subjektive Modalverben
+  Vim: d/wort · c/wort · rD                                ca. 15 Minuten
+============================================================================
+
+  Im Treppenhaus erfährt Mira viel: Herr Albrecht soll früher
+  Schauspieler gewesen sein. Die Miete soll steigen. Und der Lärm
+  könnte von der Baustelle kommen. Mit Modalverben kann man nicht nur
+  sagen, was man will oder muss, sondern auch, was man gehört hat und
+  wie sicher man ist.
+
+  In Vim lernst du, ein Kommando mit der Suche zu verbinden: `d/wort`
+  löscht alles vom Cursor bis zu diesem Wort. So verschwindet "Man sagt,
+  dass ..." in einem Schritt.
+
+
+# 1. Grammatik: Was man gehört hat, was man vermutet
+
+  Gerücht (rumour), andere sagen es:  sollen
+       Man sagt, dass er reich ist.    ->  Er soll reich sein.
+  Behauptung, er sagt es selbst:      wollen
+       Er sagt, dass er nichts davon gewusst hat.
+                                       ->  Er will nichts davon gewusst
+                                           haben.
+  (Achtung: "Er will alles wissen" heißt meistens: he wants to. Mit der
+  Vergangenheit ist die Behauptung klar.)
+  Vermutung, fast sicher:             müssen
+       Ich bin fast sicher, dass das Paket für Mira ist.
+                                       ->  Das Paket muss für Mira sein.
+  Vermutung, wahrscheinlich:          dürfte (Konjunktiv II)
+  Vermutung, möglich:                 könnte (Konjunktiv II)
+
+  Über die Vergangenheit: Modalverb + Partizip II + haben/sein
+       Er soll früher in Berlin gewohnt haben.
+       Herr Albrecht soll Schauspieler gewesen sein.
+
+
+# 2. Löschen bis zu einem Wort: d/
+
+  `d/Herr` und `Enter` löscht vom Cursor bis vor das nächste "Herr".
+  Das Wort selbst bleibt stehen. Das geht mit jedem Operator: `c/`, `y/`.
+
+  1. Gehe auf die Zeile mit ---> und drücke `w` (Cursor auf "Man").
+  2. Tippe `d/` und das erste Wort, das stehen bleiben soll, `Enter`.
+  3. Baue den Rest um: Modalverb einfügen (`i`), Verb am Ende ändern
+     (`cw`). Großbuchstabe am Satzanfang mit `r`.
+
+---> Man sagt, dass Herr Albrecht früher Schauspieler war.
+     Lösung {{{
+===> Herr Albrecht soll früher Schauspieler gewesen sein.
+     Gerücht über die Vergangenheit: soll + gewesen sein.
+     Schritte: w d/Herr Enter, /früher Enter, i soll Leerzeichen Esc,
+     /war Enter, cw gewesen sein Esc.
+     }}}
+
+---> Man sagt, dass die Miete im Haus bald steigt.
+     Lösung {{{
+===> Die Miete im Haus soll bald steigen.
+     Gerücht: soll + Infinitiv. Mit rD wird aus "die" am Satzanfang
+     "Die".
+     }}}
+
+---> Man sagt, dass Herr Albrecht früher in Berlin gewohnt hat.
+     Lösung {{{
+===> Herr Albrecht soll früher in Berlin gewohnt haben.
+     Gerücht über die Vergangenheit: soll + gewohnt haben.
+     }}}
+
+  Und jetzt eine Behauptung (wollen). Der Satz beginnt schon mit dem
+  Subjekt. Stelle den Cursor auf "behauptet" und lösche bis "jeden".
+
+---> Herr Albrecht behauptet, dass er jeden im Haus kennengelernt hat.
+     Lösung {{{
+===> Herr Albrecht will jeden im Haus kennengelernt haben.
+     Er sagt es selbst über sich: wollen. Vergangenheit: kennengelernt
+     haben.
+     }}}
+
+
+# 3. Wie sicher? müssen, dürfte, könnte
+
+  Ersetze das Wort für die Sicherheit (fast sicher, wahrscheinlich,
+  vielleicht) durch das passende Modalverb.
+
+---> Ich bin fast sicher, dass das Paket für Mira ist.
+     Lösung {{{
+===> Das Paket muss für Mira sein.
+     fast sicher: müssen.
+     }}}
+
+---> Wahrscheinlich ist die Wohnung oben teurer.
+     Lösung {{{
+===> Die Wohnung oben dürfte teurer sein.
+     wahrscheinlich: dürfte (Konjunktiv II von dürfen).
+     }}}
+
+---> Vielleicht kommt der Lärm von der Baustelle.
+     Lösung {{{
+===> Der Lärm könnte von der Baustelle kommen.
+     vielleicht, möglich: könnte (Konjunktiv II von können).
+     }}}
+
+
+# 4. soll oder will?
+
+  Lösche das falsche Modalverb mit `dw`.
+
+---> Jana erzählt: Herr Becker will soll im Lotto gewonnen haben.
+     Lösung {{{
+===> Jana erzählt: Herr Becker soll im Lotto gewonnen haben.
+     Jana hat es gehört, Herr Becker sagt es nicht selbst: sollen.
+     }}}
+
+
+# Zusammenfassung Lektion 2.6
+
+  Vim
+    `d/wort`   löschen bis vor das nächste "wort" (dann `Enter`)
+    `c/wort`   dasselbe, danach Einfügemodus
+    `rD`       Buchstaben ersetzen, hier durch ein großes D
+
+  Deutsch
+    sollen: Gerücht (andere sagen es)
+    wollen: Behauptung (er sagt es selbst): Er will es gewusst haben.
+    muss (fast sicher) > dürfte (wahrscheinlich) > könnte (möglich)
+    Vergangenheit: Er soll ... gewohnt haben / gewesen sein.
+
+  Weiter:  :GermanTutor 2.7

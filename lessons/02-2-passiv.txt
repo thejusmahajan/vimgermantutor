@@ -1,0 +1,154 @@
+============================================================================
+  Lektion 2.2: Das Passiv
+  Vim: / · n · N · ? · Strg-o                              ca. 15 Minuten
+============================================================================
+
+  Mira hat ihren Termin im Bürgeramt. Auf dem Amt sagt niemand, WER etwas
+  tut. Wichtig ist nur, WAS passiert: Das Formular wird ausgefüllt, der
+  Ausweis wird geprüft. Das ist das Passiv (passive voice).
+
+  In Vim lernst du heute das Suchen. Damit springst du in einem langen
+  Text sofort an die richtige Stelle, zum Beispiel zu jedem "man".
+
+
+# 1. Grammatik: Vorgangspassiv
+
+  Das Passiv bildest du mit werden + Partizip II (past participle). Das
+  Subjekt im Passiv ist das Akkusativ-Objekt aus dem Aktiv.
+
+       Aktiv:   Man prüft den Ausweis.
+       Passiv:  Der Ausweis wird geprüft.
+
+  Die Person kann mit von + Dativ dazukommen:
+       Der Ausweis wird von Frau Wolf geprüft.
+
+  Die Zeiten:
+       Präsens      Der Ausweis wird geprüft.
+       Präteritum   Der Ausweis wurde geprüft.
+       Perfekt      Der Ausweis ist geprüft worden.  (nicht: geworden!)
+
+  Ohne Akkusativ-Objekt: Es gibt kein Subjekt.
+       Man arbeitet hier viel.  ->  Hier wird viel gearbeitet.
+
+  Zustandspassiv (state): sein + Partizip II. Es zeigt das Ergebnis.
+       Vorgang:  Die Tür wird gerade abgeschlossen.
+       Zustand:  Die Tür ist abgeschlossen.
+
+
+# 2. Suchen mit /
+
+  `/` öffnet unten die Kommandozeile für die Suche. Tippe das Suchwort
+  und drücke `Enter`. Der Cursor springt zum nächsten Treffer.
+
+  `n`        springt zum nächsten Treffer (next)
+  `N`        springt zum vorigen Treffer
+  `?wort`    sucht rückwärts
+  `Strg-o`   springt zurück dorthin, wo du vorher warst
+
+  Tipp: /man findet auch "Mann" und "manchmal". /\<man\> findet nur das
+  ganze Wort man. (\< heißt: Wortanfang, \> heißt: Wortende.)
+  Deutsche Tastatur: / ist Umschalt-7, \ ist AltGr-ß, < und > liegen
+  links neben dem Y.
+
+  1. Tippe `/\<man\>` und `Enter`. Der Cursor springt zum nächsten man.
+  2. Drücke `n`, bis du in einer Zeile mit ---> landest.
+  3. Drücke `Strg-o` so oft, bis du wieder hier bist.
+
+
+# 3. Aktiv -> Passiv
+
+  In jeder Zeile steht ein man-Satz. Mache daraus einen Passivsatz.
+  Behalte die Wortstellung, soweit es geht.
+
+  1. Springe mit `/\<man\>` oder `n` zur Zeile.
+  2. Ändere das Verb mit `cw` in wird (oder wurde).
+  3. Lösche man mit `dw`.
+  4. Schreibe das Partizip II ans Ende. Trick bei trennbaren Verben: Der
+     Cursor steht auf "aus". Mit `ea` und "gefüllt" wird daraus
+     "ausgefüllt". Das ge- steht zwischen Präfix und Verb.
+
+---> Im Bürgeramt füllt man zuerst ein Formular aus.
+     Lösung {{{
+===> Im Bürgeramt wird zuerst ein Formular ausgefüllt.
+oder Zuerst wird im Bürgeramt ein Formular ausgefüllt.
+     ein Formular ist schon Nominativ und Akkusativ: Es ändert sich nicht.
+     ausfüllen -> ausgefüllt.
+     }}}
+
+---> Dann prüft man den Ausweis.
+     Lösung {{{
+===> Dann wird der Ausweis geprüft.
+     Aus dem Akkusativ wird der Nominativ: den Ausweis -> der Ausweis.
+     Ein schneller Weg: auf das n von "den", dann r und r.
+     }}}
+
+---> Am Ende druckt man die Meldebescheinigung aus.
+     Lösung {{{
+===> Am Ende wird die Meldebescheinigung ausgedruckt.
+     ausdrucken -> ausgedruckt (Präfix + ge + Verb).
+     }}}
+
+  Jetzt Präteritum: wurde statt wird.
+
+---> Am nächsten Tag rief man Mira vom Amt an.
+     Lösung {{{
+===> Am nächsten Tag wurde Mira vom Amt angerufen.
+     Präteritum Passiv: wurde + Partizip II. anrufen -> angerufen.
+     Mira ist hier schon Akkusativ = Nominativ, sie bleibt Mira.
+     }}}
+
+  Ohne Akkusativ-Objekt bleibt kein Subjekt übrig:
+
+---> Im Wartesaal spricht man leise.
+     Lösung {{{
+===> Im Wartesaal wird leise gesprochen.
+oder Es wird im Wartesaal leise gesprochen.
+     sprechen hat hier kein Objekt: unpersönliches Passiv.
+     Mit es nur, wenn sonst nichts auf Position 1 steht.
+     }}}
+
+  Und das Perfekt. Hier ist es am einfachsten, die Zeile ab dem Anfang
+  mit `C` neu zu schreiben.
+
+---> Man hat den Termin verschoben.
+     Lösung {{{
+===> Der Termin ist verschoben worden.
+     Perfekt Passiv: sein + Partizip II + worden.
+     }}}
+
+
+# 4. Vorgang oder Zustand?
+
+  Hier stehen wird und ist nebeneinander. Was passt? Lösche das falsche
+  Wort mit `dw`.
+
+---> Gerade wird ist die Tür des Amts abgeschlossen. Mira rennt los.
+     Lösung {{{
+===> Gerade wird die Tür des Amts abgeschlossen. Mira rennt los.
+     Gerade = jetzt passiert es: Vorgang -> wird.
+     }}}
+
+---> Es ist schon sieben Uhr. Das Amt wird ist leider geschlossen.
+     Lösung {{{
+===> Es ist schon sieben Uhr. Das Amt ist leider geschlossen.
+     Das Ergebnis, der Zustand: Das Amt ist zu -> ist geschlossen.
+     }}}
+
+
+# Zusammenfassung Lektion 2.2
+
+  Vim
+    `/wort`    vorwärts suchen, `Enter`
+    `?wort`    rückwärts suchen
+    `n` `N`    nächster / voriger Treffer
+    `\<` `\>`  Wortanfang, Wortende: /\<man\>
+    `Strg-o`   zurück zur letzten Position
+
+  Deutsch
+    Vorgangspassiv: werden + Partizip II
+      wird geprüft · wurde geprüft · ist geprüft worden
+    Person mit von + Dativ: von Frau Wolf
+    ohne Objekt: Hier wird gearbeitet.
+    Zustandspassiv: sein + Partizip II: Die Tür ist abgeschlossen.
+
+  Weiter:  :GermanTutor 2.3

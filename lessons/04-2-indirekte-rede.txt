@@ -1,0 +1,157 @@
+============================================================================
+  Lektion 4.2: Indirekte Rede
+  Vim: q · @ · @@ · 0                                      ca. 15 Minuten
+============================================================================
+
+  Montag, Teambesprechung bei Blauwerk. Die Chefin, Frau Dr. Schäfer,
+  erzählt von einem neuen Projekt. Danach schreibt Mira das Protokoll.
+  Im Protokoll und in den Nachrichten gibt man wieder, was andere gesagt
+  haben: in der indirekten Rede (reported speech).
+
+  In Vim lernst du Makros: Du nimmst eine Folge von Tasten auf und
+  spielst sie so oft ab, wie du willst.
+
+
+# 1. Grammatik: Konjunktiv I
+
+  In der indirekten Rede steht der Konjunktiv I. Er zeigt: Das sage
+  nicht ich, das hat jemand anders gesagt.
+
+  Für er/sie/es: fast immer der Infinitiv ohne -n. Ganz einfach:
+       kommen -> er komme       haben  -> er habe      können -> er könne
+       werden -> er werde       wissen -> er wisse     sein   -> er sei (!)
+
+       Direkt:    Die Chefin sagt: "Das Projekt ist wichtig."
+       Indirekt:  Die Chefin sagt, das Projekt sei wichtig.
+       Mit dass:  Die Chefin sagt, dass das Projekt wichtig sei.
+
+  Die Ersatzform: Klingt der Konjunktiv I wie der Indikativ (meistens
+  im Plural), nimmst du den Konjunktiv II oder würde + Infinitiv:
+       Sie sagen: "Wir haben Zeit."  ->  Sie sagen, sie hätten Zeit.
+       (sie haben = Indikativ, also: sie hätten)
+
+  Auch die Pronomen ändern sich: "ich" wird zu er oder sie.
+
+
+# 2. Makros: aufnehmen und abspielen
+
+  `qa`   startet die Aufnahme in das Register a. Unten steht
+         "recording @a".
+  `q`    beendet die Aufnahme.
+  `@a`   spielt das Makro a ab. `3@a` spielt es dreimal ab.
+  `@@`   spielt das letzte Makro noch einmal ab.
+
+  Dazu eine neue Bewegung: `0` (Null) springt an den Zeilenanfang.
+
+  Bilde aus jedem Infinitiv die Form für er im Konjunktiv I.
+
+  1. Gehe auf die erste Zeile mit ---> (kommen).
+  2. Drücke `qa`. Vim nimmt jetzt auf.
+  3. Tippe: `0` `w` (zum Verb), `i` er Leerzeichen `Esc` (Pronomen
+     davor), `$` `x` (das -n am Ende weg), `j` (nächste Zeile).
+  4. Drücke `q`. Die Aufnahme ist fertig.
+  5. Drücke `5@a`. Vim macht dasselbe mit den nächsten fünf Zeilen.
+  6. Schau dir das Ergebnis an. Ist jede Zeile richtig?
+
+  Deutsche Tastatur: @ ist AltGr-q.
+
+---> kommen
+---> haben
+---> können
+---> sein
+---> wissen
+---> tun
+     Lösung {{{
+===> er komme
+===> er habe
+===> er könne
+===> er sei
+===> er wisse
+===> er tue
+     Bei sein hat das Makro Glück: sei ist richtig.
+     Bei tun nicht: "er tu" ist falsch, richtig ist "er tue".
+     Ein Makro arbeitet stur. Prüfe immer das Ergebnis!
+     }}}
+
+
+# 3. Direkte Rede -> indirekte Rede
+
+  So geht es mit den Kommandos, die du kennst:
+
+  1. Mache aus dem Doppelpunkt ein Komma: `f:` und `r,`.
+  2. Lösche die Anführungszeichen mit `x` (vorne und hinten, `$`).
+  3. Ändere Pronomen und Verb mit `cw`.
+
+---> Mira sagt: „Ich bin müde.“
+     Lösung {{{
+===> Mira sagt, sie sei müde.
+oder Mira sagt, dass sie müde sei.
+     ich -> sie, bin -> sei.
+     }}}
+
+---> Die Chefin sagt: „Das Projekt ist sehr wichtig.“
+     Lösung {{{
+===> Die Chefin sagt, das Projekt sei sehr wichtig.
+oder Die Chefin sagt, dass das Projekt sehr wichtig sei.
+     ist -> sei.
+     }}}
+
+---> Tim erzählt: „Ich habe keine Zeit.“
+     Lösung {{{
+===> Tim erzählt, er habe keine Zeit.
+oder Tim erzählt, dass er keine Zeit habe.
+     ich -> er, habe bleibt habe (Konjunktiv I von haben für er).
+     }}}
+
+---> Die Kollegen sagen: „Wir haben zu viel Arbeit.“
+     Lösung {{{
+===> Die Kollegen sagen, sie hätten zu viel Arbeit.
+oder Die Kollegen sagen, dass sie zu viel Arbeit hätten.
+     wir -> sie. "sie haben" klingt wie der Indikativ.
+     Deshalb die Ersatzform im Konjunktiv II: sie hätten.
+     }}}
+
+---> Die Zeitung schreibt: „Die Mieten steigen.“
+     Lösung {{{
+===> Die Zeitung schreibt, die Mieten würden steigen.
+oder Die Zeitung schreibt, dass die Mieten steigen würden.
+     "sie steigen" klingt wie der Indikativ, "sie stiegen" wie das
+     Präteritum. Deshalb: würden steigen.
+     }}}
+
+  Ein Satz aus dem Protokoll. Nur das Verb fehlt im Konjunktiv I. Ein
+  Buchstabe reicht: `e` und `r`.
+
+---> Frau Dr. Schäfer sagte, das Team bekommt im März eine neue Kollegin.
+     Lösung {{{
+===> Frau Dr. Schäfer sagte, das Team bekomme im März eine neue Kollegin.
+     bekommen -> er/sie/es bekomme.
+     }}}
+
+  Und eine Frage. Aus einer Ja-Nein-Frage wird ein Satz mit ob, das
+  Verb steht am Ende.
+
+---> Tim fragt Mira: „Kommst du mit?“
+     Lösung {{{
+===> Tim fragt Mira, ob sie mitkomme.
+oder Tim fragt Mira, ob sie mitkommt.
+     Ja-Nein-Frage -> ob + Verb am Ende. du -> sie.
+     Im Alltag hört man auch den Indikativ: ob sie mitkommt.
+     }}}
+
+
+# Zusammenfassung Lektion 4.2
+
+  Vim
+    `qa` ... `q`  Makro in Register a aufnehmen
+    `@a` `5@a`    Makro abspielen, fünfmal abspielen
+    `@@`          letztes Makro wiederholen
+    `0`           an den Zeilenanfang
+
+  Deutsch
+    Konjunktiv I (er/sie/es): komme, habe, sei, könne, werde, wisse
+    Ersatzform, wenn Konjunktiv I = Indikativ: hätten, würden + Infinitiv
+    Pronomen anpassen: ich -> er/sie, wir -> sie
+    Ja-Nein-Frage -> ob + Verb am Ende
+
+  Weiter:  :GermanTutor 4.3

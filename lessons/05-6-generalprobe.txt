@@ -1,0 +1,177 @@
+============================================================================
+  Lektion 5.6: Generalprobe und Wiederholung
+  Vim: alles                                               ca. 15 Minuten
+                                                    + 75 Minuten Schreiben
+============================================================================
+
+  Die letzte Lektion! Mira hat ihre Prüfung in drei Wochen. Heute macht
+  sie eine Generalprobe (dress rehearsal): erst gemischte Übungen aus dem
+  ganzen Kurs, dann das ganze Modul Schreiben mit der Uhr, 75 Minuten.
+  Mach mit!
+
+
+# Zusammenfassung Kapitel 5
+
+  Vim
+    `ma` `'a`             Marke setzen, zur Marke springen
+    :set hlsearch  :noh   Treffer farbig zeigen, Farbe aus
+    :GermanTutorTimer 50  Timer (stop: anhalten)
+    :setlocal tw=70 `gqip`  Absatz umbrechen
+    `vip` `g Strg-g`      Wörter im Absatz zählen
+    `V` :s  `gv`          in der Markierung ersetzen, neu markieren
+    :iabbrev mfg ...      Abkürzung im Einfügemodus
+    `zf` `zM` `zR` `zd`   eigene Falten, alle zu, alle auf, löschen
+    `V` :sort  `ddp`      Zeilen sortieren, Zeilen tauschen
+
+  Prüfung
+    Lesen 65 Min. · Hören ca. 40 Min. · Schreiben 75 Min. · Sprechen
+    ca. 15 Min. · bestanden ab 60 von 100 Punkten pro Modul
+    Forumsbeitrag ca. 150 Wörter · formelle Nachricht ca. 100 Wörter
+    Vortrag ca. 4 Min. · Diskussion ca. 5 Min.
+
+
+# 1. Gemischte Übungen aus dem ganzen Kurs
+
+  Jeder Satz hat einen Fehler, manchmal zwei. Woher kennst du ihn?
+
+---> Trotz dem schlechten Wetter fährt Mira mit dem Fahrrad ins Büro.
+     Lösung {{{
+===> Trotz des schlechten Wetters fährt Mira mit dem Fahrrad ins Büro.
+     trotz + Genitiv (Lektion 1.2): des schlechten Wetters.
+     }}}
+
+---> Mira wohnt in einer hellen Wohnung mit großer Balkon.
+     Lösung {{{
+===> Mira wohnt in einer hellen Wohnung mit großem Balkon.
+     mit + Dativ, ohne Artikel (Lektion 1.3): mit großem Balkon.
+     }}}
+
+---> Ohne Jana hatte Mira Leipzig nie so schnell kennengelernt.
+     Lösung {{{
+===> Ohne Jana hätte Mira Leipzig nie so schnell kennengelernt.
+     irreal, Vergangenheit (Lektion 2.3): hätte.
+     }}}
+
+---> Der Antrag kann auch online gestellt worden.
+     Lösung {{{
+===> Der Antrag kann auch online gestellt werden.
+     Modalverb + Partizip II + werden (Lektion 2.4).
+     }}}
+
+---> Mira hilft dem neuen Praktikant bei seinem Bericht.
+     Lösung {{{
+===> Mira hilft dem neuen Praktikanten bei seinem Bericht.
+     n-Deklination (Lektion 3.3): dem Praktikanten.
+     }}}
+
+---> Am Abend hat Mira keine Lust mehr, noch einkaufen.
+     Lösung {{{
+===> Am Abend hat Mira keine Lust mehr, noch einzukaufen.
+     Lust haben, ... zu + Infinitiv (Lektion 3.4): einzukaufen.
+     }}}
+
+---> Tim sagt, er hat heute keine Zeit für das Meeting.
+     Lösung {{{
+===> Tim sagt, er habe heute keine Zeit für das Meeting.
+     indirekte Rede (Lektion 4.2): er habe.
+     }}}
+
+---> Weil der Zug Verspätung hatte, kam Mira zu spät ins Büro.
+     Lösung {{{
+===> Wegen der Verspätung des Zuges kam Mira zu spät ins Büro.
+oder Wegen der Verspätung des Zugs kam Mira zu spät ins Büro.
+oder Wegen der Zugverspätung kam Mira zu spät ins Büro.
+     weil -> wegen + Genitiv (Lektion 4.4). Danach sofort das Verb.
+     }}}
+
+---> Darf ich Ihnen noch eine Frage machen?
+     Lösung {{{
+===> Darf ich Ihnen noch eine Frage stellen?
+     eine Frage stellen (Lektion 4.5).
+     }}}
+
+
+# 2. Generalprobe Schreiben: 75 Minuten
+
+  Jetzt wie in der Prüfung: beide Teile, 75 Minuten, ohne Hilfe. Die
+  Musterlösungen öffnest du erst danach!
+
+  1. Tippe :GermanTutorTimer 75 und Enter.
+  2. Schreibe Teil 1 unter "Mein Beitrag:" und Teil 2 unter "Meine
+     Nachricht:" (jeweils auf die leere Zeile gehen, `o`).
+  3. Zähle die Wörter: `vip` und `g Strg-g`.
+  4. Speichere beide Texte: `vip` und :w ~/b2-teil1.txt, dann im
+     anderen Absatz `vip` und :w ~/b2-teil2.txt
+  5. Korrigiere mit den Checklisten aus Lektion 5.2 und 5.3.
+
+
+  Teil 1: Forumsbeitrag (ca. 150 Wörter)
+
+  In einem Forum wird diskutiert: "Sollten Supermärkte auch am Sonntag
+  öffnen dürfen?" Schreibe deine Meinung. Nenne Vorteile und Nachteile
+  und ein Beispiel aus deinem Alltag oder deinem Heimatland.
+
+     Mein Beitrag:
+
+
+     Musterlösung {{{
+     In diesem Forum geht es um die Frage, ob Supermärkte auch am Sonntag
+     öffnen sollten. Ich bin der Meinung, dass der Sonntag ein freier Tag
+     bleiben sollte. Einerseits wäre es praktisch, wenn man am Sonntag
+     schnell Milch oder Brot kaufen könnte. Gerade Menschen, die unter der
+     Woche lange arbeiten, hätten mehr Zeit zum Einkaufen. Andererseits
+     müssten dann noch mehr Verkäuferinnen und Verkäufer am Wochenende
+     arbeiten. Sie haben dann weniger Zeit für ihre Familien und Freunde. In
+     meinem Heimatland Slowenien sind viele Geschäfte am Sonntag
+     geschlossen, und ich habe mich schnell daran gewöhnt. Man plant den
+     Einkauf eben am Samstag. Und wenn man doch etwas vergessen hat, kann
+     man oft bei den Nachbarn klingeln. Außerdem ist es schön, wenn es in
+     der Stadt einen ruhigen Tag gibt. Abschließend möchte ich sagen, dass
+     Ausnahmen für Bäckereien und Bahnhöfe sinnvoll sind, aber nicht für
+     alle Supermärkte. Wie seht ihr das? Ich bin gespannt auf eure
+     Meinungen.
+     }}}
+
+
+  Teil 2: Formelle Nachricht (ca. 100 Wörter)
+
+  Du sollst für dein Team ein Abendessen organisieren. Am geplanten
+  Abend bist du aber auf einer Fortbildung. Schreibe deiner Chefin, Frau
+  Dr. Schäfer: Entschuldige dich, erkläre die Situation, schlage einen
+  neuen Termin oder eine andere Person vor und bitte um Antwort.
+
+     Meine Nachricht:
+
+
+     Musterlösung {{{
+     Sehr geehrte Frau Dr. Schäfer,
+
+     leider kann ich das Abendessen am Freitag nicht wie geplant
+     organisieren. An diesem Abend bin ich auf einer Fortbildung in Berlin,
+     die schon lange feststeht. Das tut mir sehr leid. Ich habe den Termin
+     leider erst heute in meinem Kalender gesehen.
+
+     Ich würde vorschlagen, das Essen eine Woche später zu machen. Dann
+     kümmere ich mich gern um alles. Falls der Termin bleiben soll, könnte
+     Tim die Organisation übernehmen. Ich gebe ihm dann alle Informationen
+     zum Restaurant. Könnten Sie mir bitte kurz mitteilen, welche Lösung
+     Ihnen lieber ist? Vielen Dank für Ihr Verständnis.
+
+     Mit freundlichen Grüßen
+     Mira Novak
+     }}}
+
+
+# Geschafft!
+
+  Glückwunsch! Du hast den ganzen VimGermanTutor geschafft: 33 Lektionen,
+  von h j k l bis zum Makro, vom Dativ bis zum Nominalstil.
+
+  Für die letzten Wochen vor der Prüfung:
+  - :GermanTutorProgress zeigt dir, welche Übungen noch offen sind.
+  - Wiederhole die Lektionen mit vielen Fehlern. Eine frische Kopie gibt
+    es jederzeit mit :GermanTutor und der Nummer.
+  - Schreibe jede Woche einen Forumsbeitrag und eine Nachricht mit dem
+    Timer. Sprich jeden Tag ein paar Minuten laut Deutsch.
+
+  Viel Erfolg in der Prüfung, und viel Spaß mit Vim!

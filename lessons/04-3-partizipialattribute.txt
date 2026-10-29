@@ -1,0 +1,130 @@
+============================================================================
+  Lektion 4.3: Partizipialattribute
+  Vim: "a · "b · "ap · :reg · df,                          ca. 15 Minuten
+============================================================================
+
+  Bei Blauwerk schreibt Mira jetzt Berichte. Ihre Chefin mag kurze,
+  dichte Sätze. Statt "der Bericht, der gestern geschrieben wurde" sagt
+  sie "der gestern geschriebene Bericht". Das ist ein Partizipialattribut
+  (participle used as an adjective), typisch für B2-Texte.
+
+  In Vim lernst du die Register mit Namen: 26 Zwischenablagen, von a bis
+  z. So kannst du zwei Satzteile gleichzeitig "in der Hand halten".
+
+
+# 1. Grammatik: Aus dem Relativsatz wird ein Adjektiv
+
+  Partizip I = Infinitiv + d. Es ist aktiv und passiert gleichzeitig:
+       die Kollegen, die warten     ->  die wartenden Kollegen
+       der Zug, der einfährt        ->  der einfahrende Zug
+
+  Partizip II. Es ist meistens passiv oder schon passiert:
+       die Lösung, die vorgeschlagen wurde  ->  die vorgeschlagene Lösung
+       das Problem, das gelöst wurde        ->  das gelöste Problem
+
+  Das Partizip bekommt eine Adjektivendung (wie in Lektion 1.3). Alles,
+  was im Relativsatz noch dabei war, steht davor:
+       die Kollegen, die im Büro warten  ->  die im Büro wartenden Kollegen
+
+
+# 2. Register mit Namen
+
+  Vor ein Kommando zum Löschen, Kopieren oder Einfügen kannst du ein
+  Register schreiben: `"a` (Anführungszeichen und ein Buchstabe).
+
+    `"adw`   löscht ein Wort und merkt es sich in Register a
+    `"ayw`   kopiert ein Wort in Register a
+    `"aP`    setzt Register a vor den Cursor, `"ap` dahinter
+    `:reg a b`  zeigt, was in a und b steht
+
+  Dazu eine Bewegung: `df,` löscht bis zum nächsten Komma (mit Komma).
+
+  Mach aus dem Relativsatz ein Partizipialattribut:
+
+  1. Cursor auf "gestern": `"adw`. Jetzt ist "gestern" in Register a.
+  2. Der Cursor steht auf "gebacken": `"bdw`. "gebacken" ist in b.
+  3. Drücke zweimal `b`: Der Cursor steht auf dem ersten Komma. Lösche
+     ", der wurde," mit `df,`.
+  4. Gehe mit `b` auf "Kuchen". Drücke `"aP` und dann `"bp`.
+  5. Jetzt fehlt noch die Endung: `b`, `ea`, e, `Esc`.
+
+---> Der Kuchen, der gestern gebacken wurde, schmeckt sehr gut.
+     Lösung {{{
+===> Der gestern gebackene Kuchen schmeckt sehr gut.
+     der Kuchen, der gebacken wurde -> der gebackene Kuchen.
+     Nach der: Endung -e, wie bei der gute Kuchen.
+     }}}
+
+  Für die nächsten Übungen nimm, was dir am schnellsten vorkommt:
+  Register, `dw`, `df,`, `i`, `cw`.
+
+
+# 3. Partizip II
+
+---> Mira liest die E-Mail, die von der Chefin geschickt wurde.
+     Lösung {{{
+===> Mira liest die von der Chefin geschickte E-Mail.
+     Akkusativ feminin nach die: -e.
+     }}}
+
+---> Die Lösung, die vom Team vorgeschlagen wurde, ist gut.
+     Lösung {{{
+===> Die vom Team vorgeschlagene Lösung ist gut.
+     Nominativ feminin nach die: -e.
+     }}}
+
+---> Das Problem, das gestern gelöst wurde, war sehr komplex.
+     Lösung {{{
+===> Das gestern gelöste Problem war sehr komplex.
+     Nominativ neutral nach das: -e.
+     }}}
+
+
+# 4. Partizip I
+
+---> Die Kollegen, die im Besprechungsraum warten, trinken Kaffee.
+     Lösung {{{
+===> Die im Besprechungsraum wartenden Kollegen trinken Kaffee.
+     warten -> wartend. Plural nach die: -en.
+     }}}
+
+---> Mira hört den Drucker, der laut piept.
+     Lösung {{{
+===> Mira hört den laut piependen Drucker.
+     piepen -> piepend. Akkusativ maskulin nach den: -en.
+     }}}
+
+---> Der Zug, der gerade in den Bahnhof einfährt, hat Verspätung.
+     Lösung {{{
+===> Der gerade in den Bahnhof einfahrende Zug hat Verspätung.
+     einfahren -> einfahrend. Nominativ maskulin nach der: -e.
+     }}}
+
+
+# 5. Partizip I oder II?
+
+  Aktiv und gerade jetzt: Partizip I. Passiv oder vorbei: Partizip II.
+
+---> Blauwerk sucht eine Kollegin, die Deutsch und Englisch spricht.
+     Lösung {{{
+===> Blauwerk sucht eine Deutsch und Englisch sprechende Kollegin.
+     Die Kollegin spricht selbst (aktiv): Partizip I.
+     Akkusativ feminin nach eine: -e.
+     }}}
+
+
+# Zusammenfassung Lektion 4.3
+
+  Vim
+    `"adw` `"ayw`   in Register a löschen, in Register a kopieren
+    `"aP` `"ap`     Register a vor / hinter den Cursor setzen
+    `:reg a b`      Register a und b zeigen
+    `df,`           bis zum nächsten Komma löschen
+
+  Deutsch
+    Partizip I (aktiv, gleichzeitig): die wartenden Kollegen
+    Partizip II (passiv, vorbei): die vorgeschlagene Lösung
+    Endung wie beim Adjektiv. Alles andere steht davor:
+      die vom Team vorgeschlagene Lösung
+
+  Weiter:  :GermanTutor 4.4

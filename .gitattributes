@@ -1,0 +1,7 @@
+# Lessons and Vim scripts are LF everywhere. The plugin also copes with CRLF,
+# but a clean checkout should not need that.
+* text=auto eol=lf
+*.cmd text eol=crlf
+*.bat text eol=crlf
+*.gif binary
+*.png binary

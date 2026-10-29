@@ -1,0 +1,101 @@
+============================================================================
+  Lektion 2.7: Wiederholung Kapitel 2
+  Vim: alles aus Kapitel 2                                 ca. 15 Minuten
+============================================================================
+
+  Geschafft! Mira ist angemeldet, die Meldebescheinigung liegt in ihrer
+  Mappe. Am Abend erzählt sie Jana von ihren Erlebnissen auf dem Amt. Ein
+  paar Sätze sind noch nicht ganz richtig.
+
+  Zuerst die Zusammenfassung von Kapitel 2, dann gemischte Übungen.
+
+
+# Zusammenfassung Kapitel 2
+
+  Vim
+    `cw` `ce` `C`      ändern: Wort, Wortende, bis Zeilenende
+    `/wort` `?wort`    suchen vorwärts, rückwärts
+    `n` `N` `*`        nächster, voriger Treffer
+    `Strg-o`           zurück zur letzten Stelle
+    `.`                letzte Änderung wiederholen
+    `:s/a/b/g`         ersetzen in der Zeile
+    `:%s/a/b/gc`       ersetzen in der Datei, mit Frage
+    `gg` `G` `:42`     Anfang, Ende, Zeile 42
+    `d/wort`           löschen bis vor "wort"
+
+  Deutsch
+    Konjunktiv II: würde + Infinitiv; wäre, hätte, könnte ...
+    Konjunktiv II Vergangenheit: hätte/wäre + Partizip II
+    Passiv: wird gemacht, wurde gemacht, ist gemacht worden
+    mit Modalverb: muss gemacht werden
+    Futur I: wird machen · Futur II: wird gemacht haben (Vermutung)
+    sollen: Gerücht · wollen: Behauptung · muss, dürfte, könnte: Vermutung
+
+
+# Übungen
+
+  Mira hat Frau Wolf geduzt. Das geht auf dem Amt nicht! Mache eine
+  höfliche Bitte mit Sie daraus.
+
+---> Kannst du mir bitte das Formular geben?
+     Lösung {{{
+===> Könnten Sie mir bitte das Formular geben?
+     Höflich: Könnten Sie ...? (Konjunktiv II, Sie)
+     }}}
+
+---> Wenn ich mehr Zeit habe, gehe ich heute noch zur Bank.
+     Lösung {{{
+===> Wenn ich mehr Zeit hätte, würde ich heute noch zur Bank gehen.
+     Irreal (Gegenwart): hätte ..., würde ... gehen.
+     }}}
+
+---> Wenn ich den Vertrag mitgebracht hatte, war alles schneller gegangen.
+     Lösung {{{
+===> Wenn ich den Vertrag mitgebracht hätte, wäre alles schneller gegangen.
+     Irreal (Vergangenheit): hätte mitgebracht, wäre gegangen.
+     }}}
+
+---> Man prüft alle Dokumente sehr genau.
+     Lösung {{{
+===> Alle Dokumente werden sehr genau geprüft.
+     Passiv, Plural: werden ... geprüft.
+     }}}
+
+---> Die Meldebescheinigung ist gestern gedruckt geworden.
+     Lösung {{{
+===> Die Meldebescheinigung ist gestern gedruckt worden.
+     Perfekt Passiv: worden, nicht geworden.
+     }}}
+
+---> Das Formular muss bis Montag abgegeben wird.
+     Lösung {{{
+===> Das Formular muss bis Montag abgegeben werden.
+     Modalverb + Partizip II + werden (Infinitiv).
+     }}}
+
+---> Frau Wolf hat den Brief wohl schon geschickt.
+     Lösung {{{
+===> Frau Wolf wird den Brief wohl schon geschickt haben.
+     Vermutung über Vergangenes: Futur II.
+     }}}
+
+---> Man sagt, dass das Bürgeramt bald umzieht.
+     Lösung {{{
+===> Das Bürgeramt soll bald umziehen.
+     Gerücht: sollen. Achtung: d/das hält schon bei "dass" an. Nimm
+     d/\<das\> (nur das ganze Wort), dann rD, i soll ...
+     }}}
+
+  Zum Schluss mit `:s`: Mache mit einem Kommando aus beiden "kann" ein
+  "könnte".
+
+---> Jana kann mitkommen, aber sie kann nicht lange bleiben.
+     Lösung {{{
+===> Jana könnte mitkommen, aber sie könnte nicht lange bleiben.
+     :s/kann/könnte/g ändert beide in der Zeile.
+     }}}
+
+
+  Sehr gut! Kapitel 2 ist geschafft. In Kapitel 3 sucht Mira einen Job.
+
+  Weiter:  :GermanTutor 3.1

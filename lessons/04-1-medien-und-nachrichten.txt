@@ -1,0 +1,153 @@
+============================================================================
+  Lektion 4.1: Medien und Nachrichten
+  Vim: v · V · d · c · y · P                               ca. 15 Minuten
+============================================================================
+
+  Kapitel 4: Im Büro und in den Nachrichten. Mira hat die Stelle bei
+  Blauwerk bekommen! Jeden Morgen fährt sie mit der Straßenbahn ins Büro
+  und liest dabei die Nachrichten. Ihr Kollege Tim hört lieber Podcasts.
+
+  In Vim lernst du den visuellen Modus (visual mode): Erst markierst du
+  Text, dann sagst du, was damit passieren soll.
+
+
+# 1. Wortschatz: Medien
+
+  die Nachrichten (Plural)   die Zeitung, -en          der Artikel, -
+  die Quelle, -n             der Podcast, -s           das Fernsehen
+  die Schlagzeile, -n        die Meldung, -en          das Netzwerk, -e
+
+  im Internet, im Fernsehen, im Radio, in der Zeitung   (Wo? Dativ)
+  sich informieren über + Akkusativ
+  eine Quelle für glaubwürdig halten
+  lesen - las - gelesen      sehen - sah - gesehen
+
+
+# 2. Der visuelle Modus: v und V
+
+  `v` startet den visuellen Modus. Bewege den Cursor: Der Text dazwischen
+  wird markiert. Dann ein Operator:
+
+    `d`   löscht die Markierung      `c`   ändert die Markierung
+    `y`   kopiert die Markierung     `Esc` bricht ab
+
+  `V` (großes V) markiert ganze Zeilen.
+
+  Korrigiere die Präposition mit dem Artikel. Es sind zwei Wörter, aber
+  du änderst sie in einem Schritt.
+
+  1. Stelle den Cursor auf den Anfang des falschen Teils.
+  2. Drücke `v` und dann `e` (einmal oder zweimal), bis die zwei Wörter
+     markiert sind.
+  3. Drücke `c`, tippe die richtige Form, drücke `Esc`.
+
+---> Mira liest die Nachrichten meistens auf dem Internet.
+     Lösung {{{
+===> Mira liest die Nachrichten meistens im Internet.
+     Es heißt: im Internet, im Fernsehen, im Radio (in + Dativ).
+     }}}
+
+---> Abends sieht sie manchmal einen Film in dem Fernsehen.
+     Lösung {{{
+===> Abends sieht sie manchmal einen Film im Fernsehen.
+     Bei festen Ausdrücken steht die Kurzform: im Fernsehen.
+     }}}
+
+---> Tim hört einen Podcast auf dem Weg zu der Arbeit.
+     Lösung {{{
+===> Tim hört einen Podcast auf dem Weg zur Arbeit.
+     Auch hier die Kurzform: zur Arbeit, zum Bahnhof.
+     }}}
+
+
+# 3. Kleine Fehler, schnell korrigiert
+
+  Nimm, was du kannst: `cw`, `ea`, `r`, `x`.
+
+---> Mira informiert sich jeden Morgen für die Politik.
+     Lösung {{{
+===> Mira informiert sich jeden Morgen über die Politik.
+     sich informieren über + Akkusativ.
+     }}}
+
+---> Die Nachricht im Radio kommen jede Stunde.
+     Lösung {{{
+===> Die Nachrichten im Radio kommen jede Stunde.
+     die Nachrichten (news) sind Plural. Das Verb zeigt es: kommen.
+     }}}
+
+---> Viele lesen die Zeitung nicht mehr auf Papier, sondern auf ihr Handy.
+     Lösung {{{
+===> Viele lesen die Zeitung nicht mehr auf Papier, sondern auf ihrem Handy.
+     Wo lesen sie? -> Dativ: auf ihrem Handy.
+     }}}
+
+---> Gestern hat Mira einen langen Artikel über Leipzig gelest.
+     Lösung {{{
+===> Gestern hat Mira einen langen Artikel über Leipzig gelesen.
+     lesen - las - gelesen. Starke Verben enden im Partizip auf -en.
+     }}}
+
+
+# 4. Zeilen verschieben mit V
+
+  Eine Meldung aus der Zeitung. Die zwei Sätze vom Anfang sind ans Ende
+  gerutscht.
+
+  1. Gehe auf die Zeile "Leipzig: ...".
+  2. Drücke `V` und `j`. Zwei Zeilen sind markiert.
+  3. Drücke `d`. Die zwei Zeilen sind weg (und gemerkt).
+  4. Gehe mit `k` auf die erste Zeile der Meldung.
+  5. Drücke `P`. Die Zeilen stehen jetzt ÜBER dem Cursor.
+
+---> Auf den wichtigsten Linien kommt dann alle fünf Minuten eine Bahn.
+---> Die Stadt will so mehr Menschen zum Umsteigen bewegen.
+---> Die neuen Fahrpläne stehen ab sofort im Internet.
+---> Leipzig: Die Straßenbahnen fahren ab Montag öfter.
+---> Das hat die Stadt am Freitag mitgeteilt.
+     Lösung {{{
+===> Leipzig: Die Straßenbahnen fahren ab Montag öfter.
+===> Das hat die Stadt am Freitag mitgeteilt.
+===> Auf den wichtigsten Linien kommt dann alle fünf Minuten eine Bahn.
+===> Die Stadt will so mehr Menschen zum Umsteigen bewegen.
+===> Die neuen Fahrpläne stehen ab sofort im Internet.
+     Eine Meldung beginnt mit dem Wichtigsten: Wer? Was? Wann?
+     Dann folgen die Details.
+     }}}
+
+
+# 5. Frei schreiben
+
+  Wie informierst du dich? Gehe auf die Zeile "Ich:", drücke `o` und
+  schreibe drei bis vier Sätze.
+
+  Prüfe danach selbst:
+    [ ] im Internet / in der Zeitung / im Radio (Dativ)
+    [ ] sich informieren über + Akkusativ
+    [ ] ein Satz mit weil oder obwohl (Verb am Ende)
+
+     Ich:
+
+     Musterlösung {{{
+     Ich informiere mich meistens im Internet über die Nachrichten.
+     Morgens höre ich einen Podcast, weil ich dabei Kaffee kochen kann.
+     Eine Zeitung auf Papier lese ich nur am Wochenende. Ich prüfe
+     immer, ob eine Quelle glaubwürdig ist.
+     }}}
+
+
+# Zusammenfassung Lektion 4.1
+
+  Vim
+    `v`         visueller Modus, zeichenweise markieren
+    `V`         visueller Modus, zeilenweise markieren
+    `d` `c` `y` auf der Markierung: löschen, ändern, kopieren
+    `P`         über (vor) dem Cursor einfügen
+
+  Deutsch
+    im Internet, im Fernsehen, im Radio, in der Zeitung
+    sich informieren über + Akkusativ
+    die Nachrichten (Plural)
+    lesen - las - gelesen
+
+  Weiter:  :GermanTutor 4.2
