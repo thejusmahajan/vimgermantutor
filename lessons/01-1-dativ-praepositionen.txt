@@ -1,110 +1,190 @@
-== Lektion 1.1: Die Dativ-Präpositionen ==
+============================================================================
+  Lektion 1.1: Dativ-Präpositionen
+  Vim: h j k l · zo zc · x · :q!                          ca. 15 Minuten
+============================================================================
 
-Herzlich willkommen zum VimGermanTutor!
-In diesem Kurs lernst du nicht nur deutsche Grammatik, sondern auch, wie du Vim als mächtiges Werkzeug zum Schreiben und Bearbeiten deiner Texte einsetzt.
+  Willkommen beim VimGermanTutor!
 
-Ziel dieser Lektion: Die deutschen Präpositionen, die immer den Dativ verlangen, wiederholen und dabei grundlegende Vim-Navigation und Textänderung üben.
+  Hier lernst du zwei Dinge auf einmal: Deutsch für das Goethe-Zertifikat
+  B2 und den Editor Vim. Jede neue Taste übst du an einem deutschen Satz.
+  So lernst du die Taste und die Grammatik zusammen.
 
---- Kurze Vim-Grundlagen: Normalmodus vs. Insert-Modus ---
-Vim hat zwei grundlegende Modi:
+  Diese Datei ist eine Kopie nur für dich. Du kannst nichts kaputt machen.
+  Probiere alles aus!
 
-Normalmodus: Der Standardmodus. Jede Taste ist ein Befehl (z.B. zum Bewegen, Löschen, Ändern). Um in den Normalmodus zu gelangen, drücke die Esc-Taste.
+  Die Sätze erzählen eine Geschichte. Mira Novak, 29, ist Datenanalystin
+  aus Ljubljana. Sie zieht nach Leipzig. Sie sucht eine Wohnung, geht zu
+  den Ämtern, sucht einen Job und lernt neue Kollegen kennen. Du
+  begleitest sie dabei.
 
-Insert-Modus (Einfügen): In diesem Modus schreibst du Text wie in einem normalen Editor. Drücke i, um in den Insert-Modus zu wechseln.
+  Tasten stehen so im Text: `j`. Das heißt: Drücke die Taste j.
 
-Drücke jetzt Esc, um sicherzustellen, dass du im Normalmodus bist.
 
---- Die Grammatik: Präpositionen mit Dativ ---
-Diese Präpositionen erfordern immer den Dativ:
-aus, außer, bei, mit, nach, seit, von, zu
+# 1. Den Cursor bewegen
 
-Eine Eselsbrücke: "Aus bei mit nach, seit von zu - schreib Dativ immerzu!"
+  Vim startet im Normalmodus (normal mode). Hier tippst du keinen Text.
+  Jede Taste ist ein Kommando, zum Beispiel ein Schritt mit dem Cursor:
 
---- Beispiele ---
-Maskulin (der -> dem):
-Ich komme aus dem Park.
-Das Geschenk ist von meinem Vater.
+              `k`              k wie klettern: nach oben
+         `h`        `l`        h nach links, l nach rechts
+              `j`              j nach unten
 
-Feminin (die -> der):
-Wir gehen zu der Bäckerei.
-Außer deiner Schwester ist niemand hier.
+  1. Drücke `j` ein paarmal. Der Cursor geht nach unten.
+  2. Drücke `k`. Der Cursor geht wieder nach oben.
+  3. Halte `j` gedrückt. Der Cursor läuft, bis du loslässt.
+  4. Gehe mit `j` weiter zu Abschnitt 2.
 
-Neutrum (das -> dem):
-Das Kind spielt bei dem Haus.
-Nach dem Essen schauen wir einen Film.
+  Tipp: Die Pfeiltasten gehen auch. Aber h j k l liegen direkt unter
+  deinen Fingern. Nach ein paar Tagen bist du damit viel schneller.
 
-Plural (die -> den + Nomen bekommt oft ein -n):
-Er spricht mit den Studenten.
-Wir fahren zu unseren Freunden.
+  Tipp: Du weißt nicht, in welchem Modus du bist? Drücke `Esc`. Danach
+  bist du sicher im Normalmodus.
 
-== Deine Mission: Übungen ==
 
---- Übung 1: Fehler finden und korrigieren ---
-Dein Werkzeug: cw (change word - Wort ändern)
+# 2. Lösungen ansehen: Falten öffnen und schließen
 
-Anleitung:
+  Unter jeder Übung steht die Lösung. Sie ist versteckt, in einer
+  geschlossenen Falte (fold). Von der Falte siehst du nur eine Zeile.
+  Erst selbst probieren, dann vergleichen!
 
-Gehe in den Normalmodus (Esc).
+  1. Gehe mit `j` auf die Zeile "Eine Überraschung" unten.
+  2. Drücke `zo` (erst z, dann o wie offen). Die Falte geht auf.
+  3. Lies den Text. Drücke dann `zc` (c wie close). Die Falte geht zu.
 
-Bewege den Cursor auf das Wort, das du ändern möchtest.
+     Eine Überraschung {{{
+     Hallo! Du hast deine erste Falte geöffnet.
+     Schließe sie jetzt wieder mit zc.
+     }}}
 
-Tippe cw. Das alte Wort verschwindet und du bist im Insert-Modus.
+  Steht der Cursor auf einer geschlossenen Falte, springt `j` über die
+  ganze Falte. Praktisch!
 
-Tippe das korrekte Wort.
 
-Drücke Esc, um zurück in den Normalmodus zu gehen. Fertig!
+# 3. Grammatik: Präpositionen mit Dativ
 
-Korrigiere die falschen Artikel in den folgenden Sätzen:
+  Nach diesen Präpositionen (prepositions) steht immer der Dativ
+  (dative case):
 
-Er spricht mit der Lehrer.      (Hinweis: 'der Lehrer' ist maskulin)
+       aus   bei   mit   nach   seit   von   zu
+       und auch: außer, gegenüber
 
-Spielst du mit das Kind?       (Hinweis: 'das Kind' ist neutrum)
+  Merkspruch: "Aus, bei, mit, nach, seit, von, zu - schreib Dativ immerzu!"
 
-Sie trinkt Kaffee mit der Sahne. (Korrekt! 'die Sahne' ist feminin)
+  Der Artikel im Dativ:
 
-Ich diskutiere mit die Kollegen. (Hinweis: Plural!)
+       der Zug        ->  mit dem Zug          maskulin:  dem
+       das Auto       ->  mit dem Auto         neutral:   dem
+       die Freundin   ->  bei der Freundin     feminin:   der
+       die Koffer     ->  mit den Koffern      Plural:    den + -n
 
---- Übung 2: Fehlende Artikel einfügen ---
-Dein Werkzeug: cw funktioniert auch hier super!
+  Im Plural bekommt das Nomen ein -n. Ausnahme: Der Plural endet schon
+  auf -n oder auf -s (mit den Frauen, mit den Autos).
+  Kurzformen: zum = zu dem, zur = zu der, vom = von dem, beim = bei dem.
 
-Anleitung:
 
-Gehe in den Normalmodus (Esc).
+# 4. Löschen mit x
 
-Bewege den Cursor auf den Unterstrich _.
+  `x` löscht das Zeichen unter dem Cursor.
 
-Tippe cw, um den Unterstrich zu ersetzen.
+  In den Sätzen unten stehen immer zwei Formen, zum Beispiel "dem/den".
+  Nur eine ist richtig. Lösche die falsche Form und den Schrägstrich.
 
-Tippe den korrekten Dativ-Artikel.
+  1. Gehe mit `j` auf die erste Zeile mit --->.
+  2. Gehe mit `l` auf den Schrägstrich oder auf die falsche Form.
+  3. Drücke `x` so oft, bis nur noch die richtige Form da ist.
+  4. Links von der Zeile erscheint ein Zeichen: ✓ heißt richtig, ✗ heißt
+     noch nicht richtig. Unten rechts zählt Vim mit: "1/8 ✓" heißt
+     "1 von 8 Übungen richtig". (Manche Terminals zeigen ok und x.)
+  5. Öffne die Lösung mit `zo` und vergleiche. Schließe sie mit `zc`.
 
-Drücke Esc, um zurück in den Normalmodus zu wechseln.
+  Zu viel gelöscht? Drücke `u` (undo). Das macht die letzte Änderung
+  rückgängig. Mehr dazu in Lektion 1.4.
 
-Füge die richtigen Artikel ein:
+---> Mira fährt mit dem/den Zug nach Leipzig.
+     Lösung {{{
+===> Mira fährt mit dem Zug nach Leipzig.
+     mit + Dativ. der Zug -> mit dem Zug.
+     }}}
 
-Ich fahre zu _ Bahnhof.          (der Bahnhof)
+---> Jana wartet am Gleis mit einen/einem großen Schild.
+     Lösung {{{
+===> Jana wartet am Gleis mit einem großen Schild.
+     mit + Dativ. das Schild -> mit einem Schild.
+     }}}
 
-Das Geschenk ist von _ Tante.       (die Tante)
+---> Mira wohnt erst einmal bei ihrer/ihre Freundin.
+     Lösung {{{
+===> Mira wohnt erst einmal bei ihrer Freundin.
+     bei + Dativ. die Freundin -> bei ihrer Freundin (feminin: -er).
+     }}}
 
-Seit _ Monat wohne ich in Hamburg. (der Monat)
+---> Seit eine/einer Woche sucht sie eine eigene Wohnung.
+     Lösung {{{
+===> Seit einer Woche sucht sie eine eigene Wohnung.
+     seit + Dativ. die Woche -> seit einer Woche.
+     Achtung: seit sagt, wie lange etwas schon dauert. Das Verb steht
+     im Präsens. Englisch: "She has been looking for a week."
+     }}}
 
-Wir kommen aus _ Schweiz.         (die Schweiz)
+---> Nach dem/das Frühstück liest sie die Wohnungsanzeigen.
+     Lösung {{{
+===> Nach dem Frühstück liest sie die Wohnungsanzeigen.
+     nach + Dativ. das Frühstück -> nach dem Frühstück.
+     }}}
 
-Das Auto steht bei _ Haus.        (das Haus)
+---> Dann telefoniert sie mit die/den Vermietern.
+     Lösung {{{
+===> Dann telefoniert sie mit den Vermietern.
+     mit + Dativ Plural: die Vermieter -> mit den Vermietern (+ -n).
+     }}}
 
-Du sprichst mit _ Leuten.         (die Leute - Plural)
+---> Am Nachmittag geht sie zum/zur Bank.
+     Lösung {{{
+===> Am Nachmittag geht sie zur Bank.
+     zu + Dativ. die Bank -> zu der Bank = zur Bank.
+     zum = zu dem (maskulin, neutral): zum Bahnhof, zum Amt.
+     }}}
 
-== Zusammenfassung & Ausblick ==
+---> Abends fährt sie mit der Straßenbahn nach/zu Hause.
+     Lösung {{{
+===> Abends fährt sie mit der Straßenbahn nach Hause.
+     nach Hause = Richtung (Wohin?). zu Hause = Ort (Wo?).
+     Mira fährt nach Hause. Später ist sie zu Hause.
+     }}}
 
-Gut gemacht! Du hast die Dativ-Präpositionen wiederholt und einen der wichtigsten Vim-Befehle gelernt.
 
-Gelernte Vim-Befehle in dieser Lektion:
+# 5. Vim verlassen
 
-Esc: Wechsel in den Normalmodus.
+  So beendest du Vim, ohne etwas zu speichern:
 
-i: Wechsel in den Insert-Modus (Einfügen).
+  1. Drücke `Esc`. Sicher ist sicher.
+  2. Tippe `:q!` und drücke `Enter`.
+     Der Doppelpunkt : öffnet die Kommandozeile unten am Bildschirm.
+     q heißt quit (beenden), ! heißt "ja, wirklich, ohne Speichern".
 
-cw: "Change Word". Ersetzt ein Wort unter dem Cursor.
+  Keine Angst: Deine richtigen Übungen merkt sich der Tutor. Mit dem
+  Kommando `:GermanTutor` (in Vim) oder `vimgermantutor` (im Terminal)
+  kommst du genau hierher zurück.
 
-Wenn du deine Änderungen speichern und die Datei schließen möchtest, tippe im Normalmodus :wq.
+  Probiere es aus, wenn du willst. Oder lies erst die Zusammenfassung.
 
-Für die nächste Lektion, erstelle und öffne die Datei lektion-1.2.txt.
+
+# Zusammenfassung Lektion 1.1
+
+  Vim
+    `h` `j` `k` `l`    Cursor nach links, unten, oben, rechts
+    `zo` / `zc`        Falte öffnen / schließen
+    `x`                Zeichen unter dem Cursor löschen
+    `u`                letzte Änderung rückgängig machen
+    `Esc`              zurück in den Normalmodus
+    `:q!` `Enter`      Vim beenden, ohne zu speichern
+
+  Deutsch
+    aus, bei, mit, nach, seit, von, zu (auch außer, gegenüber): Dativ
+    dem (maskulin, neutral) · der (feminin) · den + -n (Plural)
+    zum = zu dem · zur = zu der · vom = von dem · beim = bei dem
+    nach Hause (Wohin?) · zu Hause (Wo?)
+
+  Super gemacht! Tippe jetzt das Kommando unten und drücke `Enter`.
+
+  Weiter:  :GermanTutor 1.2

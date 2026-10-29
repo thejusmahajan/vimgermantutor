@@ -1,0 +1,71 @@
+#!/bin/sh
+# vimgermantutor - start the VimGermanTutor in Neovim or Vim.
+# Like vimtutor, it runs the editor without your vimrc, so that every key
+# does what the lesson says. Arguments after -- go to the editor.
+
+usage() {
+  cat <<'USAGE'
+Benutzung: vimgermantutor [--nvim | --vim] [Lektion] [-- Editor-Optionen]
+
+  vimgermantutor          weitermachen, wo du aufgehört hast
+  vimgermantutor 1.2      Lektion 1.2 starten
+  vimgermantutor --vim    Vim nehmen, auch wenn Neovim installiert ist
+  vimgermantutor --nvim   Neovim nehmen
+USAGE
+}
+
+editor=
+lesson=
+while [ $# -gt 0 ]; do
+  case $1 in
+    --nvim) editor=nvim ;;
+    --vim) editor=vim ;;
+    -h|--help) usage; exit 0 ;;
+    --) shift; break ;;
+    -*) echo "vimgermantutor: unbekannte Option: $1" >&2; usage >&2; exit 2 ;;
+    *) lesson=$1 ;;
+  esac
+  shift
+done
+
+# The plugin lives one directory above this script. Follow symlinks, so a
+# link in ~/.local/bin works too.
+script=$0
+while [ -h "$script" ]; do
+  link=$(readlink "$script")
+  case $link in
+    /*) script=$link ;;
+    *) script=$(dirname "$script")/$link ;;
+  esac
+done
+GERMANTUTOR_ROOT=$(cd "$(dirname "$script")/.." && pwd -P)
+# Git Bash or Cygwin on Windows: give the editor a Windows path.
+if command -v cygpath >/dev/null 2>&1; then
+  GERMANTUTOR_ROOT=$(cygpath -m "$GERMANTUTOR_ROOT")
+fi
+export GERMANTUTOR_ROOT
+
+has() { command -v "$1" >/dev/null 2>&1; }
+
+case $editor in
+  '')
+    if has nvim; then editor=nvim
+    elif has vim; then editor=vim
+    elif has gvim; then editor=gvim
+    fi ;;
+  vim)
+    if ! has vim && has gvim; then editor=gvim; fi ;;
+esac
+if [ -z "$editor" ] || ! has "$editor"; then
+  echo "vimgermantutor: ${editor:-nvim oder vim} nicht gefunden." \
+    "Bitte installiere Neovim oder Vim." >&2
+  exit 1
+fi
+
+exec "$editor" -N -u NONE \
+  --cmd 'set encoding=utf-8' \
+  --cmd 'let g:germantutor_launcher = 1' \
+  --cmd 'let &rtp = escape($GERMANTUTOR_ROOT, ",") . "," . &rtp' \
+  -c 'runtime plugin/germantutor.vim' \
+  -c "GermanTutor $lesson" \
+  "$@"

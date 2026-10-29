@@ -1,99 +1,176 @@
-== Lektion 1.2: Der Genitiv (Wessen?) ==
+============================================================================
+  Lektion 1.2: Der Genitiv
+  Vim: i · a · A · Esc · :wq                               ca. 15 Minuten
+============================================================================
 
-Willkommen zurück! In dieser Lektion widmen wir uns dem Genitiv und lernen dabei noch effizientere Wege, Text in Vim zu bearbeiten.
+  Mira hat einen Termin. Heute besichtigt sie eine Wohnung im Leipziger
+  Süden. Der Vermieter heißt Herr Becker. Er zeigt ihr jedes Zimmer und
+  redet sehr viel.
 
-Ziel dieser Lektion: Den deutschen Genitiv verstehen und dabei neue Vim-Befehle zum schnellen Ändern von Textteilen anwenden.
+  In dieser Lektion schreibst du zum ersten Mal Text in Vim. Und du übst
+  den Genitiv (genitive case), den Fall für "Wessen?" (whose?).
 
---- Vim-Fokus: Effizienter Ändern ---
-In der letzten Lektion hast du cw (change word) gelernt. Jetzt erweitern wir dein Repertoire:
 
-C (Großes C): "Change to End of Line". Löscht alles vom Cursor bis zum Ende der Zeile und wechselt in den Insert-Modus. Extrem nützlich!
+# 1. Grammatik: Der Genitiv
 
-r: "Replace". Ersetzt genau ein Zeichen unter dem Cursor, ohne in den Insert-Modus zu wechseln. Perfekt für schnelle Korrekturen.
+  Der Genitiv zeigt, zu wem oder zu was etwas gehört.
 
-Drücke Esc, um sicherzustellen, dass du im Normalmodus bist.
+       die Wohnung    ->  die Küche der Wohnung       feminin:  der
+       der Vermieter  ->  die Nummer des Vermieters   maskulin: des + -s
+       das Haus       ->  der Garten des Hauses       neutral:  des + -es
+       die Zimmer     ->  die Fenster der Zimmer      Plural:   der
 
---- Die Grammatik: Der Genitiv ---
-Der Genitiv zeigt meist Besitz oder Zugehörigkeit an. Er antwortet auf die Frage "Wessen?" (Whose?).
+  Maskuline und neutrale Nomen bekommen im Genitiv eine Endung:
+    -s   meistens:                         des Vermieters, des Zimmers
+    -es  nach s, ss, ß, x, z immer:        des Hauses, des Platzes
+    -es  oft bei kurzen Wörtern:           des Mannes, des Kindes
 
-Artikel im Genitiv:
+  Auch nach diesen Präpositionen steht der Genitiv:
+       wegen   trotz   während   statt   innerhalb   außerhalb
 
-Maskulin: der -> des (+ Nomen-Endung -s/-es)
+  Im Alltag hört man oft "wegen dem Regen". In der Prüfung schreibst du
+  aber Genitiv: "wegen des Regens".
 
-Feminin:  die -> der
 
-Neutrum:  das -> des (+ Nomen-Endung -s/-es)
+# 2. Text einfügen mit i
 
-Plural:   die -> der
+  `i` (insert) bringt dich in den Einfügemodus (insert mode). Jetzt
+  tippst du Text, und er erscheint VOR dem Cursor. Mit `Esc` gehst du
+  zurück in den Normalmodus.
 
-Nomen-Endung -(e)s: Maskuline und neutrale Nomen im Singular bekommen eine Endung.
+  In den Sätzen unten fehlt der Artikel im Genitiv.
 
-Meistens -s: des Vaters, des Autos
+  1. Gehe auf die Zeile mit --->.
+  2. Stelle den Cursor auf das erste Zeichen des Wortes, VOR dem der
+     Artikel fehlt.
+  3. Drücke `i` und tippe den Artikel und ein Leerzeichen.
+  4. Drücke `Esc`. Prüfe das Zeichen links und öffne die Lösung mit `zo`.
 
-Bei einsilbigen Wörtern oft -es: des Mannes, des Kindes
+---> Die Küche Wohnung ist klein, aber hell.
+     Lösung {{{
+===> Die Küche der Wohnung ist klein, aber hell.
+     die Wohnung -> der Wohnung (Genitiv feminin).
+     }}}
 
-Immer -es nach -s, -ss, -ß, -x, -z: des Busses, des Platzes
+---> Das Fenster Badezimmers ist sehr klein.
+     Lösung {{{
+===> Das Fenster des Badezimmers ist sehr klein.
+     das Badezimmer -> des Badezimmers (Genitiv neutral, Nomen + -s).
+     }}}
 
-== Deine Mission: Übungen ==
+---> Die Fenster Zimmer sind ganz neu.
+     Lösung {{{
+===> Die Fenster der Zimmer sind ganz neu.
+     die Zimmer (Plural) -> der Zimmer. Im Plural gibt es keine Endung -s.
+     }}}
 
---- Übung 1: Besitz anzeigen (von + Dativ -> Genitiv) ---
-Im gesprochenen Deutsch hört man oft "von + Dativ". Im geschriebenen Deutsch ist der Genitiv eleganter. Lass uns das üben!
+  Tipp: Keine Umlaute auf deiner Tastatur? Im Einfügemodus geht das so:
+  `Strg-k` (Ctrl-k), dann zwei Zeichen. Strg-k a : ergibt ä, Strg-k o :
+  ergibt ö, Strg-k u : ergibt ü, Strg-k s s ergibt ß. Das heißt in Vim
+  Digraph.
 
-Dein Werkzeug: C (Change to End of Line)
 
-Anleitung:
+# 3. Text anfügen mit a
 
-Gehe in den Normalmodus (Esc).
+  `a` (append) bringt dich auch in den Einfügemodus. Der Text erscheint
+  aber NACH dem Cursor. Das ist perfekt für Endungen, denn die stehen am
+  Ende des Wortes.
 
-Bewege den Cursor auf das erste Wort, das du ersetzen willst (hier: von).
+  Hier fehlt die Genitiv-Endung -s oder -es am Nomen.
 
-Tippe C. Alles bis zum Zeilenende wird gelöscht.
+  1. Stelle den Cursor auf den letzten Buchstaben des Nomens.
+  2. Drücke `a` und tippe die Endung.
+  3. Drücke `Esc`.
 
-Tippe die korrekte Genitiv-Konstruktion.
+---> Die Telefonnummer des Vermieter steht in der Anzeige.
+     Lösung {{{
+===> Die Telefonnummer des Vermieters steht in der Anzeige.
+     der Vermieter -> des Vermieters. Lange Wörter auf -er: nur -s.
+     }}}
 
-Drücke Esc.
+---> Der Garten des Haus ist wunderschön.
+     Lösung {{{
+===> Der Garten des Hauses ist wunderschön.
+     das Haus -> des Hauses. Nach -s immer -es.
+     }}}
 
-Wandle die folgenden Sätze um:
+  Jetzt mit `x`, `i` und `a`: Aus "wegen dem Regen" wird "wegen des
+  Regens".
 
-Die Wohnung von meiner Freundin ist schön.
+  1. Stelle den Cursor auf das m von "dem" und drücke `x`.
+  2. Der Cursor steht jetzt auf dem Leerzeichen. Drücke `i`, tippe s und
+     drücke `Esc`. (Mit `a` käme das s hinter das Leerzeichen!)
+  3. Stelle den Cursor auf das n von "Regen". Drücke `a`, tippe s, `Esc`.
 
-Das Spielzeug von dem Kind liegt auf dem Boden.
+---> Wegen dem Regen kommt Mira zehn Minuten zu spät.
+     Lösung {{{
+===> Wegen des Regens kommt Mira zehn Minuten zu spät.
+     wegen + Genitiv. der Regen -> des Regens.
+     }}}
 
-Die Ideen von den Studenten waren innovativ.
 
-Ich lese das Buch von diesem Autor.
+# 4. Am Zeilenende anfügen mit A
 
---- Übung 2: Nach bestimmten Präpositionen ---
-Diese Präpositionen verlangen immer den Genitiv:
-wegen (because of), trotz (despite), während (during), (an)statt (instead of)
+  `A` (großes A) springt ans Ende der Zeile und startet den
+  Einfügemodus. Der Cursor kann irgendwo in der Zeile stehen.
 
-Deine Werkzeuge: r (replace) und cw (change word)
+  Ergänze am Ende eine Genitiv-Gruppe und einen Punkt. Das Nomen steht
+  in Klammern über der Zeile.
 
-Anleitung:
-Benutze r, um einzelne falsche Buchstaben zu korrigieren (Cursor auf den Buchstaben, r tippen, dann den korrekten Buchstaben). Benutze cw, um ganze Wörter zu ändern.
+  1. Gehe auf die Zeile mit --->.
+  2. Drücke `A` und tippe ein Leerzeichen, den Artikel, das Nomen mit
+     Endung und den Punkt.
+  3. Drücke `Esc`.
 
-Korrigiere die Fehler in den folgenden Sätzen:
+  (der Park)
+---> Die Wohnung liegt in der Nähe
+     Lösung {{{
+===> Die Wohnung liegt in der Nähe des Parks.
+oder Die Wohnung liegt in der Nähe des Parkes.
+     in der Nähe + Genitiv. der Park -> des Parks (seltener: des Parkes).
+     }}}
 
-Wegen dem Stau kamen wir zu spät.       (der Stau)
+  (der Lärm)
+---> Mira mag die Wohnung trotz
+     Lösung {{{
+===> Mira mag die Wohnung trotz des Lärms.
+oder Mira mag die Wohnung trotz des Lärmes.
+     trotz + Genitiv. der Lärm -> des Lärms (seltener: des Lärmes).
+     }}}
 
-Trotz die Erkältung ging sie zur Arbeit. (die Erkältung)
+  (die Besichtigung)
+---> Herr Becker telefoniert die ganze Zeit während
+     Lösung {{{
+===> Herr Becker telefoniert die ganze Zeit während der Besichtigung.
+     während + Genitiv. die Besichtigung -> der Besichtigung.
+     }}}
 
-Während des Pause trinken wir Kaffee.     (die Pause)
 
-Anstatt den Kuchen isst er Obst.         (der Kuchen)
+# 5. Speichern und beenden
 
-Außerhalb das Grundstücks ist Parken verboten. (das Grundstück)
+  `:wq` speichert die Datei und beendet Vim (w = write, q = quit).
+  Gespeichert wird nur deine Kopie. Die Lektion selbst bleibt immer
+  unverändert.
 
-== Zusammenfassung & Ausblick ==
+  1. Drücke `Esc`.
+  2. Tippe `:wq` und drücke `Enter`.
 
-Sehr gut! Der Genitiv kann herausfordernd sein, aber du hast ihn gemeistert und dabei dein Vim-Wissen erweitert.
+  Du kannst auch nur speichern: `:w`. Oder nur beenden: `:q`. Wenn du
+  etwas geändert hast, sagt Vim bei `:q` Nein. Dann hilft `:q!`.
 
-Neue Vim-Befehle in dieser Lektion:
 
-C: Löscht vom Cursor bis zum Zeilenende und startet den Insert-Modus.
+# Zusammenfassung Lektion 1.2
 
-r: Ersetzt ein einzelnes Zeichen unter dem Cursor.
+  Vim
+    `i`          Text vor dem Cursor einfügen (Einfügemodus)
+    `a`          Text nach dem Cursor anfügen
+    `A`          Text am Zeilenende anfügen
+    `Esc`        Einfügemodus beenden
+    `Strg-k`     Digraph im Einfügemodus: a : -> ä, s s -> ß
+    `:wq`        speichern und beenden
+    `:w` `:q`    nur speichern, nur beenden
 
-Speichere deine Arbeit und schließe die Datei mit :wq.
-
-Für die nächste Lektion, erstelle und öffne die Datei lektion-1.3.txt.
+  Deutsch
+    Genitiv (Wessen?): des (maskulin, neutral) · der (feminin, Plural)
+    maskulin und neutral: Nomen + -s oder -es (des Vermieters, des Hauses)
+    wegen, trotz, während, statt, innerhalb, außerhalb + Genitiv
