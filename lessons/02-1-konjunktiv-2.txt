@@ -1,94 +1,145 @@
-== Lektion 1.5: Konjunktiv II (Wünsche & Bitten) ==
+============================================================================
+  Lektion 2.1: Konjunktiv II: Bitten, Wünsche, Ratschläge
+  Vim: cw · ce · C                                         ca. 15 Minuten
+============================================================================
 
-Hallo aus Hamburg! Es ist Freitagnachmittag, der 5. September 2025. Zeit für ein zentrales Thema der deutschen Grammatik: den Konjunktiv II.
+  Kapitel 2: Auf dem Amt. Mira muss sich in Leipzig anmelden. Dafür
+  braucht sie einen Termin beim Bürgeramt, ein Formular und viel Geduld.
+  Auf dem Amt hilft höfliches Deutsch, und höflich heißt oft: Konjunktiv
+  II (subjunctive II).
 
-Der Konjunktiv II beschreibt alles, was nicht real ist: Wünsche, höfliche Bitten, irreale Bedingungen oder Ratschläge.
+  In Vim lernst du den Operator c (change). Er löscht wie d und startet
+  danach sofort den Einfügemodus. Löschen und Neuschreiben in einem!
 
-Ziel dieser Lektion: Den Konjunktiv II verstehen und dabei lernen, wie man in Vim Text in der ganzen Datei auf einmal ersetzen kann.
 
---- Vim-Fokus: Globales Suchen & Ersetzen ---
-Heute lernst du einen der mächtigsten Befehle in Vim. Er wird im Befehlsmodus (Command-line mode) ausgeführt, den du mit : im Normalmodus erreichst.
+# 1. Grammatik: Konjunktiv II
 
-:s/alt/neu/g - Ersetzt (substitute) in der aktuellen Zeile jedes Vorkommen (g = global) von alt durch neu.
+  Der Konjunktiv II ist die Form für das, was nicht (oder noch nicht)
+  wirklich ist: höfliche Bitten, Wünsche, Ratschläge und irreale
+  Bedingungen.
 
-:%s/alt/neu/g - Das % steht für "in allen Zeilen". Ersetzt also in der ganzen Datei.
+  Die meisten Verben: würde + Infinitiv am Ende.
+       Ich lerne jeden Tag.   ->   Ich würde jeden Tag lernen.
 
-:%s/alt/neu/gc - Das c am Ende steht für "confirm". Vim fragt dich bei jeder Fundstelle, ob du sie ersetzen willst (y/n/a...). Das ist die sicherste und beste Methode!
+  Diese Verben haben eine eigene Form. Benutze sie statt würde:
+       sein   -> wäre        haben  -> hätte      werden -> würde
+       können -> könnte      müssen -> müsste     dürfen -> dürfte
+       sollen -> sollte      wollen -> wollte     wissen -> wüsste
+       mögen  -> möchte      kommen -> käme       geben  -> gäbe
 
---- Die Grammatik: Konjunktiv II ---
-1. Die Standardform: würde + Infinitiv
-Für die meisten Verben ist das die einfachste Form:
-Indikativ: "Ich kaufe das Auto." (Realität)
-Konjunktiv II: "Ich würde das Auto kaufen." (Hypothese, z.B. wenn ich Geld hätte)
+  So klingt es auf dem Amt:
+       Bitte:      Könnten Sie mir helfen?  Ich hätte gern einen Termin.
+       Wunsch:     Wenn ich doch schon eine Steuernummer hätte!
+       Ratschlag:  An deiner Stelle würde ich früh kommen.
+       Irreal:     Wenn ich Zeit hätte, würde ich mehr lernen.
 
-2. Wichtige Verben mit eigenen Formen
-Diese Verben sind so häufig, dass man ihre eigenen Formen anstelle von würde benutzt. Man muss sie auswendig lernen:
 
-Indikativ Konjunktiv II
-sein            wäre
-haben           hätte
-können          könnte
-müssen          müsste
-dürfen          dürfte
-sollen          sollte
-wissen          wüsste
-mögen           möchte
+# 2. Ein Wort ändern mit cw
 
-Regel: Benutze immer die eigene Form, wenn es eine gibt.
-FALSCH: Ich würde haben. -> RICHTIG: Ich hätte.
-FALSCH: Ich würde sein.  -> RICHTIG: Ich wäre.
+  `cw` löscht vom Cursor bis zum Ende des Wortes und startet den
+  Einfügemodus (change word). Du tippst das neue Wort und drückst `Esc`.
+  `ce` macht dasselbe. Bei `cw` ist Vim großzügig: Das Leerzeichen nach
+  dem Wort bleibt stehen.
 
-== Deine Mission: Übungen ==
+  Mache aus den direkten Fragen höfliche Bitten.
 
---- Übung 1: Hypothetische Sätze bilden ---
-Dein Werkzeug: cw
+  1. Stelle den Cursor auf den Anfang des Verbs.
+  2. Drücke `cw`, tippe die Form im Konjunktiv II, drücke `Esc`.
 
-Anleitung: Fülle die Lücken mit der korrekten Konjunktiv-II-Form. Nutze cw, um den Unterstrich _ zu ersetzen.
+---> Können Sie mir bitte helfen?
+     Lösung {{{
+===> Könnten Sie mir bitte helfen?
+     können -> könnte. Mit Sie: Könnten Sie ...?
+     }}}
 
-Wenn ich Zeit _ (haben), _ ich dich besuchen (besuchen).
+---> Haben Sie heute noch einen Termin frei?
+     Lösung {{{
+===> Hätten Sie heute noch einen Termin frei?
+     haben -> hätte. Mit Sie: Hätten Sie ...?
+     }}}
 
-Er _ gern Millionär (sein).
+---> Ich will einen Termin für die Anmeldung.
+     Lösung {{{
+===> Ich hätte gern einen Termin für die Anmeldung.
+oder Ich möchte einen Termin für die Anmeldung.
+oder Ich hätte gerne einen Termin für die Anmeldung.
+     "Ich will" klingt auf dem Amt unhöflich. Höflich: Ich hätte gern
+     oder Ich möchte (möchte ist der Konjunktiv II von mögen).
+     }}}
 
-Was _ du _ (tun), wenn du das Geld finden _ (finden)?
 
-Sie _ (können) uns helfen, wenn sie hier _ (sein).
+# 3. Bis zum Zeilenende ändern mit C
 
---- Übung 2: Höfliche Bitten formulieren ---
-Deine Werkzeuge: cw oder C
+  `C` (großes C) ändert alles vom Cursor bis zum Zeilenende. Es ist
+  dasselbe wie `c$`.
 
-Anleitung: Formuliere die direkten, indikativen Sätze in höfliche Bitten im Konjunktiv II um.
+  1. Ändere das erste Verb mit `cw`.
+  2. Stelle den Cursor auf den Teil, der sich ändern muss, und drücke
+     `C`. Tippe den neuen Schluss und drücke `Esc`.
 
-Indikativ: Ich will einen Kaffee.
+---> Geben Sie mir bitte das Formular.
+     Lösung {{{
+===> Würden Sie mir bitte das Formular geben?
+oder Könnten Sie mir bitte das Formular geben?
+     Aus dem Imperativ wird eine höfliche Frage: Würden Sie ... geben?
+     Schritte: cw Würden Esc, dann f. und C geben? Esc.
+     }}}
 
-Indikativ: Geben Sie mir das Salz.
+  Jetzt irreale Bedingungen: Die Bedingung ist nicht wahr. Im
+  wenn-Satz: wäre, hätte, ... Im Hauptsatz: würde + Infinitiv.
 
-Indikativ: Haben Sie einen Stift für mich?
+---> Wenn ich mehr Zeit habe, lerne ich jeden Tag Deutsch.
+     Lösung {{{
+===> Wenn ich mehr Zeit hätte, würde ich jeden Tag Deutsch lernen.
+     Real: Ich habe keine Zeit. Irreal: Wenn ich mehr Zeit hätte, ...
+     Schritte: cw hätte Esc, dann auf "lerne" C würde ich jeden Tag
+     Deutsch lernen. Esc
+     }}}
 
-Indikativ: Schließen Sie das Fenster?
+---> Wenn der Termin früher ist, komme ich gern.
+     Lösung {{{
+===> Wenn der Termin früher wäre, würde ich gern kommen.
+oder Wenn der Termin früher wäre, käme ich gern.
+     sein -> wäre. kommen: würde ... kommen oder käme. Beides ist
+     richtig, würde kommen hört man öfter.
+     }}}
 
---- Übung 3: Globales Ersetzen üben ---
-Dein Werkzeug: :%s/alt/neu/gc
+  Ein Wunsch: Ändere die ganze Zeile mit `C`. Beginne mit "Wenn" oder
+  mit dem Verb.
 
-Anleitung:
+---> Ich habe schon eine Wohnung.
+     Lösung {{{
+===> Wenn ich doch schon eine Wohnung hätte!
+oder Hätte ich doch schon eine Wohnung!
+oder Wenn ich nur schon eine Wohnung hätte!
+oder Hätte ich nur schon eine Wohnung!
+     Wunsch: Wenn ich doch ... hätte! oder: Hätte ich doch ...!
+     doch oder nur machen den Wunsch stärker.
+     }}}
 
-Lies den folgenden Absatz.
+  Ein Ratschlag für Jana, die auch zum Amt muss:
 
-Drücke Esc, dann tippe den Befehl :%s/bin/wäre/gc und drücke Enter.
+---> Du gehst früh zum Bürgeramt.
+     Lösung {{{
+===> An deiner Stelle würde ich früh zum Bürgeramt gehen.
+oder Du solltest früh zum Bürgeramt gehen.
+oder Ich würde früh zum Bürgeramt gehen.
+     Ratschlag: An deiner Stelle würde ich ... / Du solltest ...
+     }}}
 
-Bestätige jede Ersetzung einzeln mit y (yes) oder n (no).
 
-Mache die Änderungen mit u (undo) wieder rückgängig.
+# Zusammenfassung Lektion 2.1
 
-Probiere es nochmal mit :%s/habe/hätte/gc.
+  Vim
+    `cw` `ce`   Wort ändern: löschen und Einfügemodus
+    `C`         ändern bis zum Zeilenende (wie c$)
 
-Absatz zum Üben:
-Ich bin heute zu Hause, weil ich keine Arbeit habe. Ich habe auch kein Geld für Urlaub. Wenn ich Geld hätte und wenn ich Zeit hätte, bin ich jetzt nicht hier. Ich bin am Strand. Das wäre schön.
+  Deutsch
+    Konjunktiv II: würde + Infinitiv
+    eigene Formen: wäre, hätte, könnte, müsste, dürfte, sollte, wüsste,
+    möchte, käme, gäbe
+    Bitte: Könnten Sie ...? · Wunsch: Wenn ich doch ... hätte!
+    Ratschlag: An deiner Stelle würde ich ... · Du solltest ...
+    Irreal: Wenn ich Zeit hätte, würde ich ...
 
-== Zusammenfassung & Ausblick ==
-
-Der Konjunktiv II ist im Alltag extrem nützlich. Und mit :%s/.../gc hast du jetzt ein echtes Profi-Werkzeug für Vim in deinem Repertoire!
-Du hast das erste Grammatik-Modul geschafft!
-
-Speichere deine Arbeit mit :wq.
-
-Nächstes Mal starten wir Modul 2 mit lektion-2.1.txt (Thema: Arbeit und Beruf).
+  Weiter:  :GermanTutor 2.2

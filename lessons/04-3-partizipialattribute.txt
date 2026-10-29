@@ -1,88 +1,130 @@
-== Lektion 3.4: Partizipialattribute ==
+============================================================================
+  Lektion 4.3: Partizipialattribute
+  Vim: "a · "b · "ap · :reg · df,                          ca. 15 Minuten
+============================================================================
 
-Montagmorgen in Hamburg, der 15. September 2025, 9:30 Uhr. Willkommen zurück! Ich dachte, wir wären fertig, aber es gibt immer noch mehr zu lernen. Heute widmen wir uns einem sehr eleganten Thema für Fortgeschrittene: den Partizipialattributen.
+  Bei Blauwerk schreibt Mira jetzt Berichte. Ihre Chefin mag kurze,
+  dichte Sätze. Statt "der Bericht, der gestern geschrieben wurde" sagt
+  sie "der gestern geschriebene Bericht". Das ist ein Partizipialattribut
+  (participle used as an adjective), typisch für B2-Texte.
 
-Ziel dieser Lektion: Lange Relativsätze in prägnante Partizipialattribute umwandeln und dabei lernen, mit benannten Registern (named registers) wie ein Profi zu jonglieren.
+  In Vim lernst du die Register mit Namen: 26 Zwischenablagen, von a bis
+  z. So kannst du zwei Satzteile gleichzeitig "in der Hand halten".
 
---- Vim-Fokus: Benannte Register (Named Registers) ---
-Stell dir vor, du hättest nicht nur eine, sondern 26 verschiedene Zwischenablagen (Clipboards). Das sind benannte Register! Du kannst Textausschnitte gezielt ablegen und wieder abrufen.
 
-" + buchstabe + y (yank/copy)
+# 1. Grammatik: Aus dem Relativsatz wird ein Adjektiv
 
-" + buchstabe + d (delete/cut)
+  Partizip I = Infinitiv + d. Es ist aktiv und passiert gerade:
+       die Kollegen, die warten     ->  die wartenden Kollegen
+       der Zug, der einfährt        ->  der einfahrende Zug
 
-" + buchstabe + p (paste)
+  Partizip II. Es ist meistens passiv oder schon passiert:
+       die Lösung, die vorgeschlagen wurde  ->  die vorgeschlagene Lösung
+       das Problem, das gelöst wurde        ->  das gelöste Problem
 
-Beispiel-Workflow:
+  Das Partizip bekommt eine Adjektivendung (wie in Lektion 1.3). Alles,
+  was im Relativsatz noch dabei war, steht davor:
+       die Kollegen, die im Büro warten  ->  die im Büro wartenden Kollegen
 
-Gehe auf eine Zeile und tippe "ayy. Die Zeile ist jetzt in Register a kopiert.
 
-Gehe auf eine andere Zeile und tippe "bdd. Diese Zeile wird in Register b ausgeschnitten.
+# 2. Register mit Namen
 
-Gehe an eine neue Stelle und tippe "ap. Der Inhalt von Register a wird eingefügt.
+  Vor ein Kommando zum Löschen, Kopieren oder Einfügen kannst du ein
+  Register schreiben: `"a` (Anführungszeichen und ein Buchstabe).
 
-Tippe dann "bp. Der Inhalt von Register b wird eingefügt.
+    `"adw`   löscht ein Wort und merkt es sich in Register a
+    `"ayw`   kopiert ein Wort in Register a
+    `"aP`    setzt Register a vor den Cursor, `"ap` dahinter
+    `:reg a b`  zeigt, was in a und b steht
 
---- Grammatik: Partizipialattribute (Adjektive aus Verben) ---
-Diese Konstruktionen ersetzen Relativsätze und machen den Stil kompakter und gehobener.
+  Dazu eine Bewegung: `df,` löscht bis zum nächsten Komma (mit Komma).
 
-1. Partizip I (Aktiv / andauernde Handlung)
-Bildung: Infinitiv + d
-Bedeutung: Beschreibt etwas, das jetzt gerade passiert. (Die "-ing"-Form im Englischen)
+  Mach aus dem Relativsatz ein Partizipialattribut:
 
-Relativsatz: Der Mann, der am Tisch sitzt, liest ein Buch.
-Partizip I:  Der am Tisch sitzende Mann liest ein Buch.
+  1. Cursor auf "gestern": `"adw`. Jetzt ist "gestern" in Register a.
+  2. Der Cursor steht auf "gebacken": `"bdw`. "gebacken" ist in b.
+  3. Drücke zweimal `b`: Der Cursor steht auf dem ersten Komma. Lösche
+     ", der wurde," mit `df,`.
+  4. Gehe mit `b` auf "Kuchen". Drücke `"aP` und dann `"bp`.
+  5. Jetzt fehlt noch die Endung: `b`, `ea`, e, `Esc`.
 
-2. Partizip II (Passiv / abgeschlossene Handlung)
-Bildung: Das normale Partizip II des Verbs
-Bedeutung: Beschreibt etwas, das passiert ist oder getan wurde.
+---> Der Kuchen, der gestern gebacken wurde, schmeckt sehr gut.
+     Lösung {{{
+===> Der gestern gebackene Kuchen schmeckt sehr gut.
+     der Kuchen, der gebacken wurde -> der gebackene Kuchen.
+     Nach der: Endung -e, wie bei der gute Kuchen.
+     }}}
 
-Relativsatz: Das Auto, das repariert wurde, ist teuer.
-Partizip II:  Das reparierte Auto ist teuer.
+  Für die nächsten Übungen nimm, was dir am schnellsten vorkommt:
+  Register, `dw`, `df,`, `i`, `cw`.
 
---- Übung 1: Relativsätze umformen (Partizip I) ---
-Anleitung: Forme die folgenden Sätze um, indem du den Relativsatz durch ein Partizip-I-Attribut ersetzt.
 
-Das Kind, das auf der Straße spielt, ist laut.
-->
+# 3. Partizip II
 
-Ich sehe den Hund, der laut bellt.
-->
+---> Mira liest die E-Mail, die von der Chefin geschickt wurde.
+     Lösung {{{
+===> Mira liest die von der Chefin geschickte E-Mail.
+     Akkusativ feminin nach die: -e.
+     }}}
 
-Die Sonne, die vom Himmel scheint, wärmt das Gesicht.
-->
+---> Die Lösung, die vom Team vorgeschlagen wurde, ist gut.
+     Lösung {{{
+===> Die vom Team vorgeschlagene Lösung ist gut.
+     Nominativ feminin nach die: -e.
+     }}}
 
---- Übung 2: Relativsätze umformen (Partizip II mit Registern) ---
-Anleitung: Nutze jetzt deine neuen Register-Kenntnisse! Forme die Sätze um, indem du den Relativsatz durch ein Partizip-II-Attribut ersetzt.
+---> Das Problem, das gestern gelöst wurde, war sehr komplex.
+     Lösung {{{
+===> Das gestern gelöste Problem war sehr komplex.
+     Nominativ neutral nach das: -e.
+     }}}
 
-Der Kuchen, der gestern gebacken wurde, schmeckt sehr gut.
-->
 
-Ich lese den Brief, der von Hand geschrieben ist.
-->
+# 4. Partizip I
 
-Die Tür, die frisch gestrichen war, klebte ein wenig.
-->
+---> Die Kollegen, die im Besprechungsraum warten, trinken Kaffee.
+     Lösung {{{
+===> Die im Besprechungsraum wartenden Kollegen trinken Kaffee.
+     warten -> wartend. Plural nach die: -en.
+     }}}
 
---- Übung 3: Gemischte Herausforderung ---
-Anleitung: Entscheide selbst, ob du Partizip I (aktiv) oder Partizip II (passiv) benötigst, um den Satz umzuformen.
+---> Mira hört den Drucker, der laut piept.
+     Lösung {{{
+===> Mira hört den laut piependen Drucker.
+     piepen -> piepend. Akkusativ maskulin nach den: -en.
+     }}}
 
-Der Zug, der gerade in den Bahnhof einfährt, hat Verspätung.
-->
+---> Der Zug, der gerade in den Bahnhof einfährt, hat Verspätung.
+     Lösung {{{
+===> Der gerade in den Bahnhof einfahrende Zug hat Verspätung.
+     einfahren -> einfahrend. Nominativ maskulin nach der: -e.
+     }}}
 
-Das Problem, das gestern gelöst wurde, war sehr komplex.
-->
 
-Die Studenten, die auf den Professor warten, werden langsam ungeduldig.
-->
+# 5. Partizip I oder II?
 
-== Zusammenfassung & Ausblick ==
-Partizipialattribute sind ein klares Zeichen für fortgeschrittene Sprachbeherrschung.
+  Aktiv und gerade jetzt: Partizip I. Passiv oder vorbei: Partizip II.
 
-Neue Vim-Befehle in dieser Lektion:
+---> Blauwerk sucht eine Kollegin, die Deutsch und Englisch spricht.
+     Lösung {{{
+===> Blauwerk sucht eine Deutsch und Englisch sprechende Kollegin.
+     Die Kollegin spricht selbst (aktiv): Partizip I.
+     Akkusativ feminin nach eine: -e.
+     }}}
 
-"ayy / "add / "ap: Benutze das Register a zum Kopieren/Ausschneiden/Einfügen.
 
-Speichern: :wq.
+# Zusammenfassung Lektion 4.3
 
-Nächstes Thema: `lektion-
+  Vim
+    `"adw` `"ayw`   in Register a löschen, in Register a kopieren
+    `"aP` `"ap`     Register a vor / hinter den Cursor setzen
+    `:reg a b`      Register a und b zeigen
+    `df,`           bis zum nächsten Komma löschen
+
+  Deutsch
+    Partizip I (aktiv, gleichzeitig): die wartenden Kollegen
+    Partizip II (passiv, vorbei): die vorgeschlagene Lösung
+    Endung wie beim Adjektiv. Alles andere steht davor:
+      die vom Team vorgeschlagene Lösung
+
+  Weiter:  :GermanTutor 4.4

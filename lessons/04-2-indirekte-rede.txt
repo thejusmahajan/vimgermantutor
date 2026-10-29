@@ -1,80 +1,157 @@
-== Lektion 3.2: Indirekte Rede (Indirect Speech) ==
+============================================================================
+  Lektion 4.2: Indirekte Rede
+  Vim: q · @ · @@ · 0                                      ca. 15 Minuten
+============================================================================
 
-Donnerstag, der 11. September 2025, 9:05 Uhr in Hamburg. Heute lernen wir, wie man Aussagen anderer wiedergibt – eine Technik, die man oft in Nachrichten und Berichten findet.
+  Montag, Teambesprechung bei Blauwerk. Die Chefin, Frau Dr. Schäfer,
+  erzählt von einem neuen Projekt. Danach schreibt Mira das Protokoll.
+  Im Protokoll und in den Nachrichten gibt man wieder, was andere gesagt
+  haben: in der indirekten Rede (reported speech).
 
-Ziel dieser Lektion: Die Regeln der indirekten Rede verstehen und dabei lernen, Text im gesamten Dokument systematisch und kontrolliert zu ersetzen.
+  In Vim lernst du Makros: Du nimmst eine Folge von Tasten auf und
+  spielst sie so oft ab, wie du willst.
 
---- Vim-Fokus: Suchen & Ersetzen im ganzen Dokument (mit Bestätigung) ---
-Du kennst schon das Suchen mit /. Der Befehl :substitute (kurz :s) ist noch mächtiger.
 
-Befehl: :%s/alt/neu/gc
+# 1. Grammatik: Konjunktiv I
 
-::         Startet einen Befehl.
+  In der indirekten Rede steht der Konjunktiv I. Er zeigt: Das sage
+  nicht ich, das hat jemand anders gesagt.
 
-%:         Bedeutet: in der ganzen Datei.
+  Für er/sie/es: Infinitiv ohne -n. Ganz einfach:
+       kommen -> er komme       haben  -> er habe      können -> er könne
+       werden -> er werde       wissen -> er wisse     sein   -> er sei (!)
 
-s:         Der substitute-Befehl.
+       Direkt:    Die Chefin sagt: "Das Projekt ist wichtig."
+       Indirekt:  Die Chefin sagt, das Projekt sei wichtig.
+       Mit dass:  Die Chefin sagt, dass das Projekt wichtig sei.
 
-/alt/neu/: Ersetze "alt" durch "neu".
+  Die Ersatzform: Klingt der Konjunktiv I wie der Indikativ (meistens
+  im Plural), nimmst du den Konjunktiv II oder würde + Infinitiv:
+       Sie sagen: "Wir haben Zeit."  ->  Sie sagen, sie hätten Zeit.
+       (sie haben = Indikativ, also: sie hätten)
 
-g:         Global. Ersetze alle Vorkommen in einer Zeile, nicht nur das erste.
+  Auch die Pronomen ändern sich: "ich" wird zu er oder sie.
 
-c:         Confirm. Frage vor jeder Ersetzung nach. Das ist der wichtigste Teil!
 
-Nach der Eingabe fragt Vim bei jedem Treffer: replace with neu (y/n/a/q/l/^E/^Y)?
+# 2. Makros: aufnehmen und abspielen
 
-y: Ja (yes), ersetzen.
+  `qa`   startet die Aufnahme in das Register a. Unten steht
+         "recording @a".
+  `q`    beendet die Aufnahme.
+  `@a`   spielt das Makro a ab. `3@a` spielt es dreimal ab.
+  `@@`   spielt das letzte Makro noch einmal ab.
 
-n: Nein (no), überspringen.
+  Dazu eine neue Bewegung: `0` (Null) springt an den Zeilenanfang.
 
-a: Alle ersetzen (all).
+  Bilde aus jedem Infinitiv die Form für er im Konjunktiv I.
 
-q: Abbrechen (quit).
+  1. Gehe auf die erste Zeile mit ---> (kommen).
+  2. Drücke `qa`. Vim nimmt jetzt auf.
+  3. Tippe: `0` `w` (zum Verb), `i` er Leerzeichen `Esc` (Pronomen
+     davor), `$` `x` (das -n am Ende weg), `j` (nächste Zeile).
+  4. Drücke `q`. Die Aufnahme ist fertig.
+  5. Drücke `5@a`. Vim macht dasselbe mit den nächsten fünf Zeilen.
+  6. Schau dir das Ergebnis an. Ist jede Zeile richtig?
 
---- 1. Konjunktiv I: Die Form der neutralen Wiedergabe ---
-Der Konjunktiv I signalisiert: "Ich gebe nur wieder, was jemand anderes gesagt hat."
-Man bildet ihn vom Infinitivstamm + den Endungen: -e, -est, -e, -en, -et, -en.
+  Deutsche Tastatur: @ ist AltGr-q.
 
-Verb er/sie/es Besonderheit
-haben     habe
-sein      sei          Unregelmäßig!
-kommen    komme
-gehen     gehe
-können    könne
+---> kommen
+---> haben
+---> können
+---> sein
+---> wissen
+---> tun
+     Lösung {{{
+===> er komme
+===> er habe
+===> er könne
+===> er sei
+===> er wisse
+===> er tue
+     Bei sein hat das Makro Glück: sei ist richtig.
+     Bei tun nicht: "er tu" ist falsch, richtig ist "er tue".
+     Ein Makro arbeitet stur. Prüfe immer das Ergebnis!
+     }}}
 
---- 2. Die Ersatzregel: Wann man Konjunktiv II nimmt ---
-Regel: Wenn der Konjunktiv I gleich klingt wie der Indikativ (die normale Form), benutzt man stattdessen den Konjunktiv II. Das passiert meistens bei wir und sie (Plural).
 
-Direkt: Die Minister sagen: "Wir haben einen Plan."
-Konj. I: ..., sie haben einen Plan. (Klingt wie Indikativ -> unklar!)
-Korrekt: ..., sie hätten einen Plan. (Konjunktiv II -> klar!)
+# 3. Direkte Rede -> indirekte Rede
 
---- 3. Anpassungen: Pronomen und Adverbien ---
-Bei der Wiedergabe muss man oft die Perspektive ändern.
-ich -> er/sie       heute -> an diesem Tag
-mein -> sein/ihr    gestern -> am Vortag
-wir -> sie (Pl.)    morgen -> am nächsten Tag
+  So geht es mit den Kommandos, die du kennst:
 
---- Übung 1: Direkte Rede umwandeln ---
-Anleitung: Wandle die direkten Aussagen in indirekte Rede um. Benutze den neuen Befehl :%s/alt/neu/gc, um systematisch Pronomen etc. zu ändern. Korrigiere dann die Verben manuell.
+  1. Mache aus dem Doppelpunkt ein Komma: `f:` und `r,`.
+  2. Lösche die Anführungszeichen mit `x` (vorne und hinten, `$`).
+  3. Ändere Pronomen und Verb mit `cw`.
 
-Direkt: Der Politiker sagte: "Ich werde morgen eine Rede halten. Meine Rede wird wichtig sein."
-Indirekt: Der Politiker sagte, ___________________________________________________________
+---> Mira sagt: „Ich bin müde.“
+     Lösung {{{
+===> Mira sagt, sie sei müde.
+oder Mira sagt, dass sie müde sei.
+     ich -> sie, bin -> sei.
+     }}}
 
-Direkt: Die Touristen erklärten: "Wir waren gestern hier und haben nichts gesehen."
-Indirekt: Die Touristen erklärten, _______________________________________________________
+---> Die Chefin sagt: „Das Projekt ist sehr wichtig.“
+     Lösung {{{
+===> Die Chefin sagt, das Projekt sei sehr wichtig.
+oder Die Chefin sagt, dass das Projekt sehr wichtig sei.
+     ist -> sei.
+     }}}
 
-Direkt: Maria sagt: "Ich bin müde und habe keine Energie mehr."
-Indirekt: Maria sagt, __________________________________________________________________
+---> Tim erzählt: „Ich habe keine Zeit.“
+     Lösung {{{
+===> Tim erzählt, er habe keine Zeit.
+oder Tim erzählt, dass er keine Zeit habe.
+     ich -> er, habe bleibt habe (Konjunktiv I von haben für er).
+     }}}
 
---- Übung 2: Einen Nachrichtenabsatz korrigieren ---
-Anleitung: In diesem Text wurden die Verben noch nicht in den Konjunktiv I gesetzt. Finde die Fehler und korrigiere sie.
+---> Die Kollegen sagen: „Wir haben zu viel Arbeit.“
+     Lösung {{{
+===> Die Kollegen sagen, sie hätten zu viel Arbeit.
+oder Die Kollegen sagen, dass sie zu viel Arbeit hätten.
+     wir -> sie. "sie haben" klingt wie der Indikativ.
+     Deshalb die Ersatzform im Konjunktiv II: sie hätten.
+     }}}
 
-Der Sprecher des Unternehmens berichtete, die Lage ist ernst. Man hat alles versucht, um das Problem zu lösen. Die Mitarbeiter werden bald informiert. Man ist zuversichtlich, eine Lösung zu finden.
+---> Die Zeitung schreibt: „Die Mieten steigen.“
+     Lösung {{{
+===> Die Zeitung schreibt, die Mieten würden steigen.
+oder Die Zeitung schreibt, dass die Mieten steigen würden.
+     "sie steigen" klingt wie der Indikativ, "sie stiegen" wie das
+     Präteritum. Deshalb: würden steigen.
+     }}}
 
-== Zusammenfassung & Ausblick ==
-Indirekte Rede ist ein Zeichen von formellem, professionellem Deutsch.
+  Ein Satz aus dem Protokoll. Nur das Verb fehlt im Konjunktiv I. Ein
+  Buchstabe reicht: `e` und `r`.
 
-Neue Vim-Befehle in dieser Lektion:
+---> Frau Dr. Schäfer sagte, das Team bekommt im März eine neue Kollegin.
+     Lösung {{{
+===> Frau Dr. Schäfer sagte, das Team bekomme im März eine neue Kollegin.
+     bekommen -> er/sie/es bekomme.
+     }}}
 
-:%s/alt/neu/gc: Ersetze "alt" durch "neu" im
+  Und eine Frage. Aus einer Ja/Nein-Frage wird ein Satz mit ob, das
+  Verb steht am Ende.
+
+---> Tim fragt Mira: „Kommst du mit?“
+     Lösung {{{
+===> Tim fragt Mira, ob sie mitkomme.
+oder Tim fragt Mira, ob sie mitkommt.
+     Ja/Nein-Frage -> ob + Verb am Ende. du -> sie.
+     Im Alltag hört man auch den Indikativ: ob sie mitkommt.
+     }}}
+
+
+# Zusammenfassung Lektion 4.2
+
+  Vim
+    `qa` ... `q`  Makro in Register a aufnehmen
+    `@a` `5@a`    Makro abspielen, fünfmal abspielen
+    `@@`          letztes Makro wiederholen
+    `0`           an den Zeilenanfang
+
+  Deutsch
+    Konjunktiv I (er/sie/es): komme, habe, sei, könne, werde, wisse
+    Ersatzform, wenn Konjunktiv I = Indikativ: hätten, würden + Infinitiv
+    Pronomen anpassen: ich -> er/sie, wir -> sie
+    Ja/Nein-Frage -> ob + Verb am Ende
+
+  Weiter:  :GermanTutor 4.3

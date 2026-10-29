@@ -1,74 +1,138 @@
-== Lektion 1.4: Relativsätze ==
+============================================================================
+  Lektion 1.6: Relativsätze
+  Vim: J · o · O                                           ca. 15 Minuten
+============================================================================
 
-Guten Tag aus Hamburg! Am heutigen Freitag, den 5. September 2025, lernen wir, Sätze elegant mit Relativsätzen zu verbinden.
+  Mira hat die Wohnung bekommen! Jetzt lernt sie die Nachbarn kennen. Es
+  gibt viel zu erzählen, und mit Relativsätzen (relative clauses) klingt
+  das gleich viel eleganter.
 
-Ziel dieser Lektion: Relativsätze bilden und dabei lernen, wie man in Vim ganze Zeilen bewegt und zusammenfügt.
+  In Vim lernst du `J`: Es verbindet zwei Zeilen zu einer. So werden aus
+  zwei kurzen Sätzen ein langer Satz mit Relativsatz.
 
---- Vim-Fokus: Zeilen bearbeiten ---
 
-dd: Löscht die komplette Zeile (und kopiert sie gleichzeitig).
+# 1. Grammatik: Relativsätze
 
-p: Fügt die zuletzt gelöschte Zeile unter der aktuellen Zeile wieder ein.
+  Ein Relativsatz erklärt ein Nomen genauer. Er beginnt mit einem
+  Relativpronomen, und das Verb steht am Ende.
 
-J (Großbuchstabe): Verbindet die aktuelle Zeile mit der nächsten. "Join".
+       Mira hat einen Nachbarn. Er heißt Herr Albrecht.
+       Mira hat einen Nachbarn, der Herr Albrecht heißt.
 
---- Die Grammatik: Relativsätze ---
-Relativsätze geben Zusatzinfos zu einem Nomen. Das Verb steht am Ende.
-Das Relativpronomen ist meistens identisch mit dem bestimmten Artikel.
+  Das Relativpronomen hat das Genus des Nomens. Den Fall bekommt es aus
+  dem Relativsatz.
 
-Achtung bei den Ausnahmen im Dativ Plural und im Genitiv!
+            maskulin   feminin   neutral   Plural
+       Nom  der        die       das       die
+       Akk  den        die       das       die
+       Dat  dem        der       dem       denen
+       Gen  dessen     deren     dessen    deren
 
-    Maskulin (Mann)    Feminin (Frau)    Neutrum (Kind)    Plural (Leute)
+  Mit Präposition: die Nachbarin, mit der Mira oft spricht.
 
-Nom     der                die               das               die
-Akk     den                die               das               die
-Dat     dem                der               dem               denen
-Gen     dessen deren dessen deren
 
-== Deine Mission: Übungen ==
+# 2. Zwei Zeilen verbinden mit J
 
---- Übung 1: Sätze verbinden mit J ---
-Dein Werkzeug: J (Join)
+  `J` (join) hängt die nächste Zeile an die Zeile mit dem Cursor an.
+  Dazwischen setzt Vim ein Leerzeichen.
 
-Anleitung:
-Setze den Cursor auf die erste Zeile des Paares, drücke J und bearbeite die verbundene Zeile zu einem korrekten Satz mit Relativsatz.
+  1. Gehe auf die Zeile mit ---> und drücke `J`.
+  2. Der Cursor steht jetzt genau zwischen den Sätzen. Drücke `b`: Er
+     springt auf den Punkt. Mache mit `r,` ein Komma daraus.
+  3. Ersetze den Anfang des zweiten Satzes durch das Relativpronomen.
+     Mit `r` (Die -> die) oder mit `dw` und `i`.
+  4. Bringe das Verb ans Ende wie in Lektion 1.5: Cursor auf das
+     Leerzeichen vor dem Verb, `daw`, `f.`, `P`.
 
-Satzpaar 1:
-Der Kaffee ist heiß.
-Er steht auf dem Tisch.
+---> Mira besichtigt eine Wohnung.
+     Die Wohnung hat einen großen Balkon.
+     Lösung {{{
+===> Mira besichtigt eine Wohnung, die einen großen Balkon hat.
+     die Wohnung (feminin), im Relativsatz Subjekt (Nominativ): die.
+     Schritte: J b r, w rd w dw h daw f. P
+     }}}
 
-Satzpaar 2:
-Ich mag die Sängerin.
-Du hast sie mir empfohlen.
+---> Mira spricht mit einem Nachbarn.
+     Er heißt Herr Albrecht.
+     Lösung {{{
+===> Mira spricht mit einem Nachbarn, der Herr Albrecht heißt.
+     der Nachbar (maskulin), im Relativsatz Subjekt (Nominativ): der.
+     Schritte: J b r, w dw, dann i der Leerzeichen Esc, daw f. P
+     }}}
 
-Satzpaar 3:
-Wir besuchen das Museum.
-Es wurde neu eröffnet.
 
-Satzpaar 4:
-Der Mann ist nett.
-Ich habe ihm den Weg gezeigt.
+# 3. Das Verb ans Ende
 
---- Übung 2: Das richtige Relativpronomen wählen ---
-Dein Werkzeug: cw (change word)
+  Im Relativsatz steht das Verb am Ende. Wiederhole den Trick aus
+  Lektion 1.5: Cursor auf das Leerzeichen vor dem Verb, `daw`, `f.`, `P`.
 
-Anleitung:
-Bewege den Cursor auf den Unterstrich _ und ersetze ihn mit cw.
+---> Herr Albrecht hat einen Hund, der heißt Bruno.
+     Lösung {{{
+===> Herr Albrecht hat einen Hund, der Bruno heißt.
+     Relativsatz: Verb am Ende.
+     }}}
 
-Das ist der Film, _ ich sehen möchte. (Bezugswort: Film (m). Funktion: Akkusativ)
 
-Die Stadt, _ wir besuchen, liegt im Süden. (Bezugswort: Stadt (f). Funktion: Akkusativ)
+# 4. Das richtige Relativpronomen
 
-Ich danke dem Freund, _ mir geholfen hat. (Achtung! Wer hat geholfen? -> Nominativ)
+  Jetzt stehen in jeder Zeile zwei Relativpronomen. Frage: Welches Genus
+  hat das Nomen? Und welcher Fall ist es im Relativsatz? Lösche das
+  falsche Pronomen mit `dw`.
 
-Der Nachbar, _ Hund immer bellt, ist verreist. (Wessen Hund? -> Genitiv)
+---> Bruno ist ein Hund, dem den alle Nachbarn kennen.
+     Lösung {{{
+===> Bruno ist ein Hund, den alle Nachbarn kennen.
+     Alle Nachbarn kennen den Hund: Akkusativ maskulin -> den.
+     }}}
 
-Die Kollegin, mit _ ich arbeite, ist krank. (Präposition 'mit' + Dativ)
+---> Die Nachbarin, die der Mira beim Einkaufen hilft, ist schon 90.
+     Lösung {{{
+===> Die Nachbarin, der Mira beim Einkaufen hilft, ist schon 90.
+     helfen + Dativ: Mira hilft der Nachbarin -> der.
+     }}}
 
-== Zusammenfassung & Ausblick ==
+---> Im Haus wohnen zwei Studenten, den denen Mira ihr Fahrrad leiht.
+     Lösung {{{
+===> Im Haus wohnen zwei Studenten, denen Mira ihr Fahrrad leiht.
+     Mira leiht den Studenten ihr Fahrrad: Dativ Plural -> denen.
+     }}}
 
-Fantastisch! Du hast Relativsätze mit eleganten Vim-Befehlen gemeistert.
+---> Herr Becker ist der Vermieter, deren dessen Haus am Park steht.
+     Lösung {{{
+===> Herr Becker ist der Vermieter, dessen Haus am Park steht.
+     Wessen Haus? Das Haus des Vermieters (maskulin) -> dessen.
+     }}}
 
-Speichere deine Fortschritte mit :wq.
+---> Das ist die Straßenbahn, mit der die Mira in die Stadt fährt.
+     Lösung {{{
+===> Das ist die Straßenbahn, mit der Mira in die Stadt fährt.
+     mit + Dativ, die Straßenbahn (feminin) -> mit der.
+     }}}
 
-Die nächste Lektion ist lektion-1.5.txt und behandelt den Konjunktiv II.
+
+# 5. Neue Zeilen: o und O
+
+  `o` öffnet eine neue Zeile UNTER dem Cursor und startet den
+  Einfügemodus. `O` (großes O) öffnet eine neue Zeile ÜBER dem Cursor.
+
+  Probiere es aus: Gehe auf die Zeile unten. Drücke `o` und schreibe
+  einen eigenen Relativsatz über deine Stadt. Zum Beispiel: "Ich wohne in
+  einer Stadt, die ..." Drücke dann `Esc`. Für diese Zeile gibt es kein
+  ✓, denn hier ist vieles richtig.
+
+     Meine Stadt:
+
+
+# Zusammenfassung Lektion 1.6
+
+  Vim
+    `J`     die nächste Zeile anhängen (join)
+    `o`     neue Zeile unter dem Cursor, Einfügemodus
+    `O`     neue Zeile über dem Cursor, Einfügemodus
+
+  Deutsch
+    Relativpronomen: Genus vom Nomen, Fall aus dem Relativsatz
+    der/die/das · den · dem/der/denen · dessen/deren
+    Im Relativsatz steht das Verb am Ende.
+
+  Weiter:  :GermanTutor 2.1

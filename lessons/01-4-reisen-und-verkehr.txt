@@ -1,127 +1,166 @@
-== Lektion 2.2: Reisen und Verkehr ==
+============================================================================
+  Lektion 1.4: Reisen und Verkehr
+  Vim: dw · d$ · Zähler · dd · p · u · Strg-r              ca. 15 Minuten
+============================================================================
 
-Guten Morgen aus Hamburg! Es ist Mittwoch, der 10. September 2025, 8:56 Uhr. Zeit, über das Unterwegssein zu sprechen!
+  Mira entdeckt Leipzig mit der Straßenbahn. Am Wochenende fährt sie mit
+  dem Zug nach Dresden. Unterwegs übst du die Wechselpräpositionen und die
+  trennbaren Verben.
 
-Ziel dieser Lektion: Wortschatz zum Thema Reisen lernen und dabei lernen, ganze Textblöcke im visuellen Modus zu verschieben.
+  In Vim lernst du heute den Operator d (delete). Ein Operator braucht
+  eine Bewegung (motion): d plus w löscht ein Wort, d plus $ löscht bis
+  zum Zeilenende.
 
---- Vim-Fokus: Der visuelle Modus (Visual Mode) ---
-Der visuelle Modus erlaubt es dir, Textbereiche zu markieren, um sie dann als Ganzes zu bearbeiten (löschen, kopieren, verschieben).
 
-v: Startet den visuellen Modus pro Zeichen.
+# 1. Wortschatz: unterwegs
 
-V (groß): Startet den visuellen Modus pro Zeile. (Sehr nützlich!)
+  die Haltestelle, -n     die Fahrkarte, -n        der Fahrplan, -pläne
+  das Gleis, -e           der Automat, -en         die Verspätung, -en
 
-d: Löscht (schneidet) den markierten Text aus.
+  einsteigen (in + Akk)   Mira steigt in die Straßenbahn ein.
+  aussteigen (aus + Dat)  Sie steigt am Hauptbahnhof aus.
+  umsteigen (in + Akk)    Dort steigt sie in den Zug um.
+  ankommen (in + Dat)     Um zehn kommt sie in Dresden an.
+  abfahren (von + Dat)    Der Zug fährt von Gleis 12 ab.
 
-y: Kopiert ("yanks") den markierten Text.
+  Trennbare Verben (separable verbs): Im Hauptsatz steht das Präfix am
+  Ende: ein-steigen -> Sie steigt ... ein.
 
-Ablauf zum Verschieben von Zeilen:
 
-Gehe zur ersten Zeile, die du verschieben möchtest.
+# 2. Grammatik: Wo? oder Wohin?
 
-Drücke V (groß), um den zeilenweisen visuellen Modus zu starten.
+  Nach den Wechselpräpositionen (two-way prepositions) an, auf, hinter,
+  in, neben, über, unter, vor, zwischen steht mal Akkusativ, mal Dativ:
 
-Bewege dich mit j (runter) oder k (hoch), um mehrere Zeilen zu markieren.
+       Wohin? (Richtung)  -> Akkusativ    Sie steigt in die Bahn ein.
+       Wo?    (Ort)       -> Dativ        Sie sitzt in der Bahn.
 
-Drücke d, um die markierten Zeilen auszuschneiden.
+  Und: zu Fuß gehen (on foot), aber mit dem Bus, mit der Bahn fahren.
 
-Gehe zu der Zeile, über der du den Block einfügen möchtest.
 
-Drücke p, um den Block darunter einzufügen.
+# 3. Wörter löschen mit dw
 
---- Wortschatz 1: Verkehrsmittel ---
-das Auto, -s           - car
-das Fahrrad, -räder    - bicycle
-der Zug, Züge          - train
-der Bus, -se           - bus
-die U-Bahn, -en        - subway
-das Flugzeug, -e       - airplane
-zu Fuß                 - on foot
+  `dw` löscht vom Cursor bis zum Anfang des nächsten Wortes. Steht der
+  Cursor am Anfang eines Wortes, verschwindet das ganze Wort mit dem
+  Leerzeichen danach.
 
-Typischer Gebrauch:
+  In jeder Zeile stehen zwei Artikel. Nur einer passt: Wo? oder Wohin?
 
-Ich fahre mit dem Auto / Zug / Bus. (Dativ)
+  1. Gehe auf die Zeile mit --->.
+  2. Stelle den Cursor mit `w` auf den Anfang des falschen Artikels.
+  3. Drücke `dw`.
 
-Ich nehme den Bus / die U-Bahn. (Akkusativ)
+---> Mira wartet an der die Haltestelle.
+     Lösung {{{
+===> Mira wartet an der Haltestelle.
+     Wo wartet sie? -> Dativ: an der Haltestelle.
+     }}}
 
-Ich gehe zu Fuß.
+---> Dann steigt sie in der die Straßenbahn ein.
+     Lösung {{{
+===> Dann steigt sie in die Straßenbahn ein.
+     Wohin steigt sie? -> Akkusativ: in die Straßenbahn.
+     }}}
 
-Übung 1: Korrigiere die Fehler in den Sätzen.
+---> In die der Bahn sind viele Studenten.
+     Lösung {{{
+===> In der Bahn sind viele Studenten.
+     Wo sind die Studenten? -> Dativ: in der Bahn.
+     }}}
 
-Gestern bin ich mit das Auto meiner Freundin gefahren.
+---> Am Hauptbahnhof steigt sie in dem den Zug nach Dresden um.
+     Lösung {{{
+===> Am Hauptbahnhof steigt sie in den Zug nach Dresden um.
+     Wohin steigt sie um? -> Akkusativ: in den Zug.
+     }}}
 
-Wir nehmen die nächste Bus nach St. Pauli.
 
-Seid ihr nach Berlin gefliegen oder seid ihr mit der Zug gefahren?
+# 4. Mit Zähler: mehrere Wörter auf einmal
 
-Zum Büro gehe ich immer mit Fuß.
+  Vor fast jedes Kommando kannst du eine Zahl setzen, den Zähler (count).
+  `3w` springt drei Wörter weiter. `d3w` löscht drei Wörter.
 
---- Wortschatz 2: Unterwegs ---
-der Bahnhof, -höfe     - train station
-der Flughafen, -häfen  - airport
-die Haltestelle, -n    - (bus/tram) stop
-das Gleis, -e          - platform track
-die Fahrkarte, -n      - ticket
-der Koffer, -          - suitcase
-die Verspätung, -en    - delay
-der Stau, -s           - traffic jam
+  1. Stelle den Cursor auf das erste Wort, das weg muss.
+  2. Drücke `d3w`.
 
-(ein/aus/um)steigen    - to get on/off, change
-warten auf (+Akk)      - to wait for
-ankommen in/an (+Dat)  - to arrive in/at
-abfahren von (+Dat)    - to depart from
-buchen / reservieren   - to book / reserve
+---> In Dresden geht Mira mit dem Fuß zu Fuß in die Altstadt.
+     Lösung {{{
+===> In Dresden geht Mira zu Fuß in die Altstadt.
+     Der Ausdruck heißt: zu Fuß gehen (ohne Artikel).
+     }}}
 
---- Übung 2: Eine Reise ordnen mit dem visuellen Modus ---
-Anleitung: Die Schritte einer Zugreise sind durcheinander. Ordne sie mit V, d und p in die richtige Reihenfolge.
 
-Ich steige in den Zug ein.
+# 5. Bis zum Zeilenende löschen mit d$
 
-Ich kaufe eine Fahrkarte am Schalter.
+  `$` ist die Bewegung zum Zeilenende. `d$` löscht also alles vom Cursor
+  bis zum Ende der Zeile.
 
-Der Zug kommt pünktlich in München an.
+  In der Zeile steht der Satz zweimal: erst richtig, dann mit einem
+  typischen Fehler. Lösche den falschen Satz.
 
-Ich gehe zum Bahnhof.
+  1. Stelle den Cursor auf den Anfang des zweiten Satzes.
+  2. Drücke `d$`.
 
-Ich warte auf dem Bahnsteig an Gleis 5.
+---> Der Zug fährt um acht Uhr ab. Der Zug abfährt um acht Uhr.
+     Lösung {{{
+===> Der Zug fährt um acht Uhr ab.
+     abfahren ist trennbar. Im Hauptsatz: fährt ... ab.
+     }}}
 
-Der Zug fährt vom Bahnhof ab.
 
---- Konversation: Tickets kaufen & nach dem Weg fragen ---
+# 6. Ganze Zeilen: dd und p
 
-Entschuldigung, wie komme ich zum Hauptbahnhof?
+  `dd` löscht die ganze Zeile. Vim merkt sich die gelöschte Zeile.
+  `p` (put) setzt sie UNTER der Zeile mit dem Cursor wieder ein.
 
-Gehen Sie hier geradeaus, dann die zweite Straße links.
+  So verschiebst du eine Zeile nach unten: `dd`, dann `j` oder `k`, dann
+  `p`. Und `ddp` tauscht eine Zeile mit der Zeile darunter.
 
-Ich möchte eine Fahrkarte nach Berlin, bitte.
+  Die vier Sätze erzählen Miras Fahrt nach Dresden. Leider ist die
+  Reihenfolge falsch. Bringe sie in die richtige Reihenfolge.
 
-Einfach oder hin und zurück?
+---> Am Hauptbahnhof steigt sie in den Zug nach Dresden um.
+---> Mira kauft am Automaten eine Fahrkarte.
+---> Eine gute Stunde später kommt sie in Dresden an.
+---> Dann steigt sie in die Straßenbahn ein.
+     Lösung {{{
+===> Mira kauft am Automaten eine Fahrkarte.
+===> Dann steigt sie in die Straßenbahn ein.
+===> Am Hauptbahnhof steigt sie in den Zug nach Dresden um.
+===> Eine gute Stunde später kommt sie in Dresden an.
+     Ein möglicher Weg: Auf der ersten Zeile ddp (tauscht 1 und 2).
+     Dann auf der letzten Zeile dd. Jetzt steht der Cursor auf der
+     Falte darunter: dreimal k, dann p. Es gibt viele Wege!
+     }}}
 
-Wann fährt der nächste Zug nach Köln ab?
 
-Der nächste Zug fährt um 10:15 Uhr von Gleis 7 ab.
+# 7. Rückgängig: u und Strg-r
 
-Übung 3: Du bist am Bahnhof und willst eine Fahrkarte nach Lübeck kaufen. Schreibe einen kurzen Dialog (2-3 Sätze pro Person) zwischen dir und dem/der Verkäufer/in. Benutze o, um neue Zeilen zu erstellen.
+  `u` (undo) macht die letzte Änderung rückgängig. Drückst du `u`
+  mehrmals, geht Vim immer weiter zurück.
+  `Strg-r` (Ctrl-r, redo) stellt die Änderung wieder her.
 
-Du:
-Verkäufer/in:
-Du:
-Verkäufer/in:
-Du:
-Verkäufer/in:
+  Probiere es aus: Lösche in der Zeile unten zwei Wörter mit `dw`. Drücke
+  `u` zweimal. Drücke dann `Strg-r` einmal.
 
-== Zusammenfassung & Ausblick ==
+     Probierzeile: Nächste Haltestelle: Augustusplatz. Bitte aussteigen.
 
-Super! Jetzt kennst du die Grundlagen für Gespräche über Reisen.
 
-Neue Vim-Befehle in dieser Lektion:
+# Zusammenfassung Lektion 1.4
 
-V: Zeilenweisen visuellen Modus starten.
+  Vim
+    `dw`        Wort löschen (bis zum nächsten Wort)
+    `d$`        bis zum Zeilenende löschen
+    `d3w` `3w`  Zähler: dreimal
+    `dd`        Zeile löschen
+    `p`         Gelöschtes unter der Zeile einsetzen (put)
+    `ddp`       Zeile mit der nächsten tauschen
+    `u`         rückgängig (undo)
+    `Strg-r`    wiederherstellen (redo)
 
-d (im visuellen Modus): Markierten Bereich ausschneiden.
+  Deutsch
+    Wechselpräpositionen: Wohin? -> Akkusativ, Wo? -> Dativ
+    trennbare Verben: Sie steigt in die Bahn ein. Der Zug fährt ab.
+    zu Fuß gehen · mit dem Bus fahren
 
-p: Ausgeschnittenen Bereich einfügen.
-
-Speichern nicht vergessen: :wq.
-
-Nächstes Thema: lektion-2.3.txt (Meinungen äußern, Argumentieren).
+  Weiter:  :GermanTutor 1.6

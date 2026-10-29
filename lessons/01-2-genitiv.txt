@@ -174,3 +174,5 @@ oder Mira mag die Wohnung trotz des Lärmes.
     Genitiv (Wessen?): des (maskulin, neutral) · der (feminin, Plural)
     maskulin und neutral: Nomen + -s oder -es (des Vermieters, des Hauses)
     wegen, trotz, während, statt, innerhalb, außerhalb + Genitiv
+
+  Weiter:  :GermanTutor 1.3

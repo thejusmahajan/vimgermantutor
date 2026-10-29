@@ -1,108 +1,154 @@
-== Lektion 3.1: Passiv (Passive Voice) ==
+============================================================================
+  Lektion 2.2: Das Passiv
+  Vim: / · n · N · ? · Strg-o                              ca. 15 Minuten
+============================================================================
 
-Willkommen zu Modul 3! Es ist Donnerstag, der 11. September 2025, 8:53 Uhr. Wir starten mit einem wichtigen Grammatikthema: dem Passiv.
+  Mira hat ihren Termin im Bürgeramt. Auf dem Amt sagt niemand, WER etwas
+  tut. Wichtig ist nur, WAS passiert: Das Formular wird ausgefüllt, der
+  Ausweis wird geprüft. Das ist das Passiv (passive voice).
 
-Das Passiv benutzt man, wenn die Handlung wichtig ist, aber die Person, die handelt (der Täter), unwichtig oder unbekannt ist.
+  In Vim lernst du heute das Suchen. Damit springst du in einem langen
+  Text sofort an die richtige Stelle, zum Beispiel zu jedem "man".
 
-Ziel dieser Lektion: Die Bildung und Verwendung des deutschen Passivs lernen und dabei entdecken, wie man wiederkehrende Aufgaben mit Vim-Makros automatisiert.
 
---- Vim-Fokus: Makros - Deine erste Automatisierung ---
-Ein Makro ist eine aufgezeichnete Abfolge von Tastenanschlägen. Du kannst eine komplexe Bearbeitung einmal aufzeichnen und sie dann beliebig oft wiederholen.
+# 1. Grammatik: Vorgangspassiv
 
-q + buchstabe (z.B. qa): Startet die Aufnahme eines Makros in das Register 'a'.
+  Das Passiv bildest du mit werden + Partizip II (past participle). Das
+  Subjekt im Passiv ist das Akkusativ-Objekt aus dem Aktiv.
 
-q (im Normalmodus): Beendet die Aufnahme.
+       Aktiv:   Man prüft den Ausweis.
+       Passiv:  Der Ausweis wird geprüft.
 
-@ + buchstabe (z.B. @a): Spielt das Makro aus dem Register 'a' ab.
+  Die Person kann mit von + Dativ dazukommen:
+       Der Ausweis wird von Frau Wolf geprüft.
 
-@@: Wiederholt das ZULETZT abgespielte Makro.
+  Die Zeiten:
+       Präsens      Der Ausweis wird geprüft.
+       Präteritum   Der Ausweis wurde geprüft.
+       Perfekt      Der Ausweis ist geprüft worden.  (nicht: geworden!)
 
-Beispiel-Workflow:
+  Ohne Akkusativ-Objekt: Es gibt kein Subjekt.
+       Man arbeitet hier viel.  ->  Hier wird viel gearbeitet.
 
-Gehe zur Zeile, an der du die Bearbeitung starten willst.
+  Zustandspassiv (state): sein + Partizip II. Es zeigt das Ergebnis.
+       Vorgang:  Die Tür wird gerade abgeschlossen.
+       Zustand:  Die Tür ist abgeschlossen.
 
-qa -> "Recording @a" erscheint unten.
 
-Führe deine Bearbeitungsschritte durch (z.B. ans Ende gehen A, ein Semikolon tippen ;, Esc).
+# 2. Suchen mit /
 
-q -> Die Aufnahme stoppt.
+  `/` öffnet unten die Kommandozeile für die Suche. Tippe das Suchwort
+  und drücke `Enter`. Der Cursor springt zum nächsten Treffer.
 
-Gehe zur nächsten Zeile und tippe @a. Die Bearbeitung wird wiederholt!
+  `n`        springt zum nächsten Treffer (next)
+  `N`        springt zum vorigen Treffer
+  `?wort`    sucht rückwärts
+  `Strg-o`   springt zurück dorthin, wo du vorher warst
 
-Gehe zur nächsten Zeile und tippe @@. Noch einfacher!
+  Tipp: /man findet auch "Mann" und "manchmal". /\<man\> findet nur das
+  ganze Wort man. (\< heißt: Wortanfang, \> heißt: Wortende.)
+  Deutsche Tastatur: / ist Umschalt-7, \ ist AltGr-ß, < und > liegen
+  links neben dem Y.
 
---- 1. Vorgangspassiv (Prozess) ---
-Betont die Handlung. Wird gebildet mit: werden (konjugiert) + Partizip II.
+  1. Tippe `/\<man\>` und `Enter`. Der Cursor springt zum nächsten man.
+  2. Drücke `n`, bis du in einer Zeile mit ---> landest.
+  3. Drücke `Strg-o` so oft, bis du wieder hier bist.
 
-Aktiv: Der Koch kocht die Suppe.
-Passiv: Die Suppe wird (vom Koch) gekocht.
 
-Zeitformen:
-Präsens:       Das Auto wird repariert.
-Präteritum:    Das Auto wurde repariert.
-Perfekt:       Das Auto ist repariert worden. (Achtung: nicht geworden!)
-Futur I:       Das Auto wird repariert werden.
+# 3. Aktiv -> Passiv
 
-Übung 1: Aktiv -> Passiv (mit einem Makro!)
-Anleitung: Wandle den ersten Satz manuell um. Starte dann bei der zweiten Zeile eine Makro-Aufnahme mit qa. Forme den Satz um, beende die Aufnahme mit q. Wende das Makro dann mit @@ auf die restlichen Sätze an.
+  In jeder Zeile steht ein man-Satz. Mache daraus einen Passivsatz.
+  Behalte die Wortstellung, so weit es geht.
 
-Aktiv: Der Gärtner gießt die Blumen.
-Passiv: ______________________________
+  1. Springe mit `/\<man\>` oder `n` zur Zeile.
+  2. Ändere das Verb mit `cw` in wird (oder wurde).
+  3. Lösche man mit `dw`.
+  4. Schreibe das Partizip II ans Ende. Trick bei trennbaren Verben: Der
+     Cursor steht auf "aus". Mit `ea` und "gefüllt" wird daraus
+     "ausgefüllt". Das ge- steht zwischen Präfix und Verb.
 
-Aktiv: Die Polizei fängt den Dieb.
-Passiv: ______________________________
+---> Im Bürgeramt füllt man zuerst ein Formular aus.
+     Lösung {{{
+===> Im Bürgeramt wird zuerst ein Formular ausgefüllt.
+oder Zuerst wird im Bürgeramt ein Formular ausgefüllt.
+     ein Formular ist schon Nominativ und Akkusativ: Es ändert sich nicht.
+     ausfüllen -> ausgefüllt.
+     }}}
 
-Aktiv: Der Schüler liest das Buch.
-Passiv: ______________________________
+---> Dann prüft man den Ausweis.
+     Lösung {{{
+===> Dann wird der Ausweis geprüft.
+     Aus dem Akkusativ wird der Nominativ: den Ausweis -> der Ausweis.
+     Ein schneller Weg: auf das n von "den", dann r und r.
+     }}}
 
-Aktiv: Die Firma bezahlt die Rechnung.
-Passiv: ______________________________
+---> Am Ende druckt man die Meldebescheinigung aus.
+     Lösung {{{
+===> Am Ende wird die Meldebescheinigung ausgedruckt.
+     ausdrucken -> ausgedruckt (Präfix + ge + Verb).
+     }}}
 
---- 2. Zustandspassiv (Ergebnis) ---
-Betont das Ergebnis oder den Zustand nach einer Handlung. Wird gebildet mit: sein (konjugiert) + Partizip II.
+  Jetzt Präteritum: wurde statt wird.
 
-Vorgang: Die Tür wird geschlossen. (Aktion)
-Zustand: Die Tür ist geschlossen. (Ergebnis)
+---> Am nächsten Tag rief man Mira vom Amt an.
+     Lösung {{{
+===> Am nächsten Tag wurde Mira vom Amt angerufen.
+     Präteritum Passiv: wurde + Partizip II. anrufen -> angerufen.
+     Mira ist hier schon Akkusativ = Nominativ, sie bleibt Mira.
+     }}}
 
-Übung 2: Vorgang oder Zustand?
-Anleitung: Entscheide, ob die Handlung (Vorgang) oder das Ergebnis (Zustand) betont wird und fülle die Lücke mit der richtigen Form von sein oder werden.
+  Ohne Akkusativ-Objekt bleibt kein Subjekt übrig:
 
-Vorsicht, die Straße ________ gerade frisch asphaltiert!
+---> Im Wartesaal spricht man leise.
+     Lösung {{{
+===> Im Wartesaal wird leise gesprochen.
+oder Es wird im Wartesaal leise gesprochen.
+     sprechen hat hier kein Objekt: unpersönliches Passiv.
+     Mit es nur, wenn sonst nichts auf Position 1 steht.
+     }}}
 
-Die Hausaufgaben ________ schon gemacht, wir können gehen.
+  Und das Perfekt. Hier ist es am einfachsten, die Zeile ab dem Anfang
+  mit `C` neu zu schreiben.
 
-Das Fenster ________ gestern Abend von jemandem geöffnet.
+---> Man hat den Termin verschoben.
+     Lösung {{{
+===> Der Termin ist verschoben worden.
+     Perfekt Passiv: sein + Partizip II + worden.
+     }}}
 
-Schau, das Fenster ________ noch geöffnet. Wer hat das gemacht?
 
---- 3. Unpersönliches Passiv ---
-Wird bei Verben ohne Akkusativobjekt benutzt. Oft bei Sätzen, die im Aktiv mit "man" formuliert sind.
+# 4. Vorgang oder Zustand?
 
-Aktiv: Man arbeitet hier viel.
-Passiv: Es wird hier viel gearbeitet. / Hier wird viel gearbeitet.
+  Hier stehen wird und ist nebeneinander. Was passt? Lösche das falsche
+  Wort mit `dw`.
 
-Übung 3: "Man"-Sätze umwandeln
-Anleitung: Formuliere die Sätze mit "man" ins unpersönliche Passiv um.
+---> Gerade wird ist die Tür des Amts abgeschlossen. Mira rennt los.
+     Lösung {{{
+===> Gerade wird die Tür des Amts abgeschlossen. Mira rennt los.
+     Gerade = jetzt passiert es: Vorgang -> wird.
+     }}}
 
-Man darf hier nicht rauchen.
-->
+---> Es ist schon sieben Uhr. Das Amt wird ist leider geschlossen.
+     Lösung {{{
+===> Es ist schon sieben Uhr. Das Amt ist leider geschlossen.
+     Das Ergebnis, der Zustand: Das Amt ist zu -> ist geschlossen.
+     }}}
 
-Man diskutierte lange über das Problem.
-->
 
-== Zusammenfassung & Ausblick ==
-Das Passiv ist wichtig, um den Fokus einer Aussage zu verschieben.
+# Zusammenfassung Lektion 2.2
 
-Neue Vim-Befehle in dieser Lektion:
+  Vim
+    `/wort`    vorwärts suchen, `Enter`
+    `?wort`    rückwärts suchen
+    `n` `N`    nächster / voriger Treffer
+    `\<` `\>`  Wortanfang, Wortende: /\<man\>
+    `Strg-o`   zurück zur letzten Position
 
-qa (und andere Buchstaben): Startet die Aufnahme eines Makros.
+  Deutsch
+    Vorgangspassiv: werden + Partizip II
+      wird geprüft · wurde geprüft · ist geprüft worden
+    Person mit von + Dativ: von Frau Wolf
+    ohne Objekt: Hier wird gearbeitet.
+    Zustandspassiv: sein + Partizip II: Die Tür ist abgeschlossen.
 
-q: Stoppt die Aufnahme.
-
-@a: Spielt ein Makro ab.
-
-@@: Wiederholt das letzte Makro.
-
-Speichern: :wq.
-
-Nächstes Thema: lektion-3.2.txt (Indirekte Rede).
+  Weiter:  :GermanTutor 3.1

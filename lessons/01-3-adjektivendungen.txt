@@ -1,111 +1,146 @@
-== Lektion 1.3: Adjektivendungen - Die gemischte Deklination ==
+============================================================================
+  Lektion 1.3: Adjektivendungen
+  Vim: w · b · e · r                                       ca. 15 Minuten
+============================================================================
 
-Hallo aus Hamburg! Heute, am Freitag, den 5. September 2025, schauen wir uns die "gemischte" Deklination an. Keine Sorge, sie ist logischer, als sie klingt!
+  Mira liest jeden Morgen Wohnungsanzeigen. Die Texte sind kurz und voller
+  Adjektive: "Helle Wohnung mit großem Balkon". Jedes Adjektiv braucht die
+  richtige Endung.
 
-Ziel dieser Lektion: Die gemischte Adjektivdeklination verstehen und dabei die Navigation in Vim beschleunigen.
+  Dafür lernst du heute, wie du in Vim von Wort zu Wort springst. Mit `e`
+  landest du genau am Ende eines Wortes. Und dort steht die Endung!
 
---- Vim-Fokus: Schneller Bewegen ---
-Bisher hast du den Cursor wahrscheinlich mit den Pfeiltasten bewegt. Profis nutzen Tasten im Normalmodus, um viel schneller zu sein:
 
-w: Springe zum Anfang des nächsten Wortes (word).
+# 1. Von Wort zu Wort: w, b, e
 
-b: Springe zum Anfang des vorherigen Wortes (back).
+  `w`   springt zum Anfang des nächsten Wortes (word)
+  `b`   springt zurück zum Anfang des Wortes (back)
+  `e`   springt zum Ende des Wortes (end)
 
-a: Wechsle in den Insert-Modus nach dem Cursor (append).
+  1. Gehe mit `j` auf die Übungszeile unten.
+  2. Drücke ein paarmal `w`. Der Cursor springt von Wort zu Wort.
+  3. Drücke `b`. Er springt zurück.
+  4. Drücke `e`. Er steht jetzt auf dem letzten Buchstaben eines Wortes.
 
-Probiere w und b jetzt ein paar Mal in diesem Text aus! Drücke Esc, um zu starten.
+     Übungszeile: Helle Wohnung mit großem Balkon in ruhiger Lage.
 
---- Die Grammatik: Gemischte Deklination ---
-"Gemischt" wird dekliniert nach:
+  Achtung: Für `w` ist auch ein Komma oder ein Punkt ein "Wort".
 
-Indefinitartikel: ein-
 
-Negationsartikel: kein-
+# 2. Grammatik: Wer zeigt den Fall?
 
-Possessivartikel: mein-, dein-, sein-, unser- etc.
+  Die Regel in einem Satz: Entweder der Artikel oder das Adjektiv zeigt
+  Genus (gender) und Kasus (case).
 
-Die KERNREGEL: Das Adjektiv bekommt die starke Endung (-er, -e, -es), wenn das Artikelwort (ein, mein etc.) selbst keine Endung hat.
-Das passiert nur hier:
+  Zeigt der Artikel den Fall schon (der, den, dem, des, die, das, eine,
+  einen, einem, einer ...)? Dann bekommt das Adjektiv nur -e oder -en:
 
-Nominativ Maskulin: ein neuer Stuhl
+       der große Balkon     mit dem großen Balkon     einen großen Balkon
 
-Nominativ Neutrum: ein neues Buch
+  Zeigt der Artikel ihn nicht (ein, kein, mein ohne Endung), oder gibt es
+  keinen Artikel? Dann zeigt das Adjektiv den Fall, fast wie der Artikel:
 
-Akkusativ Neutrum: ein neues Buch
+       ein großer Balkon   (der)      ein helles Zimmer   (das)
+       mit großem Balkon   (dem)      neue Küche          (die)
 
-In allen anderen Fällen bekommt das Adjektiv die schwache Endung (-e oder -en).
+  Die Tabelle mit ein (Plural mit keine):
 
-Sonderfall: Im Nominativ und Akkusativ Feminin (eine neue Tasche) ist die Endung -e, obwohl eine schon eine Endung hat. Das ist eine kleine Ausnahme, die man sich merken muss.
+            maskulin        feminin         neutral         Plural
+       Nom  ein neuer       eine neue       ein neues       keine neuen
+       Akk  einen neuen     eine neue       ein neues       keine neuen
+       Dat  einem neuen     einer neuen     einem neuen     keinen neuen
+       Gen  eines neuen     einer neuen     eines neuen     keiner neuen
 
---- Tabelle zur Übersicht (Beispiel: ein gut-) ---
-|       | Maskulin (Wagen) | Feminin (Uhr) | Neutrum (Haus) | Plural (nach keine, meine...) |
-|-------|------------------|---------------|----------------|----------------------------------|
-| Nom | ein guter | eine gute | ein gutes | meine guten |
-| Akk | einen guten | eine gute | ein gutes | meine guten |
-| Dat | einem guten | einer guten | einem guten | meinen guten |
-| Gen | eines guten | einer guten | eines guten | meiner guten |
 
-== Deine Mission: Übungen ==
+# 3. Eine Endung ersetzen mit r
 
---- Übung 1: Endungen einfügen ---
-Dein Werkzeug: a (append)
+  `r` ersetzt ein Zeichen (replace). Danach bist du sofort wieder im
+  Normalmodus. Kein `Esc` nötig!
 
-Anleitung:
+  In jeder Zeile ist eine Endung falsch. Meistens ist nur ein Buchstabe
+  falsch: -en statt -em, -er statt -en ...
 
-Gehe in den Normalmodus (Esc).
+  1. Gehe mit `j` auf die Zeile mit --->.
+  2. Springe mit `w` zu dem Adjektiv mit der falschen Endung.
+  3. Drücke `e`. Der Cursor steht auf dem letzten Buchstaben.
+  4. Drücke `r` und dann den richtigen Buchstaben, zum Beispiel `rm`.
 
-Bewege den Cursor auf den Unterstrich _.
+---> Schöne Wohnung mit großen Balkon, nur fünf Minuten zum Park.
+     Lösung {{{
+===> Schöne Wohnung mit großem Balkon, nur fünf Minuten zum Park.
+     mit + Dativ, ohne Artikel: Das Adjektiv zeigt den Fall.
+     (mit dem Balkon) -> mit großem Balkon.
+     }}}
 
-Drücke a, um nach dem Unterstrich mit dem Schreiben zu beginnen.
+---> Die Wohnung hat ein großen Bad mit Fenster.
+     Lösung {{{
+===> Die Wohnung hat ein großes Bad mit Fenster.
+     Akkusativ neutral: ein großes Bad. ein zeigt das Genus nicht,
+     also zeigt es das Adjektiv: -es wie das.
+     }}}
 
-Tippe die korrekte Adjektivendung.
+---> Im Wohnzimmer steht ein alten Sofa.
+     Lösung {{{
+===> Im Wohnzimmer steht ein altes Sofa.
+     Nominativ neutral: ein altes Sofa (das Sofa).
+     }}}
 
-Drücke Esc.
+---> Mira ruft den freundlicher Vermieter an.
+     Lösung {{{
+===> Mira ruft den freundlichen Vermieter an.
+     Akkusativ maskulin: den zeigt den Fall, also nur -en.
+     }}}
 
-Das ist ein neu_ Auto. (Nom, N, sg)
+---> Herr Becker sucht einen zuverlässiges Mieter.
+     Lösung {{{
+===> Herr Becker sucht einen zuverlässigen Mieter.
+     Akkusativ maskulin: einen zuverlässigen Mieter.
+     }}}
 
-Hast du meinen rot_ Stift gesehen? (Akk, M, sg)
+---> Mira möchte lieber in einem ruhiger Viertel wohnen.
+     Lösung {{{
+===> Mira möchte lieber in einem ruhigen Viertel wohnen.
+     in + Dativ (Wo?), neutral: in einem ruhigen Viertel.
+     }}}
 
-Wir helfen unserer alt_ Nachbarin. (Dat, F, sg)
 
-Sein klein_ Bruder ist sehr nett. (Nom, M, sg)
+# 4. Mit e und x oder e und a
 
-Ich habe keine gut_ Idee. (Akk, F, sg)
+  Nicht immer reicht ein Buchstabe. Manchmal ist einer zu viel, manchmal
+  fehlt einer. Dann hilft `e` zusammen mit `x` (löschen) oder `a`
+  (anfügen).
 
-Das ist das Ergebnis eines lang_ Gesprächs. (Gen, N, sg)
+  1. Springe mit `w` und `e` ans Ende des Adjektivs.
+  2. Ein Buchstabe zu viel? Drücke `x`.
+     Ein Buchstabe fehlt? Drücke `a`, tippe ihn, drücke `Esc`.
 
-Eure schön_ Blumen gefallen mir. (Nom, Pl)
+---> Ruhige Lage, neues Küche, kleiner Garten.
+     Lösung {{{
+===> Ruhige Lage, neue Küche, kleiner Garten.
+     Anzeigen-Stil ohne Artikel, Nominativ: die Küche -> neue Küche.
+     Ruhige Lage (die) und kleiner Garten (der) waren schon richtig.
+     }}}
 
---- Übung 2: Fehler korrigieren mit schneller Navigation ---
-Deine Werkzeuge: w, b und r/cw
+---> Wegen des hohe Preises sagt Mira den Termin ab.
+     Lösung {{{
+===> Wegen des hohen Preises sagt Mira den Termin ab.
+     Genitiv maskulin: des zeigt den Fall, also -en.
+     }}}
 
-Anleitung:
-Nutze w (vorwärts) und b (rückwärts), um schnell zur falschen Endung zu springen. Korrigiere sie dann mit r (ein Zeichen ersetzen) oder cw (Wort ändern).
 
-Ich brauche einen warmen Mantel. (Korrekt!)
+# Zusammenfassung Lektion 1.3
 
-Hast du kein bessere Fahrrad? (Akk, N, sg)
+  Vim
+    `w`     zum Anfang des nächsten Wortes
+    `b`     zum Anfang des Wortes zurück
+    `e`     zum Ende des Wortes, dorthin, wo die Endung steht
+    `r`     ein Zeichen ersetzen, ohne Einfügemodus
 
-Sein neuer Computer war teuer. (Nom, M, sg -> neuer ist falsch)
+  Deutsch
+    Der Artikel zeigt den Fall: Adjektiv auf -e oder -en.
+      der neue Balkon, mit dem neuen Balkon, einen neuen Balkon
+    Der Artikel zeigt ihn nicht (ein, kein, mein) oder fehlt: Das
+    Adjektiv zeigt ihn.
+      ein neuer Balkon, ein neues Bad, mit neuem Balkon, neue Küche
 
-Meine alten Freundin hat angerufen. (Nom, F, sg)
-
-Wir fahren mit unserem neuen Auto. (Dat, N, sg -> neuen ist falsch)
-
-Siehst du ihre schön Katzen? (Akk, Pl)
-
-== Zusammenfassung & Ausblick ==
-
-Klasse! Adjektivendungen sind eine der größten Hürden, aber mit Übung werden sie zur Gewohnheit.
-
-Neue Vim-Befehle in dieser Lektion:
-
-w: Springe ein Wort vorwärts.
-
-b: Springe ein Wort zurück.
-
-a: Füge Text nach dem Cursor ein.
-
-Speichere deine Arbeit mit :wq.
-
-In der nächsten Lektion (lektion-1.4.txt) geht es um Relativsätze.
+  Weiter:  :GermanTutor 1.4

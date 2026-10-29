@@ -73,11 +73,11 @@ function! s:Test_LessonsExist() abort
   let number = 0
   for lesson in lessons
     if lesson.chapter != chapter
-      call s:Equal(lesson.chapter, chapter + 1, 'chapters without gaps at ' . lesson.id)
+      call s:Check(lesson.chapter > chapter, 'chapters in order at ' . lesson.id)
       let chapter = lesson.chapter
       let number = 0
     endif
-    call s:Equal(lesson.number, number + 1, 'lessons without gaps at ' . lesson.id)
+    call s:Check(lesson.number > number, 'lessons in order at ' . lesson.id)
     let number = lesson.number
     call s:Check(lesson.title !~# '\.txt$', 'lesson ' . lesson.id . ' has a title line')
   endfor

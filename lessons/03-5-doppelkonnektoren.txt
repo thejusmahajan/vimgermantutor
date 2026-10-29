@@ -1,95 +1,142 @@
-== Lektion 3.3: Komplexe Konnektoren (Doppelkonnektoren) ==
+============================================================================
+  Lektion 3.5: Doppelkonnektoren
+  Vim: Strg-v · I · J · c3w                                ca. 15 Minuten
+============================================================================
 
-Freitag, der 12. September 2025, 16:15 Uhr in Hamburg. Willkommen zur letzten Lektion! Heute lernen wir, wie man mit Doppelkonnektoren Sätze eleganter und präziser macht.
+  Mira hat zwei Angebote. Sie vergleicht, wägt ab und entscheidet. Dafür
+  braucht sie Doppelkonnektoren (two-part connectors): sowohl ... als
+  auch, nicht nur ... sondern auch, zwar ... aber. Sie machen Texte
+  präzise, und in der B2-Prüfung bringen sie Punkte.
 
-Ziel dieser Lektion: Doppelkonnektoren meistern und dabei lernen, Zeilen intelligent zu verbinden und Textblöcke spaltenweise zu bearbeiten.
+  In Vim lernst du den visuellen Blockmodus. Damit schreibst du in
+  mehrere Zeilen gleichzeitig.
 
---- Vim-Fokus: Zeilen verbinden & Visueller Blockmodus ---
-Zwei fortgeschrittene Techniken für das schnelle Umstrukturieren von Text.
 
-J (Großbuchstabe J): Join. Verbindet die Zeile unter dem Cursor mit der aktuellen Zeile. Vim fügt dabei intelligent ein Leerzeichen ein und passt die Einrückung an. Perfekt, um zwei kurze Sätze zu einem langen zu verbinden.
+# 1. Grammatik: Die Doppelkonnektoren
 
-Visueller Blockmodus: CTRL-v
+  sowohl ... als auch            (beides)
+       Sie spricht sowohl Englisch als auch Deutsch.
+  nicht nur ..., sondern auch    (beides, das Zweite ist ein Plus)
+       Sie spricht nicht nur Englisch, sondern auch Deutsch.
+  weder ... noch                 (keins von beiden, ohne nicht!)
+       Sie spricht weder Polnisch noch Russisch.
+  entweder ... oder              (eins von beiden)
+       Entweder sie bleibt in Leipzig oder sie geht nach Berlin.
+  zwar ..., aber                 (ja, aber ...)
+       Die Stelle ist zwar gut, aber weit weg.
+  je ..., desto                  (je mehr ..., desto mehr ...)
+       Je mehr sie übt, desto besser wird sie.
 
-CTRL-v (Strg+v): Startet den visuellen Blockmodus.
+  Komma: vor aber und sondern immer, zwischen je und desto immer. Bei
+  sowohl ... als auch, weder ... noch, entweder ... oder steht normal
+  keins. Bei je ..., desto: Im je-Satz steht das Verb am Ende. Nach
+  desto kommt der Komparativ und dann gleich das Verb.
 
-j/k/Pfeiltasten: Wähle einen rechteckigen Block an Text aus.
 
-I (Großbuchstabe i): Insert. Nachdem du einen Block markiert hast, tippe I, gib deinen Text ein und drücke dann Esc. Der Text wird am Anfang der Markierung auf jeder Zeile eingefügt!
+# 2. Zwei Sätze verbinden: J und c3w
 
---- Die Doppelkonnektoren ---
-entweder ... oder ...   (eine von zwei Alternativen)
+  1. Gehe auf die Zeile mit ---> und drücke `J`.
+  2. Füge den ersten Teil des Konnektors mit `i` ein.
+  3. Gehe mit `f.` auf den Punkt. Drücke `c3w`: Das ändert den Punkt und
+     die nächsten zwei Wörter. Tippe den zweiten Teil und drücke `Esc`.
 
-Entweder wir gehen ins Kino oder wir bleiben zu Hause.
+---> Die Firma bietet ein gutes Gehalt.
+     Sie bietet Homeoffice.
+     Lösung {{{
+===> Die Firma bietet sowohl ein gutes Gehalt als auch Homeoffice.
+     Schritte: J, Cursor auf "ein", i sowohl Leerzeichen Esc,
+     f. c3w als auch Esc. (Vor als ein Leerzeichen tippen!)
+     }}}
 
-weder ... noch ...      (beide Alternativen nicht)
+---> Mira spricht Slowenisch und Englisch.
+     Sie spricht auch Deutsch.
+     Lösung {{{
+===> Mira spricht nicht nur Slowenisch und Englisch, sondern auch Deutsch.
+     Vor sondern steht ein Komma.
+     Schritte: J, Cursor auf "Slowenisch", i nicht nur Leerzeichen Esc,
+     f. c3w , sondern Esc.
+     }}}
 
-Er trinkt weder Kaffee noch Tee. (Kein extra "nicht"!)
 
-sowohl ... als auch ... (beide Alternativen treffen zu)
+# 3. Der visuelle Blockmodus: Strg-v
 
-Sie spricht sowohl Deutsch als auch Englisch.
+  `Strg-v` (Ctrl-v) startet den visuellen Blockmodus. Mit `j` und `l`
+  markierst du ein Rechteck. `I` (großes i) schreibt dann Text vor das
+  Rechteck, in JEDE markierte Zeile. Erst nach `Esc` erscheint der Text
+  in allen Zeilen!
 
-zwar ..., aber ...      (erst zustimmen, dann einschränken)
+  Setze vor beide Sätze "Entweder" mit einem Leerzeichen.
 
-Das Auto ist zwar alt, aber es fährt noch gut.
+  1. Gehe auf die erste Zeile mit ---> und drücke `w`. Der Cursor steht
+     auf dem M von Mira.
+  2. Drücke `Strg-v` und dann `j`. Jetzt sind zwei Zeilen markiert.
+  3. Drücke `I`, tippe "Entweder " (mit Leerzeichen), drücke `Esc`.
 
-nicht nur ..., sondern auch ... (eine Steigerung/Ergänzung)
+  Tipp für Windows: Wenn Strg-v im Terminal einfügt statt zu markieren,
+  nimm `Strg-q`. Das macht in Vim dasselbe.
 
-Er ist nicht nur klug, sondern auch sehr hilfsbereit.
+---> Mira bekommt die Stelle bei Blauwerk oder sie sucht weiter.
+---> Mira nimmt das Fahrrad oder sie fährt mit der Bahn.
+     Lösung {{{
+===> Entweder Mira bekommt die Stelle bei Blauwerk oder sie sucht weiter.
+===> Entweder Mira nimmt das Fahrrad oder sie fährt mit der Bahn.
+     Entweder steht hier auf Position 0: Danach kommt das Subjekt.
+     Auch richtig wäre: Entweder bekommt Mira die Stelle ...
+     }}}
 
-je ..., desto/umso ... (ein proportionaler Vergleich)
 
-Je mehr man übt, desto besser wird man. (Nebensatz + Hauptsatz)
+# 4. Den richtigen Konnektor
 
---- Übung 1: Sätze verbinden mit J ---
-Anleitung: Gehe auf die erste Zeile des Paares. Drücke J, um sie zu verbinden. Bearbeite dann den neuen Satz mit den gelernten Befehlen (cw, A, etc.), um den passenden Konnektor einzubauen.
+  Ein Teil des Konnektors ist falsch. Ändere das falsche Wort mit `cw`.
 
-Satzpaar 1 (sowohl ... als auch ...):
-Sie kann gut singen.
-Sie kann gut tanzen.
-->
+---> Die Arbeit ist zwar interessant, und das Gehalt ist niedrig.
+     Lösung {{{
+===> Die Arbeit ist zwar interessant, aber das Gehalt ist niedrig.
+     zwar ..., aber: erst ja, dann eine Einschränkung.
+     }}}
 
-Satzpaar 2 (zwar ..., aber ...):
-Das Angebot ist günstig.
-Die Qualität ist nicht gut.
-->
+---> Blauwerk sucht nicht nur Programmierer, aber auch Analysten.
+     Lösung {{{
+===> Blauwerk sucht nicht nur Programmierer, sondern auch Analysten.
+     nicht nur ..., sondern auch.
+     }}}
 
-Satzpaar 3 (je ..., desto ...):
-Er lernt viel.
-Er versteht es besser.
-->
+---> Mira braucht sowohl ein Zeugnis und auch einen Lebenslauf.
+     Lösung {{{
+===> Mira braucht sowohl ein Zeugnis als auch einen Lebenslauf.
+     sowohl ... als auch.
+     }}}
 
---- Übung 2: Ergänzen mit dem visuellen Blockmodus ---
-Anleitung: Füge vor jede der folgenden Zeilen das Wort "entweder " ein.
+  Bei weder ... noch ist schon alles verneint. Ein "kein" ist zu viel.
+  Mache mit `x` aus "keine" ein "eine".
 
-Gehe auf das erste E in "Er".
+---> Mira hat weder von Firma A noch von Firma B keine Antwort bekommen.
+     Lösung {{{
+===> Mira hat weder von Firma A noch von Firma B eine Antwort bekommen.
+     weder ... noch verneint schon. Kein doppeltes Nein im Deutschen.
+     }}}
 
-Drücke CTRL-v.
+  Und je ..., desto: Nach desto kommt erst das Adjektiv, dann das Verb.
+  Tausche "sie" und "wird".
 
-Drücke j, um beide Zeilen zu markieren.
+---> Je mehr Bewerbungen Mira schreibt, desto besser sie wird.
+     Lösung {{{
+===> Je mehr Bewerbungen Mira schreibt, desto besser wird sie.
+     Ein Weg: Cursor auf das Leerzeichen vor "wird", daw. Dann b und
+     zweimal h: Der Cursor steht auf dem r von "besser". Jetzt p.
+     }}}
 
-Tippe I (großes I), tippe entweder  (mit Leerzeichen).
 
-Drücke Esc. Das Wort erscheint auf beiden Zeilen!
+# Zusammenfassung Lektion 3.5
 
-Ergänze dann manuell  oder ... am Ende der ersten Zeile.
+  Vim
+    `Strg-v`    visueller Blockmodus (Rechteck markieren)
+    `I`         im Blockmodus: Text vor das Rechteck, in jede Zeile
+    `J` `c3w`   Zeilen verbinden, drei Wörter ändern
 
-Er isst einen Apfel.
-Er isst eine Banane.
-->
+  Deutsch
+    sowohl ... als auch · nicht nur ..., sondern auch
+    weder ... noch (ohne nicht und kein) · entweder ... oder
+    zwar ..., aber · je + Komparativ ..., desto + Komparativ + Verb
 
---- Ein letztes Wort ---
-Herzlichen Glückwunsch! Du hast den VimGermanTutor abgeschlossen. Du hast nicht nur wichtige deutsche Grammatik und Vokabular auf B1/B2-Niveau gelernt, sondern dir auch eine solide Grundlage in Vim erarbeitet – einer Fähigkeit, die dir beim Programmieren, Schreiben und Organisieren unendlich viel Zeit sparen wird.
-
-Neue Vim-Befehle in dieser Lektion:
-
-J: Verbindet die nächste Zeile mit der aktuellen.
-
-CTRL-v: Startet den visuellen Blockmodus.
-
-I (nach CTRL-v): Fügt Text am Anfang des Blocks auf allen Zeilen ein.
-
-Der Schlüssel ist jetzt, beides weiter zu benutzen. Viel Erfolg und Spaß dabei!
-
-Speichern
+  Weiter:  :GermanTutor 4.1

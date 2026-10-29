@@ -1,92 +1,153 @@
-== Lektion 2.4: Medien und Nachrichten ==
+============================================================================
+  Lektion 4.1: Medien und Nachrichten
+  Vim: v · V · d · c · y · P                               ca. 15 Minuten
+============================================================================
 
-Donnerstagmorgen in Hamburg, der 11. September 2025, 8:52 Uhr. Heute sprechen wir über Medien – ein Thema, das uns alle täglich begleitet.
+  Kapitel 4: Im Büro und in den Nachrichten. Mira hat die Stelle bei
+  Blauwerk bekommen! Jeden Morgen fährt sie mit der Straßenbahn ins Büro
+  und liest dabei die Nachrichten. Ihr Kollege Tim hört lieber Podcasts.
 
-Ziel dieser Lektion: Wortschatz zum Thema Medien lernen und dabei meistern, wie man Wörter im Text effizient findet und gezielt ersetzt.
+  In Vim lernst du den visuellen Modus (visual mode): Erst markierst du
+  Text, dann sagst du, was damit passieren soll.
 
---- Vim-Fokus: Suchen und gezielt Ersetzen ---
-Du kennst bereits /, um zu suchen. Lass uns das mit zwei extrem mächtigen Befehlen kombinieren, um Wörter schnell zu ersetzen.
 
-cgn: Change Go Next. Das ist ein magischer Befehl. Nachdem du mit /wort gesucht hast, springt Vim zum ersten Treffer. Wenn du jetzt cgn tippst, löscht Vim das Wort, geht in den Insert-Modus und nach deiner Änderung (Esc) springt es automatisch zum nächsten Treffer.
+# 1. Wortschatz: Medien
 
-.: Der Punkt-Befehl. Wiederholt die letzte Änderung.
+  die Nachrichten (Plural)   die Zeitung, -en          der Artikel, -
+  die Quelle, -n             der Podcast, -s           das Fernsehen
+  die Schlagzeile, -n        die Meldung, -en          das Netzwerk, -e
 
-Der ultimative Workflow zum Ersetzen:
+  im Internet, im Fernsehen, im Radio, in der Zeitung   (Wo? Dativ)
+  sich informieren über + Akkusativ
+  eine Quelle für glaubwürdig halten
+  lesen - las - gelesen      sehen - sah - gesehen
 
-Suche ein Wort: /altes-wort + Enter.
 
-Ändere den ersten Treffer: cgn + neues-wort + Esc.
+# 2. Der visuelle Modus: v und V
 
-Springe zum nächsten Treffer: n.
+  `v` startet den visuellen Modus. Bewege den Cursor: Der Text dazwischen
+  wird markiert. Dann ein Operator:
 
-Wenn du ihn auch ändern willst: Tippe einfach .. Vim wiederholt die cgn-Änderung.
+    `d`   löscht die Markierung      `c`   ändert die Markierung
+    `y`   kopiert die Markierung     `Esc` bricht ab
 
-Springe weiter mit n und wiederhole mit . nach Bedarf.
+  `V` (großes V) markiert ganze Zeilen.
 
---- Wortschatz 1: Medienarten ---
-das Internet           - the internet
-die Webseite / Website - website
-das soziale Netzwerk   - social network
-der Podcast, -s        - podcast
-das Smartphone, -s     - smartphone
-das Fernsehen / der Fernseher - television (medium / device)
-die Nachrichten (Pl.)  - the news (broadcast)
-die Zeitung, -en       - newspaper
-die Zeitschrift, -en   - magazine
-der Artikel, -         - article
+  Korrigiere die Präposition mit dem Artikel. Es sind zwei Wörter, aber
+  du änderst sie in einem Schritt.
 
-Übung 1: Begriffe sortieren. Erstelle die Überschriften == Digital ==, == Geräte == und == Print == mit O. Verschiebe dann jeden Begriff aus der Liste mit dd und p in die richtige Kategorie.
+  1. Stelle den Cursor auf den Anfang des falschen Teils.
+  2. Drücke `v` und dann `e` (einmal oder zweimal), bis die zwei Wörter
+     markiert sind.
+  3. Drücke `c`, tippe die richtige Form, drücke `Esc`.
 
-Liste zum Sortieren:
-die Zeitung
-das Smartphone
-der Podcast
-der Fernseher
-die Webseite
-das Buch
-die Zeitschrift
+---> Mira liest die Nachrichten meistens auf dem Internet.
+     Lösung {{{
+===> Mira liest die Nachrichten meistens im Internet.
+     Es heißt: im Internet, im Fernsehen, im Radio (in + Dativ).
+     }}}
 
---- Wortschatz 2: Mediennutzung ---
-lesen (liest, las)     - to read
-hören                  - to hear, listen
-sehen (sieht, sah)     - to see, watch
-surfen (im Internet)   - to surf (the internet)
-streamen               - to stream
-herunterladen / hochladen - to download / upload
-posten / teilen / kommentieren - to post / share / comment
-sich informieren über  - to inform oneself about
-die Quelle, -n         - source
-glaubwürdig / gefälscht - credible / fake
+---> Abends sieht sie manchmal einen Film in dem Fernsehen.
+     Lösung {{{
+===> Abends sieht sie manchmal einen Film im Fernsehen.
+     Bei festen Ausdrücken steht die Kurzform: im Fernsehen.
+     }}}
 
-Übung 2: Beschreibe deine Mediennutzung. Schreibe 3-4 Sätze über deine Gewohnheiten. Welche Medien nutzt du? Wo informierst du dich? Benutze o am Ende dieser Übung.
+---> Tim hört einen Podcast auf dem Weg zu der Arbeit.
+     Lösung {{{
+===> Tim hört einen Podcast auf dem Weg zur Arbeit.
+     Auch hier die Kurzform: zur Arbeit, zum Bahnhof.
+     }}}
 
---- Konversation & Übung 3: Synonyme ersetzen ---
 
-Welche Medien nutzen Sie am häufigsten?
+# 3. Kleine Fehler, schnell korrigiert
 
-Ich nutze hauptsächlich mein Smartphone.
+  Nimm, was du kannst: `cw`, `ea`, `r`, `x`.
 
-Wie informieren Sie sich über aktuelle Nachrichten?
+---> Mira informiert sich jeden Morgen für die Politik.
+     Lösung {{{
+===> Mira informiert sich jeden Morgen über die Politik.
+     sich informieren über + Akkusativ.
+     }}}
 
-Ich informiere mich online über Nachrichten-Apps.
+---> Die Nachricht im Radio kommen jede Stunde.
+     Lösung {{{
+===> Die Nachrichten im Radio kommen jede Stunde.
+     die Nachrichten (news) sind Plural. Das Verb zeigt es: kommen.
+     }}}
 
-Halten Sie diese Quelle für glaubwürdig?
+---> Viele lesen die Zeitung nicht mehr auf Papier, sondern auf ihr Handy.
+     Lösung {{{
+===> Viele lesen die Zeitung nicht mehr auf Papier, sondern auf ihrem Handy.
+     Wo lesen sie? -> Dativ: auf ihrem Handy.
+     }}}
 
-Ja, ich halte sie für sehr glaubwürdig. / Nein, ich glaube, die Nachrichten sind oft gefälscht.
+---> Gestern hat Mira einen langen Artikel über Leipzig gelest.
+     Lösung {{{
+===> Gestern hat Mira einen langen Artikel über Leipzig gelesen.
+     lesen - las - gelesen. Starke Verben enden im Partizip auf -en.
+     }}}
 
-Übung 3: Wende den neuen Workflow an! Finde das Wort "sehen" im folgenden Text. Ersetze einige, aber nicht alle Vorkommen durch "schauen". Benutze /sehen, dann cgn + schauen + Esc, und dann n und . um gezielt weitere Vorkommen zu ersetzen.
 
-Text: Viele Leute sehen heute kaum noch normales Fernsehen. Sie sehen lieber Filme und Serien auf Streaming-Diensten, wann immer sie wollen. Nachrichten sehen sie vielleicht kurz am Abend. Man sollte darauf achten, was Kinder sehen.
+# 4. Zeilen verschieben mit V
 
-== Zusammenfassung & Ausblick ==
-Super! Das Vokabular zu Medien ist im Alltag sehr nützlich.
+  Eine Meldung aus der Zeitung. Die zwei Sätze vom Anfang sind ans Ende
+  gerutscht.
 
-Neue Vim-Befehle in dieser Lektion:
+  1. Gehe auf die Zeile "Leipzig: ...".
+  2. Drücke `V` und `j`. Zwei Zeilen sind markiert.
+  3. Drücke `d`. Die zwei Zeilen sind weg (und gemerkt).
+  4. Gehe mit `k` auf die erste Zeile der Meldung.
+  5. Drücke `P`. Die Zeilen stehen jetzt ÜBER dem Cursor.
 
-cgn: Ändere das Suchergebnis und springe zum nächsten.
+---> Auf den wichtigsten Linien kommt dann alle fünf Minuten eine Bahn.
+---> Die Stadt will so mehr Menschen zum Umsteigen bewegen.
+---> Die neuen Fahrpläne stehen ab sofort im Internet.
+---> Leipzig: Die Straßenbahnen fahren ab Montag öfter.
+---> Das hat die Stadt am Freitag mitgeteilt.
+     Lösung {{{
+===> Leipzig: Die Straßenbahnen fahren ab Montag öfter.
+===> Das hat die Stadt am Freitag mitgeteilt.
+===> Auf den wichtigsten Linien kommt dann alle fünf Minuten eine Bahn.
+===> Die Stadt will so mehr Menschen zum Umsteigen bewegen.
+===> Die neuen Fahrpläne stehen ab sofort im Internet.
+     Eine Meldung beginnt mit dem Wichtigsten: Wer? Was? Wann?
+     Dann folgen die Details.
+     }}}
 
-.: Wiederhole die letzte Änderung (perfekt in Kombination mit n).
 
-Speichern: :wq.
+# 5. Frei schreiben
 
-Nächstes Thema: lektion-3.1.txt (Passiv).
+  Wie informierst du dich? Gehe auf die Zeile "Ich:", drücke `o` und
+  schreibe drei bis vier Sätze.
+
+  Prüfe danach selbst:
+    [ ] im Internet / in der Zeitung / im Radio (Dativ)
+    [ ] sich informieren über + Akkusativ
+    [ ] ein Satz mit weil oder obwohl (Verb am Ende)
+
+     Ich:
+
+     Musterlösung {{{
+     Ich informiere mich meistens im Internet über die Nachrichten.
+     Morgens höre ich einen Podcast, weil ich dabei Kaffee kochen kann.
+     Eine Zeitung auf Papier lese ich nur am Wochenende. Ich prüfe
+     immer, ob eine Quelle glaubwürdig ist.
+     }}}
+
+
+# Zusammenfassung Lektion 4.1
+
+  Vim
+    `v`         visueller Modus, zeichenweise markieren
+    `V`         visueller Modus, zeilenweise markieren
+    `d` `c` `y` auf der Markierung: löschen, ändern, kopieren
+    `P`         über (vor) dem Cursor einfügen
+
+  Deutsch
+    im Internet, im Fernsehen, im Radio, in der Zeitung
+    sich informieren über + Akkusativ
+    die Nachrichten (Plural)
+    lesen - las - gelesen
+
+  Weiter:  :GermanTutor 4.2
