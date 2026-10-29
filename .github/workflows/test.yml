@@ -44,4 +44,6 @@ jobs:
       - name: Launcher via vimgermantutor.cmd
         if: runner.os == 'Windows'
         shell: cmd
-        run: call test\launcher.cmd ${{ matrix.editor }}
+        run: |
+          where ${{ matrix.editor }}
+          call test\launcher.cmd ${{ matrix.editor }}

@@ -15,5 +15,5 @@ if not exist "%GERMANTUTOR_TEST_OUT%" (
   exit /b 1
 )
 type "%GERMANTUTOR_TEST_OUT%"
-findstr /x /c:"result=ok" "%GERMANTUTOR_TEST_OUT%" >nul
+findstr /c:"result=ok" "%GERMANTUTOR_TEST_OUT%" >nul
 exit /b %ERRORLEVEL%

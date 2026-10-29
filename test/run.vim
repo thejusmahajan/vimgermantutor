@@ -284,8 +284,11 @@ function! s:Test_LauncherCopy() abort
   let copy = expand('%:p')
   call s:Check(fnamemodify(copy, ':p') !=# fnamemodify(lesson.file, ':p'),
         \ 'buffer is a copy, not the lesson')
-  call s:Check(stridx(copy, fnamemodify(tempname(), ':p:h')) == 0,
-        \ 'copy lives in the temp directory: ' . copy)
+  " Compare short (8.3) names on Windows: $TEMP is often C:\Users\RUNNER~1.
+  let modifier = has('win32') ? ':p:h:8' : ':p:h'
+  call s:Equal(fnamemodify(copy, modifier), fnamemodify(tempname(), modifier),
+        \ 'copy lives in the temp directory')
+  call s:Check(copy =~# '-01-1-dativ-praepositionen\.txt$', 'copy keeps the lesson name')
   call s:Equal(getline(1, '$'), original, 'copy has the lesson text')
   call s:Equal(&l:fileencoding, 'utf-8', 'fileencoding')
   call s:Equal(&l:foldmethod, 'marker', 'foldmethod')
